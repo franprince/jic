@@ -1,0 +1,130 @@
+.f1content, .f2content { /* Sección de descripción */
+    background-color: white;
+    display: flex;
+    padding: 2rem 4rem 2rem 4rem;
+    flex-direction: column;
+    width: 45%;
+    height: 100%;
+}
+
+/* PRIMER PROYECTO */
+
+.f1content { /* Sección de descripción */
+    border-radius: 10px 0 0 10px;
+    align-items: center;
+}
+
+.f1content .h2 { /* Título descriptivo */
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+    color: rgb(19, 19, 19);
+    margin-top: 0.5rem;
+}
+
+.f1content .h3 { /* Marca */
+    color: gray;
+    width: 100%;
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+
+.doubleImgBorder { /* Bordes de la imagen */
+    width: 100%;
+    border-radius: 0 10px 10px 0;
+}
+
+.f1content .p { /* "See the project" */
+    position: absolute;
+    bottom: 2rem;
+    left: 4.7rem;
+}
+
+/* PROYECTOS SIGUIENTES */
+
+.f2content { /* Sección de descripción */
+    border-radius: 0 0 10px 10px;
+    padding: 1rem 2rem 1rem 2rem;
+    width: 100%;
+    height: 40%;
+}
+
+
+.f2content .h2 { /* Título descriptivo */
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    width: 70%;
+    margin: 0.5rem 0 0 0;
+}
+
+.f2content .h3 { /* Marca */
+    font-size: 1rem;
+    color: gray;
+    margin: 0.5rem 0 0 0;
+}
+
+.singleImgBorder { /* Bordes de la imagen de los dos proyectos siguientes */
+    border-radius: 10px 10px 0 0;
+}
+
+.f2content .p { /* "See the project" */
+    bottom: 1rem;
+    right: 1rem;
+    position: absolute;
+}
+
+.arrow {
+    margin-right: 1rem;
+    margin-left: 1rem;
+    position: relative;
+    bottom: -2px;
+}
+
+/* EN COMÚN */
+
+.img { /* Sección de imagen */
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.p { /* "See the project" */
+    font-size: 1rem;
+    position: absolute;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 600px) {
+    .f1content {
+        border-radius: 0 0 10px 10px;
+        padding: 1rem 2rem 1rem 2rem;
+        width: 100%;
+        height: 40%;
+        align-items: start;        
+    }
+    .f1content .h2, .h3 {
+        margin: 0;
+        width: 70%;
+        text-align: left;
+    }
+    .f1content .h2 { /* Título descriptivo */
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+    
+    .f1content .h3 { /* Marca */
+        font-size: 1rem;
+        color: gray;
+        margin-top: 0.3rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .doubleImgBorder { /* Bordes de la imagen de los dos proyectos siguientes */
+        border-radius: 10px 10px 0 0;
+    }
+    
+    .f1content .p { /* "See the project" */
+        bottom: 1rem;
+        right: 3rem;
+    }
+}
