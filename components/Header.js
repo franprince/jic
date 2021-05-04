@@ -5,8 +5,8 @@ export default function Header ({title, subtitle, img}) {
     return (
         <div className={styles.wrapper}>
             <div style={{ backgroundImage: `url(${img})` }} className={styles.header}>
-                <h1 className={styles.h1}>{title}</h1>
-            <h2>{subtitle}</h2>
+                <h1>{title}</h1>
+                <h2><i className={styles.i}>{subtitle}</i></h2>
             </div>
         </div>
     )

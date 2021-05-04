@@ -1,0 +1,18 @@
+[
+    {
+        "title": "Publicidad",
+        "items": ["Video Producto", "Foto Producto", "Video Comercial"]
+    },
+    {
+        "title": "Institucional",
+        "items": ["Hotelería", "Inmobiliarias", "Agencias", "Travel Films", "Restaurantes"]
+    },
+    {
+        "title": "Animación",
+        "items": ["Motion Graphics", "Interaction Design", "Motion UI", "Animación 2D"]
+    },
+    {
+        "title": "Bodas",
+        "items": ["Video Ceremonias", "Fotografía"]
+    }
+]

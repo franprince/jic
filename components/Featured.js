@@ -10,11 +10,12 @@ export default function Featured () {
                 { featured.map(item => { // Por cada item en el JSON featured, devuelve una tarjeta cuya clase va a depender o no de la key "double"
                     return(
                         <FeaturedCard
-                    title={item.title}
-                    brand={item.brand}
-                    img={item.img}
-                    className={item.double ? styles.f1 : styles.f2}
-                    double={item.double}/>
+                        key={featured.indexOf(item)}
+                        title={item.title}
+                        category={item.category}
+                        img={item.img}
+                        className={item.double ? styles.f1 : styles.f2}
+                        double={item.double}/>
                     )
                 })}
                 </div>

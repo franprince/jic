@@ -1,0 +1,69 @@
+.slider {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dots {
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+
+  /* Hide the browser's default radio button */
+.container input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+  /* Create a custom radio button */
+.checkmark {
+    height: 0.5rem;
+    width: 0.5rem;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .container .checkmark:after {
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+      background: white;
+  }

@@ -1,0 +1,40 @@
+.wrapper {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    background-color: white;
+    padding: 3rem 6rem 3rem 6rem;
+}
+
+.wrapper > h2 {
+    font-size: 2rem;
+    margin: 2rem auto 2rem auto;
+    width: 80%;
+}
+
+.services {
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+    .services {
+        flex-direction: column;
+    }
+}
+
+.category > ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.category > h3 {
+    margin: 2rem 0 2rem 0;
+}
+
+.category > ul > li {
+    list-style: none;
+    margin: 0.5rem 0 0rem 0;
+}

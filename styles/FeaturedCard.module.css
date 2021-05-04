@@ -1,75 +1,70 @@
 .f1content, .f2content { /* Sección de descripción */
     background-color: white;
     display: flex;
-    padding: 2rem 4rem 2rem 4rem;
     flex-direction: column;
-    width: 45%;
+    width: 50%;
     height: 100%;
+    color: #222222;
+    font-family: 'Lexend';
 }
 
 /* PRIMER PROYECTO */
 
 .f1content { /* Sección de descripción */
-    border-radius: 10px 0 0 10px;
+    border-radius: 20px 0 0 20px;
     align-items: center;
+    padding: 1.8rem 2.5rem 0 2.7rem;
 }
 
-.f1content .h2 { /* Título descriptivo */
+.f1content > h2 { /* Título descriptivo */
     font-size: 2.2rem;
     line-height: 2.2rem;
-    color: rgb(19, 19, 19);
-    margin-top: 0.5rem;
+    margin-bottom: 0.8rem;
+    font-weight: 800 !important;
 }
 
-.f1content .h3 { /* Marca */
-    color: gray;
+.f1content > h3 { /* Marca */
+    color: #828282;
     width: 100%;
-    margin: 0.5rem 0 0.5rem 0;
+    font-weight: 600 !important;
+    font-size: 1.1rem;
+    margin: 0;
 }
 
 
 .doubleImgBorder { /* Bordes de la imagen */
     width: 100%;
-    border-radius: 0 10px 10px 0;
-}
-
-.f1content .p { /* "See the project" */
-    position: absolute;
-    bottom: 2rem;
-    left: 4.7rem;
+    border-radius: 0 20px 20px 0;
 }
 
 /* PROYECTOS SIGUIENTES */
 
 .f2content { /* Sección de descripción */
-    border-radius: 0 0 10px 10px;
-    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 0 0 20px 20px;
     width: 100%;
     height: 40%;
+    padding: 0.5rem 2rem 2rem 2.5rem;
 }
 
 
-.f2content .h2 { /* Título descriptivo */
-    font-size: 1.5rem;
-    line-height: 1.5rem;
-    width: 70%;
-    margin: 0.5rem 0 0 0;
+.f2content > h2 { /* Título descriptivo */
+    font-size: 1.7rem;
+    line-height: 1.8rem;
+    width: 80%;
+    font-weight: 700 !important;
+    margin-bottom: 0.5rem;
+    white-space: pre-line
 }
 
-.f2content .h3 { /* Marca */
-    font-size: 1rem;
-    color: gray;
-    margin: 0.5rem 0 0 0;
+.f2content > h3 { /* Marca */
+    font-weight: 600 !important;
+    font-size: 1.2rem;
+    color: #828282;
+    margin: 0;
 }
 
 .singleImgBorder { /* Bordes de la imagen de los dos proyectos siguientes */
-    border-radius: 10px 10px 0 0;
-}
-
-.f2content .p { /* "See the project" */
-    bottom: 1rem;
-    right: 1rem;
-    position: absolute;
+    border-radius: 20px 20px 0 0;
 }
 
 .arrow {
@@ -87,32 +82,34 @@
     position: relative;
 }
 
-.p { /* "See the project" */
-    font-size: 1rem;
-    position: absolute;
+.f1content > p { /* "Ver el proyecto" */
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: left;
+    margin-top: 77%;
 }
 
 /* MEDIA QUERIES */
 
 @media (max-width: 600px) {
     .f1content {
-        border-radius: 0 0 10px 10px;
+        border-radius: 0 0 20px 20px;
         padding: 1rem 2rem 1rem 2rem;
         width: 100%;
         height: 40%;
         align-items: start;        
     }
-    .f1content .h2, .h3 {
+    .f1content > h2 h3 {
         margin: 0;
         width: 70%;
         text-align: left;
     }
-    .f1content .h2 { /* Título descriptivo */
+    .f1content > h2 { /* Título descriptivo */
         font-size: 1.5rem;
         line-height: 1.5rem;
     }
     
-    .f1content .h3 { /* Marca */
+    .f1content > h3 { /* Marca */
         font-size: 1rem;
         color: gray;
         margin-top: 0.3rem;
@@ -123,7 +120,7 @@
         border-radius: 10px 10px 0 0;
     }
     
-    .f1content .p { /* "See the project" */
+    .f1content > p { /* "See the project" */
         bottom: 1rem;
         right: 3rem;
     }
