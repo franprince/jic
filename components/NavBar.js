@@ -30,17 +30,24 @@ export default function Navbar() {
 
     const variants = {
         open: { opacity: 1, x: 0},
-        closed: { opacity: 0, x: "60%"},
+        closed: { opacity: 0, x: "10%"},
     }
 
     return (
     <div className={styles.wrapper}>
-        <motion.div className={styles.hamb} animate={scroll < 200 ? {opacity: 0, x: "60%"} : {opacity: 1}} transition={{duration: 0.5}} >
-        <Hamburger toggled={open} toggle={handleClick} size={14} className={styles.hamb}/>
+        <motion.div className={styles.hamb} animate={scroll < 200 ? {opacity: 0} : {opacity: 1}} transition={{duration: 0.5}} >
+        <Hamburger toggled={open} toggle={handleClick} size={18} className={styles.hamb}/>
         </motion.div>
-        <motion.div className={styles.nav} onClick={handleClick} animate={open ? "open" : "closed"} variants={variants} transition={{ type: "spring", duration: 1, velocity: 2 }}>
-            <span>NAVBAR</span>
-        </motion.div>
+        <motion.nav className={styles.nav} onClick={handleClick} animate={open ? "open" : "closed"} variants={variants} transition={{ type: "spring", duration: 1, velocity: 2 }}>
+            <ul>
+                <li>PROYECTOS</li>
+                <li>SERVICIOS</li>
+                <li>YOUTUBE</li>
+                <li>PODCAST</li>
+                <li>SOBRE MI</li>
+                <li>CONTACTO</li>
+            </ul>
+        </motion.nav>
     </div>
     );
 }
