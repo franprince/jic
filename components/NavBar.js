@@ -42,7 +42,7 @@ export default function Navbar() {
     return (
         <>
     <div className={styles.wrapper}>
-        <motion.div className={styles.hamb} animate={scroll < 200 ? {opacity: 0, visibility: "hidden"} : {opacity: 1}} transition={{duration: 0.5}} >
+        <motion.div className={styles.hamb} animate={scroll < 200 ? {opacity: 0, display: "none"} : {opacity: 1}} transition={{duration: 0.5}} >
         <Hamburger toggled={open} toggle={handleClick} size={18} className={styles.hamb}/>
         </motion.div>
         <motion.nav className={styles.nav} onClick={handleClick} animate={open ? "open" : "closed"} variants={variants} transition={{ type: "spring", duration: 1, velocity: 2 }}>
