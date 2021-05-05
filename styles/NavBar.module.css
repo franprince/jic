@@ -1,16 +1,27 @@
 .wrapper {
     z-index: 1;
-    width: 90%;
+    width: 100%;
     margin: auto;
     position: fixed;
+}
+
+.wrapper > main {
+    width: 75%;
     display: flex;
     align-items: center;
     flex-direction:row-reverse;
-    padding: 1rem;
+    padding: 2rem 0 2rem 1rem;
+    margin: auto;
+}
+
+.wrapper > main > h2 {
+    font-family: 'Poppins';
+    flex: 1;
+    color: white;
 }
 
 
-.wrapper > div {
+.wrapper > main > div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,13 +38,14 @@
     border-radius: 50%;
 }
 
-.wrapper > .nav > ul {
+.wrapper > main > .nav > ul {
     color: white;
 }
 
 .nav {
     font-family: 'Poppins', sans-serif;
     font-weight: 200;
+    line-height: 1rem;
 }
 
 .nav > ul {
@@ -46,19 +58,12 @@
     list-style: none;
 }
 
-.nav > ul > li:not(:last-child)::after {
-    content: "|";
-    margin: auto 0.5rem auto 0.5rem;
-}
-
 
 .prueba {
-    background-color: rgba(0, 0, 0, 0.342);
+    background-color: rgba(0, 0, 0, 0.568);
     z-index: -1;
-    height: 150rem;
-    width: 150rem;
+    height: 100%;
+    width: 150%;
     position: fixed;
-    border-radius: 50%;
-    top: -145rem;
-    right: -58rem;
+    border-radius: 50px;
 }

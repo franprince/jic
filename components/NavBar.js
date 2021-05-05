@@ -37,27 +37,50 @@ export default function Navbar() {
         open: { opacity: 1, x: 0 },
         closed: {opacity: 0, x: "300%"}
     }
+    
+    const liFirst = {
+        borderRight: "1px solid white",
+        paddingRight: "0.5rem"
+    }
 
+    const li = {
+        borderRight: "1px solid white",
+        padding: "0 0.5rem 0 0.5rem"
+    }
+
+    const liLast = {
+        border: "none",
+        paddingLeft: "0.5rem"
+    }
+
+    const liScrolledFirst = {
+        paddingRight: "1rem",
+    }
+
+    const liScrolled = {
+        padding: "0 0.5rem 0 0.5rem"
+    }
 
     return (
-        <>
     <div className={styles.wrapper}>
+        <main>
         <motion.div className={styles.hamb} animate={scroll < 200 ? {opacity: 0, display: "none"} : {opacity: 1}} transition={{duration: 0.5}} >
         <Hamburger toggled={open} toggle={handleClick} size={18} className={styles.hamb}/>
         </motion.div>
-        <motion.nav className={styles.nav} onClick={handleClick} animate={open ? "open" : "closed"} variants={variants} transition={{ type: "spring", duration: 1, velocity: 2 }}>
-        <motion.div className={styles.prueba} animate={open && scroll > 200 ? "open" : "closed"} variants={circleVariants} transition={{ type: "spring", duration: 0.5, velocity: 2 }}>
+        <motion.nav className={styles.nav} animate={open ? "open" : "closed"} variants={variants} transition={{ type: "spring", duration: 1, velocity: 2 }}>
+        <motion.div className={styles.prueba} animate={open && scroll > 200 ? "open" : "closed"} variants={circleVariants} transition={{ type: "ease", duration: 0.1}}>
         </motion.div>
-            <ul>
-                <li>PROYECTOS</li>
-                <li>SERVICIOS</li>
-                <li>YOUTUBE</li>
-                <li>PODCAST</li>
-                <li>SOBRE MI</li>
-                <li>CONTACTO</li>
+            <ul style={{color: "white"}}>
+                <li style={scroll < 200 ? liFirst : liScrolledFirst}>PROYECTOS</li>
+                <li style={scroll < 200 ? li : liScrolled}>SERVICIOS</li>
+                <li style={scroll < 200 ? li : liScrolled}>YOUTUBE</li>
+                <li style={scroll < 200 ? li : liScrolled}>PODCAST</li>
+                <li style={scroll < 200 ? li : liScrolled}>SOBRE MI</li>
+                <li style={scroll < 200 ? liLast : liScrolled}>CONTACTO</li>
             </ul>
         </motion.nav>
+        <h2 style={{color: "white"}}>JIC</h2>
+        </main>
     </div>
-    </>
     );
 }

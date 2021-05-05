@@ -17,7 +17,6 @@ export default function FeaturedCard ({title, category, className, img, double})
                 alt={title}
                 layout="fill"
                 objectFit="cover"
-                objectPosition="center"
                 quality={100}
                 className={double ? styles.doubleImgBorder : styles.singleImgBorder}
                 />

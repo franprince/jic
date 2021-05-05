@@ -19,7 +19,7 @@ export default function Featured () {
                     )
                 })}
                 </div>
-            <p className={styles.p}>See all works <img src="/arrow.png" alt="See all works" className={styles.arrow}/></p>
+            <p className={styles.p}>Ver más proyectos</p>
         </div>
     )
 }
