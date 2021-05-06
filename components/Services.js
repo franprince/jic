@@ -5,6 +5,7 @@ export default function Services () {
 
     return (
         <div className={styles.wrapper}>
+            <section>
             <h2>SERVICIOS</h2>
             <div className={styles.services}>
             {servicesList.map((category => { //Por cada objecto del array servicesList devuelve una lista desordenada con el título de la categoría y cada item de la misma.
@@ -22,6 +23,7 @@ export default function Services () {
                 )
             }))}
             </div>
+            </section>
         </div>
     )
 }

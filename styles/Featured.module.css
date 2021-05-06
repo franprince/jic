@@ -1,6 +1,8 @@
 .container {
     display: flex;
     flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 3rem;
 }
 .grid {
     position: relative;
@@ -8,7 +10,7 @@
     top: -5rem;
     display: grid;
     gap: 1.2rem;
-    margin: auto;
+    margin: auto auto 3rem auto;
     max-width: 90%;
     min-width: 74%;
     width: fit-content;
@@ -29,19 +31,20 @@
     flex-direction: column-reverse;
 }
 
-.p {
+.container > p {
+    font-weight: 600;
+    letter-spacing: 1px;
     margin: auto;
-    padding: 0 3rem 0rem 3rem;
+    padding: 0.7rem 1rem 0.7rem 1rem;
     color: white;
+    background-color: #FF7843;
+    border-radius: 50px;
+    transition: all 0.5s ease;
 }
 
-.arrow {
-    margin-right: 1rem;
-    margin-left: 1rem;
-    position: relative;
-    bottom: -2px;
-    filter: invert(100%);
-    -webkit-filter: invert(100%);
+.container > p:hover {
+    color: #222222;
+    background-color: white;
 }
 
 @media (max-width: 600px) {

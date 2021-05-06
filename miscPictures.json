@@ -7,5 +7,9 @@
         "id": "separator1",
         "img": "/img/img2.png",
         "mobileImg": "/img/img2mobile.png"
+    },
+    {
+        "id": "contact1",
+        "img": "/img/personal1.png"
     }
 ]

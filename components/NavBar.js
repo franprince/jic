@@ -28,6 +28,8 @@ export default function Navbar() {
         )
     }, [scroll])
 
+    // Variantes para las animaciones con Framer Motion.
+
     const variants = {
         open: { opacity: 1, x: 0},
         closed: { opacity: 0, x: "10%"},
@@ -38,6 +40,9 @@ export default function Navbar() {
         closed: {opacity: 0, x: "300%"}
     }
     
+
+    // Estilos de los elementos de la barra de navegación, que cambian en función del scrolleo.
+
     const liFirst = {
         borderRight: "1px solid white",
         paddingRight: "0.5rem"
@@ -64,9 +69,7 @@ export default function Navbar() {
     return (
     <div className={styles.wrapper}>
         <main>
-        <motion.div className={styles.hamb} animate={scroll < 200 ? {opacity: 0, display: "none"} : {opacity: 1}} transition={{duration: 0.5}} >
-        <Hamburger toggled={open} toggle={handleClick} size={18} className={styles.hamb}/>
-        </motion.div>
+        <h2 style={{color: "white"}}>JIC</h2>
         <motion.nav className={styles.nav} animate={open ? "open" : "closed"} variants={variants} transition={{ type: "spring", duration: 1, velocity: 2 }}>
         <motion.div className={styles.prueba} animate={open && scroll > 200 ? "open" : "closed"} variants={circleVariants} transition={{ type: "ease", duration: 0.1}}>
         </motion.div>
@@ -79,7 +82,9 @@ export default function Navbar() {
                 <li style={scroll < 200 ? liLast : liScrolled}>CONTACTO</li>
             </ul>
         </motion.nav>
-        <h2 style={{color: "white"}}>JIC</h2>
+        <motion.div className={styles.hamb} animate={scroll < 200 ? {opacity: 0, display: "none"} : {opacity: 1}} transition={{duration: 0.5}} >
+        <Hamburger toggled={open} toggle={handleClick} size={18} className={styles.hamb}/>
+        </motion.div>
         </main>
     </div>
     );

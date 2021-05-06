@@ -19,7 +19,7 @@ export default function Featured () {
                     )
                 })}
                 </div>
-            <p className={styles.p}>Ver más proyectos</p>
+            <p>Ver más proyectos</p>
         </div>
     )
 }
