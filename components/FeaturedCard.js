@@ -5,11 +5,13 @@ export default function FeaturedCard ({title, category, className, img, double})
     return (
         <div className={className}>
             <div className={double ? styles.f1content : styles.f2content}>
+                <section className={styles.info}>
                 <h2>{title}</h2>
                 <h3>{category}</h3>
                 {double && 
                 <p>Ver el proyecto <img src="/arrow.png" alt="See the project" className={styles.arrow}/></p>
                 }
+                </section>
             </div>
             <div className={styles.img}>
                 <Image

@@ -21,7 +21,7 @@ export default function Home() {
       <Head>
         <title>Next App</title>
       </Head>
-      <NavBar/>
+      <NavBar breakpoints={[[1, 10], [2156, 2796], [3603, 3803]]}/>
       <Header img={headerImg} title="JUAN IGNACIO CALI" subtitle="Filmmaker | Director Creativo | Motion Designer"/>
       <Featured/>
       <Separator img={separator1} mobileImg={separator1mobile}/>

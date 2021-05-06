@@ -33,7 +33,7 @@
 
 .hamb {
     z-index: 1;
-    color:rgb(255, 120, 67);
+    /* color:rgb(255, 120, 67); */
     height: fit-content;
     border-radius: 50%;
 }

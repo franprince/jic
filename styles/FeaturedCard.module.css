@@ -13,17 +13,26 @@
 .f1content { /* Sección de descripción */
     border-radius: 20px 0 0 20px;
     align-items: center;
-    padding: 1.8rem 2.5rem 0 2.7rem;
 }
 
-.f1content > h2 { /* Título descriptivo */
+.f1content > .info {
+    width: 75%;
+    height: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.f1content > .info > h2 { /* Título descriptivo */
     font-size: 2.2rem;
-    line-height: 2.2rem;
+    margin-top: 0;
     margin-bottom: 0.8rem;
-    font-weight: 800 !important;
+    width: 100%;
+    white-space: pre-line
 }
 
-.f1content > h3 { /* Marca */
+.f1content > .info > h3 { /* Marca */
     color: #828282;
     width: 100%;
     font-weight: 600 !important;
@@ -31,6 +40,13 @@
     margin: 0;
 }
 
+.f1content > .info > p { /* "Ver el proyecto" */
+    font-size: 1.2rem;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
 
 .doubleImgBorder { /* Bordes de la imagen */
     width: 100%;
@@ -42,12 +58,12 @@
 .f2content { /* Sección de descripción */
     border-radius: 0 0 20px 20px;
     width: 100%;
-    height: 40%;
+    height: 50%;
     padding: 0.5rem 2rem 2rem 2.5rem;
 }
 
 
-.f2content > h2 { /* Título descriptivo */
+.f2content > .info > h2 { /* Título descriptivo */
     font-size: 1.7rem;
     line-height: 1.8rem;
     width: 80%;
@@ -56,7 +72,7 @@
     white-space: pre-line
 }
 
-.f2content > h3 { /* Marca */
+.f2content > .info > h3 { /* Marca */
     font-weight: 600 !important;
     font-size: 1.2rem;
     color: #828282;
@@ -80,13 +96,6 @@
     height: 100%;
     width: 100%;
     position: relative;
-}
-
-.f1content > p { /* "Ver el proyecto" */
-    font-size: 1.2rem;
-    width: 100%;
-    text-align: left;
-    margin-top: 77%;
 }
 
 /* MEDIA QUERIES */
