@@ -3,7 +3,17 @@ import styles from "../styles/NavBar.module.css"
 import {Spin as Hamburger} from 'hamburger-react'
 import { motion } from "framer-motion"
 
-export default function Navbar({breakpoints}) {
+export default function Navbar({breakpointsSmall, breakpointsBig, breakpointsMobile, size}) {
+
+    var breakpoints = []
+
+    if (size.height <= 650) {
+        var breakpoints = breakpointsMobile
+    } else if (size.height < 1100) {
+        var breakpoints = breakpointsSmall
+    } else {
+        var breakpoints = breakpointsBig
+    }
 
     var combinedBreakpoints = []
 
@@ -40,7 +50,8 @@ export default function Navbar({breakpoints}) {
         } else {
             setOpen(true)
         }
-        console.log(merged.includes(scroll))
+
+        console.log(scroll)
     }, [scroll])
 
     // Variantes para las animaciones con Framer Motion.

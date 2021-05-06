@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@n8tb1t/use-scroll-position": "^2.0.3",
     "framer-motion": "^4.1.11",
     "hamburger-react": "^2.4.0",
     "keen-slider": "^5.4.0",
