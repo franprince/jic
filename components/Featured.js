@@ -1,6 +1,7 @@
 import styles from "../styles/Featured.module.css"
 import featured from "../featured.json"
 import FeaturedCard from "../components/FeaturedCard"
+import Link from 'next/link'
 
 export default function Featured () {
     
@@ -19,7 +20,7 @@ export default function Featured () {
                     )
                 })}
                 </div>
-            <p>Ver más proyectos</p>
+            <Link href="/projects"><a>Ver más proyectos</a></Link>
         </div>
     )
 }

@@ -31,7 +31,7 @@
     flex-direction: column-reverse;
 }
 
-.container > p {
+.container > a {
     font-weight: 600;
     letter-spacing: 1px;
     margin: auto;
@@ -42,7 +42,7 @@
     transition: all 0.5s ease;
 }
 
-.container > p:hover {
+.container > a:hover {
     color: #222222;
     background-color: white;
 }
