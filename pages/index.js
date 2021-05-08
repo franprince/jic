@@ -8,7 +8,7 @@ import ContactCard from "../components/ContactCard"
 import WorkTogether from "../components/WorkTogether"
 import Footer from "../components/Footer"
 
-import { InView, useInView } from 'react-intersection-observer';
+import { InView } from 'react-intersection-observer';
 
 import {useState, useEffect} from "react"
 
@@ -16,9 +16,7 @@ import miscPictures from "../miscPictures.json" /* Imágenes para header y separ
 
 export default function Home() {
 
-
   const [color, setColor] = useState("#FFF")
-  const [scroll, setScroll] = useState(0); // Defino el estado de scroll de la página
 
   const headerImg = miscPictures[0].img
   const separator1 = miscPictures[1].img
@@ -27,60 +25,44 @@ export default function Home() {
 
   const size = useWindowSize();
 
-
-  // Hook para detectar el scroll de la página y cambiar la barra de navegación
-  useEffect(() => {
-      const scroll = () => {
-      setScroll(window.scrollY); // Cada vez que la página scrollea, el estado se actualiza al valor de scroll
-      };
-      window.addEventListener("scroll", scroll, false);
-      return () => window.removeEventListener("scroll", scroll, false);
-  }, []);
-
-  // Hook para detectar el tamaño de pantalla.
-function useWindowSize() {
-  // Inicializar el estado con altura y anchura undefined así cliente y servidor están coordinados
-  const [windowSize, setWindowSize] = useState({
+  function useWindowSize() { // Hook para detectar el tamaño de pantalla.
+      const [windowSize, setWindowSize] = useState({ // Inicializar el estado con altura y anchura undefined así cliente y servidor están coordinados
       width: undefined,
       height: undefined,
   });
 
-useEffect(() => {
-// Este código se ejecuta únicamente del lado del cliente
-if (typeof window !== 'undefined') {
-  // Función que se ejecuta al cambiar el tamaño de la pantalla
-  function handleResize() {
-    // Cambiar el estado del tamaño de pantalla
-  setWindowSize({
-      width: window.innerWidth,
-      height: window.innerHeight,
-  });
-  }
-  // Agregar event listener
-  window.addEventListener("resize", handleResize);
-  // Cuando cambia el tamaño de la pantalla, el handler se ejecuta automáticamente
-  handleResize();
-  // Sacar el event listener
-  return () => window.removeEventListener("resize", handleResize);
-}
-}, []);
-return windowSize;
-}
+  useEffect(() => {
+      if (typeof window !== 'undefined') { // Este código se ejecuta únicamente del lado del cliente
+      function handleResize() { // Función que se ejecuta al cambiar el tamaño de la pantalla
+      setWindowSize({ // Cambiar el estado del tamaño de pantalla
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+      }
+      window.addEventListener("resize", handleResize); // Agregar event listener
+      handleResize(); // Cuando cambia el tamaño de la pantalla, el handler se ejecuta automáticamente
+      return () => window.removeEventListener("resize", handleResize); // Sacar el event listener
+    }
+    }, []);
+    return windowSize;
+    }
 
 
 
   return (<>
       <Head>
-        <title>Next App</title>
+        <title>JIC</title>
       </Head>
-      <NavBar size={size} color={color} scroll={scroll}/>
+      <NavBar size={size} color={color}/>
       <Header img={headerImg} title="JUAN IGNACIO CALI" subtitle="Filmmaker | Director Creativo | Motion Designer"/>
       <Featured/>
       <Separator img={separator1} mobileImg={separator1mobile} size={size}/>
       <InView threshold="0.5" onChange={(inView) => inView ? setColor("#222") : setColor("#FFF")}>
       <Services/>
       </InView>
+      <InView threshold="0.5" onChange={(inView) => inView ? setColor("#FFF") : setColor("#222")}>
       <ContactCard img={contactPic}/>
+      </InView>
       <InView threshold="0.5" onChange={(inView) => inView ? setColor("#222") : setColor("#FFF")}>
       <WorkTogether/>
       </InView>

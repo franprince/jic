@@ -98,3 +98,7 @@ a {
   font-weight: 800;
   src: url('/fonts/Lexend-ExtraBold.ttf');
 }
+
+html {
+  scroll-behavior: smooth;
+}

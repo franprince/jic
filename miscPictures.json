@@ -11,5 +11,9 @@
     {
         "id": "contact1",
         "img": "/img/personal1.png"
+    },
+    {
+        "id": "header2",
+        "img": "/img/img4.png"
     }
 ]

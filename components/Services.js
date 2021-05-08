@@ -4,7 +4,7 @@ import styles from "../styles/Services.module.css"
 export default function Services () {
 
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} id="services">
             <section>
             <h2>SERVICIOS</h2>
             <div className={styles.services}>

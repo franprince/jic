@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function Header ({title, subtitle, img}) {
 
     return (
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} id="header">
             <div className={styles.header}>
             <Image
                 src={img}
@@ -15,7 +15,10 @@ export default function Header ({title, subtitle, img}) {
                 quality={100}
                 />
                 <h1>{title}</h1>
-                <h2><i className={styles.i}>{subtitle}</i></h2>
+                {subtitle && 
+                    <h2><i className={styles.i}>{subtitle}</i></h2>
+                }
+                
             </div>
         </div>
     )
