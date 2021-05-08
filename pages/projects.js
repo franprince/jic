@@ -58,7 +58,7 @@ export default function Projects() {
         <Head>
             <title>JIC | Proyectos</title>
         </Head>
-        <NavBar color={color} scroll={scroll}/>
+        <NavBar color={color} scroll={scroll} iNavRef={"1"}/>
         <Header img={headerImg} title="PROYECTOS"/>
         <ProjectsContainer/>
         <Separator img={separator1} mobileImg={separator1mobile} size={size}/>

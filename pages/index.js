@@ -53,7 +53,7 @@ export default function Home() {
       <Head>
         <title>JIC</title>
       </Head>
-      <NavBar size={size} color={color}/>
+      <NavBar size={size} color={color} inNavRef={"0"}/>
       <Header img={headerImg} title="JUAN IGNACIO CALI" subtitle="Filmmaker | Director Creativo | Motion Designer"/>
       <Featured/>
       <Separator img={separator1} mobileImg={separator1mobile} size={size}/>

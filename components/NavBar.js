@@ -1,16 +1,22 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import styles from "../styles/NavBar.module.css"
 import {Spin as Hamburger} from 'hamburger-react'
 import { motion } from "framer-motion"
 import Link from 'next/link'
 
-export default function Navbar({color, scroll}) {
+export default function Navbar({color, iNavRef}) {
 
     const [initialNavBar, setInitialNavbar] = useState(true)
     const [open, setOpen] = useState(true)
 
     const handleClick = () => { // Abre y cierra la barra de navegación haciéndole click
         setOpen(!open)
+    }
+
+    const navRef = useRef(iNavRef)
+
+    const handleRef = (e) => {
+        navRef.current = e.target.id
     }
 
     useEffect(() => {
@@ -42,31 +48,6 @@ export default function Navbar({color, scroll}) {
     }
     
 
-    // Estilos de los elementos de la barra de navegación, que cambian en función del scrolleo.
-
-    const liFirst = {
-        borderRight: "1px solid white",
-        paddingRight: "0.5rem"
-    }
-
-    const li = {
-        borderRight: "1px solid white",
-        padding: "0 0.5rem 0 0.5rem"
-    }
-
-    const liLast = {
-        border: "none",
-        paddingLeft: "0.5rem"
-    }
-
-    const liScrolledFirst = {
-        paddingRight: "1rem",
-    }
-
-    const liScrolled = {
-        padding: "0 0.5rem 0 0.5rem"
-    }
-
     return (
     <div className={styles.wrapper}>
         <main>
@@ -78,22 +59,30 @@ export default function Navbar({color, scroll}) {
         </motion.div>
             <ul style={{color: "white"}}>
                 <Link href="/projects">
-                    <a><li style={initialNavBar ? liFirst : liScrolledFirst}>PROYECTOS</li></a>
+                    <a onClick={handleRef}>
+                        <li id="1" className={initialNavBar ? styles.liFirst : styles.liScrolledFirst}
+                        style={navRef.current == "1" ? {fontWeight: "600"} : {fontWeight: "200"}}>PROYECTOS</li>
+                        </a>
                 </Link>
                 <Link href="#services">
-                    <a><li style={initialNavBar ? li : liScrolled}>SERVICIOS</li></a>
+                    <a><li id="2" className={initialNavBar ? styles.li : styles.liScrolled}
+                    style={navRef.current == "2" ? {fontWeight: "600"} : {fontWeight: "200"}}>SERVICIOS</li></a>
                 </Link>
                 <Link href="/youtube">
-                    <a><li style={initialNavBar ? li : liScrolled}>YOUTUBE</li></a>
+                    <a><li id="3" className={initialNavBar ? styles.li : styles.liScrolled}
+                    style={navRef.current == "3" ? {fontWeight: "600"} : {fontWeight: "200"}}>YOUTUBE</li></a>
                 </Link>
                 <Link href="/podcast">
-                    <a><li style={initialNavBar ? li : liScrolled}>PODCAST</li></a>
+                    <a><li id="4" className={initialNavBar ? styles.li : styles.liScrolled}
+                    style={navRef.current == "4" ? {fontWeight: "600"} : {fontWeight: "200"}}>PODCAST</li></a>
                 </Link>
                 <Link href="/about">
-                    <a><li style={initialNavBar ? li : liScrolled}>SOBRE MI</li></a>
+                    <a><li id="5" className={initialNavBar ? styles.li : styles.liScrolled}
+                    style={navRef.current == "5" ? {fontWeight: "600"} : {fontWeight: "200"}}>SOBRE MI</li></a>
                 </Link>
                 <Link href="/contact">
-                    <a><li style={initialNavBar? liLast : liScrolled}>CONTACTO</li></a>
+                    <a><li id="6" className={initialNavBar? styles.liLast : styles.liScrolled}
+                    style={navRef.current == "6" ? {fontWeight: "600"} : {fontWeight: "200"}}>CONTACTO</li></a>
                 </Link>
             </ul>
         </motion.nav>
