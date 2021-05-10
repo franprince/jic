@@ -5,6 +5,7 @@ import WorkTogether from "../components/WorkTogether"
 import Separator from "../components/Separator"
 import Footer from "../components/Footer"
 import ProjectsContainer from "../components/Projects"
+import PhGrid from "../components/PhGrid"
 import miscPictures from "../miscPictures.json"
 
 import {useState, useEffect} from "react"
@@ -61,6 +62,7 @@ export default function Projects() {
         <NavBar color={color} scroll={scroll} iNavRef={"1"}/>
         <Header img={headerImg} title="PROYECTOS"/>
         <ProjectsContainer/>
+        <PhGrid/>
         <Separator img={separator1} mobileImg={separator1mobile} size={size}/>
         <WorkTogether/>
         <Footer/>
