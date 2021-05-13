@@ -15,7 +15,7 @@ import {groq} from 'next-sanity'
 
 const projectQuery = groq`*[ _type == 'project' ]`
 
-export default function Home() {
+export default function Home({cosas}) {
 
   const [color, setColor] = useState("#FFF")
 
@@ -48,6 +48,7 @@ export default function Home() {
     return windowSize;
     }
 
+    console.log(cosas)
   return (<>
       <Head>
         <title>JIC</title>
@@ -58,6 +59,7 @@ export default function Home() {
       <Featured/>
       </InView>
       <Separator img={separator1} mobileImg={separator1mobile} size={size}/>
+      {cosas.map((element)=> <p>{element.name}</p>)}
       <InView threshold="0.5" onChange={(inView) => inView ? setColor("#222") : setColor("#FFF")}>
       <Services/>
       </InView>
@@ -74,8 +76,8 @@ export default function Home() {
 
 export async function getStaticProps({ preview = false }) {
   const cosas = overlayDrafts(await getClient(preview).fetch(projectQuery))
-  console.log(cosas)
   return {
     props: { cosas },
+    revalidate: 1
   }
 }

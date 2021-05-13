@@ -1,9 +1,6 @@
 import Layout from "../components/Layout"
 import '../styles/globals.css'
 import App from 'next/app'
-import { getClient, overlayDrafts } from '../lib/sanity.server'
-import {groq} from 'next-sanity'
-import {useState, useEffect} from "react"
 
 function MyApp({ Component, pageProps }) {
 
@@ -30,8 +27,10 @@ MyApp.getInitialProps = async (appContext) => {
   return { ...appProps }
 }
 
-  return ( 
+  return (
+    <Layout>
       <Component {...pageProps}/>
+    </Layout>
   )
 }
 
