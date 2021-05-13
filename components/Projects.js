@@ -46,20 +46,23 @@ export default function ProjectsContainer () {
         <main className={styles.container}>
             <section className={styles.projects}>
                 <div className={styles.buttons}>
-                    <button value="all" onClick={handleClick} id="0" style={filter.current == "0" ? selectedStyle : notSelected}>Todos</button>
-                    <button value="Publicidad" onClick={handleClick} id="1" style={filter.current == "1" ? selectedStyle : notSelected}>Publicidad</button>
-                    <button value="Travel Film" onClick={handleClick} id="2" style={filter.current == "2" ? selectedStyle : notSelected}>Travel Film</button>
-                    <button value="Institucional" onClick={handleClick} id="3" style={filter.current == "3" ? selectedStyle : notSelected}>Institucional</button>
-                    <button value="Animación" onClick={handleClick} id="4" style={filter.current == "4" ? selectedStyle : notSelected}>Animación</button>
+                    <button value="all" onClick={handleClick} id="0" className={filter.current == "0" ? styles.selected : styles.button}>Todos</button>
+                    <button value="Publicidad" onClick={handleClick} id="1" className={filter.current == "1" ? styles.selected : styles.button}>Publicidad</button>
+                    <button value="Travel Film" onClick={handleClick} id="2" className={filter.current == "2" ? styles.selected : styles.button}>Travel Film</button>
+                    <button value="Institucional" onClick={handleClick} id="3" className={filter.current == "3" ? styles.selected : styles.button}>Institucional</button>
+                    <button value="Animación" onClick={handleClick} id="4" className={filter.current == "4" ? styles.selected : styles.button}>Animación</button>
                 </div>
             
                 <div className={styles.grid}>
                     { shown.map(item => {
-                        return <ProjectCard item={item} shown={shown}/>
+                        return (
+                        <ProjectCard item={item} shown={shown} key={item.id}/>)
                     })}
                     <article className={shown.length > 1 ? styles.last : styles.lastDouble}>
-                        <h2>Tu marca puede estar acá ;)</h2>
-                        <p>Trabajemos juntos</p>
+                        <article>
+                            <h2>Tu marca puede estar acá ;)</h2>
+                            <a>Trabajemos juntos!</a>
+                        </article>
                     </article>
                 </div>
             </section>

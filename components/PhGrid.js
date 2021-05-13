@@ -9,7 +9,7 @@ export default function PhGrid () {
         <section className={styles.container}>
             <div className={styles.grid}>
                 {photos.map((photo) => 
-                <article className={styles.photo}>
+                <article className={styles.photo} key={photos.indexOf(photo)}>
                         <Image
                         src={photo.img}
                         alt="Juan Ignacio Cali's picture"

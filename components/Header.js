@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function Header ({title, subtitle, img}) {
 
     return (
-        <div className={styles.wrapper} id="header">
+        <header className={styles.wrapper} id="header">
             <div className={styles.header}>
             <Image
                 src={img}
@@ -20,6 +20,6 @@ export default function Header ({title, subtitle, img}) {
                 }
                 
             </div>
-        </div>
+        </header>
     )
 }

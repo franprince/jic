@@ -6,7 +6,7 @@
 }
 
 .wrapper > main {
-    width: 75%;
+    width: 80%;
     display: flex;
     align-items: center;
     flex-direction:row;
@@ -18,8 +18,12 @@
 .wrapper > main > a {
     font-family: 'Poppins';
     flex: 1;
+}
+
+.wrapper > main > a > h2 {
     transition: all 0.5s ease;
 }
+
 
 
 .wrapper > main > div {
@@ -60,6 +64,14 @@
 
 .nav > ul > a {
     list-style: none;
+}
+
+.light {
+    color: white;
+}
+
+.dark {
+    filter: invert(100);
 }
 
 .nav > ul > a > .liFirst {

@@ -9,19 +9,13 @@
     grid-template-columns: repeat(2, 50%);
     display: grid;
     gap: 1.2rem;
-    margin: auto auto 1rem auto;
+    margin: auto;
     max-width: 90%;
-    min-width: 74%;
+    min-width: 79%;
     width: fit-content;
 }
 
-.last {
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .lastDouble {
     grid-column: 1/3;
@@ -39,13 +33,69 @@
 }
 
 .buttons {
-    width: 74%;
+    width: 79%;
     margin: auto;
     margin-bottom:2.5rem
 }
 
+.buttons > button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    outline: none;
+    padding: 0.5rem 1.2rem 0.5rem 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    color: white;
+    transition: all 0.5s ease;
+}
+
+.button {
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+.selected {
+    background-color: #FF7843;
+    border: 2px solid #FF7843;
+}
+
 .buttons > button:not(:last-child) {
     margin-right: 1rem;
+}
+
+.buttons > .button:hover {
+    background-color: #FFF;
+    color: #222;
+}
+
+.last {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.last > article {
+    width: 60%;
+    margin: auto;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.last > article > h2 {
+    font-size: 2.2rem;
+    line-height: 2.5rem;
+}
+
+.last > article > a {
+    background-color: #FF7843;
+    padding: 0.5rem 1.2rem 0.5rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    width: fit-content;
 }
 @media (max-width: 700px) {
     .grid {

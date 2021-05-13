@@ -1,12 +1,14 @@
 import styles from "../styles/ProjectCard.module.css"
 import Image from 'next/image'
+import Link from "next/link"
 
 export default function ProjectCard ({item, shown}) {
 
     const length = shown.length - 1
 
     return (
-        <article className={shown.indexOf(item) == 0 ? styles.double :
+        <Link href={`/projects/${item.id}`}>
+            <article className={shown.indexOf(item) == 0 ? styles.double :
                             shown.indexOf(item) % 3 != 0 ? styles.single :
                             shown.indexOf(item) == length ? styles.single : styles.double}>
             <div className={styles.content}>
@@ -14,9 +16,9 @@ export default function ProjectCard ({item, shown}) {
                     <h2>{item.title}</h2>
                     <h3>{item.subtitle}</h3>
                     {shown.indexOf(item) == 0 ? 
-                    <p>Ver el proyecto <img src="/arrow.png" alt="See the project" className={styles.arrow}/></p>
+                    <p>Ver el proyecto <img src="/arrow.png" alt="Ver el proyecto" className={styles.arrow}/></p>
                     : shown.indexOf(item) % 3 != 0 ? null
-                    : shown.indexOf(item) == length ? null : <p>Ver el proyecto <img src="/arrow.png" alt="See the project" className={styles.arrow}/></p>
+                    : shown.indexOf(item) == length ? null : <p>Ver el proyecto <img src="/arrow.png" alt="Ver el proyecto" className={styles.arrow}/></p>
                     }
                 </section>
             </div>
@@ -31,5 +33,6 @@ export default function ProjectCard ({item, shown}) {
                 />
             </div>
         </article>
+        </Link>
     )
 }

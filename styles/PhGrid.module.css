@@ -5,10 +5,10 @@
 
 .grid {
     margin:auto;
-    width: 80%;
+    width: 79%;
     display: grid;
     grid-template-columns: repeat(auto-fill, 340px);
-    gap: 1.5rem;
+    gap: 1.1rem;
 }
 
 .grid > .photo {

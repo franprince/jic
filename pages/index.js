@@ -7,12 +7,13 @@ import NavBar from "../components/NavBar"
 import ContactCard from "../components/ContactCard"
 import WorkTogether from "../components/WorkTogether"
 import Footer from "../components/Footer"
-
 import { InView } from 'react-intersection-observer';
-
 import {useState, useEffect} from "react"
-
 import miscPictures from "../miscPictures.json" /* Imágenes para header y separadores */
+import { getClient, overlayDrafts } from '../lib/sanity.server'
+import {groq} from 'next-sanity'
+
+const projectQuery = groq`*[ _type == 'project' ]`
 
 export default function Home() {
 
@@ -47,20 +48,20 @@ export default function Home() {
     return windowSize;
     }
 
-
-
   return (<>
       <Head>
         <title>JIC</title>
       </Head>
-      <NavBar size={size} color={color} inNavRef={"0"}/>
+      <NavBar size={size} color={color} inNavRef={"0"} theme={"light"}/>
       <Header img={headerImg} title="JUAN IGNACIO CALI" subtitle="Filmmaker | Director Creativo | Motion Designer"/>
+      <InView threshold="0.3" onChange={(inView) => inView ? setColor("#222") : setColor("#FFF")}>
       <Featured/>
+      </InView>
       <Separator img={separator1} mobileImg={separator1mobile} size={size}/>
       <InView threshold="0.5" onChange={(inView) => inView ? setColor("#222") : setColor("#FFF")}>
       <Services/>
       </InView>
-      <InView threshold="0.5" onChange={(inView) => inView ? setColor("#FFF") : setColor("#222")}>
+      <InView threshold="0.3" onChange={(inView) => inView ? setColor("#FFF") : setColor("#222")}>
       <ContactCard img={contactPic}/>
       </InView>
       <InView threshold="0.5" onChange={(inView) => inView ? setColor("#222") : setColor("#FFF")}>
@@ -69,4 +70,12 @@ export default function Home() {
       <Footer/>
       </>
   )
+}
+
+export async function getStaticProps({ preview = false }) {
+  const cosas = overlayDrafts(await getClient(preview).fetch(projectQuery))
+  console.log(cosas)
+  return {
+    props: { cosas },
+  }
 }

@@ -4,7 +4,7 @@ import {Spin as Hamburger} from 'hamburger-react'
 import { motion } from "framer-motion"
 import Link from 'next/link'
 
-export default function Navbar({color, iNavRef}) {
+export default function Navbar({color, iNavRef, theme}) {
 
     const [initialNavBar, setInitialNavbar] = useState(true)
     const [open, setOpen] = useState(true)
@@ -49,7 +49,7 @@ export default function Navbar({color, iNavRef}) {
     
 
     return (
-    <div className={styles.wrapper}>
+    <nav className={styles.wrapper}>
         <main>
             <Link href="/#header">
                 <a><h2 style={{"color": color}}>JIC</h2></a>
@@ -57,7 +57,7 @@ export default function Navbar({color, iNavRef}) {
         <motion.nav className={styles.nav} animate={open ? "open" : "closed"} variants={variants} transition={{ type: "spring", duration: 1, velocity: 2 }}>
         <motion.div className={styles.prueba} animate={initialNavBar ? "closed" : open ? "open" : "closed"} variants={circleVariants} transition={{ type: "ease", duration: 0.1}}>
         </motion.div>
-            <ul style={{color: "white"}}>
+            <ul className={theme == "light" ? styles.light : styles.dark}>
                 <Link href="/projects">
                     <a onClick={handleRef}>
                         <li id="1" className={initialNavBar ? styles.liFirst : styles.liScrolledFirst}
@@ -90,6 +90,6 @@ export default function Navbar({color, iNavRef}) {
         <Hamburger toggled={open} toggle={handleClick} size={18} className={styles.hamb}/>
         </motion.div>
         </main>
-    </div>
+    </nav>
     );
 }
