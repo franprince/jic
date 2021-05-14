@@ -5,6 +5,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import home from './home'
 import projects from './projects'
 import project from './project'
+import projectsPage from './projectsPage'
 import podcast from './podcast'
 import contact from './contact'
 import phGrid from './phGrid'
@@ -16,6 +17,7 @@ name: 'mySchema',
 types: schemaTypes.concat([
   project,
   projects,
+  projectsPage,
   phGrid,
   home,
   youtube,

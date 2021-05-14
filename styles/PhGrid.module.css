@@ -5,9 +5,9 @@
 
 .grid {
     margin:auto;
-    width: 79%;
+    width: fit-content;
     display: grid;
-    grid-template-columns: repeat(auto-fill, 340px);
+    grid-template-columns: repeat(3, 340px);
     gap: 1.1rem;
 }
 
@@ -19,4 +19,14 @@
 
 .grid > .photo > div {
     border-radius: 15px;
+}
+
+@media(max-width: 1200px) {
+    .grid {
+        margin:auto;
+        width: 79%;
+        display: grid;
+        grid-template-columns: repeat(2, 340px);
+        gap: 1.1rem;
+    }
 }

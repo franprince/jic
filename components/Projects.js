@@ -1,9 +1,8 @@
-import projects from "../projects.json"
 import styles from "../styles/ProjectsContainer.module.css"
 import ProjectCard from "../components/ProjectCard"
 import {useState, useRef} from "react"
 
-export default function ProjectsContainer () {
+export default function ProjectsContainer ({projects}) {
 
     const [shown, setShown] = useState(projects)
     const filter = useRef("0")
@@ -13,35 +12,12 @@ export default function ProjectsContainer () {
         if (e.target.value == "all") {
             setShown(projects)
         } else {
-            const filtered = projects.filter(project => project.category.includes(e.target.value))
+            const filtered = projects.filter(project => project.categories.includes(e.target.value))
             setShown(filtered)
         }
         filter.current = e.target.id
     }
 
-    const selectedStyle = {
-        fontFamily: "Poppins, sans-serif",
-        fontWeight: "600",
-        color: "white",
-        outline: "none",
-        padding: "0.5rem 1.2rem 0.5rem 1.2rem",
-        backgroundColor: "#FF7843",
-        border: "2px solid #FF7843",
-        borderRadius: "50px",
-        cursor: "pointer",
-    }
-
-    const notSelected = {
-        fontFamily: "Poppins",
-        fontWeight: "600",
-        color: "white",
-        outline: "none",
-        padding: "0.5rem 1.2rem 0.5rem 1.2rem",
-        backgroundColor: "transparent",
-        border: "2px solid white",
-        borderRadius: "50px",
-        cursor: "pointer",
-    }
     return(
         <main className={styles.container}>
             <section className={styles.projects}>
@@ -56,7 +32,7 @@ export default function ProjectsContainer () {
                 <div className={styles.grid}>
                     { shown.map(item => {
                         return (
-                        <ProjectCard item={item} shown={shown} key={item.id}/>)
+                        <ProjectCard item={item} shown={shown} key={item._id}/>)
                     })}
                     <article className={shown.length > 1 ? styles.last : styles.lastDouble}>
                         <article>

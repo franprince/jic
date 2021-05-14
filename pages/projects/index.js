@@ -6,22 +6,38 @@ import Separator from "../../components/Separator"
 import Footer from "../../components/Footer"
 import ProjectsContainer from "../../components/Projects"
 import PhGrid from "../../components/PhGrid"
-import miscPictures from "../../miscPictures.json"
-
 import {useState, useEffect} from "react"
-
+import { getClient, overlayDrafts } from '../../lib/sanity.server'
+import {groq} from 'next-sanity'
 import { InView } from 'react-intersection-observer';
 
-export default function Projects() {
+// QUERIES PARA SANITY
+
+const projectQuery = groq`*[ _type == 'project' ]{
+    name,
+    _id,
+    categories,
+    featured,
+    slug,
+    "imageUrl": img.asset->url,
+    _createdAt
+} | order(_createdAt asc)`
+
+const projectPageQuery = groq`*[ _type == 'projectsPage' ]{
+    _id,
+    "headerURL": header.asset->url,
+    "parallaxURL": parallax.asset->url,
+    "parallaxMobileURL": parallaxMobile.asset->url
+}`
+
+const gridQuery = groq`*[_type=='phGrid'] {_id, 'assets': pics[].asset->url}`
+
+
+export default function Projects({projectsApi, projectsPageApi, pics}) {
 
     const [color, setColor] = useState("#FFF")
 
-    const headerImg = miscPictures[3].img
-    const separator1 = miscPictures[1].img
-    const separator1mobile = miscPictures[1].mobileImg
-
     const size = useWindowSize();
-
 
     function useWindowSize() { // Hook para detectar el tamaño de pantalla.
         const [windowSize, setWindowSize] = useState({ // Inicializar el estado con altura y anchura undefined así cliente y servidor están coordinados
@@ -51,12 +67,12 @@ export default function Projects() {
             <title>JIC | Proyectos</title>
         </Head>
         <NavBar size={size} color={color} iNavRef={"1"} theme={"light"}/>
-        <Header img={headerImg} title="PROYECTOS"/>
+        <Header img={projectsPageApi[0].headerURL} title="PROYECTOS"/>
         <InView threshold="0.1" onChange={(InView) => InView ? setColor("#222") : setColor("#FFF")}>
-        <ProjectsContainer/>
+        <ProjectsContainer projects={projectsApi}/>
         </InView>
-        <PhGrid/>
-        <Separator img={separator1} mobileImg={separator1mobile} size={size}/>
+        <PhGrid pictures={pics[0].assets}/>
+        <Separator img={projectsPageApi[0].parallaxURL} mobileImg={projectsPageApi[0].parallaxMobileURL} size={size}/>
         <InView threshold="0.5" onChange={(InView) => InView ? setColor("#222") : setColor("#FFF")}>
         <WorkTogether/>
         </InView>
@@ -65,3 +81,13 @@ export default function Projects() {
     )
 
 }
+
+export async function getStaticProps({ preview = false }) {
+    const projectsApi = overlayDrafts(await getClient(preview).fetch(projectQuery))
+    const projectsPageApi = overlayDrafts(await getClient(preview).fetch(projectPageQuery))
+    const pics = overlayDrafts(await getClient(preview).fetch(gridQuery))
+    return {
+      props: { projectsApi, projectsPageApi, pics },
+      revalidate: 1
+    }
+  }
