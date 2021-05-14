@@ -14,6 +14,11 @@ export default {
         title: 'Imagen con efecto Parallax'
     },
     {
+        name: 'parallaxMobile',
+        type: 'image',
+        title: 'Imagen con efecto Parallax (mobile)'
+    },
+    {
         name: 'personalImg',
         type: 'image',
         title: 'Imagen personal',

@@ -10,6 +10,11 @@ export default {
         rows: 2,
     },
     {
+        title: "Destacado",
+        name: "featured",
+        type: "boolean"
+    },
+    {
         title: "Slug",
         name: "slug",
         description: ".../slug-de-mi-proyecto",

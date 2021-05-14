@@ -9,21 +9,34 @@ import WorkTogether from "../components/WorkTogether"
 import Footer from "../components/Footer"
 import { InView } from 'react-intersection-observer';
 import {useState, useEffect} from "react"
-import miscPictures from "../miscPictures.json" /* Imágenes para header y separadores */
 import { getClient, overlayDrafts } from '../lib/sanity.server'
 import {groq} from 'next-sanity'
 
-const projectQuery = groq`*[ _type == 'project' ]`
+// QUERIES PARA SANITY
 
-export default function Home({cosas}) {
+const projectQuery = groq`*[ _type == 'project' ]{
+  name,
+  _id,
+  categories,
+  featured,
+  slug,
+  "imageUrl": img.asset->url,
+  _createdAt
+} | order(_createdAt asc)`
+
+const homeQuery = groq`*[ _type == 'home' ]{
+  _id,
+  "headerURL": header.asset->url,
+  "parallaxURL": parallax.asset->url,
+  "personalImgURL": personalImg.asset->url,
+  "parallaxMobileURL": parallaxMobile.asset->url
+}`
+
+// HOME APP
+
+export default function Home({projectsApi, homeApi}) {
 
   const [color, setColor] = useState("#FFF")
-
-  const headerImg = miscPictures[0].img
-  const separator1 = miscPictures[1].img
-  const separator1mobile = miscPictures[1].mobileImg
-  const contactPic = miscPictures[2].img
-
   const size = useWindowSize();
 
   function useWindowSize() { // Hook para detectar el tamaño de pantalla.
@@ -47,24 +60,24 @@ export default function Home({cosas}) {
     }, []);
     return windowSize;
     }
-
-    console.log(cosas)
+    
   return (<>
       <Head>
         <title>JIC</title>
       </Head>
       <NavBar size={size} color={color} inNavRef={"0"} theme={"light"}/>
-      <Header img={headerImg} title="JUAN IGNACIO CALI" subtitle="Filmmaker | Director Creativo | Motion Designer"/>
-      <InView threshold="0.3" onChange={(inView) => inView ? setColor("#222") : setColor("#FFF")}>
-      <Featured/>
+      <InView threshold="1" onChange={(inView) => inView ? setColor("#FFF") : setColor("#222")}>
+      <Header img={homeApi[0].headerURL} title="JUAN IGNACIO CALI" subtitle="Filmmaker | Director Creativo | Motion Designer"/>
       </InView>
-      <Separator img={separator1} mobileImg={separator1mobile} size={size}/>
-      {cosas.map((element)=> <p>{element.name}</p>)}
+      <InView threshold="0.3" onChange={(inView) => inView ? setColor("#222") : setColor("#FFF")}>
+      <Featured projects={projectsApi}/>
+      </InView>
+      <Separator img={homeApi[0].parallaxURL} mobileImg={homeApi[0].parallaxMobileURL} size={size}/>
       <InView threshold="0.5" onChange={(inView) => inView ? setColor("#222") : setColor("#FFF")}>
       <Services/>
       </InView>
       <InView threshold="0.3" onChange={(inView) => inView ? setColor("#FFF") : setColor("#222")}>
-      <ContactCard img={contactPic}/>
+      <ContactCard img={homeApi[0].personalImgURL}/>
       </InView>
       <InView threshold="0.5" onChange={(inView) => inView ? setColor("#222") : setColor("#FFF")}>
       <WorkTogether/>
@@ -75,9 +88,10 @@ export default function Home({cosas}) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const cosas = overlayDrafts(await getClient(preview).fetch(projectQuery))
+  const projectsApi = overlayDrafts(await getClient(preview).fetch(projectQuery))
+  const homeApi = overlayDrafts(await getClient(preview).fetch(homeQuery))
   return {
-    props: { cosas },
+    props: { projectsApi, homeApi },
     revalidate: 1
   }
 }
