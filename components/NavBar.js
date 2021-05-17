@@ -3,6 +3,7 @@ import styles from "../styles/NavBar.module.css"
 import {Spin as Hamburger} from 'hamburger-react'
 import { motion } from "framer-motion"
 import Link from 'next/link'
+import Head from "next/head"
 
 export default function Navbar({color, iNavRef, theme}) {
 
@@ -49,7 +50,10 @@ export default function Navbar({color, iNavRef, theme}) {
     
 
     return (
-    <nav className={styles.wrapper}>
+    <nav className={styles.wrapper} onLoad={() => midnight()}>
+        <Head>
+            <script src="midnight.jquery.min.js"></script>
+            </Head>
         <main>
             <Link href="/#header">
                 <a><h2 style={{"color": color}}>JIC</h2></a>
@@ -65,7 +69,7 @@ export default function Navbar({color, iNavRef, theme}) {
                         </a>
                 </Link>
                 <Link href="#services">
-                    <a><li id="2" className={initialNavBar ? styles.li : styles.liScrolled}
+                    <a onClick={() => {navRef.current = "2"}}><li id="2" className={initialNavBar ? styles.li : styles.liScrolled}
                     style={navRef.current == "2" ? {fontWeight: "600"} : {fontWeight: "200"}}>SERVICIOS</li></a>
                 </Link>
                 <Link href="/youtube">
