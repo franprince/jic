@@ -24,6 +24,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 15rem;
 }
 
 .projects {
@@ -90,7 +91,7 @@
     line-height: 2.5rem;
 }
 
-.last > article > a {
+.last > article > a, .lastDouble > article > a {
     background-color: #FF7843;
     padding: 0.5rem 1.2rem 0.5rem 1.2rem;
     border-radius: 50px;

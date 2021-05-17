@@ -67,7 +67,9 @@ export default function Projects({projectsApi, projectsPageApi, pics}) {
             <title>JIC | Proyectos</title>
         </Head>
         <NavBar size={size} color={color} iNavRef={"1"} theme={"light"}/>
+        <InView threshold="1" onChange={(InView) => InView ? setColor("#FFF") : setColor("#222")}>
         <Header img={projectsPageApi[0].headerURL} title="PROYECTOS"/>
+        </InView>
         <InView threshold="0.1" onChange={(InView) => InView ? setColor("#222") : setColor("#FFF")}>
         <ProjectsContainer projects={projectsApi}/>
         </InView>

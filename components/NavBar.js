@@ -43,23 +43,20 @@ export default function Navbar({color, iNavRef, theme}) {
         closed: { opacity: 0, x: "10%"},
     }
 
-    const circleVariants = {
+    const bgVariants = {
         open: { opacity: 1, x: 0 },
         closed: {opacity: 0, x: "300%"}
     }
     
 
     return (
-    <nav className={styles.wrapper} onLoad={() => midnight()}>
-        <Head>
-            <script src="midnight.jquery.min.js"></script>
-            </Head>
+    <nav className={styles.wrapper}>
         <main>
             <Link href="/#header">
                 <a><h2 style={{"color": color}}>JIC</h2></a>
             </Link>
         <motion.nav className={styles.nav} animate={open ? "open" : "closed"} variants={variants} transition={{ type: "spring", duration: 1, velocity: 2 }}>
-        <motion.div className={styles.prueba} animate={initialNavBar ? "closed" : open ? "open" : "closed"} variants={circleVariants} transition={{ type: "ease", duration: 0.1}}>
+        <motion.div className={styles.bg} animate={initialNavBar ? "closed" : open ? "open" : "closed"} variants={bgVariants} transition={{ type: "ease", duration: 0.1}}>
         </motion.div>
             <ul className={theme == "light" ? styles.light : initialNavBar ? styles.dark : styles.light}>
                 <Link href="/projects">
