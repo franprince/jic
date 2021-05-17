@@ -57,7 +57,7 @@ export default function Navbar({color, iNavRef, theme}) {
         <motion.nav className={styles.nav} animate={open ? "open" : "closed"} variants={variants} transition={{ type: "spring", duration: 1, velocity: 2 }}>
         <motion.div className={styles.prueba} animate={initialNavBar ? "closed" : open ? "open" : "closed"} variants={circleVariants} transition={{ type: "ease", duration: 0.1}}>
         </motion.div>
-            <ul className={theme == "light" ? styles.light : styles.dark}>
+            <ul className={theme == "light" ? styles.light : initialNavBar ? styles.dark : styles.light}>
                 <Link href="/projects">
                     <a onClick={handleRef}>
                         <li id="1" className={initialNavBar ? styles.liFirst : styles.liScrolledFirst}

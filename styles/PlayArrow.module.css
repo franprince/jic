@@ -1,0 +1,35 @@
+.arrowCont {
+    transform: scale(1);
+}
+
+.arrow {
+    position: relative;
+    text-align: left;
+  }
+  
+  .arrow::before,
+  .arrow::after {
+    content: '';
+    position: absolute;
+    background-color: inherit;
+  }
+  
+  .arrow,
+  .arrow::before,
+  .arrow::after {
+    width:  2em;
+    height: 2em;
+    border-top-right-radius: 30%;
+  }
+  
+  .arrow {
+    transform: rotate(-90deg) skewX(-30deg) scale(1,.866);
+  }
+  
+  .arrow::before {
+    transform: rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%);
+  }
+  
+  .arrow::after {
+    transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%);
+  }

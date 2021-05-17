@@ -32,7 +32,8 @@ export default function ProjectsContainer ({projects}) {
                 <div className={styles.grid}>
                     { shown.map(item => {
                         return (
-                        <ProjectCard item={item} shown={shown} key={item._id}/>)
+                        <ProjectCard item={item} shown={shown} key={item._id}/>
+                        )
                     })}
                     <article className={shown.length > 1 ? styles.last : styles.lastDouble}>
                         <article>

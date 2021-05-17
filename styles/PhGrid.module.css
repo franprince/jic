@@ -9,6 +9,7 @@
     display: grid;
     grid-template-columns: repeat(3, 340px);
     gap: 1.1rem;
+
 }
 
 .grid > .photo {
@@ -24,9 +25,19 @@
 @media(max-width: 1200px) {
     .grid {
         margin:auto;
-        width: 79%;
+        width: fit-content;
         display: grid;
         grid-template-columns: repeat(2, 340px);
+        gap: 1.1rem;
+    }
+}
+
+@media(max-width: 800px) {
+    .grid {
+        margin:auto;
+        width: 340px;
+        display: grid;
+        grid-template-columns: repeat(1, 340px);
         gap: 1.1rem;
     }
 }

@@ -7,6 +7,7 @@ export default function ProjectCard ({item, shown}) {
     const length = shown.length - 1
 
     return (
+        <Link href={`/projects/${item.slug.current}`}>
             <article className={shown.indexOf(item) == 0 ? styles.double :
                             shown.indexOf(item) % 3 != 0 ? styles.single :
                             shown.indexOf(item) == length ? styles.single : styles.double}>
@@ -32,5 +33,6 @@ export default function ProjectCard ({item, shown}) {
                 />
             </div>
         </article>
+        </Link>
     )
 }

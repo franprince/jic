@@ -10,6 +10,34 @@ export default {
         rows: 2,
     },
     {
+        title: "Subtítulo",
+        name: "subtitle",
+        description: "Este es el título que tendrá el proyecto en su propia sección",
+        type: "text",
+        rows: 2,
+    },
+    {
+        title: "Color del playbutton",
+        name: "playbuttonColor",
+        type: "string"
+    },
+    {
+        title: "Marca",
+        name: "brand",
+        type: "string",
+    },
+    {
+        title: "Thumbnail",
+        description: "Esta imagen va a aparecer hasta que el usuario haga click para iniciar el video",
+        name: "thumbnail",
+        type: "image",
+    },
+    {
+        title: "URL del video",
+        name: "videoURL",
+        type: "url",
+    },
+    {
         title: "Destacado",
         name: "featured",
         type: "boolean"
@@ -53,10 +81,5 @@ export default {
         type: "array",
         of: [{type: "image"}]
     },
-        {
-        title: "Video",
-        name: "video",
-        type: "mux.video"
-    }
     ]
 }
