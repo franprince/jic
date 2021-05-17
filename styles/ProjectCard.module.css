@@ -11,10 +11,10 @@
     filter: blur(2px);
 }
 
-.single:hover > .content > .info > h2,
+/* .single:hover > .content > .info > h2,
 .single:hover > .content > .info > h3 {
     filter: blur(2px);
-}
+} */
 
 .double {
     grid-column: 1/3;

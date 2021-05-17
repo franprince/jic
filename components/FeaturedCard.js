@@ -1,8 +1,10 @@
 import styles from "../styles/FeaturedCard.module.css"
 import Image from 'next/image'
+import Link from "next/link"
 
 export default function FeaturedCard ({item, index, className}) {
     return (
+        <Link href={`/projects/${item.slug.current}`}>
         <div className={className}>
             <div className={index == 0 ? styles.f1content : styles.f2content}>
                 <section className={styles.info}>
@@ -24,5 +26,6 @@ export default function FeaturedCard ({item, index, className}) {
                 />
             </div>
         </div>
+        </Link>
     )
 }

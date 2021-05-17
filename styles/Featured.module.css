@@ -23,6 +23,9 @@
     position: relative;
 }
 
+.f1:hover, .f2:hover {
+    cursor: pointer;
+}
 .f1 {
     grid-column: 1/3;
 }

@@ -11,6 +11,7 @@ import Screenshots from "../../components/Screenshots"
 import Footer from "../../components/Footer"
 import styles from "../../styles/ProjectPage.module.css"
 import Head from "next/head";
+import Link from "next/link"
 
 const projectQuery = groq`*[ _type == 'project' ]{
   _id,
@@ -135,6 +136,7 @@ export default function Details ({pageSlug, projects}) {
           <section className={styles.moreProjects}>
           { moreProjects && moreProjects.map(item => {
                 return (
+                  <Link href={`/projects/${item.slug.current}`}>
                   <article className={styles.card} key={item._id}>
                       <div className={styles.content}>
                           <section className={styles.info}>
@@ -152,7 +154,7 @@ export default function Details ({pageSlug, projects}) {
                             className={styles.imgBorder}
                           />
                       </div>
-                  </article>
+                  </article></Link>
                           )
                       })}
           </section>
