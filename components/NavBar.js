@@ -66,11 +66,11 @@ export default function Navbar({color, iNavRef, theme}) {
                         </a>
                 </Link>
                 <Link href="#services">
-                    <a onClick={() => {navRef.current = "2"}}><li id="2" className={initialNavBar ? styles.li : styles.liScrolled}
+                    <a onClick={() => {navRef.current == "2"}}><li id="2" className={initialNavBar ? styles.li : styles.liScrolled}
                     style={navRef.current == "2" ? {fontWeight: "600"} : {fontWeight: "200"}}>SERVICIOS</li></a>
                 </Link>
                 <Link href="/youtube">
-                    <a><li id="3" className={initialNavBar ? styles.li : styles.liScrolled}
+                    <a href="/youtube"><li id="3" className={initialNavBar ? styles.li : styles.liScrolled}
                     style={navRef.current == "3" ? {fontWeight: "600"} : {fontWeight: "200"}}>YOUTUBE</li></a>
                 </Link>
                 <Link href="/podcast">
