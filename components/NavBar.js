@@ -3,7 +3,6 @@ import styles from "../styles/NavBar.module.css"
 import {Spin as Hamburger} from 'hamburger-react'
 import { motion } from "framer-motion"
 import Link from 'next/link'
-import Head from "next/head"
 
 export default function Navbar({color, iNavRef, theme}) {
 
@@ -52,8 +51,8 @@ export default function Navbar({color, iNavRef, theme}) {
     return (
     <nav className={styles.wrapper}>
         <main>
-            <Link href="/#header">
-                <a><h2 style={{"color": color}}>JIC</h2></a>
+            <Link href="/home">
+                <a><h2 style={{color: color}}>JIC</h2></a>
             </Link>
         <motion.nav className={styles.nav} animate={open ? "open" : "closed"} variants={variants} transition={{ type: "spring", duration: 1, velocity: 2 }}>
         <motion.div className={styles.bg} animate={initialNavBar ? "closed" : open ? "open" : "closed"} variants={bgVariants} transition={{ type: "ease", duration: 0.1}}>
@@ -65,7 +64,7 @@ export default function Navbar({color, iNavRef, theme}) {
                         style={navRef.current == "1" ? {fontWeight: "600"} : {fontWeight: "200"}}>PROYECTOS</li>
                         </a>
                 </Link>
-                <Link href="#services">
+                <Link href="/#services">
                     <a onClick={() => {navRef.current == "2"}}><li id="2" className={initialNavBar ? styles.li : styles.liScrolled}
                     style={navRef.current == "2" ? {fontWeight: "600"} : {fontWeight: "200"}}>SERVICIOS</li></a>
                 </Link>

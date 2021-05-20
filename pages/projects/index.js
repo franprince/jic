@@ -70,9 +70,7 @@ export default function Projects({projectsApi, projectsPageApi, pics}) {
         <InView threshold="1" onChange={(InView) => InView ? setColor("#FFF") : setColor("#222")}>
         <Header img={projectsPageApi[0].headerURL} title="PROYECTOS"/>
         </InView>
-        <InView threshold="0.1" onChange={(InView) => InView ? setColor("#222") : setColor("#FFF")}>
         <ProjectsContainer projects={projectsApi}/>
-        </InView>
         <PhGrid pictures={pics[0].assets}/>
         <Separator img={projectsPageApi[0].parallaxURL} mobileImg={projectsPageApi[0].parallaxMobileURL} size={size} bgColor={"white"}/>
         <InView threshold="0.5" onChange={(InView) => InView ? setColor("#222") : setColor("#FFF")}>
