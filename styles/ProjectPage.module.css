@@ -10,12 +10,12 @@
 }
 
 .description {
-    margin-top: -2rem;
+    margin-top: -4rem;
 }
 
 .description > article {
     width: 66%;
-    margin: auto 5rem 8rem 11rem;
+    margin: auto 5rem 10rem 11rem;
 }
 
 .description > article > h2,

@@ -1,9 +1,8 @@
 import styles from "../styles/Separator.module.css"
 import {Parallax} from "react-parallax"
-import { useState, useEffect } from 'react';
 
 
-export default function Separator ({img, mobileImg, size}) {
+export default function Separator ({img, mobileImg, size, bgColor}) {
 
 
     var strength = 0
@@ -19,7 +18,7 @@ export default function Separator ({img, mobileImg, size}) {
 
     return (
         <>
-        <div className={styles.wrapper}>
+        <div className={styles.wrapper} style={{backgroundColor: bgColor}}>
             <Parallax bgImage={ bg } className={styles.separator} strength={strength}>
             </Parallax>
         </div>

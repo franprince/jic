@@ -12,6 +12,7 @@ import Footer from "../../components/Footer"
 import styles from "../../styles/ProjectPage.module.css"
 import Head from "next/head";
 import Link from "next/link"
+import MoreProjects from "../../components/MoreProjects";
 
 const projectQuery = groq`*[ _type == 'project' ]{
   _id,
@@ -85,12 +86,18 @@ export default function Details ({pageSlug, projects}) {
     <Head>
       <title>{thisProject[0].name}</title>
     </Head>
-        <main className={styles.main}>
+      <main className={styles.main}>
         <NavBar size={size} color={color} iNavRef={"1"} theme={"dark"}/>
         <ProjectHeader brand={thisProject[0].brand} title={thisProject[0].subtitle} category={thisProject[0].categories[0]}/>
         <InView threshold="0.4" onChange={(inView) => inView ? setColor("#FFF") : setColor("#222")}>
         <div className={styles.videoWrapper}>
-        <ReactPlayer playIcon={<PlayArrow arrowColor={thisProject[0].playbuttonColor}/>} url={`${thisProject[0].videoURL}`} light={`${thisProject[0].thumbnailURL}`} height={"80%"} width={"100%"} style={{position: "absolute", top: "0", left: "0"}} config={{ vimeo: { playerOptions: { autoplay: true }} }} />
+        <ReactPlayer
+                    playIcon={<PlayArrow arrowColor={thisProject[0].playbuttonColor}/>}
+                    url={`${thisProject[0].videoURL}`}
+                    light={`${thisProject[0].thumbnailURL}`}
+                    height={"80%"} width={"100%"}
+                    style={{position: "absolute", top: "0", left: "0"}}
+                    config={{ vimeo: { playerOptions: { autoplay: true }} }} />
         </div>
         </InView>
         <section className={styles.description}>
@@ -119,6 +126,7 @@ export default function Details ({pageSlug, projects}) {
                 layout="fill"
                 objectFit="cover"
                 quality={100}
+                priority={true}
                 />
           </article>
           <article className={styles.creditsInfo}>
@@ -131,48 +139,21 @@ export default function Details ({pageSlug, projects}) {
           </article>
         </section>
         </InView>
-        <section className={styles.moreProjectsContainer}>
-          <h2>Otros proyectos</h2>
-          <section className={styles.moreProjects}>
-          { moreProjects && moreProjects.map(item => {
-                return (
-                  <Link href={`/projects/${item.slug.current}`}>
-                  <article className={styles.card} key={item._id}>
-                      <div className={styles.content}>
-                          <section className={styles.info}>
-                                <h2>{item.name}</h2>
-                                <h3>{item.categories[0]}</h3>
-                          </section>
-                      </div>
-                      <div className={styles.img}>
-                          <Image
-                            src={item.imageUrl}
-                            alt={item.name}
-                            layout="fill"
-                            objectFit="cover"
-                            quality={100}
-                            className={styles.imgBorder}
-                          />
-                      </div>
-                  </article></Link>
-                          )
-                      })}
-          </section>
-        </section>
+        <MoreProjects moreProjects={moreProjects}/>
         <Footer/>
         </main>
         </>)
 }
 
 export const getServerSideProps = async pageContext => {
-     const pageSlug = pageContext.query.slug
-     const projects = overlayDrafts(await getClient().fetch(projectQuery))
-     if (!pageSlug) {
-         return {
-             notFound: true
-         } 
-     }
-     return {
-       props: {pageSlug, projects}
-     }
+    const pageSlug = pageContext.query.slug
+    const projects = overlayDrafts(await getClient().fetch(projectQuery))
+      if (!pageSlug) {
+        return {
+            notFound: true
+        } 
+      }
+      return {
+        props: {pageSlug, projects}
+        }
 }

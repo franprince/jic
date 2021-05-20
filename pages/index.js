@@ -72,7 +72,7 @@ export default function Home({projectsApi, homeApi}) {
       <InView threshold="0.3" onChange={(inView) => inView ? setColor("#222") : setColor("#FFF")}>
       <Featured projects={projectsApi}/>
       </InView>
-      <Separator img={homeApi[0].parallaxURL} mobileImg={homeApi[0].parallaxMobileURL} size={size}/>
+      <Separator img={homeApi[0].parallaxURL} mobileImg={homeApi[0].parallaxMobileURL} size={size} bgColor={"white"}/>
       <InView threshold="0.5" onChange={(inView) => inView ? setColor("#222") : setColor("#FFF")}>
       <Services/>
       </InView>
