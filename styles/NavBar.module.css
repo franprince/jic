@@ -25,8 +25,6 @@
     font-size: 1.6rem;
 }
 
-
-
 .wrapper > main > div {
     display: flex;
     justify-content: center;
@@ -50,14 +48,9 @@
     -moz-box-shadow: 10px 10px 14px -10px rgba(0,0,0,0.39);
 }
 
-.wrapper > main > .nav > ul {
-    color: white;
-}
-
 .nav {
-    font-weight: 200;
     font-size: 1.2rem;
-    line-height: 1rem;
+    line-height: 1.5rem;
     position: relative;
 }
 
@@ -71,23 +64,20 @@
     list-style: none;
 }
 
-.light {
-    color: white;
+.nav > ul > a > li {
+    transition: all 0.3s ease;
+    overflow: hidden;
+    background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
 }
 
-.dark {
-    filter: invert(100);
+.nav > ul > a > li:hover {
+    background-position: 0 100%;
 }
 
-.nav > ul > a > .liFirst {
-    border-right: 1px solid white;
-    padding-right: 0.5rem;
-}
-
-.nav > ul > a > .li {
-    border-right: 1px solid white;
-    padding: 0 0.5rem 0 0.5rem;
-}
 
 .nav > ul > a > .liLast {
     border: none;
@@ -107,4 +97,32 @@
     position: fixed;
     border-radius: 50px;
     opacity: 0;
+}
+
+.light > a > .liFirst, .dark > a > .liFirst {
+    padding-right: 0.5rem;
+}
+
+.light > a > .li, .dark > a > .li {
+    padding: 0 0.5rem 0 0.5rem;
+}
+
+/*LIGHT THEME*/
+
+.light > a > .liFirst, .light > a > .li {
+    border-right: 1px solid white;
+}
+
+.light > a > li {
+    background: linear-gradient(to right, #FF7843, #FF7843 50%, white 50%);
+}
+
+/*DARK THEME*/
+
+.dark > a > .liFirst, .dark > a > .li {
+    border-right: 1px solid #222;
+}
+
+.dark > a > li {
+    background: linear-gradient(to right, #FF7843, #FF7843 50%, #222 50%);
 }

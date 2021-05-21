@@ -62,28 +62,28 @@ export default function Navbar({color, iNavRef, theme}) {
                 <Link href="/projects">
                     <a onClick={handleRef}>
                         <li id="1" className={initialNavBar ? styles.liFirst : styles.liScrolledFirst}
-                        style={navRef.current == "1" ? {fontWeight: "600"} : {fontWeight: "200"}}>PROYECTOS</li>
+                        style={navRef.current == "1" ? {fontWeight: "700", pointerEvents: "none"} : {fontWeight: "400"}}>PROYECTOS</li>
                         </a>
                 </Link>
                 <Link href="/#services">
                     <a onClick={() => {navRef.current == "2"}}><li id="2" className={initialNavBar ? styles.li : styles.liScrolled}
-                    style={navRef.current == "2" ? {fontWeight: "600"} : {fontWeight: "200"}}>SERVICIOS</li></a>
+                    style={navRef.current == "2" ? {fontWeight: "700", pointerEvents: "none"} : {fontWeight: "400"}}>SERVICIOS</li></a>
                 </Link>
                 <Link href="/youtube">
                     <a href="/youtube"><li id="3" className={initialNavBar ? styles.li : styles.liScrolled}
-                    style={navRef.current == "3" ? {fontWeight: "600"} : {fontWeight: "200"}}>YOUTUBE</li></a>
+                    style={navRef.current == "3" ? {fontWeight: "700", pointerEvents: "none"} : {fontWeight: "400"}}>YOUTUBE</li></a>
                 </Link>
                 <Link href="/podcast">
                     <a><li id="4" className={initialNavBar ? styles.li : styles.liScrolled}
-                    style={navRef.current == "4" ? {fontWeight: "600"} : {fontWeight: "200"}}>PODCAST</li></a>
+                    style={navRef.current == "4" ? {fontWeight: "700", pointerEvents: "none"} : {fontWeight: "400"}}>PODCAST</li></a>
                 </Link>
                 <Link href="/about">
                     <a><li id="5" className={initialNavBar ? styles.li : styles.liScrolled}
-                    style={navRef.current == "5" ? {fontWeight: "600"} : {fontWeight: "200"}}>SOBRE MI</li></a>
+                    style={navRef.current == "5" ? {fontWeight: "700", pointerEvents: "none"} : {fontWeight: "400"}}>SOBRE MI</li></a>
                 </Link>
                 <Link href="/contact">
                     <a><li id="6" className={initialNavBar? styles.liLast : styles.liScrolled}
-                    style={navRef.current == "6" ? {fontWeight: "600"} : {fontWeight: "200"}}>CONTACTO</li></a>
+                    style={navRef.current == "6" ? {fontWeight: "700", pointerEvents: "none"} : {fontWeight: "400"}}>CONTACTO</li></a>
                 </Link>
             </ul>
         </motion.nav>
