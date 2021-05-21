@@ -3,7 +3,6 @@ import { InView } from 'react-intersection-observer';
 import { getClient, overlayDrafts } from '../../lib/sanity.server'
 import {groq} from 'next-sanity'
 import ReactPlayer from 'react-player'
-import Image from "next/image"
 import NavBar from "../../components/NavBar"
 import ProjectHeader from "../../components/ProjectHeader"
 import PlayArrow from "../../components/PlayArrow"
@@ -11,8 +10,9 @@ import Screenshots from "../../components/Screenshots"
 import Footer from "../../components/Footer"
 import styles from "../../styles/ProjectPage.module.css"
 import Head from "next/head";
-import Link from "next/link"
 import MoreProjects from "../../components/MoreProjects";
+import Description from "../../components/Description";
+import Credits from "../../components/Credits";
 
 const projectQuery = groq`*[ _type == 'project' ]{
   _id,
@@ -86,63 +86,32 @@ export default function Details ({pageSlug, projects}) {
     <Head>
       <title>{thisProject[0].name}</title>
     </Head>
-      <main className={styles.main}>
-        <NavBar size={size} color={color} iNavRef={"1"} theme={"dark"}/>
-        <ProjectHeader brand={thisProject[0].brand} title={thisProject[0].subtitle} category={thisProject[0].categories[0]}/>
-        <InView threshold="0.4" onChange={(inView) => inView ? setColor("#FFF") : setColor("#222")}>
+    <main className={styles.main}>
+      <NavBar size={size} color={color} iNavRef={"1"} theme={"dark"}/>
+      <ProjectHeader brand={thisProject[0].brand} title={thisProject[0].subtitle} category={thisProject[0].categories[0]}/>
+      <InView threshold="0.4" onChange={(inView) => inView ? setColor("#FFF") : setColor("#222")}>
         <div className={styles.videoWrapper}>
-        <ReactPlayer
-                    playIcon={<PlayArrow arrowColor={thisProject[0].playbuttonColor}/>}
-                    url={`${thisProject[0].videoURL}`}
-                    light={`${thisProject[0].thumbnailURL}`}
-                    height={"80%"} width={"100%"}
-                    style={{position: "absolute", top: "0", left: "0"}}
-                    config={{ vimeo: { playerOptions: { autoplay: true }} }} />
+          <ReactPlayer
+                      playIcon={<PlayArrow arrowColor={thisProject[0].playbuttonColor}/>}
+                      url={`${thisProject[0].videoURL}`}
+                      light={`${thisProject[0].thumbnailURL}`}
+                      height={"100%"} width={"100%"}
+                      style={{position: "absolute", top: "0", left: "0"}}
+                      config={{ vimeo: { playerOptions: { autoplay: true }} }} />
         </div>
-        </InView>
-        <section className={styles.description}>
-          <article>
-            <h2>El proyecto</h2>
-            <p>
-            {thisProject[0].description}
-            </p>
-          </article>
-          <InView threshold="0.3" onChange={(inView) => inView ? setColor("#FFF") : setColor("#222")}>
+      </InView>
+        <Description text={thisProject[0].description} title="El proyecto"/>
+      <InView threshold="0.3" onChange={(inView) => inView ? setColor("#FFF") : setColor("#222")}>
           <Screenshots screenshots={screenshots}/>
-          </InView>
-          <article className={styles.process}>
-            <h2>El proceso</h2>
-            <p>
-            {thisProject[0].process}
-            </p>
-          </article>
-        </section>
-        <InView threshold="0.3" onChange={(inView) => inView ? setColor("#FFF") : setColor("#222")}>
-        <section className={styles.credits}>
-          <article className={styles.image}>
-          <Image
-                src="/img/separador.png"
-                alt="Imagen de separador"
-                layout="fill"
-                objectFit="cover"
-                quality={100}
-                priority={true}
-                />
-          </article>
-          <article className={styles.creditsInfo}>
-            <article>
-            <h2>Créditos</h2>
-            <p>
-            {thisProject[0].credits}
-            </p>
-            </article>
-          </article>
-        </section>
-        </InView>
-        <MoreProjects moreProjects={moreProjects}/>
-        <Footer/>
-        </main>
-        </>)
+      </InView>
+      <Description text={thisProject[0].process} title="El proceso"/>
+      <InView threshold="0.3" onChange={(inView) => inView ? setColor("#FFF") : setColor("#222")}>
+        <Credits text={thisProject[0].credits}/>
+      </InView>
+      <MoreProjects moreProjects={moreProjects}/>
+      <Footer/>
+      </main>
+      </>)
 }
 
 export const getServerSideProps = async pageContext => {

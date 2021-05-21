@@ -1,65 +1,16 @@
 .main {
     background-color: white;
-    font-family: "Poppins", sans-serif;
 }
 
 .videoWrapper {
     position: relative;
-    padding-top: 56.25%;
-    padding-bottom: 0;
+    padding-top: 45%;
+    height: 30vh;
 }
 
-.description {
-    margin-top: -4rem;
-}
-
-.description > article {
-    width: 66%;
-    margin: auto 5rem 10rem 11rem;
-}
-
-.description > article > h2,
-.credits > .creditsInfo > article > h2,
 .moreProjectsContainer > h2 {
     font-size: 2.3rem;
     font-weight: 800;
-}
-
-.description > article > p, .credits > .creditsInfo > article > p {
-    font-size: 1.3rem;
-}
-
-.process {
-    padding-top: 6rem;
-}
-
-.credits {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    background-color: #222;
-
-}
-
-.credits > .image {
-    height: 80vh;
-    position: relative
-}
-
-.credits > .creditsInfo {
-    color: white;
-    margin: auto 5rem auto 9rem;
-    width: 50%;
-    white-space: pre-line;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.creditsInfo > article {
-padding-top: 7rem;
-padding-bottom: 7rem;
 }
 
 .moreProjectsContainer {

@@ -66,10 +66,10 @@ export default function Home({projectsApi, homeApi}) {
         <title>JIC</title>
       </Head>
       <NavBar size={size} color={color} inNavRef={"0"} theme={"light"}/>
-      <InView threshold="1" onChange={(inView) => inView ? setColor("#FFF") : setColor("#222")}>
       <Header img={homeApi[0].headerURL} title="JUAN IGNACIO CALI" subtitle="Filmmaker | Director Creativo | Motion Designer"/>
-      </InView>
+      <InView threshold="0.5" onChange={(inView) => inView ? setColor("#222") : setColor("#FFF")}>
       <Featured projects={projectsApi}/>
+      </InView>
       <Separator img={homeApi[0].parallaxURL} mobileImg={homeApi[0].parallaxMobileURL} size={size} bgColor={"white"}/>
       <InView threshold="0.5" onChange={(inView) => inView ? setColor("#222") : setColor("#FFF")}>
       <Services/>

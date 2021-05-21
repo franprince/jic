@@ -1,16 +1,14 @@
 import NavBar from "../../components/NavBar";
-import {useState, useEffect} from "react"
+import PodcastHeader from "../../components/PodcastHeader";
 import Head from "next/head";
-import json from "../../youtubeTest.json"
-import Header from "../../components/Header";
-import Separator from "../../components/Separator"
-import { InView } from 'react-intersection-observer';
-import Videos from "../../components/Videos";
 import Footer from "../../components/Footer"
 import ContactCard from "../../components/ContactCard"
 import WorkTogether from "../../components/WorkTogether"
+import json from "../../podcastTest.json"
+import {useState, useEffect} from "react"
 
-export default function Youtube () {
+
+export default function Podcast () {
 
     const [color, setColor] = useState("#FFF")
     const size = useWindowSize();
@@ -36,22 +34,17 @@ export default function Youtube () {
         }, []);
         return windowSize;
     }
-    const videos = json[0].urls
 
-    return (
+
+    return(
         <>
-            <Head>
-            <title>JIC | YouTube</title>
-            </Head>
-            <NavBar size={size} color={color} iNavRef={"3"} theme={"light"}/>
-            <Header img={json[0].headerURL} title="YOUTUBE EN PROCESO"/>
-            <Videos videos={videos}/>
-            <Separator img={json[0].parallaxURL} mobileImg={json[0].parallaxURL} size={size} bgColor="#222"/>
-            <ContactCard img={json[0].personalImgURL}/>
-            <InView threshold="0.5" onChange={(inView) => inView ? setColor("#222") : setColor("#FFF")}>
-            <WorkTogether/>
-            </InView>
-            <Footer/>
+        <Head>
+            <title>
+                JIC | Podcast
+            </title>
+        </Head>
+        <NavBar size={size} color={color} iNavRef={"4"} theme={"light"}/>
+        <PodcastHeader img={json[0].headerURL}/>
         </>
     )
 }

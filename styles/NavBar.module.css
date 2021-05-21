@@ -16,12 +16,13 @@
 }
 
 .wrapper > main > a {
-    font-family: 'Poppins';
     flex: 1;
 }
 
 .wrapper > main > a > h2 {
     transition: all 0.5s ease;
+    letter-spacing: 1px;
+    font-size: 1.6rem;
 }
 
 
@@ -54,8 +55,8 @@
 }
 
 .nav {
-    font-family: 'Poppins', sans-serif;
     font-weight: 200;
+    font-size: 1.2rem;
     line-height: 1rem;
     position: relative;
 }
