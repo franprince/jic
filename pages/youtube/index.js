@@ -49,7 +49,7 @@ export default function Youtube () {
             <Separator img={json[0].parallaxURL} mobileImg={json[0].parallaxURL} size={size} bgColor="#222"/>
             <ContactCard img={json[0].personalImgURL}/>
             <InView threshold="0.5" onChange={(inView) => inView ? setColor("#222") : setColor("#FFF")}>
-            <WorkTogether/>
+            <WorkTogether text="Trabajemos juntos!" link ="/"/>
             </InView>
             <Footer/>
         </>

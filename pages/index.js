@@ -78,7 +78,7 @@ export default function Home({projectsApi, homeApi}) {
       <ContactCard img={homeApi[0].personalImgURL}/>
       </InView>
       <InView threshold="0.5" onChange={(inView) => inView ? setColor("#222") : setColor("#FFF")}>
-      <WorkTogether/>
+      <WorkTogether text="Trabajemos juntos!" link="/"/>
       </InView>
       <Footer/>
       </>

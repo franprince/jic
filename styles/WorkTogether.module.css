@@ -7,16 +7,16 @@
     align-items: center;
 }
 
-.container > section {
+.container > a > section {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.container > section > h2 {
+.container > a > section > h2 {
     font-weight: 400;
 }
 
-.container > section > img {
+.container > a > section > img {
     margin-top: 5px;
     align-self: center;
     transform:scale(0.6);

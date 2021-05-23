@@ -1,0 +1,89 @@
+.main {
+    width: 100%;
+    background-color: white;
+    padding-bottom: 8rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.main > section {
+    width: 25%;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.main > section > article {
+    position: relative;
+    padding: 6rem 0 0 0;
+    line-height: 2.5rem;
+    font-size: 1.2rem;
+}
+.main > section > article > div:not(.links) {
+    position: relative !important;
+    border-radius: 22px;
+}
+.main > section > article > div > img {
+    height: 100% !important;
+    width: 100%;
+    position: relative !important;
+}
+
+.main > section > article > div > a > img {
+    width: 2.5rem;
+}
+
+.disponible {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.links {
+    margin-top: 1rem;
+}
+
+.circle {
+    width: 250rem;
+    height: 250rem;
+    position: absolute;
+    top: 45%;
+    left: -55%;
+    background-color: #80FFDB;
+    border-radius: 50%;
+    display: block;
+}
+
+.pictures {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    height: 100%;
+    position: relative;
+}
+
+.pictures > article {
+    position: inherit;
+}
+
+.pictures > article > div {
+    position: relative !important;
+}
+
+.pictures > article > div > img {
+    height: 25rem !important;
+    width: 100%;
+    position: relative !important;
+}
+@media(max-width: 1400px) {
+    .circle {
+        width: 250rem;
+        height: 250rem;
+        position: absolute;
+        top: 50%;
+        left: -97%;
+        background-color: #80FFDB;
+        border-radius: 50%;
+        display: block;
+    }
+} 

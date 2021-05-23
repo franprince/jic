@@ -74,7 +74,7 @@ export default function Projects({projectsApi, projectsPageApi, pics}) {
         <PhGrid pictures={pics[0].assets}/>
         <Separator img={projectsPageApi[0].parallaxURL} mobileImg={projectsPageApi[0].parallaxMobileURL} size={size} bgColor={"white"}/>
         <InView threshold="0.5" onChange={(InView) => InView ? setColor("#222") : setColor("#FFF")}>
-        <WorkTogether/>
+        <WorkTogether text="Trabajemos juntos!" link="/"/>
         </InView>
         <Footer/>
         </>
