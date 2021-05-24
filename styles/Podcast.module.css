@@ -71,10 +71,11 @@
 }
 
 .pictures > article > div > img {
-    height: 25rem !important;
+    height: 35rem !important;
     width: 100%;
     position: relative !important;
 }
+
 @media(max-width: 1400px) {
     .circle {
         width: 250rem;
@@ -86,4 +87,11 @@
         border-radius: 50%;
         display: block;
     }
+
+    .pictures > article > div > img {
+        height: 25rem !important;
+        width: 100%;
+        position: relative !important;
+    }
+    
 } 
