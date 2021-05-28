@@ -5,8 +5,20 @@ import json from "../../aboutTest.json"
 import AboutHeader from "../../components/AboutHeader";
 import Image from "next/image"
 import styles from "../../styles/About.module.css"
+import ReactPlayer from 'react-player'
+import PlayArrow from "../../components/PlayArrow"
+import TextSlider from "../../components/TextSlider"
+import PhGrid from "../../components/PhGrid"
+import WorkTogether from "../../components/WorkTogether"
+import Footer from "../../components/Footer"
+import { InView } from 'react-intersection-observer';
+import { getClient, overlayDrafts } from '../../lib/sanity.server'
+import {groq} from 'next-sanity'
 
-export default function About () {
+const gridQuery = groq`*[_type=='phGrid'] {_id, 'assets': pics[].asset->url}`
+
+export default function About ({pics}) {
+
 
     const [color, setColor] = useState("#FFF")
     const size = useWindowSize();
@@ -72,6 +84,45 @@ export default function About () {
                     </article>
             </section>
         </main>
+        <section className={styles.film}>
+            <h2>Un film acerca de mí</h2>
+            <div className={styles.videoWrapper}>
+                    <ReactPlayer
+                        url={json[0].url}
+                        playIcon={<PlayArrow arrowColor={"#FFF"}/>}
+                        light={true}
+                        height={"100%"}
+                        width={"100%"}
+                        quality={100}
+                        controls={true}
+                        style={{position: "absolute", top: "0", left: "0"}}
+                        config={{
+                            youtube: {
+                                playerVars: { autoplay: 1 }
+                                    }
+                                }}
+                    />
+            </div>
+        </section>
+        <section className={styles.grid}>
+            <PhGrid pictures={pics[0].assets}/>
+        </section>
+        <section className={styles.slider}>
+            <h3>MI MANIFIESTO</h3>
+            <TextSlider />
+        </section>
+        <InView threshold="0.5" onChange={(inView) => inView ? setColor("#222") : setColor("#FFF")}>
+        <WorkTogether text="Trabajemos juntos!" link="/"/>
+        </InView>
+        <Footer/>
         </>
     )
 }
+
+export async function getStaticProps({ preview = false }) {
+    const pics = overlayDrafts(await getClient(preview).fetch(gridQuery))
+    return {
+      props: { pics },
+      revalidate: 1
+    }
+  }

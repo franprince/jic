@@ -4,24 +4,29 @@ import Slider from 'react-touch-drag-slider'
 
 const slides = [
     {
-        "title": "Slide 1",
-        "description": "This is slide 1",
+        "title": "#1\nLorem Ipsum",
+        "description": "Algo en lo que estoy trabajando.\nLa frase ya se explica sola, just fu**ing do it.",
         "id": 1
     },
     {
-        "title": "Slide 2",
-        "description": "This is slide 2",
+        "title": "#2\nLorem Ipsum",
+        "description": "Algo en lo que estoy trabajando.\nLa frase ya se explica sola, just fu**ing do it.",
         "id": 2
     },
     {
-        "title": "Slide 3",
-        "description": "This is slide 3",
+        "title": "#3\nLorem Ipsum",
+        "description": "Algo en lo que estoy trabajando.\nLa frase ya se explica sola, just fu**ing do it.",
         "id": 3
     },
     {
-        "title": "Slide 4",
-        "description": "This is slide 4",
+        "title": "#4\nDONE is better than PERFECT.",
+        "description": "Algo en lo que estoy trabajando.\nLa frase ya se explica sola, just fu**ing do it.",
         "id": 4
+    },
+    {
+        "title": "#5\nLorem Ipsum",
+        "description": "Algo en lo que estoy trabajando.\nLa frase ya se explica sola, just fu**ing do it.",
+        "id": 5
     }
 ]
 
@@ -30,12 +35,12 @@ export default function TextSlider () {
     const [index, setIndex] = useState(0)
 
     return(
-        <div className={styles.slider}>
+        <section className={styles.slider}>
 
             <Slider activeIndex={parseInt(index)} onSlideComplete={(i) => {setIndex(i)}}>
                 {slides.map((slide)=> {
                     return (
-                    <div key={slide.id}><p>{slide.title}</p><p>{slide.description}</p></div>
+                    <article key={slide.id} className={styles.article}><h3>{slide.title}</h3><p>{slide.description}</p></article>
                 )}
                 )}
             </Slider>
@@ -51,6 +56,6 @@ export default function TextSlider () {
                 })}
             </div>
 
-        </div>
+        </section>
     )
 }

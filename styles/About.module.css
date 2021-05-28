@@ -20,7 +20,7 @@
 .main > section > article:not(:first-child) {
     align-items: flex-start;
     width: 45%;
-    padding-left: 5rem;
+    padding-left: 4.5rem;
     padding-top: 0.8rem;
 }
 
@@ -65,8 +65,8 @@
 }
 
 .circles > div {
-    height: 2.7rem;
-    width: 2.7rem;
+    height: 2.4rem;
+    width: 2.4rem;
     background-color: white;
     border-radius: 50%;
     position: relative;
@@ -75,4 +75,52 @@
 
 .circles > div:not(:last-child) {
     margin-right: 1rem;
+}
+
+.videoWrapper {
+    margin: auto;
+    width: 73%;
+    position: relative;
+    border-radius: 50px;
+    position: relative;
+    padding-top: 41.1%;
+}
+
+.videoWrapper > div > div {
+    border-radius: 20px;
+}
+
+.film {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.film > h2 {
+    font-size: 2.1rem;
+    padding: 5rem 0 4rem 0;
+}
+
+.grid {
+    padding-top: 5rem;
+    margin: auto;
+    width: 100%;
+}
+
+.slider {
+    width: 100%;
+    margin-top: 13rem;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider > h3 {
+    font-size: 2.3rem;
+    color: white;
+    margin-bottom: 9rem;
 }

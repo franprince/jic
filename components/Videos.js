@@ -11,7 +11,7 @@ export default function Videos ({videos}) {
                         <article>
                             <ReactPlayer
                             url={item}
-                            playIcon={<PlayArrow arrowColor={"#FFF"} className={styles.hola}/>}
+                            playIcon={<PlayArrow arrowColor={"#FFF"}/>}
                             light={true}
                             height={"100%"}
                             width={"100%"}
