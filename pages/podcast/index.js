@@ -77,9 +77,11 @@ export default function Podcast () {
         </main>
         </InView>
         <section className={styles.pictures}>
-            <article>
-            <Image
-                src={json[0].picsURL[0]}
+            {json[0].picsURL.map(picture=>{
+                return (
+                    <article key={json[0].picsURL.indexOf(picture)}>
+                <Image
+                src={picture}
                 alt="The Cali Show Podcast"
                 layout="fill"
                 objectFit="cover"
@@ -87,26 +89,8 @@ export default function Podcast () {
                 quality={100}
                 />
             </article>
-            <article>
-            <Image
-                src={json[0].picsURL[1]}
-                alt="The Cali Show Podcast"
-                layout="fill"
-                objectFit="cover"
-                objectPosition="top"
-                quality={100}
-                />
-            </article>
-            <article>
-            <Image
-                src={json[0].picsURL[2]}
-                alt="The Cali Show Podcast"
-                layout="fill"
-                objectFit="cover"
-                objectPosition="top"
-                quality={100}
-                />
-            </article>
+                )
+            })}
         </section>
         <InView threshold="0.8" onChange={(inView) => inView ? setColor("#222") : setColor("#FFF")}>
         <WorkTogether text="Mi Canal de YouTube" link="https://www.youtube.com/channel/UC2Xel3b_bb-RwcpZk0U4yuA"/>

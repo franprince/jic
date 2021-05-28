@@ -46,14 +46,12 @@ export default function Navbar({color, iNavRef, theme}) {
         open: { opacity: 1, x: 0 },
         closed: {opacity: 0, x: "300%"}
     }
-    
-    console.log(color)
 
     return (
     <nav className={styles.wrapper}>
         <main>
             <Link href="/">
-                <a><h2 style={{color: color}}>JIC</h2></a>
+                <a><h2 style={!initialNavBar ? {color: color} : theme == "light" ?  {color: "#FFF"} : {color: "#222"}}>JIC</h2></a>
             </Link>
         <motion.nav className={styles.nav} animate={open ? "open" : "closed"} variants={variants} transition={{ type: "spring", duration: 1, velocity: 2 }}>
         <motion.div className={styles.bg} animate={initialNavBar ? "closed" : open ? "open" : "closed"} variants={bgVariants} transition={{ type: "ease", duration: 0.1}}>

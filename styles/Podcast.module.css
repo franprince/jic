@@ -10,7 +10,6 @@
     width: 25%;
     margin: auto;
     position: relative;
-    z-index: 1;
 }
 
 .main > section > article {
@@ -18,6 +17,7 @@
     padding: 6rem 0 0 0;
     line-height: 2.5rem;
     font-size: 1.2rem;
+    z-index: 1;
 }
 .main > section > article > div:not(.links) {
     position: relative !important;
@@ -81,8 +81,8 @@
         width: 250rem;
         height: 250rem;
         position: absolute;
-        top: 50%;
-        left: -97%;
+        top: 48%;
+        left: -96%;
         background-color: #80FFDB;
         border-radius: 50%;
         display: block;

@@ -1,0 +1,78 @@
+.main {
+    width: 100%;
+}
+
+.main > section {
+    display: flex;
+    justify-content: center;
+    padding: 5rem 0 4rem 0;
+}
+
+.main > section > article {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.main > section > article:not(:first-child) {
+    align-items: flex-start;
+    width: 45%;
+    padding-left: 5rem;
+    padding-top: 0.8rem;
+}
+
+.main > section > article:first-child {
+    padding-left: 8rem;
+    width: 55%;
+}
+
+.main > section > article > p {
+    font-size: 1.2rem;
+    width: 72%;
+    line-height: 2.3rem;
+}
+
+.main > section > article > h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.main > section > article > div:not(.circles) {
+    position: relative;
+    width: 32rem;
+    height: 32rem;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    bottom: auto !important;
+}
+
+.square {
+    background-color: #C4C4C4;
+    margin-top: 2.5rem;
+    margin-left: 2.5rem;
+}
+
+.circles {
+    width: 50%;
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+}
+
+.circles > div {
+    height: 2.7rem;
+    width: 2.7rem;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+    bottom: 0;
+}
+
+.circles > div:not(:last-child) {
+    margin-right: 1rem;
+}
