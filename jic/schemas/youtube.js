@@ -9,10 +9,10 @@ export default {
         type: "image"
       },
       {
-        title: "URL de los videos",
-        name: "urls",
+        title: "ID de los videos",
+        name: "ids",
         type: "array",
-        of: [{type: "url"}]
+        of: [{type: "string"}]
       },
       {
         title: "Imagen Parallax",

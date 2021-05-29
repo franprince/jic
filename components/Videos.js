@@ -8,9 +8,9 @@ export default function Videos ({videos}) {
             <section>
                 {videos && videos.map(item => {
                     return (
-                        <article>
+                        <article style={{backgroundImage: `url(https://i.ytimg.com/vi/${item}/hqdefault.jpg)`}}>
                             <ReactPlayer
-                            url={item}
+                            url={`https://www.youtube.com/watch?v=${item}&ab_channel=JuanIgnacioCali`}
                             playIcon={<PlayArrow arrowColor={"#FFF"}/>}
                             light={true}
                             height={"100%"}

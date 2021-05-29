@@ -52,6 +52,7 @@
     font-size: 1.2rem;
     line-height: 1.5rem;
     position: relative;
+    opacity: 0;
 }
 
 .nav > ul {
@@ -66,16 +67,11 @@
 
 .nav > ul > a > li {
     transition: all 0.3s ease;
-    overflow: hidden;
-    background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 200% 100%;
-  background-position: 100%;
+    font-weight: 100;
 }
 
 .nav > ul > a > li:hover {
-    background-position: 0 100%;
+    font-weight: 600 !important;
 }
 
 
@@ -114,7 +110,7 @@
 }
 
 .light > a > li {
-    background: linear-gradient(to right, #FF7843, #FF7843 50%, white 50%);
+    color: white;
 }
 
 /*DARK THEME*/
@@ -124,5 +120,50 @@
 }
 
 .dark > a > li {
-    background: linear-gradient(to right, #FF7843, #FF7843 50%, #222 50%);
+    color: #222;
+}
+
+@media (max-width: 600px) {
+    .wrapper > main > a {
+        flex: 0;
+        position: absolute;
+        top: 2rem;
+        left: 0.5rem;
+    }
+
+    .hamb {
+        position: absolute;
+        top: 3rem;
+        right: 0.5rem;
+    }
+
+    .wrapper > main {
+        justify-content: space-around;
+        padding: 0;
+    }
+    .bg {
+        position: absolute;
+        width: 150vw;
+        right: -12rem;
+        border-radius: 0px;
+        background-color: rgba(0, 0, 0, 0.76);
+    }
+    .nav > ul {
+        height: 100vh;
+        flex-direction: column;
+        padding: 2rem;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .li, .liLast, .liFirst .liScrolled {
+        border: none;
+        padding: 0;
+    }
+    
+    .nav > ul > a > .liScrolled {
+        border: none;
+        padding: 0.8rem;
+    }
 }

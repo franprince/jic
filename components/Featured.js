@@ -4,7 +4,8 @@ import ProjectCard from "../components/ProjectCard"
 
 export default function Featured ({projects}) {
 
-    const featured = projects.filter(project => project.featured == true)
+    const raw = projects.filter(project => project.featured == true)
+    const featured = raw.slice(0,3)
     
     return(
         <div className={styles.container}>
