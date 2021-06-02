@@ -16,7 +16,7 @@
     margin: 0;
     font-size: 2.4rem;
     line-height: 2.4rem;
-    font-weight: 900;
+    font-weight: 700;
     white-space: pre-line;
 }
 
@@ -24,10 +24,11 @@
     color: #828282;
     margin-bottom: 0.5rem;
     font-size: 1.3rem;
+    font-weight: 700;
 }
 
 .content > h4 {
-    color: #FF7843;
+    color: #828282;
     font-size: 1.2rem;
     font-weight: 600;
     margin-top: 0.5rem;

@@ -29,7 +29,7 @@ export default function About ({pics}) {
         <AboutHeader title="BUT FIRST, QUIÉN SOY?" img={json[0].headerImg}/>
         <Presentation img={json[0].personalImgURL}/>
         <AboutVideo video={json[0].url}/>
-        <PhGrid pictures={pics[0].assets}/>
+        <PhGrid pictures={pics[0].assets} width="73%"/>
         <TextSlider />
         <InView threshold="0.5" onChange={(inView) => inView ? setColor("#000") : setColor("#FFF")}>
         <WorkTogether text="Trabajemos juntos!" link="/"/>

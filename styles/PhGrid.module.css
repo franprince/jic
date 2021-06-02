@@ -6,7 +6,6 @@
 .grid {
     margin:auto;
     display: grid;
-    width: 73%;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.1rem;
 

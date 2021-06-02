@@ -10,9 +10,10 @@ import Screenshots from "../../components/Screenshots"
 import Footer from "../../components/Footer"
 import styles from "../../styles/ProjectPage.module.css"
 import Head from "next/head";
+import Image from "next/image"
 import MoreProjects from "../../components/MoreProjects";
 import Description from "../../components/Description";
-import Credits from "../../components/Credits";
+
 
 const projectQuery = groq`*[ _type == 'project' ]{
   _id,
@@ -83,7 +84,17 @@ export default function Details ({pageSlug, projects}) {
       </InView>
       <Description text={thisProject[0].process} title="El proceso"/>
       <InView threshold="0.3" onChange={(inView) => inView ? setColor("#FFF") : setColor("#000")}>
-        <Credits text={thisProject[0].credits}/>
+        <article className={styles.image}>
+          <Image
+                src="/img/separador.png"
+                alt="Imagen de separador"
+                layout="fill"
+                objectFit="cover"
+                quality={100}
+                priority={true}
+                />
+      </article>
+      <Description text={thisProject[0].credits} title="Créditos" credits={true}/>
       </InView>
       <MoreProjects moreProjects={moreProjects}/>
       <Footer/>

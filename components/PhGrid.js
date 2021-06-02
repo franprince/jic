@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import styles from "../styles/PhGrid.module.css"
 
-export default function PhGrid ({pictures}) {
+export default function PhGrid ({pictures, width}) {
 
     const pics = pictures.slice(0,9)
 
     return (
         <section className={styles.container}>
-            <div className={styles.grid}>
+            <div className={styles.grid} style={{width: width}}>
                 {pics.map((pic) => 
                 <article className={styles.photo} key={pic}>
                         <Image

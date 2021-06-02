@@ -49,9 +49,10 @@ export default function Home({projectsApi, homeApi}) {
       setColor("#000")
     } else {
       setColor(color)
+      console.log("Llegaste a más de 600")
     }
 }
-
+useEffect(() => setColor("#FFF"), [])
 useEffect(() => handleScroll(), [])
     
   return (<>
@@ -62,18 +63,14 @@ useEffect(() => handleScroll(), [])
       <InView onChange={(inView) => inView && setColor("#FFF")}>
       <Header img={homeApi[0].headerURL} title="JUAN IGNACIO CALI" subtitle="Filmmaker | Director Creativo | Fotógrafo"/>
       </InView>
-      <InView onChange={(inView) => inView && setColor("#000")}>
       <Featured projects={projectsApi}/>
-      </InView>
       <InView onChange={(inView) => inView && setColor("#000")}>
       <Services/>
       </InView>
-      <InView onChange={(inView) => inView && setColor("#FFF")}>
+      <InView onChange={(inView) => inView ? setColor("#FFF") : setColor("#000")}>
       <ContactCard img={homeApi[0].personalImgURL}/>
       </InView>
-      <InView onChange={(inView) => inView && setColor("#000")}>
       <WorkTogether text="Trabajemos juntos!" link="/"/>
-      </InView>
       <Footer/>
       </>
   )

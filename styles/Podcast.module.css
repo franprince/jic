@@ -3,13 +3,14 @@
     background-color: white;
     padding-bottom: 8rem;
     position: relative;
-    overflow: hidden;
 }
 
-.main > section {
+.main > section:not(.circleWrapper) {
     width: 25%;
     margin: auto;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .main > section > article {
@@ -43,16 +44,20 @@
 .links {
     margin-top: 1rem;
 }
+.circleWrapper {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-55%);
+    overflow: hidden;
+    height: 50rem;
+}
 
 .circle {
-    width: 250rem;
-    height: 250rem;
-    position: absolute;
-    top: 45%;
-    left: -55%;
+    width: 3800px;
+    height: 3800px;
     background-color: #80FFDB;
     border-radius: 50%;
-    display: block;
+
 }
 
 .pictures {
@@ -76,17 +81,11 @@
     position: relative !important;
 }
 
+
 @media(max-width: 1400px) {
-    .circle {
-        width: 250rem;
-        height: 250rem;
-        position: absolute;
+    /* .circleWrapper {
         top: 48%;
-        left: -96%;
-        background-color: #80FFDB;
-        border-radius: 50%;
-        display: block;
-    }
+    } */
 
     .pictures > article > div > img {
         height: 25rem !important;
@@ -94,4 +93,33 @@
         position: relative !important;
     }
     
-} 
+}
+
+@media (max-width: 600px) {
+
+    .main {
+        padding-bottom:  0;
+    }
+    .main > section:not(.circleWrapper) {
+        width: 75%;
+        top: -10rem;
+    }
+
+    .img {
+        order: -1;
+    }
+
+    .disponible {
+        margin-bottom: 0;
+        margin-top: 5rem;
+    }
+    .links {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .main > section > article > div > a > img {
+        width: 4rem;
+    }
+}

@@ -29,7 +29,7 @@ export default function Podcast () {
                 <article>
                 Un <b>podcast</b> donde hablamos con <b>artistas</b>, <b>filmmakers</b> y <b>emprendedores</b> acerca de experiencias y procesos de trabajo.
                 </article>
-                <article>
+                <article className={styles.img}>
                     <Image
                 src={json[0].podcastImgURL}
                 alt="The Cali Show Podcast"
@@ -49,7 +49,11 @@ export default function Podcast () {
                     </div>
                 </article>
             </section>
-            <div className={styles.circle}></div>
+            <section className={styles.circleWrapper}>
+                <div className={styles.circle}></div>
+            </section>
+                
+            
         </main>
         </InView>
         <section className={styles.pictures}>

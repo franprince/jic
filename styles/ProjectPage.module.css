@@ -11,6 +11,11 @@
     backdrop-filter: blur(2px);
 }
 
+.image {
+    height: 80vh;
+    position: relative
+}
+
 
 .videoWrapper > div > div {
     position: relative;

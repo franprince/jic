@@ -5,11 +5,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 2rem;
+    padding-bottom: 5rem;
 }
 
 .wrapper > section {
-    margin: -5rem auto 4rem auto;
+    margin: -5rem auto 2rem auto;
     width: 75%;
     display: grid;
     grid-template-columns: repeat(2, 50%);
@@ -25,20 +25,20 @@
 } 
 
 .wrapper > a {
-    margin-top: 2rem;
-    font-weight: 600;
+    margin-top: 3rem;
+    font-weight: 700;
     width: fit-content;
-    letter-spacing: 1px;
-    padding: 0.7rem 1rem 0.7rem 1rem;
-    color: white;
-    background-color: #FF7843;
+    padding: 0.7rem 2.3rem 0.7rem 2.3rem;
+    color: #000;
+    background-color: #FFF;
     border-radius: 50px;
     transition: all 0.5s ease;
+    border: 1px solid white;
 }
 
 .wrapper > a:hover {
-    color: #000;
-    background-color: white;
+    color: #fff;
+    background-color: #000;
 }
 
 .wrapper > section > article > div > div > div { /* Perdón por la cantidad de divs, es el Play Icon del react-player */

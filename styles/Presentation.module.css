@@ -5,7 +5,7 @@
 .main > section {
     display: flex;
     justify-content: center;
-    padding: 5rem 0 4rem 0;
+    padding: 10rem 0 4rem 0;
 }
 
 .main > section > article {
@@ -19,32 +19,35 @@
 
 .main > section > article:not(:first-child) {
     align-items: flex-start;
-    width: 45%;
-    padding-left: 4.5rem;
-    padding-top: 0.8rem;
+    width: 43.5%;
+    padding-left: 4.6rem;
+    height: 33rem;
 }
 
 .main > section > article:first-child {
-    padding-left: 8rem;
-    width: 55%;
+    padding-left: 9rem;
+    width: 56.5%;
 }
 
 .main > section > article > p {
-    font-size: 1.2rem;
-    width: 72%;
-    line-height: 2.3rem;
+    font-size: 1.5rem;
+    width: 90%;
+    line-height: 2.7rem;
+    margin-top: 0.2rem;
+    font-family: "Lora", serif;
 }
 
 .main > section > article > h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    margin-top: 0;
+    font-size: 2.4rem;
+    margin-bottom: 0.3rem;
+    margin-top: -1rem;
+    font-weight: 700;
 }
 
-.main > section > article > div:not(.circles) {
+.main > section > article > div:not(.links) {
     position: relative;
-    width: 32rem;
-    height: 32rem;
+    width: 33rem;
+    height: 33rem;
     top: auto !important;
     right: auto !important;
     left: auto !important;
@@ -57,22 +60,24 @@
     margin-left: 2.5rem;
 }
 
-.circles {
-    width: 50%;
+.links {
     flex: 1;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
     align-items: flex-end;
 }
 
-.circles > div {
-    height: 2.4rem;
-    width: 2.4rem;
-    background-color: white;
-    border-radius: 50%;
+.links > a {
+    height: 4rem;
+    width: 4rem;
     position: relative;
     bottom: 0;
 }
 
-.circles > div:not(:last-child) {
-    margin-right: 1rem;
+.links > a > img {
+    margin-top: 0.5rem;
+    height: 3rem;
+    width: 3rem;
 }

@@ -44,18 +44,19 @@
     padding: 0.5rem 1.2rem 0.5rem 1.2rem;
     border-radius: 50px;
     cursor: pointer;
-    color: white;
     transition: all 0.5s ease;
 }
 
 .button {
     background-color: transparent;
     border: 2px solid white;
+    color: white;
 }
 
 .selected {
-    background-color: #FF7843;
-    border: 2px solid #FF7843;
+    background-color: white;
+    border: 2px solid white;
+    color: #000
 }
 
 .buttons > button:not(:last-child) {
@@ -90,11 +91,12 @@
 }
 
 .last > article > a, .lastDouble > article > a {
-    background-color: #FF7843;
+    background-color: white;
     padding: 0.5rem 1.2rem 0.5rem 1.2rem;
     border-radius: 50px;
-    font-weight: 600;
+    font-weight: 700;
     width: fit-content;
+    color: #000
 }
 @media (max-width: 700px) {
     .grid {

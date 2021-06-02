@@ -2,7 +2,7 @@ import styles from "../styles/Header.module.css"
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function Header ({title, subtitle, img}) {
+export default function Header ({title, subtitle, img, projects}) {
 
     return (
         <header className={styles.wrapper} id="header">
@@ -15,7 +15,7 @@ export default function Header ({title, subtitle, img}) {
                 objectPosition="center"
                 quality={100}
                 />
-                <h1>{title}</h1>
+                <h1 style={projects && {marginLeft: "0"}}>{title}</h1>
                 {subtitle && 
                     <h2><i className={styles.i}>{subtitle}</i></h2>
                 }
