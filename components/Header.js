@@ -1,5 +1,6 @@
 import styles from "../styles/Header.module.css"
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Header ({title, subtitle, img}) {
 
@@ -17,6 +18,9 @@ export default function Header ({title, subtitle, img}) {
                 <h1>{title}</h1>
                 {subtitle && 
                     <h2><i className={styles.i}>{subtitle}</i></h2>
+                }
+                {title == "JUAN IGNACIO CALI" && 
+                    <Link href="/projects"><a>Mis proyectos</a></Link>
                 }
                 
             </div>

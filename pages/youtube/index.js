@@ -24,9 +24,9 @@ export default function Youtube () {
             <NavBar color={color} iNavRef={"3"} theme={"light"}/>
             <Header img={json[0].headerURL} title="YOUTUBE EN PROCESO"/>
             <Videos videos={videos}/>
-            {/* <Separator img={json[0].parallaxURL} mobileImg={json[0].parallaxURL} size={size} bgColor="#222"/> */}
+            {/* <Separator img={json[0].parallaxURL} mobileImg={json[0].parallaxURL} size={size} bgColor="#000"/> */}
             <ContactCard img={json[0].personalImgURL}/>
-            <InView threshold="0.5" onChange={(inView) => inView ? setColor("#222") : setColor("#FFF")}>
+            <InView threshold="0.5" onChange={(inView) => inView ? setColor("#000") : setColor("#FFF")}>
             <WorkTogether text="Trabajemos juntos!" link ="/"/>
             </InView>
             <Footer/>

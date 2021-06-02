@@ -43,10 +43,12 @@ export default function Home({projectsApi, homeApi}) {
   const [color, setColor] = useState("#FFF")
 
   const handleScroll = () => {
-    if (window.scrollY > 10) {
-      setColor(color) 
-    } else {
+    if (window.scrollY < 10) {
       setColor("#FFF")
+    } else if (window.scrollY < 600) {
+      setColor("#000")
+    } else {
+      setColor(color)
     }
 }
 
@@ -57,17 +59,19 @@ useEffect(() => handleScroll(), [])
         <title>JIC</title>
       </Head>
       <NavBar color={color} inNavRef={"0"} theme={"light"}/>
-      <Header img={homeApi[0].headerURL} title="JUAN IGNACIO CALI" subtitle="Filmmaker | Director Creativo | Motion Designer"/>
       <InView onChange={(inView) => inView && setColor("#FFF")}>
+      <Header img={homeApi[0].headerURL} title="JUAN IGNACIO CALI" subtitle="Filmmaker | Director Creativo | Fotógrafo"/>
+      </InView>
+      <InView onChange={(inView) => inView && setColor("#000")}>
       <Featured projects={projectsApi}/>
       </InView>
-      <InView onChange={(inView) => inView && setColor("#222")}>
+      <InView onChange={(inView) => inView && setColor("#000")}>
       <Services/>
       </InView>
-      <InView threshold="0.3" onChange={(inView) => inView ? setColor("#FFF") : setColor("#222")}>
+      <InView onChange={(inView) => inView && setColor("#FFF")}>
       <ContactCard img={homeApi[0].personalImgURL}/>
       </InView>
-      <InView threshold="0.5" onChange={(inView) => inView ? setColor("#222") : setColor("#FFF")}>
+      <InView onChange={(inView) => inView && setColor("#000")}>
       <WorkTogether text="Trabajemos juntos!" link="/"/>
       </InView>
       <Footer/>

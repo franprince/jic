@@ -23,7 +23,7 @@ export default function Podcast () {
         </Head>
         <NavBar color={color} iNavRef={"4"} theme={"light"}/>
         <PodcastHeader img={json[0].headerURL}/>
-        <InView threshold="0.3" onChange={(inView) => inView ? setColor("#222") : setColor("#FFF")}>
+        <InView threshold="0.3" onChange={(inView) => inView ? setColor("#000") : setColor("#FFF")}>
         <main className={styles.main}>
             <section>
                 <article>
@@ -68,7 +68,7 @@ export default function Podcast () {
                 )
             })}
         </section>
-        <InView threshold="0.8" onChange={(inView) => inView ? setColor("#222") : setColor("#FFF")}>
+        <InView threshold="0.8" onChange={(inView) => inView ? setColor("#000") : setColor("#FFF")}>
         <WorkTogether text="Mi Canal de YouTube" link="https://www.youtube.com/channel/UC2Xel3b_bb-RwcpZk0U4yuA"/>
         </InView>
         <Footer/>

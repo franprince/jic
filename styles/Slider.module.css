@@ -64,6 +64,22 @@
 
 }
 
+.wrapper {
+  width: 100%;
+  margin-top: 13rem;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper > h3 {
+  font-size: 2.3rem;
+  color: white;
+  margin-bottom: 9rem;
+}
+
 
   /* Esconder los checkmarks que vienen por default */
 .container input {
@@ -78,7 +94,7 @@
     height: 0.8rem;
     width: 0.8rem;
     background-color: transparent;
-    background-color: white;
+    border: 1px solid white;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -106,5 +122,5 @@
       height: 100%;
       width: 100%;
       border-radius: 50%;
-      background: #FF7843;
+      background: white;
   }

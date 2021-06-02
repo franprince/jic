@@ -36,7 +36,7 @@
     flex-direction: column;
     width: 50%;
     height: 100%;
-    color: #222222;
+    color: #000;
 }
 
 .double > .content { /* Sección de descripción */

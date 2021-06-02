@@ -39,7 +39,7 @@ export default function Details ({pageSlug, projects}) {
   const clearProjects = projects.filter(project => project.name != thisProject[0].name)
   const screenshots = thisProject[0].screenshots
 
-  const [color, setColor] = useState("#222")
+  const [color, setColor] = useState("#000")
   const [moreProjects, setMoreProjects] = useState()
 
     function getRandom(arr, n) { // Función para conseguir dos proyectos al azar que se mostrarán al final de la página
@@ -66,7 +66,7 @@ export default function Details ({pageSlug, projects}) {
     <main className={styles.main}>
       <NavBar color={color} iNavRef={"1"} theme={"dark"}/>
       <ProjectHeader brand={thisProject[0].brand} title={thisProject[0].subtitle} category={thisProject[0].categories[0]}/>
-      <InView threshold="0.4" onChange={(inView) => inView ? setColor("#FFF") : setColor("#222")}>
+      <InView threshold="0.6" onChange={(inView) => inView ? setColor("#FFF") : setColor("#000")}>
         <div className={styles.videoWrapper} style={{backgroundImage: `url(${thisProject[0].thumbnailURL})`}}>
           <ReactPlayer
                       playIcon={<PlayArrow arrowColor={thisProject[0].playbuttonColor}/>}
@@ -78,11 +78,11 @@ export default function Details ({pageSlug, projects}) {
         </div>
       </InView>
         <Description text={thisProject[0].description} title="El proyecto"/>
-      <InView threshold="0.3" onChange={(inView) => inView ? setColor("#FFF") : setColor("#222")}>
+      <InView threshold="0.3" onChange={(inView) => inView ? setColor("#FFF") : setColor("#000")}>
           <Screenshots screenshots={screenshots}/>
       </InView>
       <Description text={thisProject[0].process} title="El proceso"/>
-      <InView threshold="0.3" onChange={(inView) => inView ? setColor("#FFF") : setColor("#222")}>
+      <InView threshold="0.3" onChange={(inView) => inView ? setColor("#FFF") : setColor("#000")}>
         <Credits text={thisProject[0].credits}/>
       </InView>
       <MoreProjects moreProjects={moreProjects}/>

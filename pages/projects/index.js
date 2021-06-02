@@ -36,6 +36,22 @@ export default function Projects({projectsApi, projectsPageApi, pics}) {
 
     const [color, setColor] = useState("#FFF")
 
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    })
+    
+    
+      const handleScroll = () => {
+        if (window.scrollY < 10) {
+          setColor("#FFF")
+        } else if (window.scrollY < 400) {
+          setColor("#000")
+        } else {
+          setColor(color)
+        }
+    }
+    useEffect(() => handleScroll(), [])
         return(
         <>
         <Head>
@@ -43,13 +59,11 @@ export default function Projects({projectsApi, projectsPageApi, pics}) {
         </Head>
         <NavBar color={color} iNavRef={"1"} theme={"light"}/>
         <Header img={projectsPageApi[0].headerURL} title="PROYECTOS"/>
-        <InView onChange={(InView) => InView && setColor("#222")}>
         <ProjectsContainer projects={projectsApi}/>
-        </InView>
         <InView onChange={(InView) => InView && setColor("#FFF")}>
         <PhGrid pictures={pics[0].assets}/>
         </InView>
-        <InView onChange={(InView) => InView && setColor("#222")}>
+        <InView onChange={(InView) => InView && setColor("#000")}>
         <WorkTogether text="Trabajemos juntos!" link="/"/>
         </InView>
         <Footer/>

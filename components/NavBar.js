@@ -8,6 +8,7 @@ export default function Navbar({color, iNavRef, theme}) {
 
     const [initialNavBar, setInitialNavbar] = useState(true)
     const [open, setOpen] = useState(true)
+    const [mobile, setMobile] = useState()
 
     const handleClick = () => { // Abre y cierra la barra de navegación haciéndole click
         setOpen(!open)
@@ -46,15 +47,18 @@ export default function Navbar({color, iNavRef, theme}) {
         }
         }, []);
         return windowSize;
-
     }
     
     useEffect(() => {
         if (size.width && size.width < 600) {
             setOpen(false)
             setInitialNavbar(false)
+            setMobile(true)
+        } else {
+            setMobile(false)
         }
     }, [size])
+
     useEffect(() => handleScroll(), [size])
 
     const handleScroll = () => {
@@ -74,24 +78,23 @@ export default function Navbar({color, iNavRef, theme}) {
     // Variantes para las animaciones con Framer Motion.
 
     const variants = {
-        open: { opacity: 1, x: 0},
-        closed: { opacity: 0, pointerEvents: "none", x: "10%"},
+        open: { opacity: 1, x: 0, display: "flex"},
+        closed: { opacity: 0, pointerEvents: "none", x: "300%", display: "none"},
     }
 
     const bgVariants = {
         open: { opacity: 1, x: 0 },
-        closed: {opacity: 0, x: "300%"}
+        closed: {opacity: 0, x: "300%", width: "0px"}
     }
 
     return (
     <nav className={styles.wrapper}>
         <main>
             <Link href="/">
-                <a><h2 style={!initialNavBar ? {color: color} : theme == "light" ?  {color: color} : {color: "#222"}}>JIC</h2></a>
+                <a><h2 style={{color: color}}>JIC</h2></a>
             </Link>
-        <motion.nav className={styles.nav} animate={open ? "open" : "closed"} variants={variants} transition={{ type: "spring", duration: 1, velocity: 2 }}>
-                    <motion.div className={styles.bg} animate={initialNavBar ? "closed" : open ? "open" : "closed"} variants={bgVariants} transition={{ type: "ease", duration: 0.1}}>
-                    </motion.div>
+        <motion.nav className={styles.nav} animate={open ? "open" : "closed"} variants={variants} transition={{ type: "spring", duration: 0.6}}>
+                    <motion.div className={styles.bg} animate={initialNavBar ? "closed" : open ? "open" : "closed"} variants={bgVariants} transition={{ type: "ease", duration: 0.2}}></motion.div>
             <ul className={theme == "light" ? styles.light : initialNavBar ? styles.dark : styles.light}>
                 <Link href="/projects">
                     <a onClick={handleRef}>
@@ -119,6 +122,7 @@ export default function Navbar({color, iNavRef, theme}) {
                     <a><li id="6" className={initialNavBar? styles.liLast : styles.liScrolled}
                     style={navRef.current == "6" ? {fontWeight: "700", pointerEvents: "none"} : {fontWeight: "300"}}>CONTACTO</li></a>
                 </Link>
+                {/* <li style={mobile ? {color: "red"} : {color: "blue"}}> PPP </li> */}
             </ul>
         </motion.nav>
         <motion.div className={styles.hamb} animate={initialNavBar ? {opacity: 0, display: "none"} : {opacity: 1}} transition={{duration: 0.5}} >

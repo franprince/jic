@@ -35,7 +35,9 @@ export default function TextSlider () {
     const [index, setIndex] = useState(0)
 
     return(
-        <section className={styles.slider}>
+        <section className={styles.wrapper}>
+        <h3>MI MANIFIESTO</h3>
+        <div className={styles.slider}>
 
             <Slider activeIndex={parseInt(index)} onSlideComplete={(i) => {setIndex(i)}}>
                 {slides.map((slide)=> {
@@ -55,7 +57,7 @@ export default function TextSlider () {
                     )
                 })}
             </div>
-
+            </div>
         </section>
     )
 }
