@@ -72,11 +72,13 @@ export default function Details ({pageSlug, projects}) {
           <ReactPlayer
                       playIcon={<PlayArrow arrowColor={thisProject[0].playbuttonColor}/>}
                       url={`${thisProject[0].videoURL}`}
-                      light={`${thisProject[0].thumbnailURL}`}
-                      height={"100%"} width={"100%"}
+                      light={`url(${thisProject[0].thumbnailURL})`}
+                      height={"100%"} 
+                      width={"100%"}
                       style={{position: "absolute", top: "0", left: "0"}}
                       config={{ vimeo: { playerOptions: { autoplay: true }} }} />
         </div>
+
       <Description text={thisProject[0].description} title="El proyecto"/>
       <InView onChange={(inView) => inView && setColor("#FFF")}>
       <Screenshots screenshots={screenshots}/>

@@ -4,11 +4,9 @@
 
 .videoWrapper {
     position: relative;
-    height: 90vh;
-    top: 0 !important;
-    background-size: cover;
+    padding-top: 56.25%;
     background-position: center;
-    backdrop-filter: blur(2px);
+    background-size: cover;
 }
 
 .image {
@@ -16,20 +14,6 @@
     position: relative
 }
 
-
-.videoWrapper > div > div {
-    position: relative;
-    top: 0 !important;
-    height: 100% !important;
-    width: 100% !important;
-    background-color: rgba(255, 255, 255, 0.795);
-}
-
-.videoWrapper > div > div > iframe {
-    height: 83vh !important;
-    position: relative;
-    top: 1.4% !important;
-}
 .moreProjectsContainer > h2 {
     font-size: 2.3rem;
     font-weight: 800;
@@ -122,18 +106,6 @@
 }
 
 @media (max-width: 700px) {
-    .videoWrapper > div > div > iframe {
-        height: 50vh !important;
-    }
-
-    .videoWrapper > div {
-        height: 50vh;
-    }
-
-    .videoWrapper {
-        height: 50vh
-    }
-
     .moreProjects {
         margin: auto;
         width: 80%;
