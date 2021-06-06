@@ -9,7 +9,6 @@ import Videos from "../../components/Videos";
 import Footer from "../../components/Footer"
 import ContactCard from "../../components/ContactCard"
 import WorkTogether from "../../components/WorkTogether"
-import Image from "next/image"
 
 export default function Youtube () {
 
@@ -23,19 +22,10 @@ export default function Youtube () {
             <title>JIC | YouTube</title>
             </Head>
             <NavBar color={color} iNavRef={"3"} theme={"light"}/>
-            <Header img={json[0].headerURL} title="YOUTUBE EN PROCESO"/>
+            <Header img={json[0].headerURL} title={`YOUTUBE IN\nPROGRESS`} home={false}/>
             <Videos videos={videos}/>
-            <article style={{height: "80vh", position: "relative"}}>
-            <Image
-                src="/img/separador.png"
-                alt="Imagen de separador"
-                layout="fill"
-                objectFit="cover"
-                quality={100}
-                priority={true}
-                />
-            </article>
             <ContactCard img={json[0].personalImgURL}/>
+            <Separator/>
             <InView threshold="0.5" onChange={(inView) => inView ? setColor("#000") : setColor("#FFF")}>
             <WorkTogether text="Trabajemos juntos!" link ="/"/>
             </InView>

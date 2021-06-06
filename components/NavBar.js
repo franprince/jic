@@ -9,21 +9,21 @@ export default function Navbar({color, iNavRef, theme}) {
     const [initialNavBar, setInitialNavbar] = useState(true)
     const [open, setOpen] = useState(true)
     const [mobile, setMobile] = useState()
-
-    const handleClick = () => { // Abre y cierra la barra de navegación haciéndole click
-        setOpen(!open)
-    }
-
     const navRef = useRef(iNavRef)
-
-    const handleRef = (e) => {
-        navRef.current = e.target.id
-    }
-
+    
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     })
+    
+    
+    const handleClick = () => { // Abre y cierra la barra de navegación haciéndole click
+        setOpen(!open)
+    }
+
+    const handleRef = (e) => {
+        navRef.current = e.target.id
+    }
 
     const size = useWindowSize();
 
@@ -50,7 +50,7 @@ export default function Navbar({color, iNavRef, theme}) {
     }
     
     useEffect(() => {
-        if (size.width && size.width < 600) {
+        if (size.width && size.width < 700) {
             setOpen(false)
             setInitialNavbar(false)
             setMobile(true)
@@ -62,10 +62,10 @@ export default function Navbar({color, iNavRef, theme}) {
     useEffect(() => handleScroll(), [size])
 
     const handleScroll = () => {
-        if (window.scrollY > 200 || (size.width && size.width < 600)) {
+        if (window.scrollY > 200 || (size.width && size.width < 700)) {
             setInitialNavbar(false)
             setOpen(false)
-        } else if (window.scrollY == 0 && size.width < 600) {
+        } else if (window.scrollY == 0 && size.width < 700) {
             setOpen(false)
         }
         else {

@@ -1,10 +1,10 @@
-.wrapper {
+.homeWrapper, .wrapper {
     width: 100%;
     height: 100vh;
     position: relative;
 }
 
-.header {
+.header, .elements {
     width: 100%;
     height: 100%;
     display: flex;
@@ -14,27 +14,26 @@
     color: white;
 }
 
-.header > h1 {
+
+.elements > h1 {
     font-weight: 700;
-    font-size: 2.35rem;
+    font-size: 2.4rem;
     margin-bottom: 0;
-    letter-spacing: 1px;
     z-index: 1;
 }
-.header > h2 {
+.elements > h2 {
     margin-top: -0.7rem;
     z-index: 1;
 }
-.header .i {
+.elements .i {
     font-weight: 200;
     font-size: 0.98rem;
     margin-top: 0;
 }
 
-.header > a {
+.elements > a {
     font-weight: 600;
     z-index: 1;
-    letter-spacing: 1px;
     padding: 0.5rem 2.5rem 0.5rem 2.5rem;
     color: #000;
     background-color: white;
@@ -43,13 +42,61 @@
     transition: all 0.5s ease;
 }
 
-.header > a:hover {
+.elements > a:hover {
     background-color: transparent;
     color: #FFF;
 }
 
-.header > h1,
-.header > h2,
-.header > a {
+.elements > h1,
+.elements > h2,
+.elements > a {
     margin-left: -35rem;
+}
+
+.wrapper > .header > section > h1 {
+    margin-left: 0;
+}
+
+@media (max-width: 700px) {
+    .wrapper {
+        width: 100%;
+        height: 50vh;
+        position: relative;
+        margin-bottom: 6rem;
+    }
+    .wrapper > .header > div {
+        display: none !important;
+    }
+
+    .wrapper > .header > section > h1 {
+        margin: 3rem auto auto auto;
+        font-size: 2.7rem;
+        white-space: pre-line;
+    }
+    .elements {
+        display: grid;
+        grid-template-rows: 2rem 2rem 2fr;
+        height: 80%;
+        padding-top: 7rem;
+    }
+    .elements > h1,
+    .elements > h2,
+    .elements > a {
+        margin-left: 0;
+        text-align: center;
+    }
+    .elements > h1 {
+        align-self: flex-end;
+        font-size: 2rem;
+        width: 100%;
+        
+    }
+    .elements .i {
+        font-size: 1.1rem;
+    }
+    .elements > a {
+        width: fit-content;
+        align-self: flex-end;
+        margin: auto auto 0 auto;
+    }
 }

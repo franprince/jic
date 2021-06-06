@@ -1,27 +1,18 @@
-import styles from "../styles/Separator.module.css"
-import {Parallax} from "react-parallax"
+import Image from "next/image"
+import banner from "../bannerTest.json"
 
-
-export default function Separator ({img, mobileImg, size, bgColor}) {
-
-
-    var strength = 0
-    var bg
-
-    if (size.width > 600) {
-        strength = 500
-        bg = img
-    } else {
-        strength = 400
-        bg = mobileImg
-    }
+export default function Separator () {
 
     return (
-        <>
-        <div className={styles.wrapper} style={{backgroundColor: bgColor}}>
-            <Parallax bgImage={ bg } className={styles.separator} strength={strength}>
-            </Parallax>
-        </div>
-        </>
+            <article style={{height: "80vh", position: "relative"}}>
+            <Image
+                src={banner[0].url}
+                alt="Imagen de separador"
+                layout="fill"
+                objectFit="cover"
+                quality={100}
+                priority={true}
+                />
+            </article>
     )
 }

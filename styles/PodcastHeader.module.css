@@ -25,6 +25,7 @@
     z-index: 1;
     font-family: 'Gobold', sans-serif;
 }
+
 .header > section > h2 {
     width: fit-content;
     font-family: 'Barlow Condensed', sans-serif;
@@ -42,4 +43,22 @@
     font-weight: 200;
     font-size: 0.98rem;
     margin-top: 0;
+}
+
+@media (max-width: 700px) {
+    .wrapper {
+        height: 100vh;
+    }
+    .header > section {
+        margin: 45% auto auto auto;
+        padding: 0.2rem;
+    }
+    .header > section > h1 {
+        font-size: 4.5rem;
+        letter-spacing: 0px;
+    }
+    
+    .header > section > h2 {
+        font-size: 2.1rem;
+    }
 }

@@ -9,14 +9,9 @@ export default {
         title: 'Imagen de encabezado'
     },
     {
-        name: 'parallax',
+        name: 'headerMobile',
         type: 'image',
-        title: 'Imagen con efecto Parallax'
-    },
-    {
-        name: 'parallaxMobile',
-        type: 'image',
-        title: 'Imagen con efecto Parallax (mobile)'
+        title: 'Imagen de encabezado (para mobile)'
     },
     {
         name: 'personalImg',
@@ -24,6 +19,5 @@ export default {
         title: 'Imagen personal',
         description: 'Esta imagen irá en la parte de contacto'
     }
-    
     ]
 }

@@ -108,3 +108,15 @@
         flex-direction: column-reverse;
     }
 }
+
+@media (max-width: 700px) {
+    .buttons {
+        display: none;
+    }
+    .projects {
+        top: 0;
+    }
+    .container {
+        padding-bottom: 7rem;
+    }
+}

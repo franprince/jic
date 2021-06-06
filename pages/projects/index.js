@@ -58,7 +58,7 @@ export default function Projects({projectsApi, projectsPageApi, pics}) {
             <title>JIC | Proyectos</title>
         </Head>
         <NavBar color={color} iNavRef={"1"} theme={"light"}/>
-        <Header img={projectsPageApi[0].headerURL} projects={true} title="PROYECTOS"/>
+        <Header img={projectsPageApi[0].headerURL} home={false} title="PROYECTOS"/>
         <ProjectsContainer projects={projectsApi}/>
         <InView onChange={(InView) => InView && setColor("#FFF")}>
         <PhGrid pictures={pics[0].assets} width="78%"/>

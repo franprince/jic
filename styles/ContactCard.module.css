@@ -42,12 +42,24 @@
     font-family: "Lora", serif;
 }
 .links {
-    margin-top: 2rem;
-    width: 100%;
+    margin: 2rem auto auto auto;
+    width: 50%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
-.links > a {
-    margin: 0 0.5rem 0 0.5rem
+.links > a > img{
+    height: 3.3rem;
+}
+
+@media (max-width: 700px) {
+    .container {
+        height: auto;
+        flex-direction: column;
+    }
+
+    .picture, .info {
+        width: 100%;
+        height: 100vh;
+    }
 }

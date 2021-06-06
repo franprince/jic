@@ -56,8 +56,8 @@
 
 @media (max-width: 600px) {
     .wrapper > section {
-        margin: -5rem auto 4rem auto;
-        width: 75%;
+        margin: auto auto 4rem auto;
+        width: 85%;
         display: grid;
         grid-template-columns: 100%;
         position: relative;

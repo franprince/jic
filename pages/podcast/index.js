@@ -6,7 +6,7 @@ import Footer from "../../components/Footer"
 import WorkTogether from "../../components/WorkTogether"
 import json from "../../podcastTest.json"
 import { InView } from 'react-intersection-observer';
-import {useState, useEffect} from "react"
+import {useState} from "react"
 import styles from "../../styles/Podcast.module.css"
 
 
@@ -59,7 +59,7 @@ export default function Podcast () {
         <section className={styles.pictures}>
             {json[0].picsURL.map(picture=>{
                 return (
-                    <article key={json[0].picsURL.indexOf(picture)}>
+                    <article key={json[0].picsURL.indexOf(picture)} className={json[0].picsURL.indexOf(picture) == 2 ? styles.last : styles.notLast}>
                 <Image
                 src={picture}
                 alt="The Cali Show Podcast"

@@ -8,3 +8,11 @@
 .container > article {
     position: relative;
 }
+
+@media (max-width: 700px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 21rem);
+        height: fit-content;
+    }
+}

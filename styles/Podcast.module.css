@@ -88,7 +88,7 @@
     } */
 
     .pictures > article > div > img {
-        height: 25rem !important;
+        min-height: 25rem !important;
         width: 100%;
         position: relative !important;
     }
@@ -112,6 +112,16 @@
     .disponible {
         margin-bottom: 0;
         margin-top: 5rem;
+    }
+    .pictures {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 30rem 30rem 35rem;
+        width: 100%;
+        position: relative;
+    }
+    .last > div > img {
+        height: 40rem !important;
     }
     .links {
         width: 80%;

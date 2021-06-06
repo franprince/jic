@@ -29,3 +29,16 @@
     font-weight: 400;
     font-family: "Lora", serif;
 }
+
+@media (max-width: 700px) {
+    .description > article {
+        width: 90%;
+    }
+    .description > article > h2, .description > article > p {
+        width: 100%;
+    }
+    .description > article > p {
+        font-size: 1.5rem;
+        line-height: 2.6rem;
+    }
+}

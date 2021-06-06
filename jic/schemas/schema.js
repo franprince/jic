@@ -11,6 +11,7 @@ import contact from './contact'
 import phGrid from './phGrid'
 import youtube from './youtube'
 import about from './about'
+import banner from "./banner"
 
 export default createSchema({
 name: 'mySchema',
@@ -23,6 +24,7 @@ types: schemaTypes.concat([
   youtube,
   podcast,
   about,
-  contact
+  contact,
+  banner
 ])
 })

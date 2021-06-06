@@ -59,16 +59,16 @@ export default function Details ({pageSlug, projects}) {
   
   useEffect(() => getRandom(clearProjects, 2), [])
 
-
     return (<>
     <Head>
       <title>{thisProject[0].name}</title>
     </Head>
     <main className={styles.main}>
       <NavBar color={color} iNavRef={"1"} theme={"dark"}/>
+      <InView onChange={(inView) => inView && setColor("#000")}>
       <ProjectHeader brand={thisProject[0].brand} title={thisProject[0].subtitle} category={thisProject[0].categories[0]}/>
-      <InView threshold="0.6" onChange={(inView) => inView ? setColor("#FFF") : setColor("#000")}>
-        <div className={styles.videoWrapper} style={{backgroundImage: `url(${thisProject[0].thumbnailURL})`}}>
+      </InView>
+      <div className={styles.videoWrapper} style={{backgroundImage: `url(${thisProject[0].thumbnailURL})`}}>
           <ReactPlayer
                       playIcon={<PlayArrow arrowColor={thisProject[0].playbuttonColor}/>}
                       url={`${thisProject[0].videoURL}`}
@@ -77,13 +77,14 @@ export default function Details ({pageSlug, projects}) {
                       style={{position: "absolute", top: "0", left: "0"}}
                       config={{ vimeo: { playerOptions: { autoplay: true }} }} />
         </div>
+      <Description text={thisProject[0].description} title="El proyecto"/>
+      <InView onChange={(inView) => inView && setColor("#FFF")}>
+      <Screenshots screenshots={screenshots}/>
       </InView>
-        <Description text={thisProject[0].description} title="El proyecto"/>
-      <InView threshold="0.3" onChange={(inView) => inView ? setColor("#FFF") : setColor("#000")}>
-          <Screenshots screenshots={screenshots}/>
-      </InView>
+      <InView onChange={(inView) => inView && setColor("#000")}>
       <Description text={thisProject[0].process} title="El proceso"/>
-      <InView threshold="0.3" onChange={(inView) => inView ? setColor("#FFF") : setColor("#000")}>
+      </InView>
+      <InView onChange={(inView) => inView && setColor("#FFF")}>
         <article className={styles.image}>
           <Image
                 src="/img/separador.png"
@@ -94,9 +95,13 @@ export default function Details ({pageSlug, projects}) {
                 priority={true}
                 />
       </article>
+      </InView>
+      <InView onChange={(inView) => inView && setColor("#FFF")}>
       <Description text={thisProject[0].credits} title="Créditos" credits={true}/>
       </InView>
+      <InView threshold="0.3" onChange={(inView) => inView && setColor("#000")}>
       <MoreProjects moreProjects={moreProjects}/>
+      </InView>
       <Footer/>
       </main>
       </>)

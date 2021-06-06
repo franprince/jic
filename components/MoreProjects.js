@@ -4,12 +4,12 @@ import Image from "next/image"
 export default function MoreProjects ({moreProjects}) {
     return (
         <section className={styles.moreProjectsContainer}>
-          <h2>Otros proyectos</h2>
+          <h2>Otros Proyectos</h2>
           <section className={styles.moreProjects}>
           { moreProjects && moreProjects.map(item => {
                 return (
-                  <Link href={`/projects/${item.slug.current}`}>
-                  <article className={styles.card} key={item._id}>
+                  <Link href={`/projects/${item.slug.current}`} key={item._id}>
+                  <article className={styles.card} >
                       <div className={styles.content}>
                           <section className={styles.info}>
                                 <h2>{item.name}</h2>
