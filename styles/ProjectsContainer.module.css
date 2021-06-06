@@ -1,6 +1,7 @@
 .container {
     display: flex;
     flex-direction: column;
+    margin-top: -3rem
 }
 .grid {
     position: relative;
@@ -117,6 +118,13 @@
         top: 0;
     }
     .container {
-        padding-bottom: 7rem;
+        padding-bottom: 6rem;
+    }
+    .last {
+        padding-top: 4rem;
+    }
+
+    .last > article {
+        width: 65%;
     }
 }

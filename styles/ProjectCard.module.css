@@ -145,3 +145,15 @@
 .single > .img > div > .imgBorder {
     border-radius: 20px 20px 0 0;
 }
+
+@media (max-width: 700px) {
+    .single {
+        height: 30rem;
+    }
+    .single > .content {
+        max-height: 30%;
+    }
+    .single > .content > .info > h2 {
+        width: 100%;
+    }
+}

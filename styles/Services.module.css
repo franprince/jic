@@ -14,7 +14,7 @@
 
 .wrapper > section > h2 {
     font-size: 2.4rem;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .services {
@@ -26,7 +26,7 @@
 
 .services > section > h3 {
     font-size: 1.7rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 1px;
 }
 
@@ -36,22 +36,48 @@
 }
 
 @media (max-width: 600px) {
+    .wrapper {
+        padding: 6rem 0 6rem 0;
+    }
+    .wrapper > section > h2 {
+        width: 100%;
+        text-align: center;
+    }
+    .wrapper > section > div > section {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
     .services {
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        }
+
+    .category > ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
     }
-}
 
-.category > ul {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-}
+    .category > h3 {
+        margin: 2rem 0 2rem 0;
+    }
 
-.category > h3 {
-    margin: 2rem 0 2rem 0;
-}
-
-.category > ul > li {
-    list-style: none;
-    margin: 0.5rem 0 0rem 0;
+    .category > ul > li {
+        list-style: none;
+        margin: 0.5rem 0 0rem 0;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    .services > section > h3 {
+        font-size: 1.7rem;
+        font-weight: 800;
+        letter-spacing: 1px;
+        margin-top: 4rem;
+    }
+    
+    
 }

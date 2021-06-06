@@ -25,8 +25,6 @@ const projectQuery = groq`*[ _type == 'project' ]{
 const projectPageQuery = groq`*[ _type == 'projectsPage' ]{
     _id,
     "headerURL": header.asset->url,
-    "parallaxURL": parallax.asset->url,
-    "parallaxMobileURL": parallaxMobile.asset->url
 }`
 
 const gridQuery = groq`*[_type=='phGrid'] {_id, 'assets': pics[].asset->url}`
@@ -36,22 +34,6 @@ export default function Projects({projectsApi, projectsPageApi, pics}) {
 
     const [color, setColor] = useState("#FFF")
 
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll)
-    })
-    
-    
-      const handleScroll = () => {
-        if (window.scrollY < 10) {
-          setColor("#FFF")
-        } else if (window.scrollY < 400) {
-          setColor("#000")
-        } else {
-          setColor(color)
-        }
-    }
-    useEffect(() => handleScroll(), [])
         return(
         <>
         <Head>
@@ -59,7 +41,9 @@ export default function Projects({projectsApi, projectsPageApi, pics}) {
         </Head>
         <NavBar color={color} iNavRef={"1"} theme={"light"}/>
         <Header img={projectsPageApi[0].headerURL} home={false} title="PROYECTOS"/>
+        <InView onChange={(InView) => InView && setColor("#FFF")}>
         <ProjectsContainer projects={projectsApi}/>
+        </InView>
         <InView onChange={(InView) => InView && setColor("#FFF")}>
         <PhGrid pictures={pics[0].assets} width="78%"/>
         </InView>
