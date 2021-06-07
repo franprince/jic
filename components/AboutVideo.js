@@ -2,27 +2,28 @@ import ReactPlayer from 'react-player'
 import PlayArrow from "../components/PlayArrow"
 import styles from "../styles/AboutVideo.module.css"
 
-export default function AboutVideo ({video}) {
+export default function AboutVideo ({videoID}) {
+
+    console.log(videoID)
     return (
         <section className={styles.film}>
         <h2>Un film acerca de mí</h2>
-        <div className={styles.videoWrapper}>
+        <article style={{backgroundImage: `url(https://i.ytimg.com/vi/${videoID}/hqdefault.jpg)`}}>
                 <ReactPlayer
-                    url={video}
-                    playIcon={<PlayArrow arrowColor={"#FFF"}/>}
-                    light={true}
-                    height={"100%"}
-                    width={"100%"}
-                    quality={100}
-                    controls={true}
-                    style={{position: "absolute", top: "0", left: "0"}}
-                    config={{
-                        youtube: {
-                            playerVars: { autoplay: 1 }
-                                }
-                            }}
-                />
-        </div>
+                url={`https://www.youtube.com/watch?v=${videoID}&ab_channel=JuanIgnacioCali`}
+                playIcon={<PlayArrow arrowColor={"#FFF"}/>}
+                light={true}
+                height={"100%"}
+                width={"100%"}
+                controls={true}
+                style={{position: "absolute", top: "0", left: "0"}}
+                config={{
+                    youtube: {
+                    playerVars: { autoplay: 1 }
+                    }
+                    }}
+                    />
+        </article>
     </section>
     )
 }

@@ -36,7 +36,7 @@ export default function TextSlider () {
 
     return(
         <section className={styles.wrapper}>
-        <h3>MI MANIFIESTO</h3>
+        <h3>Mi Manifiesto</h3>
         <div className={styles.slider}>
 
             <Slider activeIndex={parseInt(index)} onSlideComplete={(i) => {setIndex(i)}}>

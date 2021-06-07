@@ -19,6 +19,7 @@
     line-height: 2.5rem;
     font-size: 1.2rem;
     z-index: 1;
+    text-align: center;
 }
 .main > section > article > div:not(.links) {
     position: relative !important;

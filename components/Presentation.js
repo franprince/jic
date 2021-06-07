@@ -23,7 +23,7 @@ export default function Presentation ({img}) {
                 </h3>
                 <p>
                 Hola! 👋🏼  Soy Juan Ignacio.<br/>
-                Tengo 27 años y vivo en Buenos Aires,<br/>
+                Tengo 27 años y vivo en Buenos Aires, 
                 Argentina.<br/>
                 Soy Licenciado en Diseño Multimedia y actualmente trabajo como Director Creativo, Filmmaker & Motion Designer.<br/>
                 Si querés saber más sobre mi, mirá el video que está mas abajo!

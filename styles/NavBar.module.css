@@ -20,9 +20,11 @@
 }
 
 .wrapper > main > a > h2 {
+    z-index: 3;
     transition: all 0.5s ease;
     letter-spacing: 1px;
     font-size: 1.6rem;
+    text-shadow: 2px 2px 3px rgba(150, 150, 150, 0.63);
 }
 
 .wrapper > main > div {
@@ -151,12 +153,18 @@
         background-color: rgba(0, 0, 0, 0.76);
     }
     .nav > ul {
-        height: 100vh;
+        height: 80vh;
+        position: relative;
+        top: 6rem;
         flex-direction: column;
         padding: 2rem;
         margin: auto;
         justify-content: center;
         align-items: center;
+    }
+
+    .nav > ul > a > li {
+        margin-top: 0.8rem;
     }
 
     .li, .liLast, .liFirst .liScrolled {
@@ -167,5 +175,17 @@
     .liScrolled, .liScrolledFirst {
         border: none;
         padding: 0.8rem;
+    }
+
+    .links {
+        display: flex;
+        align-items: center;
+        margin-top: 4rem
+    }
+    .links > a > img {
+        height: 3rem;
+    }
+    .links > a:not(:last-child) {
+        margin-right: 0.8rem;
     }
 }

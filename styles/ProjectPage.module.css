@@ -8,7 +8,10 @@
     background-position: center;
     background-size: cover;
 }
-
+.videoWrapper > div {
+    height: 105%;
+    top: -5px !important
+}
 .image {
     height: 80vh;
     position: relative

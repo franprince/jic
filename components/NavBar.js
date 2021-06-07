@@ -122,7 +122,20 @@ export default function Navbar({color, iNavRef, theme}) {
                     <a><li id="6" className={initialNavBar? styles.liLast : styles.liScrolled}
                     style={navRef.current == "6" ? {fontWeight: "700", pointerEvents: "none"} : {fontWeight: "300"}}>CONTACTO</li></a>
                 </Link>
-                {/* <li style={mobile ? {color: "red"} : {color: "blue"}}> PPP </li> */}
+                <li className={styles.links} style={mobile ? {display: "flex"} : {display: "none"}}>
+                    <a href="https://www.instagram.com/juanignaciocali/">
+                        <img src="/img/instagram.png" alt="Ir a Instagram"/>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UC2Xel3b_bb-RwcpZk0U4yuA">
+                        <img src="/img/youtube.png" alt="Ir a YouTube"/>
+                    </a>
+                    <a href="mailto:juanignaciocali@gmail.com">
+                        <img src="/img/mail.png" alt="Contactame por email"/>
+                    </a>
+                    <a href="wa.link/yxd518">
+                        <img src="/img/whatsapp.png" alt="Contactame por WhatsApp"/>
+                    </a>
+                </li>
             </ul>
         </motion.nav>
         <motion.div className={styles.hamb} animate={initialNavBar ? {opacity: 0, display: "none"} : {opacity: 1}} transition={{duration: 0.5}} >
