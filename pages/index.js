@@ -45,7 +45,7 @@ export default function Home({projectsApi, homeApi}) {
       <InView onChange={(inView) => inView && setColor("#FFF")}>
       <Header img={homeApi[0].headerURL} changeOnMobile={true} home={true} mobileImg={homeApi[0].headerMobileURL} title="JUAN IGNACIO CALI" subtitle="Filmmaker | Director Creativo | Fotógrafo"/>
       </InView>
-      <InView threshold="0.5" onChange={(inView) => inView ? setColor("#000") : setColor("#FFF")}>
+      <InView threshold="0.5" onChange={(inView) => inView && setColor("#000")}>
       <Featured projects={projectsApi}/>
       </InView>
       <InView onChange={(inView) => inView && setColor("#000")}>

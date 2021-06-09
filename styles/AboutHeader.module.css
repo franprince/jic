@@ -23,10 +23,27 @@
     margin-bottom: 0;
     letter-spacing: 1px;
     z-index: 1;
+    white-space: pre-line;
+    margin: auto;
+}
+
+.contactTitles {
+    width: 70%;
+}
+.contactTitles > h1:not(:first-child) {
+    display: none;
 }
 
 @media (max-width: 700px) {
     .header > div {
         display: none !important;
     }
+    .contactTitles > h1:not(:last-child) {
+        display: none;
+    }
+    
+    .contactTitles > h1:not(:first-child) {
+        display: block;
+    }
+    
 }
