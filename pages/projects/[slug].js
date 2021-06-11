@@ -83,6 +83,7 @@ export default function Details ({pageSlug, projects}) {
                       light={`url(${thisProject[0].thumbnailURL})`}
                       height={"100%"} 
                       width={"100%"}
+                      muted={true}
                       style={{position: "absolute", top: "0", left: "0"}}
                       config={{ vimeo: { playerOptions: { autoplay: true }} }} />
         </div>

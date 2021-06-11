@@ -16,6 +16,7 @@ export default function AboutVideo ({videoID}) {
                 height={"100%"}
                 width={"100%"}
                 controls={true}
+                muted={true}
                 style={{position: "absolute", top: "0", left: "0"}}
                 config={{
                     youtube: {
