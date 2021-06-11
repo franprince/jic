@@ -85,22 +85,51 @@ export default function Form () {
                 body: JSON.stringify(formData)
                 })
     }
+
+    const [producto, setProducto] = useState('')
+    const [presupuesto, setPresupuesto] = useState('')
+    const [nombre, setNombre] = useState('')
+    const [mensaje, setMensaje] = useState('')
+
+    const handleSelectChange = (selectedOption) => {
+        if (selectedOption.category == "1") {
+            setProducto(selectedOption.value)
+        }else{
+            setPresupuesto(selectedOption.value)
+        }
+    }
+    const handleNameChange = (e) => {
+        setNombre(e.target.value)
+    }
+    const handleMessage = (e) => {
+        setMensaje(e.target.value)
+    }
+
+    const handleClick = (e) => {
+        e.preventDefault()
+        fetch('/api/mail', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ nombre: nombre, mensaje: mensaje, presupuesto: presupuesto, producto: producto })
+          });
+
+    }
     return (
         <section className={styles.form}>
-            <form method="post" onSubmit={handleSubmit}>
+            <form>
                 <p>
                     <label htmlFor="name">Name</label>
-                    <input type="text" name="name"/>
+                    <input onChange={handleNameChange} type="text" name="name"/>
                 </p>
                 <p>
                     <label htmlFor="message" >Message</label>
-                    <textarea name="message"/>
+                    <textarea onChange={handleMessage} name="message"/>
                 </p>
                 <div>
-                <Select options={options1} instanceID="Necesidades" name="producto" styles={customStyles} placeholder="Estoy necesitando" />
-                <Select options={options2} instanceID="Presupuesto" name="presupuesto" styles={customStyles} placeholder="Mi presupuesto estimado es" />
+                <Select options={options1} onChange={handleSelectChange} instanceID="Necesidades" name="producto" styles={customStyles} placeholder="Estoy necesitando" />
+                <Select options={options2} onChange={handleSelectChange} instanceID="Presupuesto" name="presupuesto" styles={customStyles} placeholder="Mi presupuesto estimado es" />
                 </div>
-                <button>Submit</button>
+                <button onClick={handleClick}>Submit</button>
             </form>
         </section>
     )
