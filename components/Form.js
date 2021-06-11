@@ -80,7 +80,7 @@ export default function Form () {
         Array.from(e.currentTarget.elements).forEach(field => 
             {if(!field.name) return;
             formData[field.name] = field.value})
-            await fetch('/api/mail', {
+            fetch('/api/mail', {
                 method: 'post',
                 body: JSON.stringify(formData)
                 })
