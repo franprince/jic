@@ -29,9 +29,9 @@ import { sendEmail } from '../../utils/sendEmail.js';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     if(req.method === 'POST') {
-        const { nombre, mensaje, presupuesto, producto } = req.body;
-      await sendEmail({ nombre, mensaje, presupuesto, producto });
-      return res.status(200).end();
+        const { nombre, mensaje, presupuesto, producto, trabajo, puesto, email } = req.body;
+        await sendEmail({ nombre, mensaje, presupuesto, producto, trabajo, puesto, email });
+        return res.status(200).end();
     }
     return res.status(404).json({
         error: {

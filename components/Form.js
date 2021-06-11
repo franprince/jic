@@ -74,22 +74,13 @@ export default function Form () {
         })
     }
 
-    async function handleSubmit (e) {
-        e.preventDefault();
-        const formData = {}
-        Array.from(e.currentTarget.elements).forEach(field => 
-            {if(!field.name) return;
-            formData[field.name] = field.value})
-            fetch('/api/mail', {
-                method: 'post',
-                body: JSON.stringify(formData)
-                })
-    }
-
-    const [producto, setProducto] = useState('')
+    const [producto, setProducto] = useState()
     const [presupuesto, setPresupuesto] = useState('')
     const [nombre, setNombre] = useState('')
     const [mensaje, setMensaje] = useState('')
+    const [trabajo, setTrabajo] = useState('')
+    const [puesto, setPuesto] = useState('')
+    const [email, setEmail] = useState()
 
     const handleSelectChange = (selectedOption) => {
         if (selectedOption.category == "1") {
@@ -98,38 +89,38 @@ export default function Form () {
             setPresupuesto(selectedOption.value)
         }
     }
-    const handleNameChange = (e) => {
-        setNombre(e.target.value)
-    }
-    const handleMessage = (e) => {
-        setMensaje(e.target.value)
-    }
 
     const handleClick = (e) => {
-        e.preventDefault()
         fetch('/api/mail', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ nombre: nombre, mensaje: mensaje, presupuesto: presupuesto, producto: producto })
-          });
+            body: JSON.stringify({ nombre: nombre, mensaje: mensaje, presupuesto: presupuesto, producto: producto, trabajo: trabajo, puesto: puesto, email: email })
+        });
 
     }
     return (
         <section className={styles.form}>
-            <form>
+            <form onSubmit={handleClick}>
                 <p>
-                    <label htmlFor="name">Name</label>
-                    <input onChange={handleNameChange} type="text" name="name"/>
+                    <input onChange={(e) => setNombre(e.target.value)} type="text" name="name" placeholder="Mi nombre es*" required/>
                 </p>
                 <p>
-                    <label htmlFor="message" >Message</label>
-                    <textarea onChange={handleMessage} name="message"/>
+                    <input onChange={(e) => setEmail(e.target.value)} type="email" name="email" placeholder="Mi email es*" required/>
+                </p>
+                <p>
+                    <input onChange={(e) => setTrabajo(e.target.value)} type="text" name="job" placeholder="Estoy trabajando en"/>
+                </p>
+                <p>
+                    <input onChange={(e) => setPuesto(e.target.value)} type="text" name="position" placeholder="Mi puesto es"/>
                 </p>
                 <div>
-                <Select options={options1} onChange={handleSelectChange} instanceID="Necesidades" name="producto" styles={customStyles} placeholder="Estoy necesitando" />
-                <Select options={options2} onChange={handleSelectChange} instanceID="Presupuesto" name="presupuesto" styles={customStyles} placeholder="Mi presupuesto estimado es" />
+                <Select options={options1} onChange={handleSelectChange} id="producto" instanceID="12345" inputID="producto" name="producto" styles={customStyles} placeholder="Estoy necesitando" />
+                <Select options={options2} onChange={handleSelectChange} id="presupuesto" instanceID="86865" inputID="presupuesto" name="presupuesto" styles={customStyles} placeholder="Mi presupuesto estimado es" />
                 </div>
-                <button onClick={handleClick}>Submit</button>
+                <p>
+                    <textarea onChange={(e) => setMensaje(e.target.value)} name="message" placeholder="Mensaje"/>
+                </p>
+                <button >Enviar</button>
             </form>
         </section>
     )
