@@ -75,6 +75,7 @@ export default function Form () {
     }
 
     async function handleSubmit (e) {
+        e.preventDefault();
         const formData = {}
         Array.from(e.currentTarget.elements).forEach(field => 
             {if(!field.name) return;
