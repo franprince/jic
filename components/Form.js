@@ -80,7 +80,7 @@ export default function Form () {
         Array.from(e.currentTarget.elements).forEach(field => 
             {if(!field.name) return;
             formData[field.name] = field.value})
-            fetch('/api/mail', {
+            await fetch('/api/mail', {
                 method: 'post',
                 body: JSON.stringify(formData)
                 })
@@ -97,7 +97,7 @@ export default function Form () {
                     <textarea name="message"/>
                 </p>
                 <div>
-                <Select options={options1} instanceID="Producto" name="producto" styles={customStyles} placeholder="Estoy necesitando" />
+                <Select options={options1} instanceID="Necesidades" name="producto" styles={customStyles} placeholder="Estoy necesitando" />
                 <Select options={options2} instanceID="Presupuesto" name="presupuesto" styles={customStyles} placeholder="Mi presupuesto estimado es" />
                 </div>
                 <button>Submit</button>
