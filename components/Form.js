@@ -58,7 +58,7 @@ export default function Form () {
                 backgroundColor: "#C5C5C5"
             },
         }),
-        indicatorSeparator: () => ({
+        indicatorBanner: () => ({
             display: "none"
         }),
         indicatorsContainer: () => ({
@@ -113,14 +113,25 @@ export default function Form () {
                 <p>
                     <input onChange={(e) => setPuesto(e.target.value)} type="text" name="position" placeholder="Mi puesto es"/>
                 </p>
-                <div>
-                <Select options={options1} onChange={handleSelectChange} id="producto" instanceID="12345" inputID="producto" name="producto" styles={customStyles} placeholder="Estoy necesitando" />
-                <Select options={options2} onChange={handleSelectChange} id="presupuesto" instanceID="86865" inputID="presupuesto" name="presupuesto" styles={customStyles} placeholder="Mi presupuesto estimado es" />
+                <div className={styles.mobileCell}>
+                    <h2>Cuál es tu idea?</h2>
+                    <p>Hablemos sobre tu proyecto.</p>
                 </div>
+                <div>
+                    <Select options={options1} onChange={handleSelectChange} id="producto" instanceID="12345" inputID="producto" name="producto" styles={customStyles} placeholder="Estoy necesitando" />
+                </div>
+                <div>
+                    <Select options={options2} onChange={handleSelectChange} id="presupuesto" instanceID="86865" inputID="presupuesto" name="presupuesto" styles={customStyles} placeholder="Mi presupuesto estimado es" />
+                </div>
+                    
+                    
                 <p>
-                    <textarea onChange={(e) => setMensaje(e.target.value)} name="message" placeholder="Mensaje"/>
+                    <textarea rows="4" onChange={(e) => setMensaje(e.target.value)} name="message" placeholder="Detalles del proyecto, algo más que tenga que saber?"/>
                 </p>
-                <button >Enviar</button>
+                <div></div>
+                <div>
+                    <button >Enviar</button>
+                </div>
             </form>
         </section>
     )

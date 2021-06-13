@@ -46,7 +46,7 @@
 
 .double > .content > .info {
     width: 75%;
-    height: 72%;
+    min-height: 72%;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -54,8 +54,8 @@
 }
 
 .double > .content > .info > h2 {
-    font-size: 2.2rem;
-    line-height: 2.4rem;
+    font-size: 40px;
+    line-height: 115.5%;
     margin-top: 0;
     margin-bottom: 0.8rem;
     width: 100%;
@@ -67,7 +67,7 @@
     color: #828282;
     width: 100%;
     font-weight: 600 !important;
-    font-size: 1.1rem;
+    font-size: 18px;
     margin: 0;
     transition: all 0.5s ease;
 }
@@ -85,7 +85,7 @@
 }
 
 .double > .content > .info > p {
-    font-size: 1.2rem;
+    font-size: 20px;
     margin: 0;
     width: 100%;
     position: absolute;
@@ -107,7 +107,7 @@
 .single > .content {
     border-radius: 0 0 20px 20px;
     width: 100%;
-    max-height: 35%;
+    min-height: 35%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -116,15 +116,15 @@
 
 .single > .content > .info {
     margin: auto;
-    width: 85%;
-    height: 80%;
+    width: 80%;
+    min-height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .single > .content > .info > h2 {
-    font-size: 1.7rem;
+    font-size: 30px;
     line-height: 1.8rem;
     width: 80%;
     font-weight: 700 !important;
@@ -136,7 +136,7 @@
 
 .single > .content > .info > h3 {
     font-weight: 600 !important;
-    font-size: 1.2rem;
+    font-size: 18px;
     color: #828282;
     margin: 0;
     transition: all 0.5s ease;

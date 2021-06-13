@@ -1,7 +1,6 @@
 import Head from "next/head";
 import NavBar from "../../components/NavBar";
-import {useState, useEffect} from "react"
-import json from "../../aboutTest.json"
+import {useState} from "react"
 import AboutHeader from "../../components/AboutHeader";
 import TextSlider from "../../components/TextSlider"
 import PhGrid from "../../components/PhGrid"
@@ -15,7 +14,15 @@ import AboutVideo from "../../components/AboutVideo";
 
 const gridQuery = groq`*[_type=='phGrid'] {_id, 'assets': pics[].asset->url}`
 
-export default function About ({pics}) {
+const aboutQuery = groq`*[_type=='about'] {
+    _id,
+    "headerURL": header.asset -> url,
+    "personalImgURL": personalImg.asset -> url,
+    text,
+    videoID
+    }`
+
+export default function About ({pics, aboutApi}) {
 
 
     const [color, setColor] = useState("#FFF")
@@ -26,13 +33,13 @@ export default function About ({pics}) {
             <title>JIC | Sobre Mi</title>
         </Head>
         <NavBar color={color} iNavRef={"5"} theme={"light"}/>
-        <AboutHeader title="SOBRE MI" img={json[0].headerImg}/>
-        <Presentation img={json[0].personalImgURL}/>
-        <AboutVideo videoID={json[0].videoID}/>
+        <AboutHeader title="SOBRE MI" img={aboutApi[0].headerURL}/>
+        <Presentation img={aboutApi[0].personalImgURL}/>
+        <AboutVideo videoID={aboutApi[0].videoID}/>
         <PhGrid pictures={pics[0].assets} width="73%"/>
         <TextSlider />
         <InView threshold="0.5" onChange={(inView) => inView ? setColor("#000") : setColor("#FFF")}>
-        <WorkTogether text="Trabajemos juntos!" link="/"/>
+        <WorkTogether text="Trabajemos juntos!" link="/contact"/>
         </InView>
         <Footer/>
         </>
@@ -41,8 +48,9 @@ export default function About ({pics}) {
 
 export async function getStaticProps({ preview = false }) {
     const pics = overlayDrafts(await getClient(preview).fetch(gridQuery))
+    const aboutApi = overlayDrafts(await getClient(preview).fetch(aboutQuery))
     return {
-      props: { pics },
+      props: { pics, aboutApi },
       revalidate: 1
     }
   }

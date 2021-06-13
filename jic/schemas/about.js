@@ -9,14 +9,19 @@ export default {
         type: "image"
       },
       {
+        title: "Texto de descripción",
+        name: "text",
+        type: "text"
+      },
+      {
         title: "Imagen personal",
         name: "personalImg",
         type: "image"
       },
       {
-        title: "URL del video",
-        name: "url",
-        type: "url"
+        title: "ID del video",
+        name: "videoID",
+        type: "string"
       }
     ]
   }

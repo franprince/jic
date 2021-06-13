@@ -19,13 +19,20 @@
 
 .wrapper > section > article {
     position: relative;
-    padding-top: 56.25%;
     background-position: center;
     background-size: cover;
+    padding-top: 56.25%;
+    height: 0
+} 
+
+.wrapper > section > article >iframe {
+    position: absolute;
+    top: 0;
 } 
 
 .wrapper > a {
     margin-top: 3rem;
+    margin-bottom: 3rem;
     font-weight: 700;
     width: fit-content;
     padding: 0.7rem 2.3rem 0.7rem 2.3rem;

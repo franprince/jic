@@ -4,13 +4,21 @@ import Head from "next/head";
 import Image from "next/image"
 import Footer from "../../components/Footer"
 import WorkTogether from "../../components/WorkTogether"
-import json from "../../podcastTest.json"
 import { InView } from 'react-intersection-observer';
 import {useState} from "react"
 import styles from "../../styles/Podcast.module.css"
+import { getClient, overlayDrafts } from '../../lib/sanity.server'
+import {groq} from 'next-sanity'
+
+const podcastQuery = groq`*[_type=='podcast'] {
+    _id,
+    "headerURL": header.asset -> url,
+    "assets": pics[].asset -> url,
+    "podcastImgURL": podcastImg.asset -> url
+    }`
 
 
-export default function Podcast () {
+export default function Podcast ({podcastApi}) {
 
     const [color, setColor] = useState("#FFF")
 
@@ -22,7 +30,7 @@ export default function Podcast () {
             </title>
         </Head>
         <NavBar color={color} iNavRef={"4"} theme={"light"}/>
-        <PodcastHeader img={json[0].headerURL}/>
+        <PodcastHeader img={podcastApi[0].headerURL}/>
         <InView threshold="0.3" onChange={(inView) => inView ? setColor("#000") : setColor("#FFF")}>
         <main className={styles.main}>
             <section>
@@ -31,7 +39,7 @@ export default function Podcast () {
                 </article>
                 <article className={styles.img}>
                     <Image
-                src={json[0].podcastImgURL}
+                src={podcastApi[0].podcastImgURL}
                 alt="The Cali Show Podcast"
                 layout="fill"
                 objectFit="cover"
@@ -42,10 +50,10 @@ export default function Podcast () {
                 <article className={styles.disponible}>
                     <p>Disponible en</p>
                     <div className={styles.links}>
-                    <a href="https://www.youtube.com/watch?v=1RBARH-Jpxk&list=PLNQzQMQkAiUhel2EG-MNEFdM-qZbWeMlr"><img src="/img/yt.png" alt="Youtube" /></a>
+                    <a href="https://www.youtube.com/juanignaciocali"><img src="/img/yt.png" alt="Youtube" /></a>
                     <a href="https://open.spotify.com/show/6VHzEF8VKmRstoAdgwXFX9"><img src="/img/spoty.png" alt="Spotify" /></a>
-                    <a href="#"><img src="/img/podcast.png" alt="Apple Podcasts" /></a>
-                    <a href="https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy81NWZhNzdiMC9wb2RjYXN0L3Jzcw"><img src="/img/gpodcast.png" alt="Google Podcasts" /></a>
+                    <a href="https://podcasts.apple.com/ar/podcast/the-cali-show/id1562735300"><img src="/img/podcast.png" alt="Apple Podcasts" /></a>
+                    <a href="https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy81NWZhNzdiMC9wb2RjYXN0L3Jzcw=="><img src="/img/gpodcast.png" alt="Google Podcasts" /></a>
                     </div>
                 </article>
             </section>
@@ -57,9 +65,9 @@ export default function Podcast () {
         </main>
         </InView>
         <section className={styles.pictures}>
-            {json[0].picsURL.map(picture=>{
+            {podcastApi[0].assets.map(picture=>{
                 return (
-                    <article key={json[0].picsURL.indexOf(picture)} className={json[0].picsURL.indexOf(picture) == 2 ? styles.last : styles.notLast}>
+                    <article key={podcastApi[0].assets.indexOf(picture)} className={podcastApi[0].assets.indexOf(picture) == 2 ? styles.last : styles.notLast}>
                 <Image
                 src={picture}
                 alt="The Cali Show Podcast"
@@ -67,15 +75,24 @@ export default function Podcast () {
                 objectFit="cover"
                 objectPosition="top"
                 quality={100}
+                priority={true}
                 />
             </article>
                 )
             })}
         </section>
         <InView threshold="0.8" onChange={(inView) => inView ? setColor("#000") : setColor("#FFF")}>
-        <WorkTogether text="Mi Canal de YouTube" link="https://www.youtube.com/channel/UC2Xel3b_bb-RwcpZk0U4yuA"/>
+        <WorkTogether text="Instagram del Podcast" link="https://www.instagram.com/calishowpodcast/"/>
         </InView>
         <Footer/>
         </>
     )
 }
+
+export async function getStaticProps({ preview = false }) {
+    const podcastApi = overlayDrafts(await getClient(preview).fetch(podcastQuery))
+    return {
+      props: { podcastApi },
+      revalidate: 1
+    }
+  }

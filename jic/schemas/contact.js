@@ -7,11 +7,6 @@ export default   {
         title: "Imagen del encabezado",
         name: "header",
         type: "image"
-      },
-      {
-        title: "Imagen Parallax",
-        name: "parallax",
-        type: "image"
       }
     ]
   }

@@ -50,7 +50,7 @@ export default function Navbar({color, iNavRef, theme}) {
     }
     
     useEffect(() => {
-        if (size.width && size.width < 700) {
+        if (size.width && size.width < 1000) {
             setOpen(false)
             setInitialNavbar(false)
             setMobile(true)
@@ -62,7 +62,7 @@ export default function Navbar({color, iNavRef, theme}) {
     useEffect(() => handleScroll(), [size])
 
     const handleScroll = () => {
-        if (window.scrollY > 200 || (size.width && size.width < 700)) {
+        if (window.scrollY > 200 || (size.width && size.width < 1000)) {
             setInitialNavbar(false)
             setOpen(false)
         } else if (window.scrollY == 0 && size.width < 700) {
@@ -91,7 +91,7 @@ export default function Navbar({color, iNavRef, theme}) {
     <nav className={styles.wrapper}>
         <main>
             <Link href="/">
-                <a><h2 style={{color: color}}>JIC</h2></a>
+                <a><h2 style={!mobile ? {color: color} : open ? {color: "#FFF"} : {color: color}}>JIC</h2></a>
             </Link>
         <motion.nav className={styles.nav} animate={open ? "open" : "closed"} variants={variants} transition={{ type: "spring", duration: 0.6}}>
                     <motion.div className={styles.bg} animate={initialNavBar ? "closed" : open ? "open" : "closed"} variants={bgVariants} transition={{ type: "ease", duration: 0.2}}></motion.div>

@@ -1,20 +1,33 @@
 import NavBar from "../../components/NavBar";
-import {useState, useEffect} from "react"
+import {useState} from "react"
 import Head from "next/head";
-import json from "../../youtubeTest.json"
 import Header from "../../components/Header";
-import Separator from "../../components/Separator"
+import Banner from "../../components/Banner"
 import { InView } from 'react-intersection-observer';
 import Videos from "../../components/Videos";
 import Footer from "../../components/Footer"
 import ContactCard from "../../components/ContactCard"
 import WorkTogether from "../../components/WorkTogether"
+import { getClient, overlayDrafts } from '../../lib/sanity.server'
+import {groq} from 'next-sanity'
 
-export default function Youtube () {
+const ytQuery = groq`*[_type=='youtube'] {
+    _id,
+    "headerURL": header.asset -> url,
+    ids,
+    "personalImgURL": personalImg.asset -> url
+    }`
+
+    const bannerQuery = groq`*[_type=='about'] {
+        _id,
+        "headerURL": header.asset -> url
+        }`
+
+export default function Youtube ({ytApi, banner}) {
 
     const [color, setColor] = useState("#FFF")
 
-    const videos = json[0].ids
+    const videos = ytApi[0].ids
 
     return (
         <>
@@ -22,14 +35,23 @@ export default function Youtube () {
             <title>JIC | YouTube</title>
             </Head>
             <NavBar color={color} iNavRef={"3"} theme={"light"}/>
-            <Header img={json[0].headerURL} title={`YOUTUBE IN\nPROGRESS`} home={false}/>
+            <Header img={ytApi[0].headerURL} title={`YOUTUBE IN\nPROGRESS`} home={false}/>
             <Videos videos={videos}/>
-            <ContactCard img={json[0].personalImgURL}/>
-            <Separator/>
+            <Banner img={banner[0].headerURL}/>
+            <ContactCard img={ytApi[0].personalImgURL}/>
             <InView threshold="0.5" onChange={(inView) => inView ? setColor("#000") : setColor("#FFF")}>
-            <WorkTogether text="Trabajemos juntos!" link ="/"/>
+            <WorkTogether text="Trabajemos juntos!" link ="/contact"/>
             </InView>
             <Footer/>
         </>
     )
 }
+
+export async function getStaticProps({ preview = false }) {
+    const ytApi = overlayDrafts(await getClient(preview).fetch(ytQuery))
+    const banner = overlayDrafts(await getClient(preview).fetch(bannerQuery))
+    return {
+      props: { ytApi, banner },
+      revalidate: 1
+    }
+  }

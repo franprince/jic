@@ -8,23 +8,8 @@ export default function Videos ({videos}) {
             <section>
                 {videos && videos.map(item => {
                     return (
-                        <article style={{backgroundImage: `url(https://i.ytimg.com/vi/${item}/hqdefault.jpg)`}}>
-                            <ReactPlayer
-                            url={`https://youtu.be/${item}`}
-                            playIcon={<PlayArrow arrowColor={"#FFF"}/>}
-                            light={true}
-                            height={"100%"}
-                            width={"100%"}
-                            controls={false}
-                            muted={true}
-                            autoPlay={true}
-                            style={{position: "absolute", top: "0", left: "0"}}
-                            config={{
-                                youtube: {
-                                    playerVars: { autoplay: 1, showinfo: 0, playsinline: 1 }
-                                }
-                            }}
-                            />
+                        <article key={item}>
+                            <iframe width="100%" height="100%" src={`https://www.youtube.com/embed/${item}`} title="YouTube video player" frameBorder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         </article>
                     )
                 })}

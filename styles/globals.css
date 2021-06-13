@@ -26,9 +26,9 @@ a {
 }
 
 @font-face {
-  font-family: 'Barlow Condensed';
+  font-family: 'Poppins';
   font-weight: 200;
-  src: url('/fonts/BarlowCondensed-ExtraLightItalic.ttf');
+  src: url('/fonts/Poppins-LightItalic.ttf');
 }
 
 @font-face {

@@ -1,12 +1,12 @@
 .main {
     width: 100%;
     background-color: white;
-    padding-bottom: 8rem;
     position: relative;
+    padding-bottom: 3rem;
 }
 
 .main > section:not(.circleWrapper) {
-    width: 25%;
+    width: 40%;
     margin: auto;
     position: relative;
     display: flex;
@@ -15,12 +15,16 @@
 
 .main > section > article {
     position: relative;
-    padding: 6rem 0 0 0;
     line-height: 2.5rem;
-    font-size: 1.2rem;
+    font-size: 20px;
     z-index: 1;
     text-align: center;
 }
+
+.main > section > article:first-of-type {
+    padding: 7rem 0 7rem 0
+}
+
 .main > section > article > div:not(.links) {
     position: relative !important;
     border-radius: 22px;
@@ -32,14 +36,19 @@
 }
 
 .main > section > article > div > a > img {
-    width: 2.5rem;
+    width: 4rem;
 }
 
 .disponible {
+    margin: 4rem auto 6rem auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.disponible > p {
+    padding-bottom: 1rem;
 }
 
 .links {
@@ -48,7 +57,7 @@
 .circleWrapper {
     position: absolute;
     left: 50%;
-    transform: translate(-50%,-55%);
+    transform: translate(-50%,-80%);
     overflow: hidden;
     height: 50rem;
 }
@@ -83,36 +92,33 @@
 }
 
 
-@media(max-width: 1400px) {
-    /* .circleWrapper {
-        top: 48%;
-    } */
+@media (max-width: 700px) {
 
-    .pictures > article > div > img {
-        min-height: 25rem !important;
-        width: 100%;
-        position: relative !important;
-    }
+    .circle {
+        width: 2800px;
+        height: 2800px;
+        background-color: #80FFDB;
+        border-radius: 50%;
     
-}
-
-@media (max-width: 600px) {
+    }
 
     .main {
-        padding-bottom:  0;
+        margin-bottom:  -10rem;
+        padding-bottom: 0;
     }
     .main > section:not(.circleWrapper) {
         width: 75%;
-        top: -10rem;
+        top: -12rem;
     }
 
     .img {
         order: -1;
+        margin-bottom: 4rem !important;
     }
 
     .disponible {
-        margin-bottom: 0;
-        margin-top: 5rem;
+        width: 100% !important;
+        margin: 8rem auto 8rem auto !important
     }
     .pictures {
         display: grid;
@@ -125,12 +131,32 @@
         height: 40rem !important;
     }
     .links {
-        width: 80%;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        width: 100%;
     }
 
     .main > section > article > div > a > img {
         width: 4rem;
+    }
+
+    .main > section > article:first-of-type {
+        padding: 1rem 0 1rem 0;
+        margin-bottom: 6rem;
+    }
+
+    .main > section > article {
+        font-size: 18px;
+        width: 100%;
+        margin:0 auto 5rem auto;
+        padding-top: 0;
+    }
+
+    .circleWrapper {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,-75%);
+        overflow: hidden;
+        height: 50rem;
     }
 }

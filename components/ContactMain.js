@@ -1,6 +1,4 @@
 import styles from "../styles/ContactMain.module.css"
-import Select from 'react-select'
-import {useState} from "react"
 import Form from "./Form"
 
 export default function ContactMain () {
@@ -18,6 +16,14 @@ export default function ContactMain () {
                     <p>juan.ignacio.cali@gmail.com</p>
                     <p>+54 221 356-3090</p>
                     <h3>Seguime</h3>
+                    <article className={styles.links}>
+                        <a href="https://www.instagram.com/juanignaciocali/">
+                            <img src="/img/instagram.png" alt="Ir a Instagram" className={styles.icon}/>
+                        </a>
+                        <a href="mailto:juanignaciocali@gmail.com">
+                            <img src="/img/mail.png" alt="Contactame por email" className={styles.icon}/>
+                        </a>
+                </article>
                 </article>
                 <article className={styles.area3}>
                     <h2>Quién sos?</h2>

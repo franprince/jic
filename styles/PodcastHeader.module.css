@@ -21,7 +21,6 @@
     font-weight: 700;
     font-size: 4.7rem;
     margin-bottom: 0.5rem;
-    letter-spacing: 1px;
     z-index: 1;
     font-family: 'Gobold', sans-serif;
 }
@@ -47,14 +46,14 @@
 
 @media (max-width: 700px) {
     .wrapper {
-        height: 100vh;
+        height: 120vh;
     }
     .header > section {
-        margin: 45% auto auto auto;
+        margin: 50% auto auto auto;
         padding: 0;
     }
     .header > section > h1 {
-        font-size: 3.7rem;
+        font-size: 55px;
         letter-spacing: 0px;
     }
     

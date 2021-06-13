@@ -48,7 +48,7 @@ export default function Projects({projectsApi, projectsPageApi, pics}) {
         <PhGrid pictures={pics[0].assets} width="78%"/>
         </InView>
         <InView onChange={(InView) => InView && setColor("#000")}>
-        <WorkTogether text="Trabajemos juntos!" link="/"/>
+        <WorkTogether text="Trabajemos juntos!" link="/contact"/>
         </InView>
         <Footer/>
         </>

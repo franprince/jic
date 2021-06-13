@@ -15,11 +15,6 @@ export default {
         of: [{type: "string"}]
       },
       {
-        title: "Imagen Parallax",
-        name: "parallaxImg",
-        type: "image",
-      },
-      {
         title: "Imagen personal",
         name: "personalImg",
         type: "image"
