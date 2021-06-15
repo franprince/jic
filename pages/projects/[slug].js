@@ -4,6 +4,7 @@ import { getClient, overlayDrafts } from '../../lib/sanity.server'
 import {groq} from 'next-sanity'
 import ReactPlayer from 'react-player'
 import NavBar from "../../components/NavBar"
+import Banner from "../../components/Banner"
 import ProjectHeader from "../../components/ProjectHeader"
 import PlayArrow from "../../components/PlayArrow"
 import Screenshots from "../../components/Screenshots"
@@ -34,7 +35,13 @@ const projectQuery = groq`*[ _type == 'project' ]{
   _createdAt
 } | order(_createdAt asc)`
 
-export default function Details ({pageSlug, projects}) {
+const bannerQuery = groq`*[_type=='banner'] {
+  _id,
+  "headerURL": header.asset -> url
+  }`
+
+
+export default function Details ({pageSlug, projects, banner}) {
 
   const thisProject = projects.filter(project => project.slug.current == pageSlug) // Evita que el proyecto actual sea sugerido en la parte de abajo
   const clearProjects = projects.filter(project => project.name != thisProject[0].name)
@@ -89,25 +96,16 @@ export default function Details ({pageSlug, projects}) {
         </div>
 
       <Description text={thisProject[0].description} title="El proyecto"/>
-      <InView onChange={(inView) => inView && setColor("#FFF")}>
+      <InView threshold="0.3" onChange={(inView) => inView && setColor("#FFF")}>
       <Screenshots screenshots={screenshots}/>
       </InView>
-      <InView onChange={(inView) => inView && setColor("#000")}>
+      <InView threshold="0.3" onChange={(inView) => inView && setColor("#000")}>
       <Description text={thisProject[0].process} title="El proceso"/>
       </InView>
-      <InView onChange={(inView) => inView && setColor("#FFF")}>
-        <article className={styles.image}>
-          <Image
-                src="/img/separador.png"
-                alt="Imagen de separador"
-                layout="fill"
-                objectFit="cover"
-                quality={100}
-                priority={true}
-                />
-      </article>
+      <InView threshold="0.3" onChange={(inView) => inView && setColor("#FFF")}>
+      <Banner img={banner[0].headerURL}/>
       </InView>
-      <InView onChange={(inView) => inView && setColor("#FFF")}>
+      <InView threshold="0.3" onChange={(inView) => inView && setColor("#FFF")}>
       <Description text={thisProject[0].credits} title="Créditos" credits={true}/>
       </InView>
       <InView threshold="0.3" onChange={(inView) => inView && setColor("#000")}>
@@ -121,12 +119,13 @@ export default function Details ({pageSlug, projects}) {
 export const getServerSideProps = async pageContext => {
     const pageSlug = pageContext.query.slug
     const projects = overlayDrafts(await getClient().fetch(projectQuery))
+    const banner = overlayDrafts(await getClient().fetch(bannerQuery))
       if (!pageSlug) {
         return {
             notFound: true
         } 
       }
       return {
-        props: {pageSlug, projects}
+        props: {pageSlug, projects, banner}
         }
 }

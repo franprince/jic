@@ -83,11 +83,12 @@
 }
 
 @media (max-width: 700px) {
+
     .main > section {
         flex-direction: column;
         padding: 0 ;
         width: 100%;
-        margin: auto;
+        margin: -10rem auto auto auto;
     }
 
     .main > section > article:first-child {
@@ -120,8 +121,7 @@
 
     .main > section > article > div:not(.links) {
         position: relative !important;
-        top: -100px !important;
-        transform: scale(0.6);
+        transform: scale(0.57);
     }
 
     .links {

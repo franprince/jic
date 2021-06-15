@@ -12,7 +12,7 @@
 @media (max-width: 700px) {
     .container {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(6, 21rem);
+        grid-template-rows: repeat(6, 16rem);
         height: fit-content;
     }
 }

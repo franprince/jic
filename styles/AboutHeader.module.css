@@ -44,6 +44,8 @@
     
     .contactTitles > h1:not(:first-child) {
         display: block;
+        font-size: 30px;
+        margin-bottom: -8rem
     }
     
 }

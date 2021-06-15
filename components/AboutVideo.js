@@ -3,7 +3,6 @@ import styles from "../styles/AboutVideo.module.css"
 
 export default function AboutVideo ({videoID}) {
 
-    console.log(videoID)
     return (
         <section className={styles.film}>
         <h2>Un film acerca de mí</h2>

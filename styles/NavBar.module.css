@@ -90,7 +90,7 @@
 }
 
 .bg {
-    background-color: rgba(0, 0, 0, 0.568);
+    background-color: rgba(0, 0, 0, 0.842);
     z-index: -1;
     height: 100%;
     width: 150% !important;
@@ -128,6 +128,9 @@
 }
 
 @media (max-width: 1000px) {
+    .wrapper > main {
+        width: 90%;
+    }
     .wrapper > main > a {
         flex: 0;
         position: absolute;

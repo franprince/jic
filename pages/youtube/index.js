@@ -18,7 +18,7 @@ const ytQuery = groq`*[_type=='youtube'] {
     "personalImgURL": personalImg.asset -> url
     }`
 
-    const bannerQuery = groq`*[_type=='about'] {
+    const bannerQuery = groq`*[_type=='banner'] {
         _id,
         "headerURL": header.asset -> url
         }`

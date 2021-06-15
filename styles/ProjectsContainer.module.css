@@ -41,8 +41,9 @@
 .buttons > button {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
+    font-size: 16px;
     outline: none;
-    padding: 0.5rem 1.2rem 0.5rem 1.2rem;
+    padding: 0.5rem 2rem 0.5rem 2rem;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.5s ease;
@@ -61,7 +62,7 @@
 }
 
 .buttons > button:not(:last-child) {
-    margin-right: 1rem;
+    margin-right: 1.5rem;
 }
 
 .buttons > .button:hover {
@@ -87,8 +88,8 @@
 }
 
 .last > article > h2 {
-    font-size: 2.2rem;
-    line-height: 2.5rem;
+    font-size: 38px;
+    line-height: 98.7%;
 }
 
 .last > article > a, .lastDouble > article > a {
@@ -97,8 +98,23 @@
     border-radius: 50px;
     font-weight: 700;
     width: fit-content;
-    color: #000
+    color: #000;
+    transition: all 0.3s ease;
+    border: 1px solid white;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+.last > article > a:hover, .lastDouble > article > a:hover {
+    background-color: black;
+    padding: 0.5rem 1.2rem 0.5rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    width: fit-content;
+    color: #FFF;
+    border: 1px solid white;
+}
+
 @media (max-width: 700px) {
     .grid {
         display: flex;

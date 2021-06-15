@@ -35,13 +35,13 @@
     display: flex;
     flex-direction: column;
     width: 50%;
-    height: 100%;
     color: #000;
 }
 
 .double > .content { /* Sección de descripción */
     border-radius: 20px 0 0 20px;
     align-items: center;
+    height: 100%;
 }
 
 .double > .content > .info {
@@ -55,9 +55,9 @@
 
 .double > .content > .info > h2 {
     font-size: 40px;
-    line-height: 115.5%;
+    line-height: 98.7%;
     margin-top: 0;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.3rem;
     width: 100%;
     white-space: pre-line;
     transition: all 0.5s ease;
@@ -89,7 +89,7 @@
     margin: 0;
     width: 100%;
     position: absolute;
-    bottom: 0;
+    bottom: -1.2rem;
 }
 
 .arrow {
@@ -126,7 +126,7 @@
 .single > .content > .info > h2 {
     font-size: 30px;
     line-height: 1.8rem;
-    width: 80%;
+    width: 90%;
     font-weight: 700 !important;
     margin-top: 0;
     margin-bottom: 0.5rem;
@@ -137,6 +137,7 @@
 .single > .content > .info > h3 {
     font-weight: 600 !important;
     font-size: 18px;
+    line-height: 120%;
     color: #828282;
     margin: 0;
     transition: all 0.5s ease;
@@ -148,12 +149,17 @@
 
 @media (max-width: 700px) {
     .single {
-        height: 30rem;
+        min-height: fit-content;
     }
+
     .single > .content {
-        max-height: 30%;
+        min-height: fit-content;
+    }
+
+    .info {
+        padding: 2rem 0 2rem 0
     }
     .single > .content > .info > h2 {
-        width: 100%;
+        width: 75%;
     }
 }
