@@ -16,7 +16,7 @@ export default function Footer () {
                     <a href="https://www.instagram.com/juanignaciocali/">
                         <img src="/img/instagram.png" alt="Ir a Instagram"/>
                     </a>
-                    <a href="wa.link/yxd518">
+                    <a href="https://wa.me/542213563090">
                         <img src="/img/whatsapp.png" alt="Contactame por WhatsApp"/>
                     </a>
                     </div>

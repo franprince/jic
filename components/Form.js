@@ -1,6 +1,6 @@
 import Select from 'react-select'
 import styles from "../styles/Form.module.css"
-import {useEffect, useState} from "react"
+import {useRef, useState} from "react"
 
 export default function Form () {
 
@@ -81,6 +81,7 @@ export default function Form () {
     const [trabajo, setTrabajo] = useState('')
     const [puesto, setPuesto] = useState('')
     const [email, setEmail] = useState()
+    const [sent, setSent] = useState(false)
 
     const handleSelectChange = (selectedOption) => {
         if (selectedOption.category == "1") {
@@ -90,49 +91,72 @@ export default function Form () {
         }
     }
 
-    const handleClick = (e) => {
+    const formName = useRef(null)
+    const formProduct = useRef(null)
+    const formBudget = useRef(null)
+    const formEmail = useRef(null)
+    const formPosition = useRef(null)
+    const formMessage = useRef(null)
+    const formJob = useRef(null)
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
         fetch('/api/mail', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ nombre: nombre, mensaje: mensaje, presupuesto: presupuesto, producto: producto, trabajo: trabajo, puesto: puesto, email: email })
         });
-
+        setSent(true)
+        formName.current.value = ""
+        formEmail.current.value = ""
+        formJob.current.value = ""
+        formPosition.current.value = ""
+        formProduct.current.value = ""
+        formBudget.current.value = ""
+        formMessage.current.value = ""
     }
     return (
         <section className={styles.form}>
-            <form onSubmit={handleClick}>
+            <form onSubmit={handleSubmit}>
                 <p>
-                    <input onChange={(e) => setNombre(e.target.value)} type="text" name="name" placeholder="Mi nombre es*" required/>
+                    <input ref={formName} onChange={(e) => setNombre(e.target.value)} type="text" name="name" placeholder="Mi nombre es*" required/>
                 </p>
                 <p>
-                    <input onChange={(e) => setEmail(e.target.value)} type="email" name="email" placeholder="Mi email es*" required/>
+                    <input ref={formEmail} onChange={(e) => setEmail(e.target.value)} type="email" name="email" placeholder="Mi email es*" required/>
                 </p>
                 <p>
-                    <input onChange={(e) => setTrabajo(e.target.value)} type="text" name="job" placeholder="Estoy trabajando en"/>
+                    <input ref={formJob} onChange={(e) => setTrabajo(e.target.value)} type="text" name="job" placeholder="Estoy trabajando en"/>
                 </p>
                 <p>
-                    <input onChange={(e) => setPuesto(e.target.value)} type="text" name="position" placeholder="Mi puesto es"/>
+                    <input ref={formPosition} onChange={(e) => setPuesto(e.target.value)} type="text" name="position" placeholder="Mi puesto es"/>
                 </p>
                 <div className={styles.mobileCell}>
                     <h2>Cuál es tu idea?</h2>
                     <p>Hablemos sobre tu proyecto.</p>
                 </div>
                 <div>
-                    <Select options={options1} onChange={handleSelectChange} id="producto" instanceID="12345" inputID="producto" name="producto" styles={customStyles} placeholder="Estoy necesitando" />
+                    <Select ref={formProduct} options={options1} onChange={handleSelectChange} id="producto" instanceID="12345" inputID="producto" name="producto" styles={customStyles} placeholder="Estoy necesitando" />
                 </div>
                 <div>
-                    <Select options={options2} onChange={handleSelectChange} id="presupuesto" instanceID="86865" inputID="presupuesto" name="presupuesto" styles={customStyles} placeholder="Mi presupuesto estimado es" />
+                    <Select ref={formBudget} options={options2} onChange={handleSelectChange} id="presupuesto" instanceID="86865" inputID="presupuesto" name="presupuesto" styles={customStyles} placeholder="Mi presupuesto estimado es" />
                 </div>
                     
                     
                 <p>
-                    <textarea rows="4" onChange={(e) => setMensaje(e.target.value)} name="message" placeholder="Detalles del proyecto, algo más que tenga que saber?"/>
+                    <textarea ref={formMessage} rows="4" onChange={(e) => setMensaje(e.target.value)} name="message" placeholder="Detalles del proyecto, algo más que tenga que saber?"/>
                 </p>
                 <div></div>
                 <div>
-                    <button >Enviar</button>
+                    <button>Enviar</button>
                 </div>
             </form>
+            <div className={styles.sent} style={sent ? {display: "flex"} : {display: "none"}}>
+                <section>
+                    <img src="/img/checked.png" alt="Enviado exitosamente" />
+                    <button onClick={(e) => setSent(false)}>X</button>
+                    Mensaje enviado exitosamente! Muchas gracias.
+                </section>
+            </div>
         </section>
     )
 }
