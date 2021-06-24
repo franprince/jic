@@ -50,14 +50,7 @@ export default function ProjectCard ({item, shown}) {
                 </section>
             </div>
             <div className={styles.img}>
-            <Image
-                src={item.imageUrl}
-                alt={item.name}
-                layout="fill"
-                objectFit="cover"
-                quality={100}
-                className={styles.imgBorder}
-                />
+                <img src={item.imageUrl} alt={item.name} className={styles.imgBorder}/>
             </div>
         </article>
         </Link>

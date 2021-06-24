@@ -76,9 +76,15 @@
     height: 100%;
     width: 100%;
     position: relative;
+    overflow: hidden;
 }
 
-.double > .img > div > .imgBorder {
+.double > .img > img {
+    height: 100%;
+    width: 100%;
+}
+
+.double > .img > .imgBorder {
     width: 100%;
     border-radius: 0 20px 20px 0;
     transition: all 0.5s ease;
@@ -102,6 +108,15 @@
 .single {
     border-radius: 0 0 20px 20px;
     width: 100%;
+}
+
+.single > .img {
+    overflow: hidden;
+}
+
+.single > .img > img {
+    width: 100%;
+    height: 100%;
 }
 
 .single > .content {
@@ -143,7 +158,7 @@
     transition: all 0.5s ease;
 }
 
-.single > .img > div > .imgBorder {
+.single > .img > .imgBorder {
     border-radius: 20px 20px 0 0;
 }
 
