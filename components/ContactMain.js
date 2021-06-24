@@ -21,7 +21,7 @@ export default function ContactMain () {
                             <img src="/img/instagram.png" alt="Ir a Instagram" className={styles.icon}/>
                         </a>
                         <a href="mailto:juanignaciocali@gmail.com">
-                            <img src="/img/mail.png" alt="Contactame por email" className={styles.icon}/>
+                            <img src="/img/gmail.svg" alt="Contactame por email" className={styles.icon}/>
                         </a>
                 </article>
                 </article>

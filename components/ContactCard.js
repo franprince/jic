@@ -20,7 +20,7 @@ export default function ContactCard ({img}) {
                 <h3>Contactate conmigo!</h3>
                 <article className={styles.links}>
                 <a href="mailto:juanignaciocali@gmail.com">
-                    <img src="/img/mail.png" alt="Contactame por email" className={styles.icon}/>
+                    <img src="/img/gmail.svg" alt="Contactame por email" className={styles.icon}/>
                 </a>
                 <a href="https://www.instagram.com/juanignaciocali/">
                     <img src="/img/instagram.png" alt="Ir a Instagram" className={styles.icon}/>
