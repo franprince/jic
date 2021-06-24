@@ -82,6 +82,8 @@
 .double > .img > img {
     height: 100%;
     width: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .double > .img > .imgBorder {
@@ -117,6 +119,8 @@
 .single > .img > img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .single > .content {
