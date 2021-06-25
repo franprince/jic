@@ -7,10 +7,13 @@ import Link from 'next/link'
 export default function Navbar({color, iNavRef, theme}) {
 
     const [initialNavBar, setInitialNavbar] = useState(true)
-    const [open, setOpen] = useState(true)
+    const [open, setOpen] = useState(false)
     const [mobile, setMobile] = useState()
     const navRef = useRef(iNavRef)
     
+    if (iNavRef == undefined) {
+        navRef.current = "0"
+    }
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
@@ -60,18 +63,29 @@ export default function Navbar({color, iNavRef, theme}) {
     }, [size])
 
     useEffect(() => handleScroll(), [size])
-
-    const handleScroll = () => {
-        if (window.scrollY > 200 || (size.width && size.width < 1000)) {
+    useEffect(() => {
+        if (size.width < 700) {
             setInitialNavbar(false)
-            setOpen(false)
-        } else if (window.scrollY == 0 && size.width < 700) {
-            setOpen(false)
-        }
-        else {
+            if (window.scrollY == 0) {
+                setOpen(false)
+            } else {setOpen(open)}
+        } else {
             setInitialNavbar(true)
             setOpen(true)
         }
+    }, [size])
+
+    const handleScroll = () => {
+        if (window.scrollY > 200 && size.width > 700) {
+            setInitialNavbar(false)
+            setOpen(false)
+        } else {
+             setOpen(open)
+             setInitialNavbar(false)
+        // } else if (window.scrollY > 0 && size.width < 700) {
+        //     setOpen(open)
+        // }
+        } 
     }
     
 
@@ -91,20 +105,22 @@ export default function Navbar({color, iNavRef, theme}) {
     <nav className={styles.wrapper}>
         <main>
             <Link href="/">
-                <a><h2 style={!mobile ? {color: color} : open ? {color: "#FFF"} : {opacity: "0"}}>JIC</h2></a>
+                <a><h2 style={!mobile ? {color: color, opacity: "1"} : open ? {color: "#FFF", opacity: "1"} : {opacity: "0"}}>JIC</h2></a>
             </Link>
         <motion.nav className={styles.nav} animate={open ? "open" : "closed"} variants={variants} transition={{ type: "spring", duration: 0.6}}>
                     <motion.div className={styles.bg} animate={initialNavBar ? "closed" : open ? "open" : "closed"} variants={bgVariants} transition={{ type: "ease", duration: 0.2}}></motion.div>
             <ul className={theme == "light" ? styles.light : initialNavBar ? styles.dark : styles.light}>
-                <Link href="/projects">
+                <Link href="/">
                     <a onClick={handleRef}>
-                        <li id="1" className={initialNavBar ? styles.liFirst : styles.liScrolledFirst}
-                        style={navRef.current == "1" ? {fontWeight: "700", pointerEvents: "none"} : {fontWeight: "300"}}>PROYECTOS</li>
+                        <li id="0" className={initialNavBar ? styles.liFirst : styles.liScrolledFirst}
+                        style={navRef.current == "0" ? {fontWeight: "700", pointerEvents: "none"} : {fontWeight: "300"}}>HOME</li>
                         </a>
                 </Link>
-                <Link href="/#services">
-                    <a onClick={() => {navRef.current == "2"}}><li id="2" className={initialNavBar ? styles.li : styles.liScrolled}
-                    style={navRef.current == "2" ? {fontWeight: "700", pointerEvents: "none"} : {fontWeight: "300"}}>SERVICIOS</li></a>
+                <Link href="/projects">
+                    <a onClick={handleRef}>
+                        <li id="1" className={initialNavBar ? styles.li : styles.liScrolled}
+                        style={navRef.current == "1" ? {fontWeight: "700", pointerEvents: "none"} : {fontWeight: "300"}}>PROYECTOS</li>
+                        </a>
                 </Link>
                 <Link href="/youtube">
                     <a href="/youtube"><li id="3" className={initialNavBar ? styles.li : styles.liScrolled}
@@ -115,24 +131,24 @@ export default function Navbar({color, iNavRef, theme}) {
                     style={navRef.current == "4" ? {fontWeight: "700", pointerEvents: "none"} : {fontWeight: "300"}}>PODCAST</li></a>
                 </Link>
                 <Link href="/about">
-                    <a><li id="5" className={initialNavBar ? styles.li : styles.liScrolled}
+                    <a><li id="5" className={initialNavBar ? styles.liLast : styles.liLastScrolled}
                     style={navRef.current == "5" ? {fontWeight: "700", pointerEvents: "none"} : {fontWeight: "300"}}>SOBRE MI</li></a>
                 </Link>
                 <Link href="/contact">
-                    <a><li id="6" className={initialNavBar? styles.liLast : styles.liScrolled}
+                    <a><li id="6" className={initialNavBar? styles.contact : styles.contactScrolled}
                     style={navRef.current == "6" ? {fontWeight: "700", pointerEvents: "none"} : {fontWeight: "300"}}>CONTACTO</li></a>
                 </Link>
                 <li className={styles.links} style={mobile ? {display: "flex"} : {display: "none"}}>
-                    <a href="https://www.instagram.com/juanignaciocali/">
+                    <a href="https://www.instagram.com/juanignaciocali/" target="_blank">
                         <img src="/img/instagram.png" alt="Ir a Instagram"/>
                     </a>
-                    <a href="https://www.youtube.com/channel/UC2Xel3b_bb-RwcpZk0U4yuA">
+                    <a href="https://www.youtube.com/channel/UC2Xel3b_bb-RwcpZk0U4yuA" target="_blank">
                         <img src="/img/youtube.svg" alt="Ir a YouTube"/>
                     </a>
-                    <a href="mailto:juanignaciocali@gmail.com">
+                    <a href="mailto:juanignaciocali@gmail.com" target="_blank">
                         <img src="/img/gmail.svg" alt="Contactame por email"/>
                     </a>
-                    <a href="wa.link/yxd518">
+                    <a href="https://wa.me/542213563090" target="_blank">
                         <img src="/img/wsp.svg" alt="Contactame por WhatsApp"/>
                     </a>
                 </li>

@@ -24,6 +24,7 @@
 
 .wrapper > main > a > h2 {
     z-index: 3;
+    opacity: 0;
     transition: all 0.5s ease;
     font-size: 1.6rem;
     text-shadow: 2px 2px 3px rgba(150, 150, 150, 0.63);
@@ -57,37 +58,56 @@
     line-height: 1.5rem;
     position: relative;
     opacity: 0;
+    display: flex;
+    align-content: center;
 }
 
 .nav > ul {
     display: flex;
-    padding: 0.5rem 1rem 0.5rem 1rem;
+    padding: 0.5rem 1rem 0.5rem 1.5rem;
     margin: 0;
 }
 
 .nav > ul > a {
     list-style: none;
     color: white;
+    display: flex;
+    align-content: center;
 }
 
 .nav > ul > a > li {
     transition: all 0.3s ease;
     font-weight: 100;
+    align-self: center;
 }
 
 .nav > ul > a > li:hover {
-    font-weight: 600 !important;
+    font-weight: 700 !important;
 }
 
 
-.nav > ul > a > .liLast {
-    border: none;
-    padding-left: 0.5rem;
+.nav > ul > a > .contact, .contactScrolled {
+    border: 2px solid white;
+    border-radius: 20px;
+    margin-left: 0.5rem;
+    padding: 0.25rem 1.8rem 0.25rem 1.8rem;
+}
+
+.contact:hover, .contactScrolled:hover {
+    font-weight: 700 !important;
+    background-color: white;
+    border: 2px solid white;
+    color: black;
 }
 
 .nav > ul > a > .liScrolled {
     border: none;
     padding-left: 0.7rem;
+}
+
+.liLast, .liLastScrolled {
+    padding-left: 0.5rem;
+    margin-right: 0.1rem;
 }
 
 .bg {
@@ -98,6 +118,12 @@
     position: fixed;
     border-radius: 50px;
     opacity: 0;
+    pointer-events: none;
+}
+
+.contact, .contactScrolled {
+    font-size: 16px;
+    font-weight: 700 !important;
 }
 
 .light > a > .liFirst, .dark > a > .liFirst {
@@ -128,6 +154,14 @@
     color: #000;
 }
 
+.dark > a > .contact {
+    border: 2px solid black !important;
+}
+
+.dark > a > .contact:hover {
+    color: white;
+    background-color: black;
+}
 @media (max-width: 1000px) {
     .wrapper > main {
         width: 90%;
@@ -182,6 +216,11 @@
         padding: 0.8rem;
     }
 
+    .liLastScrolled {
+        padding: 0.8rem;
+        padding-bottom: 1.5rem;
+    }
+
     .links {
         display: flex;
         align-items: center;
@@ -192,5 +231,9 @@
     }
     .links > a:not(:last-child) {
         margin-right: 0.8rem;
+    }
+
+    .contact, .contactScrolled {
+        margin-top: 1rem;
     }
 }
