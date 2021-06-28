@@ -8,12 +8,12 @@
     align-items: center;
 }
 
-.wrapper > section {
+.wrapper > div {
     margin: auto;
     width: 78%;
 }
 
-.wrapper > section > h2 {
+.wrapper > div > h2 {
     font-size: 40px;
     font-weight: 700;
     line-height: 115.5%;
@@ -27,7 +27,7 @@
     justify-content: space-between;
 }
 
-.services > section > h3 {
+.services > article > h3 {
     font-size: 30px;
     font-weight: 700;
     line-height: 98.7%;
@@ -50,11 +50,11 @@
     .wrapper {
         padding: 6rem 0 6rem 0;
     }
-    .wrapper > section > h2 {
+    .wrapper > div > h2 {
         width: 100%;
         text-align: center;
     }
-    .wrapper > section > div > section {
+    .wrapper > div > section > article {
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -84,7 +84,7 @@
         text-align: center;
         font-size: 1.5rem;
     }
-    .services > section > h3 {
+    .services > article > h3 {
         font-size: 1.7rem;
         font-weight: 800;
         margin-top: 4rem;

@@ -8,7 +8,7 @@ export default function Featured ({projects}) {
     const featured = raw.slice(0,3)
     
     return(
-        <div className={styles.container}>
+        <main className={styles.container} id="projects">
             <div className={styles.grid}>
                 { featured.map(item => {
                     return(
@@ -17,6 +17,6 @@ export default function Featured ({projects}) {
                 })}
                 </div>
             <Link href="/projects"><a>Ver más proyectos</a></Link>
-        </div>
+        </main>
     )
 }

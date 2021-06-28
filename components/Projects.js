@@ -37,7 +37,7 @@ export default function ProjectsContainer ({projects}) {
                     })}
                     <article className={shown.length > 1 ? styles.last : styles.lastDouble}>
                         <article>
-                            <h2>Tu marca puede estar acá ;)</h2>
+                            <h2>Tu marca puede<br/>estar acá ;)</h2>
                             <a href="/contact">Trabajemos juntos!</a>
                         </article>
                     </article>

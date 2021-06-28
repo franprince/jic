@@ -6,11 +6,21 @@
 }
 
 .main > section:not(.circleWrapper) {
-    width: 40%;
+    width: 100%;
     margin: auto;
     position: relative;
     display: flex;
     flex-direction: column;
+}
+
+.main > section > article:not(:first-of-type) {
+    width: 32%;
+    margin: auto;
+}
+
+.main > section > article:last-of-type {
+    padding-bottom: 6rem;
+    padding-top: 5rem;
 }
 
 .main > section > article {
@@ -22,7 +32,7 @@
 }
 
 .main > section > article:first-of-type {
-    padding: 7rem 0 7rem 0
+    padding: 7rem 0 7rem 0;
 }
 
 .main > section > article > div:not(.links) {
@@ -57,7 +67,7 @@
 .circleWrapper {
     position: absolute;
     left: 50%;
-    transform: translate(-50%,-80%);
+    transform: translate(-50%,-78%);
     overflow: hidden;
     height: 50rem;
 }
@@ -107,8 +117,12 @@
         padding-bottom: 0;
     }
     .main > section:not(.circleWrapper) {
-        width: 75%;
+        width: 100%;
         top: -12rem;
+    }
+
+    .main > section > article:not(:first-of-type) {
+        width: 75%;
     }
 
     .img {

@@ -1,7 +1,8 @@
 .container {
     display: flex;
     flex-direction: column;
-    margin-top: -3rem
+    margin: -1rem auto auto auto;
+    width: 78%;
 }
 .grid {
     position: relative;
@@ -9,8 +10,7 @@
     display: grid;
     gap: 1.2rem;
     margin: auto;
-    max-width: 90%;
-    min-width: 79%;
+    width: 80%;
     width: fit-content;
 }
 
@@ -33,9 +33,9 @@
 }
 
 .buttons {
-    width: 79%;
+    width: 100%;
     margin: auto;
-    margin-bottom:2.5rem
+    margin-bottom:2.5rem;
 }
 
 .buttons > button {

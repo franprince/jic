@@ -19,11 +19,11 @@ const aboutQuery = groq`*[_type=='about'] {
     "headerURL": header.asset -> url,
     "personalImgURL": personalImg.asset -> url,
     text,
-    videoID
+    videoID,
+    text
     }`
 
 export default function About ({pics, aboutApi}) {
-
 
     const [color, setColor] = useState("#FFF")
 
@@ -34,9 +34,9 @@ export default function About ({pics, aboutApi}) {
         </Head>
         <NavBar color={color} iNavRef={"5"} theme={"light"}/>
         <AboutHeader title="SOBRE MI" img={aboutApi[0].headerURL}/>
-        <Presentation img={aboutApi[0].personalImgURL}/>
+        <Presentation img={aboutApi[0].personalImgURL} text={aboutApi[0].text}/>
         <AboutVideo videoID={aboutApi[0].videoID}/>
-        <PhGrid pictures={pics[0].assets} width="73%"/>
+        <PhGrid pictures={pics[0].assets} width="fit-content"/>
         <TextSlider />
         <InView threshold="0.5" onChange={(inView) => inView ? setColor("#000") : setColor("#FFF")}>
         <WorkTogether text="Trabajemos juntos!" link="/contact"/>

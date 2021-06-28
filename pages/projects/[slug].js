@@ -76,18 +76,8 @@ export default function Details ({pageSlug, projects, banner}) {
       <ProjectHeader brand={thisProject[0].brand} title={thisProject[0].subtitle} category={thisProject[0].categories[0]}/>
       </InView>
       <div className={styles.videoWrapper}>
-      <Image
-                src={thisProject[0].thumbnailURL}
-                alt="Imagen de separador"
-                layout="fill"
-                objectFit="cover"
-                quality={100}
-                priority={true}
-                />
           <ReactPlayer
-                      playIcon={<PlayArrow arrowColor={thisProject[0].playbuttonColor}/>}
                       url={`${thisProject[0].videoURL}`}
-                      light={`url(${thisProject[0].thumbnailURL})`}
                       height={"100%"} 
                       width={"100%"}
                       muted={true}

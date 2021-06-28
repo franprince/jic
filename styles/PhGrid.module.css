@@ -1,19 +1,21 @@
 .container {
     width: 100%;
-    margin-bottom: 10rem;
+    margin: auto auto 10rem auto;
+    position: relative;
 }
 
 .grid {
-    margin:auto;
+    margin: auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 340.28px);
     gap: 1.1rem;
+    position: relative;
 
 }
 
 .grid > .photo {
     width: 100%;
-    padding-top: 150%;
+    padding-top: 452.34px;
     /* min-height: 452px;
     max-height: 800px; */
     position: relative;
@@ -21,6 +23,8 @@
 
 .grid > .photo > div {
     border-radius: 15px;
+    width: 340.28px;
+    position: relative;
 }
 
 /* @media(max-width: 1200px) {

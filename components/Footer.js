@@ -7,16 +7,16 @@ export default function Footer () {
                 <section>
                     <h2>JIC</h2>
                     <div>
-                    <a href="https://www.youtube.com/channel/UC2Xel3b_bb-RwcpZk0U4yuA">
+                    <a target="_blank" href="https://www.youtube.com/channel/UC2Xel3b_bb-RwcpZk0U4yuA">
                         <img src="/img/youtube.svg" alt="Ir a YouTube"/>
                     </a>
-                    <a href="mailto:juanignaciocali@gmail.com">
+                    <a target="_blank" href="mailto:juanignaciocali@gmail.com">
                         <img src="/img/gmail.svg" alt="Contactame por email"/>
                     </a>
-                    <a href="https://www.instagram.com/juanignaciocali/">
+                    <a target="_blank" href="https://www.instagram.com/juanignaciocali/">
                         <img src="/img/instagram.png" alt="Ir a Instagram"/>
                     </a>
-                    <a href="https://wa.me/542213563090">
+                    <a target="_blank" href="https://wa.me/542213563090">
                         <img src="/img/wsp.svg" alt="Contactame por WhatsApp"/>
                     </a>
                     </div>

@@ -17,14 +17,7 @@ export default function MoreProjects ({moreProjects}) {
                           </section>
                       </div>
                       <div className={styles.img}>
-                          <Image
-                            src={item.imageUrl}
-                            alt={item.name}
-                            layout="fill"
-                            objectFit="cover"
-                            quality={100}
-                            className={styles.imgBorder}
-                          />
+                      <img src={item.imageUrl} alt={item.name}/>
                       </div>
                   </article></Link>
                           )

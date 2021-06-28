@@ -34,8 +34,8 @@ export default function Podcast ({podcastApi}) {
         <InView threshold="0.3" onChange={(inView) => inView ? setColor("#000") : setColor("#FFF")}>
         <main className={styles.main}>
             <section>
-                <article>
-                Un <b>podcast</b> donde hablamos con <b>artistas</b>, <b>filmmakers</b> y <b>emprendedores</b> acerca de experiencias y procesos de trabajo.
+                <article className={styles.text}>
+                Un <b>podcast</b> donde hablamos con <b>artistas</b>,<br/> <b>filmmakers</b> y <b>emprendedores</b> acerca de<br/> experiencias y procesos de trabajo.
                 </article>
                 <article className={styles.img}>
                     <Image
@@ -50,10 +50,10 @@ export default function Podcast ({podcastApi}) {
                 <article className={styles.disponible}>
                     <p>Disponible en</p>
                     <div className={styles.links}>
-                    <a href="https://www.youtube.com/juanignaciocali"><img src="/img/podYT.svg" alt="Youtube" /></a>
-                    <a href="https://open.spotify.com/show/6VHzEF8VKmRstoAdgwXFX9"><img src="/img/podSpotify.svg" alt="Spotify" /></a>
-                    <a href="https://podcasts.apple.com/ar/podcast/the-cali-show/id1562735300"><img src="/img/podApple.svg" alt="Apple Podcasts" /></a>
-                    <a href="https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy81NWZhNzdiMC9wb2RjYXN0L3Jzcw=="><img src="/img/podGoogle.svg" alt="Google Podcasts" /></a>
+                    <a target="_blank" href="https://www.youtube.com/juanignaciocali"><img src="/img/podYT.svg" alt="Youtube" /></a>
+                    <a target="_blank" href="https://open.spotify.com/show/6VHzEF8VKmRstoAdgwXFX9"><img src="/img/podSpotify.svg" alt="Spotify" /></a>
+                    <a target="_blank" href="https://podcasts.apple.com/ar/podcast/the-cali-show/id1562735300"><img src="/img/podApple.svg" alt="Apple Podcasts" /></a>
+                    <a target="_blank" href="https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy81NWZhNzdiMC9wb2RjYXN0L3Jzcw=="><img src="/img/podGoogle.svg" alt="Google Podcasts" /></a>
                     </div>
                 </article>
             </section>

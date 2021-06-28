@@ -1,7 +1,7 @@
 import styles from "../styles/Presentation.module.css"
 import Image from "next/image"
 
-export default function Presentation ({img}) {
+export default function Presentation ({img, text}) {
 
     return(
         <main className={styles.main}>
@@ -22,11 +22,7 @@ export default function Presentation ({img}) {
                     Juan Ignacio Cali
                 </h3>
                 <p>
-                Hola! 👋🏼  Soy Juan Ignacio.<br/>
-                Tengo 27 años y vivo en Buenos Aires, 
-                Argentina.<br/>
-                Soy Licenciado en Diseño Multimedia y actualmente trabajo como Director Creativo, Filmmaker & Motion Designer.<br/>
-                Si querés saber más sobre mi, mirá el video que está mas abajo!
+                {text}
                 </p>
                 <div className={styles.links}>
                     <a href="https://www.youtube.com/channel/UC2Xel3b_bb-RwcpZk0U4yuA">

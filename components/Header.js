@@ -38,16 +38,16 @@ export default function Header ({title, subtitle, img, home, mobileImg, changeOn
                 alt={title}
                 layout="fill"
                 objectFit="cover"
-                objectPosition={!changeOnMobile ?  "center" : size.width < 700 ? "bottom" : "center"}
+                objectPosition={!changeOnMobile ?  "center" : size.width < 700 && "center"}
                 quality={100}
                 />
                 <section className={styles.elements}>
-                    <h1>{title}</h1>
+                    <h1 style={title == "PROYECTOS" ? {marginTop: "-1rem"} : null}>{title}</h1>
                 {subtitle && 
                     <h2><i className={styles.i}>{subtitle}</i></h2>
                 }
                 {title == "JUAN IGNACIO CALI" && 
-                    <Link href="/projects"><a>Mis proyectos</a></Link>
+                    <Link href="/#projects"><a>Mis proyectos</a></Link>
                 }
                 
                 </section>

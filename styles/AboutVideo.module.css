@@ -1,6 +1,6 @@
 .videoWrapper {
     margin: auto;
-    width: 73%;
+    width: 70%;
     position: relative;
     border-radius: 50px;
     position: relative;
@@ -18,14 +18,15 @@
     justify-content: center;
     align-items: center;
     color: white;
-    width: 73%;
+    width: 79%;
     margin: auto;
     margin-bottom: 6rem
 }
 
 .film > h2 {
-    font-size: 2.1rem;
+    font-size: 40px;
     padding: 5rem 0 4rem 0;
+    font-weight: 700;
 }
 
 .film > article {
@@ -35,6 +36,8 @@
     background-size: cover;
     width: 100%
 }
+
+
 
 @media (max-width: 700px) {
     .film {

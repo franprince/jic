@@ -14,19 +14,6 @@ export default function Navbar({color, iNavRef, theme}) {
     if (iNavRef == undefined) {
         navRef.current = "0"
     }
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll)
-    })
-    
-    
-    const handleClick = () => { // Abre y cierra la barra de navegación haciéndole click
-        setOpen(!open)
-    }
-
-    const handleRef = (e) => {
-        navRef.current = e.target.id
-    }
 
     const size = useWindowSize();
 
@@ -51,8 +38,31 @@ export default function Navbar({color, iNavRef, theme}) {
         }, []);
         return windowSize;
     }
-    
-    useEffect(() => {
+
+    const handleScroll = () => {
+        if (window.scrollY > 10 && size.width > 700) {
+            setInitialNavbar(false)
+            setOpen(false)
+        } else if (window.scrollY == 0 && size.width > 700) {
+            setOpen(true)
+            setInitialNavbar(true)
+        }
+        else {
+            setOpen(open)
+            setInitialNavbar(false)
+        } 
+    }
+
+    const handleSize = () => {
+        if (size.width < 700) {
+            setInitialNavbar(false)
+            if (window.scrollY == 0) {
+                setOpen(false)
+            } else {setOpen(open)}
+            } else {
+            setInitialNavbar(true)
+            setOpen(true)
+        }
         if (size.width && size.width < 1000) {
             setOpen(false)
             setInitialNavbar(false)
@@ -60,34 +70,21 @@ export default function Navbar({color, iNavRef, theme}) {
         } else {
             setMobile(false)
         }
-    }, [size])
-
-    useEffect(() => handleScroll(), [size])
-    useEffect(() => {
-        if (size.width < 700) {
-            setInitialNavbar(false)
-            if (window.scrollY == 0) {
-                setOpen(false)
-            } else {setOpen(open)}
-        } else {
-            setInitialNavbar(true)
-            setOpen(true)
-        }
-    }, [size])
-
-    const handleScroll = () => {
-        if (window.scrollY > 200 && size.width > 700) {
-            setInitialNavbar(false)
-            setOpen(false)
-        } else {
-             setOpen(open)
-             setInitialNavbar(false)
-        // } else if (window.scrollY > 0 && size.width < 700) {
-        //     setOpen(open)
-        // }
-        } 
     }
-    
+
+    const handleClick = () => { // Abre y cierra la barra de navegación haciéndole click
+        setOpen(!open)
+    }
+
+    const handleRef = (e) => {
+        navRef.current = e.target.id
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    })
+    useEffect(() => handleSize(), [size])
 
     // Variantes para las animaciones con Framer Motion.
 
