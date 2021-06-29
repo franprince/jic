@@ -32,7 +32,7 @@ export default function Presentation ({img, text}) {
                         <img src="/img/gmail.svg" alt="Contactame por email"/>
                     </a>
                     <a href="https://www.instagram.com/juanignaciocali/">
-                        <img src="/img/instagram.png" alt="Ir a Instagram"/>
+                        <img src="/img/instagram.svg" alt="Ir a Instagram"/>
                     </a>
                     <a href="wa.link/yxd518">
                         <img src="/img/wsp.svg" alt="Contactame por WhatsApp"/>

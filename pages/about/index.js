@@ -36,7 +36,7 @@ export default function About ({pics, aboutApi}) {
         <AboutHeader title="SOBRE MI" img={aboutApi[0].headerURL}/>
         <Presentation img={aboutApi[0].personalImgURL} text={aboutApi[0].text}/>
         <AboutVideo videoID={aboutApi[0].videoID}/>
-        <PhGrid pictures={pics[0].assets} width="fit-content"/>
+        <PhGrid pictures={pics[0].assets}/>
         <TextSlider />
         <InView threshold="0.5" onChange={(inView) => inView ? setColor("#000") : setColor("#FFF")}>
         <WorkTogether text="Trabajemos juntos!" link="/contact"/>

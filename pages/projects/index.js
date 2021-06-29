@@ -45,7 +45,7 @@ export default function Projects({projectsApi, projectsPageApi, pics}) {
         <ProjectsContainer projects={projectsApi}/>
         </InView>
         <InView onChange={(InView) => InView && setColor("#FFF")}>
-        <PhGrid pictures={pics[0].assets} width="78%"/>
+        <PhGrid pictures={pics[0].assets}/>
         </InView>
         <InView onChange={(InView) => InView && setColor("#000")}>
         <WorkTogether text="Trabajemos juntos!" link="/contact"/>

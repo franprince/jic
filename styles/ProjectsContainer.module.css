@@ -120,7 +120,9 @@
         display: flex;
         flex-direction: column;
     }
-
+    .container {
+        width: 90%;
+    }
     .double {
         flex-direction: column-reverse;
     }
@@ -139,4 +141,9 @@
     .last {
         display: none;
     }
+}
+
+@media (min-width: 1670px) {
+    .container {width: 75%;}
+    .grid {width: 100%; }
 }

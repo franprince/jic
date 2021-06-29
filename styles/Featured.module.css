@@ -62,3 +62,8 @@
         flex-direction: column-reverse;
     }
 }
+
+@media (min-width: 1670px) {
+    .container {width: 75%; margin: auto}
+    .grid {width: 100%}
+}

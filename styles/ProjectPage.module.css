@@ -125,3 +125,18 @@
         text-align: left;
     }
 }
+
+@media (min-width: 1670px) {
+    .card {
+        height: 32rem;
+    }
+
+    .moreProjects {
+        padding-bottom: 12rem;
+    }
+
+    .moreProjectsContainer > h2 {
+    width: 75%;
+    margin: 11rem auto 6rem auto;
+}
+}

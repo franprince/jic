@@ -38,6 +38,7 @@
     white-space: pre-line;
 }
 
+
 .main > section > article > h3 {
     font-size: 40px;
     margin-bottom: 0.3rem;
@@ -88,7 +89,7 @@
 
     .main > section > article:first-child {
         padding-left: 0;
-        width: 100%;
+        width: 80%;
         margin: 5rem auto auto auto;
     }
 
@@ -115,10 +116,19 @@
 
     .main > section > article > div:not(.links) {
         position: relative !important;
-        transform: scale(0.8);
+        transform: scale(0.6);
     }
 
     .links {
         display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .main > section > article > p {
+        white-space:inherit;
+        overflow-wrap: normal;
+        line-break: strict;
+        border: 1px solid red;
     }
 }

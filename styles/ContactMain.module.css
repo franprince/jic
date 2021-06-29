@@ -109,14 +109,14 @@
     margin-top: -3rem;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
     .main > section {
         padding: 7rem 1rem 7rem 1rem;
-        width: 100%;
         margin: auto;
+        position: relative;
         display: grid;
-        column-gap: 7rem;
         row-gap: 2rem;
+        width: 100%;
         grid-template-areas: "first"
                             "third"
                             "fourth";
@@ -136,6 +136,11 @@
         width: 100%;
         line-height: 195.2%;
         font-family: 'Lora', serif;
+    }
+
+    .main > section > article {
+        margin: auto !important;
+        width: 100%;
     }
 
     .hablemos {
@@ -158,6 +163,9 @@
         left: 20%;
   }
 
+  .area1 {
+      width: fit-content !important;
+  }
   .area3 {
       margin-top: auto
   }
@@ -171,4 +179,50 @@
     display: flex;
 }
 
+}
+
+@media (min-width: 300px) and (max-width: 400px) {
+    .main > section {
+        width: 100%;
+        position: relative;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .main > section > article {
+        width: 95% !important;
+        margin-left: -7px;
+    }
+
+    .area1 {
+        padding: 0 !important;
+        width: 90% !important;
+    }
+
+    .area1 > p {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+    .area4 {
+        margin-top: auto;
+        grid-area: fourth;
+        display: flex;
+    }
+
+    .area3 > p {
+        color: #6D6D6D
+    }
+
+    .area3 {
+        margin-top: auto
+    }
+    .area3 > p {
+        color: #6D6D6D
+    }
+  
+    .area4 {
+      margin-top: auto;
+      grid-area: fourth;
+      display: flex;
+  }
 }

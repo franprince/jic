@@ -80,9 +80,9 @@ export default function Details ({pageSlug, projects, banner}) {
                       url={`${thisProject[0].videoURL}`}
                       height={"100%"} 
                       width={"100%"}
-                      muted={true}
+                      light={true}
                       style={{position: "absolute", top: "0", left: "0"}}
-                      config={{ vimeo: { playerOptions: { autoplay: true }} }} />
+                      />
         </div>
 
       <Description text={thisProject[0].description} title="El proyecto"/>
