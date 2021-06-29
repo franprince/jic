@@ -137,7 +137,7 @@ export default function Navbar({color, iNavRef, theme}) {
                 </Link>
                 <li className={styles.links} style={mobile ? {display: "flex"} : {display: "none"}}>
                     <a href="https://www.instagram.com/juanignaciocali/" target="_blank">
-                        <img src="/img/instagram.png" alt="Ir a Instagram"/>
+                        <img src="/img/instagram.svg" alt="Ir a Instagram"/>
                     </a>
                     <a href="https://www.youtube.com/channel/UC2Xel3b_bb-RwcpZk0U4yuA" target="_blank">
                         <img src="/img/youtube.svg" alt="Ir a YouTube"/>

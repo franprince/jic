@@ -14,7 +14,7 @@ export default function Footer () {
                         <img src="/img/gmail.svg" alt="Contactame por email"/>
                     </a>
                     <a target="_blank" href="https://www.instagram.com/juanignaciocali/">
-                        <img src="/img/instagram.png" alt="Ir a Instagram"/>
+                        <img src="/img/instagram.svg" alt="Ir a Instagram"/>
                     </a>
                     <a target="_blank" href="https://wa.me/542213563090">
                         <img src="/img/wsp.svg" alt="Contactame por WhatsApp"/>

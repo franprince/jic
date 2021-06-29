@@ -23,7 +23,7 @@ export default function ContactCard ({img}) {
                     <img src="/img/gmail.svg" alt="Contactame por email" className={styles.icon}/>
                 </a>
                 <a href="https://www.instagram.com/juanignaciocali/">
-                    <img src="/img/instagram.png" alt="Ir a Instagram" className={styles.icon}/>
+                    <img src="/img/instagram.svg" alt="Ir a Instagram" className={styles.icon}/>
                 </a>
                 </article>
                 </article>

@@ -5,27 +5,27 @@ import Slider from 'react-touch-drag-slider'
 const slides = [
     {
         "title": "#1\nLorem Ipsum",
-        "description": "Algo en lo que estoy trabajando.\nLa frase ya se explica sola,\njust fu**ing do it.",
+        "description": "Algo en lo que estoy trabajando.\nLa frase ya se explica sola, just fu**ing do it.",
         "id": 1
     },
     {
         "title": "#2\nLorem Ipsum",
-        "description": "Algo en lo que estoy trabajando.\nLa frase ya se explica sola,\njust fu**ing do it.",
+        "description": "Algo en lo que estoy trabajando.\nLa frase ya se explica sola, just fu**ing do it.",
         "id": 2
     },
     {
         "title": "#3\nLorem Ipsum",
-        "description": "Algo en lo que estoy trabajando.\nLa frase ya se explica sola,\njust fu**ing do it.",
+        "description": "Algo en lo que estoy trabajando.\nLa frase ya se explica sola, just fu**ing do it.",
         "id": 3
     },
     {
         "title": "#4\nDONE is better\nthan PERFECT.",
-        "description": "Algo en lo que estoy trabajando.\nLa frase ya se explica sola,\njust fu**ing do it.",
+        "description": "Algo en lo que estoy trabajando.\nLa frase ya se explica sola, just fu**ing do it.",
         "id": 4
     },
     {
         "title": "#5\nLorem Ipsum",
-        "description": "Algo en lo que estoy trabajando.\nLa frase ya se explica sola,\njust fu**ing do it.",
+        "description": "Algo en lo que estoy trabajando.\nLa frase ya se explica sola, just fu**ing do it.",
         "id": 5
     }
 ]

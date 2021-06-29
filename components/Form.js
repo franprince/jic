@@ -1,8 +1,33 @@
 import Select from 'react-select'
 import styles from "../styles/Form.module.css"
-import {useRef, useState} from "react"
+import {useRef, useState, useEffect} from "react"
+import { useRouter } from 'next/router'
 
 export default function Form () {
+
+    const size = useWindowSize();
+
+    function useWindowSize() { // Hook para detectar el tamaño de pantalla.
+            const [windowSize, setWindowSize] = useState({ // Inicializar el estado con altura y anchura undefined así cliente y servidor están coordinados
+            width: undefined,
+            height: undefined,
+        });
+    
+        useEffect(() => {
+            if (typeof window !== 'undefined') { // Este código se ejecuta únicamente del lado del cliente
+            function handleResize() { // Función que se ejecuta al cambiar el tamaño de la pantalla
+            setWindowSize({ // Cambiar el estado del tamaño de pantalla
+            width: window.innerWidth,
+            height: window.innerHeight,
+            });
+            }
+            window.addEventListener("resize", handleResize); // Agregar event listener
+            handleResize(); // Cuando cambia el tamaño de la pantalla, el handler se ejecuta automáticamente
+            return () => window.removeEventListener("resize", handleResize); // Sacar el event listener
+        }
+        }, []);
+        return windowSize;
+    }
 
     const options1 = [
         {
@@ -27,13 +52,13 @@ export default function Form () {
             value: "$15.000", label: "$15.000"
         },
         {
-            value: "$20.000-$50.000", label: "$20.000-$50.000"
+            value: "$20.000 - $50.000", label: "$20.000 - $50.000"
         },
         {
-            value: "$60.000", label: "$60.000"
+            value: "$50.000 - $100.000", label: "$50.000 - $100.000"
         },
         {
-            value: "Mas de $60.000", label: "Más de $60.000"
+            value: "Más de $100.000", label: "Más de $100.000"
         },
         {
             value: "No especifica", label: "Prefiero no especificar"
@@ -41,11 +66,23 @@ export default function Form () {
     ]
 
     const customStyles = {
-        control: () => ({
+        control: () => (size.width < 325 ? {
             border: "1px solid black",
             borderRadius: "10px",
             display: "flex",
-            padding: "0.3rem 1rem 0.3rem 0.8rem",
+            padding: "0.5rem 0rem 0.5rem 0.5rem",
+            cursor: "pointer",
+        } : size.width < 700 ? {
+            border: "1px solid black",
+            borderRadius: "10px",
+            display: "flex",
+            padding: "0.8rem 1rem 0.8rem 0.8rem",
+            cursor: "pointer",
+        } : {
+            border: "1px solid black",
+            borderRadius: "10px",
+            display: "flex",
+            padding: "0.7rem",
             cursor: "pointer",
         }),
         placeholder: () => ({
@@ -64,24 +101,34 @@ export default function Form () {
         indicatorsContainer: () => ({
             display: "none"
         }),
-        container: () => ({
-            backgroundColor: "#F9F9F9"
+        container: () => (size.width > 700 ? {
+            backgroundColor: "#F9F9F9",
+            marginTop: "8rem",
+        } : size.width < 325 ? {
+            backgroundColor: "#F9F9F9",
+            marginTop: "auto",
+        } : {
+            backgroundColor: "#F9F9F9",
+            marginTop: "auto",
         }),
         menuList: () => ({
             backgroundColor: "#F9F9F9",
             marginTop: "-8px",
-            padding: "0.5rem 0 0.5rem 0"
+            padding: "0.5rem 0 0.5rem 0",
         })
     }
 
     const [producto, setProducto] = useState()
-    const [presupuesto, setPresupuesto] = useState('')
+    const [presupuesto, setPresupuesto] = useState()
     const [nombre, setNombre] = useState('')
     const [mensaje, setMensaje] = useState('')
     const [trabajo, setTrabajo] = useState('')
     const [puesto, setPuesto] = useState('')
     const [email, setEmail] = useState()
     const [sent, setSent] = useState(false)
+    const [missingProduct, setMissingProduct] = useState(false)
+    const [missingBudget, setMissingBudget] = useState(false)
+    const router = useRouter()
 
     const handleSelectChange = (selectedOption) => {
         if (selectedOption.category == "1") {
@@ -101,7 +148,16 @@ export default function Form () {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch('/api/mail', {
+        if (!producto) {
+            if (!presupuesto) {
+                setMissingBudget(true)
+                setMissingProduct(true)
+            } else {
+                setMissingProduct(true)
+            }
+        }
+        else {
+            fetch('/api/mail', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ nombre: nombre, mensaje: mensaje, presupuesto: presupuesto, producto: producto, trabajo: trabajo, puesto: puesto, email: email })
@@ -114,6 +170,13 @@ export default function Form () {
         formProduct.current.value = ""
         formBudget.current.value = ""
         formMessage.current.value = ""
+        }
+        
+    }
+
+    const handleClick = (e) => {
+        setSent(false)
+        router.reload(window.location.pathname)
     }
     return (
         <section className={styles.form}>
@@ -132,28 +195,28 @@ export default function Form () {
                 </p>
                 <div className={styles.mobileCell}>
                     <h2>Cuál es tu idea?</h2>
-                    <p>Hablemos sobre tu proyecto.</p>
+                    <p className={styles.hablemos}>Hablemos sobre tu proyecto.</p>
                 </div>
                 <div>
                     <Select isSearchable={false} ref={formProduct} options={options1} onChange={handleSelectChange} id="producto" instanceID="12345" inputID="producto" name="producto" styles={customStyles} placeholder="Estoy necesitando" />
+                    <p style={missingProduct ? {display: "block"} : {display: "none"}}>Por favor, completá este campo.</p>
                 </div>
                 <div>
                     <Select isSearchable={false} ref={formBudget} options={options2} onChange={handleSelectChange} id="presupuesto" instanceID="86865" inputID="presupuesto" name="presupuesto" styles={customStyles} placeholder="Mi presupuesto estimado es" />
+                    <p style={missingBudget ? {display: "block"} : {display: "none"}}>Por favor, completá este campo.</p>
                 </div>
-                    
-                    
                 <p>
                     <textarea ref={formMessage} rows="4" onChange={(e) => setMensaje(e.target.value)} name="message" placeholder="Detalles del proyecto, algo más que tenga que saber?"/>
                 </p>
                 <div></div>
-                <div>
+                <div className={styles.button}>
                     <button>Enviar</button>
                 </div>
             </form>
             <div className={styles.sent} style={sent ? {display: "flex"} : {display: "none"}}>
                 <section>
                     <img src="/img/checked.png" alt="Enviado exitosamente" />
-                    <button onClick={(e) => setSent(false)}>X</button>
+                    <button onClick={handleClick}>X</button>
                     Mensaje enviado exitosamente! Muchas gracias.
                 </section>
             </div>
