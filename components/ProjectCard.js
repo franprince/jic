@@ -1,12 +1,9 @@
 import styles from "../styles/ProjectCard.module.css"
 import Link from "next/link"
 import {useState, useEffect} from "react"
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 export default function ProjectCard ({item, shown}) {
 
-    useEffect(() => AOS.init(), [])
 
     const size = useWindowSize();
 
@@ -36,7 +33,7 @@ export default function ProjectCard ({item, shown}) {
 
     return (
         <Link href={`/projects/${item.slug.current}`}>
-            <article data-aos={shown.indexOf(item) == 0 ? "fade-down" : (shown.indexOf(item) - 1) % 3 != 0 ? "fade-left" : "fade-right"} className={size.width < 700 ? styles.single : 
+            <article className={size.width < 700 ? styles.single : 
                             shown.indexOf(item) == 0 ? styles.double :
                             shown.indexOf(item) % 3 != 0 ? styles.single :
                             shown.indexOf(item) == length ? styles.single : styles.double}>
