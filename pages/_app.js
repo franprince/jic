@@ -1,14 +1,19 @@
 import Layout from "../components/Layout"
 import '../styles/globals.css'
 import App from 'next/app'
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function MyApp({ Component, pageProps }) {
 
-MyApp.getInitialProps = async (appContext) => {
-  const appProps = await App.getInitialProps(appContext);
-
-  return { ...appProps }
-}
+  useEffect(() => {
+    AOS.init({
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 50,
+    });
+  }, []);
 
   return (
     <Layout>
