@@ -1,7 +1,12 @@
 import styles from "../styles/ProjectPage.module.css"
 import Link from "next/link"
-import Image from "next/image"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 export default function MoreProjects ({moreProjects}) {
+
+    useEffect(() => AOS.init(), [])
+
     return (
         <section className={styles.moreProjectsContainer}>
           <h2>Otros Proyectos</h2>
@@ -9,7 +14,7 @@ export default function MoreProjects ({moreProjects}) {
           { moreProjects && moreProjects.map(item => {
                 return (
                   <Link href={`/projects/${item.slug.current}`} key={item._id}>
-                  <article className={styles.card} >
+                  <article data-aos={moreProjects.indexOf(item) == 0 ? "fade-right" : "fade-left"} className={styles.card} >
                       <div className={styles.content}>
                           <section className={styles.info}>
                                 <h2>{item.name}</h2>

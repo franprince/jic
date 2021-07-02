@@ -1,11 +1,11 @@
 import ReactPlayer from 'react-player'
 import styles from "../styles/AboutVideo.module.css"
 
-export default function AboutVideo ({videoID}) {
+export default function AboutVideo ({videoID, title}) {
 
     return (
-        <section className={styles.film}>
-        <h2>Un film acerca de mí</h2>
+        <section className={styles.film} style={title ? null : {paddingBottom: "2rem"}}>
+        {title && <h2>{title}</h2>}
         <article>
                 <ReactPlayer
                 url={`https://www.youtube.com/watch?v=${videoID}&ab_channel=JuanIgnacioCali`}

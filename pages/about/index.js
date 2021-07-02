@@ -35,7 +35,7 @@ export default function About ({pics, aboutApi}) {
         <NavBar color={color} iNavRef={"5"} theme={"light"}/>
         <AboutHeader title="SOBRE MI" img={aboutApi[0].headerURL}/>
         <Presentation img={aboutApi[0].personalImgURL} text={aboutApi[0].text}/>
-        <AboutVideo videoID={aboutApi[0].videoID}/>
+        <AboutVideo videoID={aboutApi[0].videoID} title="Un film acerca de mí"/>
         <PhGrid pictures={pics[0].assets}/>
         <TextSlider />
         <InView threshold="0.5" onChange={(inView) => inView ? setColor("#000") : setColor("#FFF")}>

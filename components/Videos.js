@@ -1,6 +1,4 @@
 import styles from "../styles/Videos.module.css"
-import ReactPlayer from 'react-player'
-import PlayArrow from "../components/PlayArrow"
 
 export default function Videos ({videos}) {
     return (

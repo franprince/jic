@@ -22,7 +22,7 @@ export default function Footer () {
                     </div>
                 </section>
                 <section className={styles.contact}>
-                    <p>+54 221 356-3090</p>
+                    <a href="tel:+5491137627620">+54 221 356-3090</a>
                     <p>juan.ignacio.cali@gmail.com</p>
                     <p>Buenos Aires, Argentina</p>
                 </section>

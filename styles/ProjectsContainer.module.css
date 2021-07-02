@@ -6,12 +6,10 @@
 }
 .grid {
     position: relative;
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: repeat(2, 1fr);
     display: grid;
     gap: 1.2rem;
-    margin: auto;
-    width: 80%;
-    width: fit-content;
+    margin: 0;
 }
 
 
@@ -87,7 +85,7 @@
     justify-content: space-around;
 }
 
-.last > article > h2 {
+.last > article > h2, .lastDouble > article > h2 {
     font-size: 38px;
     line-height: 98.7%;
 }

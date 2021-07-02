@@ -8,10 +8,6 @@
     margin-bottom: 7rem;
 }
 
-.videoWrapper > div > div {
-    border-radius: 20px;
-}
-
 .film {
     display: flex;
     flex-direction: column;
@@ -50,6 +46,6 @@
 
 @media (min-width: 1670px) {
     .film {
-        width: 74%;
+        width: 65%;
     }
 }

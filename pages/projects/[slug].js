@@ -14,6 +14,7 @@ import Head from "next/head";
 import Image from "next/image"
 import MoreProjects from "../../components/MoreProjects";
 import Description from "../../components/Description";
+import AboutVideo from "../../components/AboutVideo";
 
 
 const projectQuery = groq`*[ _type == 'project' ]{
@@ -24,6 +25,7 @@ const projectQuery = groq`*[ _type == 'project' ]{
   categories,
   featured,
   process,
+  "processPics":processPics[0].asset -> url,
   description,
   credits,
   playbuttonColor,
@@ -32,6 +34,9 @@ const projectQuery = groq`*[ _type == 'project' ]{
   "imageUrl": img.asset->url,
   "thumbnailURL": thumbnail.asset->url,
   "screenshots": screenshots[].asset->url,
+  "backstagePics" : backstagePics[].asset->url,
+  backstageVid,
+  backstage,
   _createdAt
 } | order(_createdAt asc)`
 
@@ -65,7 +70,7 @@ export default function Details ({pageSlug, projects, banner}) {
   }
   
   useEffect(() => getRandom(clearProjects, 2), [])
-
+  console.log(thisProject[0].backstageVid)
     return (<>
     <Head>
       <title>{thisProject[0].name}</title>
@@ -80,21 +85,33 @@ export default function Details ({pageSlug, projects, banner}) {
                       url={`${thisProject[0].videoURL}`}
                       height={"100%"} 
                       width={"100%"}
-                      light={true}
+                      muted={true}
                       style={{position: "absolute", top: "0", left: "0"}}
+                      config={{
+                        vimeo: {
+                          playerOptions: {autoplay: true}
+                        }
+                      }}
                       />
         </div>
 
       <Description text={thisProject[0].description} title="El proyecto"/>
       <InView threshold="0.3" onChange={(inView) => inView && setColor("#FFF")}>
-      <Screenshots screenshots={screenshots}/>
+      <Screenshots pictures={screenshots}/>
       </InView>
       <InView threshold="0.3" onChange={(inView) => inView && setColor("#000")}>
       <Description text={thisProject[0].process} title="El proceso"/>
       </InView>
       <InView threshold="0.3" onChange={(inView) => inView && setColor("#FFF")}>
-      <Banner img={banner[0].headerURL}/>
+      {thisProject[0].processPics != null  && <Screenshots pictures={thisProject[0].processPics}/>}
       </InView>
+      {
+        thisProject[0].backstage && 
+        <>
+        <Description text={thisProject[0].backstage} title="El backstage"/>
+      {thisProject[0].backstagePics != null  && <Screenshots pictures={thisProject[0].backstagePics}/>}
+      {thisProject[0].backstageVid != null  && <AboutVideo videoID={thisProject[0].backstageVid}/>}</>
+      }
       <InView threshold="0.3" onChange={(inView) => inView && setColor("#FFF")}>
       <Description text={thisProject[0].credits} title="Créditos" credits={true}/>
       </InView>

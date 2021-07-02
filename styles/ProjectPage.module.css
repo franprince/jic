@@ -47,12 +47,16 @@
     align-items: center;
     position: relative;
     border-radius: 20px;
+    transition: all 0.3s ease;
     width: 100%;
     box-shadow: 10px 10px 17px -3px rgba(0,0,0,0.17);
 -webkit-box-shadow: 10px 10px 17px -3px rgba(0,0,0,0.17);
 -moz-box-shadow: 10px 10px 17px -3px rgba(0,0,0,0.17);
 }
 
+.card:hover {
+    transform: scale(0.98);
+}
 .card:hover {
     cursor: pointer;
 }
@@ -107,6 +111,7 @@
 .img > img {
     width: 100%;
     object-fit: cover;
+    height: 100%;
 }
 
 @media (max-width: 700px) {

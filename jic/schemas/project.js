@@ -17,20 +17,9 @@ export default {
         rows: 2,
     },
     {
-        title: "Color del playbutton",
-        name: "playbuttonColor",
-        type: "string"
-    },
-    {
         title: "Marca",
         name: "brand",
         type: "string",
-    },
-    {
-        title: "Thumbnail",
-        description: "Esta imagen va a aparecer hasta que el usuario haga click para iniciar el video",
-        name: "thumbnail",
-        type: "image",
     },
     {
         title: "URL del video",
@@ -65,18 +54,42 @@ export default {
         type: "text",
     },
     {
+        title: "Fotos del proceso",
+        description: "Capturas que van a aparecer en El Proceso",
+        name: "processPics",
+        type: "array",
+        of: [{type: "image"}]
+    },
+    {
         title: "Créditos",
         name: "credits",
         type: "text",
+    },
+    {
+        title: "El backstage",
+        name: "backstage",
+        type: "text",
+    },
+    {
+        title: "Fotos del backstage",
+        description: "Capturas que van a aparecer en El Backstage",
+        name: "backstagePics",
+        type: "array",
+        of: [{type: "image"}]
+    },
+    {
+        title: "ID del video de backstage",
+        name: "backstageVid",
+        type: "string",
     },
         {
         title: "Imagen Principal",
         name: "img",
         type: "image"
     },
-        {
+    {
         title: "Capturas",
-        description: "Las 6 capturas que se van a mostrar en la página de cada proyecto",
+        description: "Las capturas que van a aparecer en El Proceso",
         name: "screenshots",
         type: "array",
         of: [{type: "image"}]
