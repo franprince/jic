@@ -100,10 +100,11 @@ export default function Navbar({color, iNavRef, theme}) {
 
     return (
     <nav className={styles.wrapper}>
-        <main>
+        <main style={!open && !mobile ? {justifyContent: "space-between"} : null}>
             <Link href="/">
                 <a><h2 style={!mobile ? {color: color, opacity: "1"} : open ? {color: "#FFF", opacity: "1"} : {opacity: "0"}}>JIC</h2></a>
             </Link>
+            <div style={mobile ? {display: "none"} : {flex: "1"}}></div>
         <motion.nav className={styles.nav} animate={open ? "open" : "closed"} variants={variants} transition={{ type: "spring", duration: 0.6}}>
                     <motion.div className={styles.bg} animate={initialNavBar ? "closed" : open ? "open" : "closed"} variants={bgVariants} transition={{ type: "ease", duration: 0.2}}></motion.div>
             <ul className={theme == "light" ? styles.light : initialNavBar ? styles.dark : styles.light}>

@@ -94,24 +94,34 @@ export default function Details ({pageSlug, projects, banner}) {
                       }}
                       />
         </div>
-
-      <Description text={thisProject[0].description} title="El proyecto"/>
+      <InView threshold="0.3" onChange={(inView) => inView && setColor("#000")}>
+        <Description text={thisProject[0].description} title="El proyecto"/>
+      </InView>
       <InView threshold="0.3" onChange={(inView) => inView && setColor("#FFF")}>
-      <Screenshots pictures={screenshots}/>
+        <Screenshots pictures={screenshots}/>
       </InView>
       <InView threshold="0.3" onChange={(inView) => inView && setColor("#000")}>
-      <Description text={thisProject[0].process} title="El proceso"/>
+        <Description text={thisProject[0].process} title="El proceso"/>
       </InView>
       <InView threshold="0.3" onChange={(inView) => inView && setColor("#FFF")}>
-      {thisProject[0].processPics != null  && <Screenshots pictures={thisProject[0].processPics}/>}
+      {thisProject[0].processPics != null  && 
+        <Screenshots pictures={thisProject[0].processPics}/>}
       </InView>
       {
         thisProject[0].backstage && 
         <>
-        <Description text={thisProject[0].backstage} title="El backstage"/>
-        {thisProject[0].backstageVid != null  && <AboutVideo videoID={thisProject[0].backstageVid}/>}
-        {thisProject[0].backstagePics != null  && <Screenshots pictures={thisProject[0].backstagePics}/>}
-      </>
+        <InView threshold="0.3" onChange={(inView) => inView && setColor("#000")}>
+          <Description text={thisProject[0].backstage} title="El backstage"/>
+        </InView>
+        {thisProject[0].backstageVid != null  && 
+          <AboutVideo videoID={thisProject[0].backstageVid}/>
+        }
+        {thisProject[0].backstagePics != null  && 
+          <InView threshold="0.3" onChange={(inView) => inView && setColor("#FFF")}>
+            <Screenshots pictures={thisProject[0].backstagePics}/>
+          </InView>
+        }
+        </>
       }
       <InView threshold="0.3" onChange={(inView) => inView && setColor("#FFF")}>
       <Description text={thisProject[0].credits} title="Créditos" credits={true}/>

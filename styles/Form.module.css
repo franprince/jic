@@ -1,6 +1,11 @@
+.select > div > div > div {
+    font-size: 16px;
+    min-height: 2rem;
+    min-width: 250px;
+}
+
 .form {
     width: 100%;
-    position: relative;
 }
 
 .form > form {
@@ -104,10 +109,13 @@
 
 .sent {
     position: absolute;
+    display: flex;
+    opacity: 0;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.438);
+    z-index: 1;
     justify-content: center;
     align-items: center;
 }
@@ -116,47 +124,112 @@
     position: relative;
     background-color: rgb(255, 255, 255);
     height: fit-content;
-    width: 40%;
+    width: 60%;
+    height: 33%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 3rem 2rem 3rem 2rem;
-    border: 1px solid rgba(0,0,0,0.26);
     border-radius: 20px;
     text-align: center;
     overflow: hidden;
-    box-shadow: 10px 10px 17px -3px rgba(0,0,0,0.26);
--webkit-box-shadow: 10px 10px 17px -3px rgba(0,0,0,0.26);
--moz-box-shadow: 10px 10px 17px -3px rgba(0,0,0,0.26);
+    box-shadow: 0px 5px 13px -1px rgba(0,0,0,0.46);
+-webkit-box-shadow: 0px 5px 13px -1px rgba(0,0,0,0.46);
+-moz-box-shadow: 0px 5px 13px -1px rgba(0,0,0,0.46);
 }
 
 .sent > section > img {
-    position: absolute;
-    height: 5rem;
-    width: 5rem;
-    bottom: 8px;
-    left: 8px;
-    opacity: 0.2;
+    height: 64px;
+    width: 64px;
+}
+
+.sent > section > h2 {
+    font-size: 40px;
+}
+
+.sent > section > p {
+    font-family: 'Lora', serif;
+    font-size: 24px;
+    line-height: 195.2%;
+    margin-top: 0;
 }
 
 .sent > section > button {
-    width: 1.5rem;
+    width: 44px;
+    height: 44px;
     text-align: center;
-    font-size: 0.6rem;
-    position: relative;
+    position: absolute;
+    top: 50px;
+    right: 50px;
     align-self: flex-end;
-    top: -2rem;
-    right: -1rem;
-    bottom: 2rem;
-    border: none;
     outline: none;
-    background-color: black;
-    height: 1.5rem;
+    background-color: white;
     border-radius: 50%;
-    color: white;
+    transition: all 0.3s ease;
+    color: black;
     cursor: pointer;
-    cursor: pointer;
+    border: none;
+    box-shadow: 0px 5px 9px -1px rgba(0,0,0,0.46);
+-webkit-box-shadow: 0px 5px 9px -1px rgba(0,0,0,0.46);
+-moz-box-shadow: 0px 5px 9px -1px rgba(0,0,0,0.46);
 }
+
+.sent > section > button::before, .sent > section > button::after {
+    position: absolute;
+  top: 12px;
+  content: ' ';
+  height: 22px;
+  width: 2px;
+  background-color: rgb(0, 0, 0);
+}
+
+
+
+.sent > section > button:hover {
+    opacity: 0.5;
+    box-shadow: 0px 5px 9px -1px rgba(0, 0, 0, 0.900);
+-webkit-box-shadow: 0px 5px 9px -1px rgba(0, 0, 0, 0.900);
+-moz-box-shadow: 0px 5px 9px -1px rgba(0,0,0,0.900);
+}
+
+.sent > section > button::before {
+    transform: rotate(45deg);
+  }
+  .sent > section > button::after {
+    transform: rotate(-45deg);
+  }
+
+
 @media (min-width: 401px) and (max-width: 1000px) {
+
+    .sent > section {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0px;
+    }
+
+    .sent > section > img {
+        height: 48px;
+        width: 48px;
+    }
+    
+    .sent > section > h2 {
+        font-size: 30px;
+        width: 60%;
+        margin-top: 2rem;
+    }
+    
+    .sent > section > p {
+        font-size: 20px;
+        margin-top: 0.7rem;
+    }
+
+    .sent > section > button {
+        top: 50px;
+        right: 35px;
+    }
+
     .form > form {
         display: flex;
         flex-direction: column;
@@ -205,6 +278,33 @@
 }
 
 @media (min-width: 300px) and (max-width: 400px) {
+
+    .sent > section {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0px;
+    }
+
+    .sent > section > img {
+        height: 48px;
+        width: 48px;
+    }
+    
+    .sent > section > h2 {
+        font-size: 22px;
+        width: 65%;
+        margin-top: 2rem;
+    }
+    
+    .sent > section > p {
+        font-size: 18px;
+        margin-top: 0.7rem;
+    }
+
+    .sent > section > button {
+        top: 50px;
+        right: 35px;
+    }
     .form > form {
         display: flex;
         flex-direction: column;

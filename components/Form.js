@@ -2,8 +2,9 @@ import Select from 'react-select'
 import styles from "../styles/Form.module.css"
 import {useRef, useState, useEffect} from "react"
 import { useRouter } from 'next/router'
+import { motion } from "framer-motion"
 
-export default function Form () {
+export default function Form ({sent, setSent}) {
 
     const size = useWindowSize();
 
@@ -84,6 +85,7 @@ export default function Form () {
             display: "flex",
             padding: "0.7rem",
             cursor: "pointer",
+            fontSize: "16px"
         }),
         placeholder: () => ({
             color: "black",
@@ -125,7 +127,6 @@ export default function Form () {
     const [trabajo, setTrabajo] = useState('')
     const [puesto, setPuesto] = useState('')
     const [email, setEmail] = useState()
-    const [sent, setSent] = useState(false)
     const [missingProduct, setMissingProduct] = useState(false)
     const [missingBudget, setMissingBudget] = useState(false)
     const router = useRouter()
@@ -197,11 +198,11 @@ export default function Form () {
                     <h2>Cuál es tu idea?</h2>
                     <p className={styles.hablemos}>Hablemos sobre tu proyecto.</p>
                 </div>
-                <div>
+                <div className={styles.select}>
                     <Select isSearchable={false} ref={formProduct} options={options1} onChange={handleSelectChange} id="producto" instanceID="12345" inputID="producto" name="producto" styles={customStyles} placeholder="Estoy necesitando" />
                     <p style={missingProduct ? {display: "block"} : {display: "none"}}>Por favor, completá este campo.</p>
                 </div>
-                <div>
+                <div className={styles.select}>
                     <Select isSearchable={false} ref={formBudget} options={options2} onChange={handleSelectChange} id="presupuesto" instanceID="86865" inputID="presupuesto" name="presupuesto" styles={customStyles} placeholder="Mi presupuesto estimado es" />
                     <p style={missingBudget ? {display: "block"} : {display: "none"}}>Por favor, completá este campo.</p>
                 </div>
@@ -213,13 +214,14 @@ export default function Form () {
                     <button>Enviar</button>
                 </div>
             </form>
-            <div className={styles.sent} style={sent ? {display: "flex"} : {display: "none"}}>
+            <motion.div  animate={sent ? {scale: 1, opacity: 1} : {scale: 0, opacity: 0}} className={styles.sent}>
                 <section>
-                    <img src="/img/checked.png" alt="Enviado exitosamente" />
-                    <button onClick={handleClick}>X</button>
-                    Mensaje enviado exitosamente! Muchas gracias.
+                    <img src="/img/cohete.png" alt="Enviado exitosamente" />
+                    <button onClick={handleClick}></button>
+                    <h2>El mensaje fue enviado!</h2>
+                    {size.width > 1000 ? <p>Gracias! En las próximas horas<br/>me pondré en contacto con vos!</p> : <p>Gracias!<br/> En las próximas horas<br/>me pondré en contacto con vos!</p>}
                 </section>
-            </div>
+            </motion.div>
         </section>
     )
 }

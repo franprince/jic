@@ -1,7 +1,6 @@
 import styles from "../styles/ProjectCard.module.css"
 import Link from "next/link"
 import {useState, useEffect} from "react"
-import { motion } from "framer-motion"
 import AOS from "aos"
 import 'aos/dist/aos.css';
 export default function ProjectCard ({item, shown}) {

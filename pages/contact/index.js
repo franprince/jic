@@ -25,7 +25,7 @@ export default function Contact ({header}) {
         </Head>
         <NavBar color={color} iNavRef={"6"} theme={"light"}/>
         <AboutHeader title={`YA HABLAMOS DE MI, AHORA\nHABLEMOS DE VOS Y TU PROYECTO!`} mobileTitle="HABLEMOS DE TU PROYECTO" img={header[0].headerURL} contact={true}/>
-        <InView threshold="0.5" onChange={(inView) => inView ? setColor("#000") : setColor("#FFF")}>
+        <InView threshold="0.3" onChange={(inView) => inView ? setColor("#000") : setColor("#FFF")}>
         <ContactMain/>
         </InView>
         <Footer />
