@@ -8,7 +8,7 @@ export default function Navbar({color, iNavRef, theme}) {
 
     const [initialNavBar, setInitialNavbar] = useState(true)
     const [open, setOpen] = useState(false)
-    const [mobile, setMobile] = useState()
+    const [mobile, setMobile] = useState(true)
     const navRef = useRef(iNavRef)
     
     if (iNavRef == undefined) {

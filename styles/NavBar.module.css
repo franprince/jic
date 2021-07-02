@@ -163,6 +163,15 @@
     background-color: black;
 }
 @media (max-width: 1000px) {
+
+    .wrapper > main > a > h2 {
+        z-index: 3;
+        opacity: 0 ;
+        transition: all 0.5s ease;
+        font-size: 1.6rem;
+        text-shadow: 2px 2px 3px rgba(150, 150, 150, 0.63);
+    }
+
     .wrapper > main {
         width: 90%;
     }

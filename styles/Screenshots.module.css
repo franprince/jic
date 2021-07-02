@@ -1,6 +1,6 @@
 .container {
     display: grid;
-    height: 90vh;
+    min-height: 50vh;
     width: 100%;
 }
 
@@ -8,6 +8,7 @@
     position: relative;
     overflow: hidden;
     object-fit: cover;
+    height: 50vh;
 }
 
 .container > article > img {
@@ -18,8 +19,13 @@
 
 @media (max-width: 700px) {
     .container {
+        min-height: 16rem !important;
         grid-template-columns: 1fr !important;
         grid-template-rows: repeat(auto-fill, 16rem) !important;
         height: fit-content !important;
+    }
+
+    .container > article {
+        height: auto !important;
     }
 }

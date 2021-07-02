@@ -109,8 +109,9 @@ export default function Details ({pageSlug, projects, banner}) {
         thisProject[0].backstage && 
         <>
         <Description text={thisProject[0].backstage} title="El backstage"/>
-      {thisProject[0].backstagePics != null  && <Screenshots pictures={thisProject[0].backstagePics}/>}
-      {thisProject[0].backstageVid != null  && <AboutVideo videoID={thisProject[0].backstageVid}/>}</>
+        {thisProject[0].backstageVid != null  && <AboutVideo videoID={thisProject[0].backstageVid}/>}
+        {thisProject[0].backstagePics != null  && <Screenshots pictures={thisProject[0].backstagePics}/>}
+      </>
       }
       <InView threshold="0.3" onChange={(inView) => inView && setColor("#FFF")}>
       <Description text={thisProject[0].credits} title="Créditos" credits={true}/>

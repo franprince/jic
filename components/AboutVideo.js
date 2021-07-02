@@ -4,7 +4,7 @@ import styles from "../styles/AboutVideo.module.css"
 export default function AboutVideo ({videoID, title}) {
 
     return (
-        <section className={styles.film} style={title ? null : {paddingBottom: "2rem", paddingTop: "6rem"}}>
+        <section className={styles.film} style={title ? null : {paddingBottom: "3rem", paddingTop: "0"}}>
         {title && <h2>{title}</h2>}
         <article>
                 <ReactPlayer
