@@ -49,6 +49,12 @@
 
 .links > a > img{
     height: 3.3rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.links > a > img:hover{
+    transform: scale(0.94);
 }
 
 @media (max-width: 700px) {

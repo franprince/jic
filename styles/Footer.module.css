@@ -28,6 +28,13 @@
 
 .container > section > div > a > img {
     height: 3.2rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.container > section > div > a > img:hover {
+    transform: scale(0.94);
+    border-radius: 50%;
 }
 
 .contact {

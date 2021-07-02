@@ -53,6 +53,11 @@
     box-shadow: 10px 10px 14px -10px rgba(68, 68, 68, 0.185);
     -webkit-box-shadow: 10px 10px 14px -10px rgba(68, 68, 68, 0.185);
     -moz-box-shadow: 10px 10px 14px -10px rgba(68, 68, 68, 0.185);
+    transition: all 0.3s ease;
+}
+
+.links > a > img:hover{
+    transform: scale(0.94);
 }
 
 .area1 > p:first-of-type::before,
