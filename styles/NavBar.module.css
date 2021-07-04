@@ -236,3 +236,29 @@
         margin-top: 1rem;
     }
 }
+
+@media (max-width: 325px) {
+    .links {
+        margin-top: 3.5rem
+    }
+
+    .liScrolled, .liScrolledFirst {
+        padding: 0.5rem;
+    }
+    
+    .liLastScrolled {
+        padding: 0.5rem;
+        padding-bottom: 1.2rem;
+    }
+
+    .nav > ul {
+        height: 80vh;
+        position: relative;
+        top: 5.5rem;
+        flex-direction: column;
+        padding: 2rem;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+    }
+}

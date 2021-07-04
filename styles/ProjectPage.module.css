@@ -17,11 +17,6 @@
     position: relative
 }
 
-.moreProjectsContainer > h2 {
-    font-size: 2.3rem;
-    font-weight: 800;
-}
-
 .moreProjectsContainer {
     width: 100%;
 }
@@ -29,6 +24,8 @@
 .moreProjectsContainer > h2 {
     width: 75%;
     margin: 10rem auto 2.5rem auto;
+    font-size: 2.3rem;
+    font-weight: 800;
 }
 
 .moreProjects {
@@ -45,10 +42,10 @@
     height: 27rem;
     width: 100%;
     align-items: center;
-    position: relative;
     border-radius: 20px;
     transition: all 0.3s ease;
     width: 100%;
+    flex-direction: column-reverse;
     box-shadow: 10px 10px 17px -3px rgba(0,0,0,0.17);
 -webkit-box-shadow: 10px 10px 17px -3px rgba(0,0,0,0.17);
 -moz-box-shadow: 10px 10px 17px -3px rgba(0,0,0,0.17);
@@ -97,10 +94,6 @@
     transition: all 0.5s ease;
 }
 
-.card {
-    flex-direction: column-reverse;
-    position: relative;
-}
 
 .img {
     border-radius: 20px 20px 0 0;

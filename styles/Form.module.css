@@ -81,8 +81,8 @@
     font-weight: 700;
     width: fit-content;
     color: #FFF;
+    border: 2px solid black;
     outline: none;
-    border: none;
     cursor: pointer;
     align-self: flex-end;
     font-family: 'Poppins', sans-serif;
@@ -96,9 +96,7 @@
 
 .form > form > div > button:hover {
     background-color: #FFF;
-    border: 1px solid #000 ;
     color: #000;
-    border: none;
 }
 
 

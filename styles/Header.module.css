@@ -77,9 +77,9 @@
         display: none !important;
     }
 
-    .homeWrapper > div > .elements {
+    /* .homeWrapper > div > .elements {
         top: -30px;
-    }
+    } */
 
     .wrapper > .header > section > h1 {
         margin: 5rem auto auto auto;
@@ -87,10 +87,8 @@
         white-space: pre-line;
     }
     .elements {
-        display: grid;
-        grid-template-rows: 2rem 2rem 2fr;
         height: 80%;
-        padding-top: 7rem;
+        padding-top: 2rem;
     }
     .elements > h1,
     .elements > h2,
@@ -100,12 +98,12 @@
     }
     .elements > h1 {
         align-self: flex-end;
-        font-size: 2rem;
+        font-size: 30px;
         width: 100%;
         
     }
     .elements .i {
-        font-size: 1.1rem;
+        font-size: 16px;
     }
     .elements > a {
         width: fit-content;

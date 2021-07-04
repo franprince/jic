@@ -30,9 +30,6 @@ export default function ContactMain () {
 
     const [sent, setSent] = useState(false)
 
-    console.log(sent)
-    console.log(size.width)
-
     return (
         <main className={styles.main}>
             <section style={sent && size && size.width < 700 ? {height: "100vh", overflow: "hidden", position: "fixed", top: "0", zIndex: "3"} : null}>

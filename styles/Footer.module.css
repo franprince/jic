@@ -87,3 +87,9 @@
         cursor: pointer;
     }
 }
+
+@media (max-width: 325px) {
+    .contact > p, .contact > a {
+        margin: auto 0 auto 0
+    }
+}
