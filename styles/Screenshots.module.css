@@ -17,15 +17,13 @@
     object-fit: cover;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
     .container {
-        min-height: 16rem !important;
-        grid-template-columns: 1fr !important;
-        grid-template-rows: repeat(auto-fill, 16rem) !important;
-        height: fit-content !important;
+        display: flex;
+        flex-direction: column;
     }
 
     .container > article {
-        height: auto !important;
+        height: 16rem !important;
     }
 }

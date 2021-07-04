@@ -209,7 +209,7 @@ export default function Form ({sent, setSent}) {
                 <p>
                     <textarea ref={formMessage} rows="4" onChange={(e) => setMensaje(e.target.value)} name="message" placeholder="Detalles del proyecto, algo más que tenga que saber?"/>
                 </p>
-                <div></div>
+                <div className={styles.space}></div>
                 <div className={styles.button}>
                     <button>Enviar</button>
                 </div>

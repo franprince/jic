@@ -129,6 +129,14 @@
         margin: 10rem auto 8rem auto;
         text-align: left;
     }
+
+    .card {
+        height: 23rem;
+    }
+
+    .img {
+        height: 100%;
+    }
 }
 
 @media (min-width: 1670px) {
