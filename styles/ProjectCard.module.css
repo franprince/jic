@@ -162,10 +162,13 @@
 @media (max-width: 700px) {
     .single {
         min-height: fit-content;
+        margin-top: 1.2rem
     }
+
 
     .single > .content {
         min-height: fit-content;
+        width: 100%;
     }
 
     .info {
