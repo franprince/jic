@@ -1,0 +1,28 @@
+.card {
+    border: 1px solid rgb(56, 47, 58);
+    border-radius: 20px;
+}
+
+.content {
+    border: 1px solid rgb(173, 202, 216);
+    min-height: 40%;
+    display: flex;
+    align-items: center;
+}
+
+.info {
+    margin: auto;
+    width: 80%;
+}
+
+.img {
+    height: 60%;
+}
+
+.img > img {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+}
