@@ -1,5 +1,4 @@
 import styles from "../styles/ProjectsContainer.module.css"
-import ProjectCard from "../components/ProjectCard"
 import {useState, useRef, useEffect} from "react"
 import SingleCard from "../components/SingleCard"
 import DoubleCard from "../components/DoubleCard"
