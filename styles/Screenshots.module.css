@@ -1,18 +1,17 @@
 .container {
     display: grid;
-    min-height: 50vh;
     width: 100%;
     grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
-    grid-auto-rows: 21rem;
 }
 
-.container > article {
+.container > article, .single > article {
     position: relative;
     overflow: hidden;
     object-fit: cover;
+    height: 20rem;
 }
 
-.container > article > img {
+.container > article > img, .single > article > img {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -23,8 +22,8 @@
     grid-column: 3/4;
 }
 
-.single {
-    grid-auto-rows: 24rem ;
+.single > article {
+    height: 25rem;
 }
 
 @media (max-width: 1300px) {
