@@ -1,11 +1,37 @@
 import styles from "../styles/ProjectsContainer.module.css"
 import ProjectCard from "../components/ProjectCard"
-import {useState, useRef} from "react"
+import {useState, useRef, useEffect} from "react"
+import SingleCard from "../components/SingleCard"
+import DoubleCard from "../components/DoubleCard"
 
 export default function ProjectsContainer ({projects}) {
 
     const [shown, setShown] = useState(projects)
     const filter = useRef("0")
+
+    const size = useWindowSize();
+
+    function useWindowSize() { // Hook para detectar el tamaño de pantalla.
+            const [windowSize, setWindowSize] = useState({ // Inicializar el estado con altura y anchura undefined así cliente y servidor están coordinados
+            width: undefined,
+            height: undefined,
+        });
+    
+        useEffect(() => {
+            if (typeof window !== 'undefined') { // Este código se ejecuta únicamente del lado del cliente
+            function handleResize() { // Función que se ejecuta al cambiar el tamaño de la pantalla
+            setWindowSize({ // Cambiar el estado del tamaño de pantalla
+            width: window.innerWidth,
+            height: window.innerHeight,
+            });
+            }
+            window.addEventListener("resize", handleResize); // Agregar event listener
+            handleResize(); // Cuando cambia el tamaño de la pantalla, el handler se ejecuta automáticamente
+            return () => window.removeEventListener("resize", handleResize); // Sacar el event listener
+        }
+        }, []);
+        return windowSize;
+    }
 
     const handleClick = (e) => {
         e.preventDefault()
@@ -30,12 +56,14 @@ export default function ProjectsContainer ({projects}) {
                 </div>
             
                 <div className={styles.grid}>
-                    { shown.map(item => {
-                        return (
-                        <ProjectCard item={item} shown={shown} key={item._id}/>
+                    { shown.map((item, index) => {
+                        return(
+                            index == 0 &&  size.width > 800 && shown.length > 1 || index % 3 == 0 && size.width > 800 && index !== (shown.length -1) ? 
+                            <DoubleCard item={item} index={index}/> :
+                            <SingleCard item={item} index={index} size={size}/>
                         )
                     })}
-                    <article className={shown.length > 1 ? styles.last : styles.lastDouble}>
+                    <article className={styles.last}>
                         <article>
                             <h2>Tu marca puede<br/>estar acá ;)</h2>
                             <a href="/contact">Trabajemos juntos!</a>

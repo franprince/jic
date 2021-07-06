@@ -46,13 +46,14 @@
     margin-top: 0.5rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .wrapper {
         padding: 6rem 0 6rem 0;
     }
     .wrapper > div > h2 {
         width: 100%;
         text-align: center;
+        font-size: 30px;
     }
     .wrapper > div > section > article {
         display: flex;
@@ -75,19 +76,16 @@
     }
 
     .category > h3 {
-        margin: 2rem 0 2rem 0;
+        margin: 4rem 0 2rem 0;
+        font-size: 24px;
+        font-weight: 700 !important;
     }
 
     .category > ul > li {
         list-style: none;
         margin: 0.5rem 0 0rem 0;
         text-align: center;
-        font-size: 1.5rem;
-    }
-    .services > article > h3 {
-        font-size: 1.7rem;
-        font-weight: 800;
-        margin-top: 4rem;
+        font-size: 20px;
     }
     
     

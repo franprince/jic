@@ -37,8 +37,11 @@
     .description > article > h2, .description > article > p {
         width: 100%;
     }
+    .description > article > h2 {
+        font-size: 30px;
+    }
     .description > article > p {
-        font-size: 1.5rem;
-        line-height: 2.6rem;
+        font-size: 20px;
+        line-height: 170%;
     }
 }

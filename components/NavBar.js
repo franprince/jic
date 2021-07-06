@@ -40,10 +40,10 @@ export default function Navbar({color, iNavRef, theme}) {
     }
 
     const handleScroll = () => {
-        if (window.scrollY > 10 && size.width > 700) {
+        if (window.scrollY > 10 && size.width > 800) {
             setInitialNavbar(false)
             setOpen(false)
-        } else if (window.scrollY == 0 && size.width > 700) {
+        } else if (window.scrollY == 0 && size.width > 800) {
             setOpen(true)
             setInitialNavbar(true)
         }
@@ -54,7 +54,7 @@ export default function Navbar({color, iNavRef, theme}) {
     }
 
     const handleSize = () => {
-        if (size.width < 700) {
+        if (size.width < 800) {
             setInitialNavbar(false)
             if (window.scrollY == 0) {
                 setOpen(false)

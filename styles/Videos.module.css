@@ -63,7 +63,7 @@
 
 @media (max-width: 600px) {
     .wrapper > section {
-        margin: auto auto 4rem auto;
+        margin: 4rem auto 4rem auto;
         width: 85%;
         display: grid;
         grid-template-columns: 100%;

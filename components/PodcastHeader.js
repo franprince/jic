@@ -15,8 +15,7 @@ export default function PodcastHeader ({img}) {
                 priority={true}
                 />
                 <section>
-                <h1><i>THE CALI SHOW</i></h1>
-                <h2><i>PODCAST</i></h2>
+                <img src="/img/thecalishow.svg" alt="The Cali Show Podcast"></img>
                 </section>
             </div>
         </header>

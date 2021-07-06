@@ -1,44 +1,34 @@
 .container {
     display: flex;
     flex-direction: column;
-    margin: -1rem auto auto auto;
-    width: 78%;
+    width: 100%;
+    padding-bottom: 6rem;
 }
 .grid {
-    position: relative;
-    grid-template-columns: repeat(2, 1fr);
+    margin: 5rem auto auto auto;
+    max-width: 77%;
     display: grid;
     gap: 1.2rem;
-    margin: 0;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+    position: relative;
+    grid-auto-rows: 439px;
 }
 
-
-
-.lastDouble {
-    grid-column: 1/3;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 15rem;
-}
 
 .projects {
     width: 100%;
     position: relative;
-    top: -10rem;
 }
 
 .buttons {
-    width: 100%;
-    margin: auto;
-    margin-bottom:2.5rem;
+    width: 77%;
+    margin: -6rem auto auto auto;
+    margin-bottom:6rem;
 }
 
 .buttons > button {
     font-family: "Poppins", sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 16px;
     outline: none;
     padding: 0.5rem 2rem 0.5rem 2rem;
@@ -60,7 +50,7 @@
 }
 
 .buttons > button:not(:last-child) {
-    margin-right: 1.5rem;
+    margin-right: 1.7rem;
 }
 
 .buttons > .button:hover {
@@ -76,23 +66,25 @@
     align-items: center;
 }
 
+
 .last > article {
-    width: 60%;
+    width: fit-content;
     margin: auto;
-    height: 80%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-.last > article > h2, .lastDouble > article > h2 {
+.last > article > h2 {
     font-size: 38px;
     line-height: 98.7%;
 }
 
-.last > article > a, .lastDouble > article > a {
+.last > article > a {
     background-color: white;
-    padding: 0.5rem 1.2rem 0.5rem 1.2rem;
+    font-size: 16px;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
     border-radius: 50px;
     font-weight: 700;
     width: fit-content;
@@ -103,9 +95,8 @@
     margin-right: auto;
 }
 
-.last > article > a:hover, .lastDouble > article > a:hover {
+.last > article > a:hover {
     background-color: black;
-    padding: 0.5rem 1.2rem 0.5rem 1.2rem;
     border-radius: 50px;
     font-weight: 700;
     width: fit-content;
@@ -113,26 +104,24 @@
     border: 1px solid white;
 }
 
-@media (max-width: 700px) {
+@media (min-width: 1670px) {
     .grid {
-        display: flex;
-        flex-direction: column;
-        gap: 0;
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 35rem), 1fr));
+        grid-auto-rows: 1fr;
     }
-    .container {
-        width: 90%;
-    }
-    .double {
-        flex-direction: column-reverse;
+
+    .last {
+        height: 649px;
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
+    .grid {
+        max-width: 90%;
+        grid-auto-rows: 500px;
+    }
     .buttons {
         display: none;
-    }
-    .projects {
-        top: 0;
     }
     .container {
         padding-bottom: 6rem;
@@ -140,9 +129,4 @@
     .last {
         display: none;
     }
-}
-
-@media (min-width: 1670px) {
-    .container {width: 75%;}
-    .grid {width: 100%; }
 }

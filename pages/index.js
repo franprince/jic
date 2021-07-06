@@ -36,6 +36,11 @@ export default function Home({projectsApi, homeApi}) {
 
   const [color, setColor] = useState("#FFF")
 
+  useEffect(() => window.scroll({
+    top: 0,
+    left: 0
+ }), [])
+
 
   return (<>
       <Head>

@@ -5,22 +5,16 @@ export default function Screenshots ({pictures}) {
     const length = pictures.length
 
     return (
-        <section className={styles.container} style={
-            length >= 7 && typeof pictures != 'string' ? {display: "none"} :
-            length == 1 || typeof pictures == 'string' ? {gridTemplateColumns: "1fr", height: "70vh"} :
-            length == 2 || length == 4 ? {gridTemplateColumns: "1fr 1fr"} :
-            length == 3 || length == 6  || length == 5 ? {gridTemplateColumns: "1fr 1fr 1fr"} :
-            null
-        }>
-            {pictures && typeof pictures != 'string' && pictures.map(item => {
+        <section className={styles.container}>
+            {pictures && typeof pictures != 'string' && pictures.map((item, index) => {
                 return (
-                    <article key={item} style={ length == 3 ? {height: "70vh"} : length == 5 && pictures.indexOf(item) == 0 ? {gridRow: "1/3"} : null}>
+                    <article key={item} className={pictures.length == 3 && index == 2 ? styles.doubleOf3 : pictures.length == 5 && index == 4 ? styles.doubleOf5 : null}>
                         <img src={item} alt="Screenshot" />
                     </article>
                 )
             })}
             { typeof pictures == 'string' && 
-                <article key={pictures} style={{height: "70vh"}}>
+                <article key={pictures} style={{gridColumn: "1/-1"}}>
                         <img src={pictures} alt="Screenshot" />
                     </article>
             }

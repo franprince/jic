@@ -35,7 +35,7 @@ export default function Podcast ({podcastApi}) {
         <main className={styles.main}>
             <section>
                 <article className={styles.text}>
-                Un <b>podcast</b> donde hablamos con <b>artistas</b>,<br/> <b>filmmakers</b> y <b>emprendedores</b> acerca de<br/> experiencias y procesos de trabajo.
+                Un <b>podcast</b> donde hablamos con <b>artistas</b>,<br/> <b>filmmakers</b> y <b>emprendedores</b> sobre<br/> experiencias y procesos de trabajo.
                 </article>
                 <article className={styles.img}>
                     <Image

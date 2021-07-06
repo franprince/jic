@@ -1,11 +1,12 @@
 .videoWrapper {
     margin: auto;
-    width: 70%;
+    width: 78%;
     position: relative;
     border-radius: 50px;
     position: relative;
     padding-top: 41.1%;
     margin-bottom: 7rem;
+    border: 1px solid red;
 }
 
 .film {
@@ -14,7 +15,7 @@
     justify-content: center;
     align-items: center;
     color: white;
-    width: 79%;
+    width: 78%;
     margin: auto;
     margin-bottom: 6rem;
 }
@@ -42,10 +43,14 @@
         text-align: center;
         margin-bottom: 5rem;
     }
+
+    .film > h2 {
+        font-size: 30px;
+    }
 }
 
 @media (min-width: 1670px) {
     .film {
-        width: 65%;
+        width: 78%;
     }
 }

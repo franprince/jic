@@ -103,7 +103,7 @@ export default function Form ({sent, setSent}) {
         indicatorsContainer: () => ({
             display: "none"
         }),
-        container: () => (size.width > 700 ? {
+        container: () => (size.width > 10000 ? {
             backgroundColor: "#F9F9F9",
             marginTop: "8rem",
         } : size.width < 325 ? {

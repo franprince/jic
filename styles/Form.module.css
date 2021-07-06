@@ -200,6 +200,9 @@
 
 
 @media (min-width: 401px) and (max-width: 1000px) {
+    .form > form > div {
+        margin-top: 1.2rem
+    }
 
     .sent > section {
         width: 100vw;

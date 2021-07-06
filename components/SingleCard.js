@@ -4,14 +4,18 @@ import AOS from "aos"
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
 
-export default function SingleCard ({item, index}) {
+export default function SingleCard ({item, index, size}) {
 
     useEffect(() => AOS.init(), [])
 
     return(
         <Link href={`/projects/${item.slug.current}`}>
             <article className={styles.card}
-            data-aos={index == 0 ? null : (index -1) % 3 != 0 ? "fade-left" : "fade-right"}
+            data-aos={size && size.width < 700 ?
+                        index == 0 ? null :
+                        index % 2 == 0 ? "fade-right" :
+                        "fade-left" :
+                        (index -1) % 3 == 0 ? "fade-right" : "fade-left"}
             >
                 <div className={styles.img}>
                     <img src={item.imageUrl} alt={item.name} className={styles.imgBorder}/>

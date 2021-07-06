@@ -46,7 +46,7 @@ export default function Featured ({projects}) {
                     )
                 })}
                 </div>
-            <Link href="/projects"><a>Ver más proyectos</a></Link>
+            <Link href="/projects"><button><a>Ver más proyectos</a></button></Link>
         </main>
     )
 }

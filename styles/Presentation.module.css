@@ -1,11 +1,13 @@
 .main {
     width: 100%;
+    padding-top: 8rem
 }
 
 .main > section {
+    width: 78%;
     display: flex;
-    justify-content: center;
-    padding: 10rem 0 4rem 0;
+    justify-content: space-between;
+    margin: auto;
 }
 
 .main > section > article {
@@ -15,24 +17,29 @@
     justify-content: center;
     align-items: center;
     color: white;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: auto;
+}
+
+.main > section >article:first-of-type {
+    width: 50%;
+}
+
+.main > section > article > img {
+    height: 100%;
+    width: 100%;
 }
 
 .main > section > article:not(:first-child) {
     align-items: flex-start;
-    width: 45.5%;
     height: 524px;
-    padding-left: 4rem;
 }
 
-.main > section > article:first-child {
-    padding-left: 6rem;
-    width: 50%;
-}
 
 .main > section > article > p {
     font-size: 24px;
-    width: 90%;
-    line-height: 2.7rem;
+    line-height: 175%;
     margin-top: 0.2rem;
     font-family: "Lora", serif;
     white-space: pre-line;
@@ -48,12 +55,8 @@
 
 .main > section > article > div:not(.links) {
     position: relative;
-    width:  524px;
-    height:  524px;
-    top: auto !important;
-    right: auto !important;
-    left: auto !important;
-    bottom: auto !important;
+    padding-top: 56.25%;
+    border: 1px solid green;
 }
 
 
@@ -84,45 +87,45 @@
 .links > a > img:hover {
     transform: scale(0.94);
 }
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
 
     .main > section {
         flex-direction: column;
         padding: 0 ;
-        width: 100%;
+        width: fit-content;
         margin: -10rem auto auto auto;
     }
 
-    .main > section > article:first-child {
-        padding-left: 0;
-        width: 80%;
-        margin: 5rem auto auto auto;
+    .main > section >article:first-of-type {
+        width: 90%;
     }
+    
 
     .main > section > article:not(:first-child) {
         align-items: center;
-        width: 100%;
+        width: 87%;
         padding-left: 0;
         height: fit-content;
     }
 
     .main > section > article > p {
         font-size: 20px;
-        width: 87%;
+        width: fit-content;
         line-height: 175%;
         margin: auto;
     }
 
     .main > section > article > h3 {
         font-size: 30px;
-        margin: 4rem auto 4rem auto;
+        margin: 5rem auto 3.5rem auto;
         font-weight: 700;
     }
 
 
     .main > section > article > div:not(.links) {
-        position: relative !important;
-        transform: scale(0.6);
+        width: 30px;
+        border: 1px solid purple;
+        margin: auto;
     }
 
     .links {

@@ -7,15 +7,7 @@ export default function Presentation ({img, text}) {
         <main className={styles.main}>
     <section>
             <article>
-            <Image
-            src={img}
-            alt="Juan Ignacio Cali"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="top"
-            quality={100}
-            priority={true}
-            />
+                <img src={img} alt="Foto personal de Juan Ignacio Cali"/>
             </article>
             <article>
                 <h3>

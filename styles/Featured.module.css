@@ -14,6 +14,36 @@
     grid-auto-rows: 449px;
 }
 
+.container > button {
+    width: 100vw !important;
+    background-color: black;
+    border: none;
+    outline: none;
+    pointer-events: none;
+    margin-top: 4rem
+}
+
+.container > button > a {
+        font-weight: 700;
+    z-index: 1;
+    font-family: 'Poppins', sans-serif;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    color: #000;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 50px;
+    transition: all 0.5s ease;
+    margin: auto;
+    cursor: pointer;
+    font-size: 16px;
+    pointer-events: all;
+}
+
+.container > button > a:hover {
+    background-color: transparent;
+    color: #FFF;
+}
+
 @media (min-width: 1670px) {
     .grid {
         grid-template-columns: repeat(auto-fill, minmax(min(100%, 35rem), 1fr));

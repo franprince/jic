@@ -13,6 +13,10 @@ function MyApp({ Component, pageProps }) {
       once: false,
       offset: 50,
     });
+    window.scroll({
+      top: 0,
+      left: 0
+   })
   }, []);
 
   return (
