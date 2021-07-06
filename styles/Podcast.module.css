@@ -125,7 +125,6 @@
     .main > section > article:not(:first-of-type) {
         width: 78%;
         max-width: 25rem;
-        border: 1px solid red;
     }
 
     .main > section > article > br {

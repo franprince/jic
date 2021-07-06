@@ -3,7 +3,7 @@
     min-height: 50vh;
     width: 100%;
     grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
-    grid-auto-rows: 20.52rem;
+    grid-auto-rows: 21rem;
 }
 
 .container > article {
