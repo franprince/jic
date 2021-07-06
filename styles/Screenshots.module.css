@@ -1,14 +1,13 @@
 .container {
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(27rem, 1fr));
 }
 
-.container > article, .single > article {
+.container > article {
     position: relative;
-    overflow: hidden;
     object-fit: cover;
-    height: 20rem;
+    min-height: 20rem;
 }
 
 .container > article > img, .single > article > img {
@@ -33,5 +32,19 @@
     .doubleOf5 {
         grid-row: auto;
         grid-column: 1/-1;
+    }
+}
+
+@media (min-width: 1670px) {
+    .container {
+        display: grid;
+        width: 100%;
+        overflow: hidden ;
+        grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    }
+
+    .container > article {
+
+        min-height: 23rem;
     }
 }
