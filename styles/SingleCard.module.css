@@ -1,13 +1,21 @@
 .card {
     border: 1px solid rgb(56, 47, 58);
     border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(0.98) !important;
+    cursor: pointer;
 }
 
 .content {
-    border: 1px solid rgb(173, 202, 216);
-    min-height: 40%;
+    background-color: white;
+    min-height: 38%;
     display: flex;
     align-items: center;
+    overflow-wrap: normal;
+    border-radius: 0 0 20px 20px;
 }
 
 .info {
@@ -15,8 +23,22 @@
     width: 80%;
 }
 
+.info > h2 {
+    white-space: pre-line;
+    font-size: 30px;
+    line-height: 98.7%;
+    margin-bottom: 0;
+}
+
+.info > h3 {
+    font-size: 18px;
+    color: #828282;
+    font-weight: 600 !important;
+    margin-top: 0.5rem
+}
+
 .img {
-    height: 60%;
+    height: 62%;
 }
 
 .img > img {
@@ -25,4 +47,13 @@
     height: 100%;
     border-radius: 20px 20px 0 0;
     width: 100%;
+}
+
+@media (min-width: 1670px) {
+    .info > h2 {
+        font-size: 35px;
+    }
+    .info > h3 {
+        font-size: 23px;
+    }
 }

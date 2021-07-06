@@ -7,7 +7,11 @@ export default {
         title: "Nombre del proyecto",
         name: "name",
         type: "text",
+        description: "Máximo 40 caracteres",
         rows: 2,
+        validation: Rule => [
+            Rule.max(40).error('Máximo de caracteres excedido')
+        ]
     },
     {
         title: "Subtítulo",

@@ -42,6 +42,10 @@ export default function SingleCard ({item, index}) {
                         <h2>{item.name}</h2>
                         <h3>{item.categories.join(", ")}</h3>
                     </section>
+                    <a href={`/projects/${item.slug.current}`}>
+                        <p>Ver el proyecto</p>
+                        <img src="/img/arrow.svg" alt="Ver el proyecto" className={styles.arrow}/>
+                    </a>
                 </div>
                 <div className={styles.img}>
                     <img src={item.imageUrl} alt={item.name} className={styles.imgBorder}/>

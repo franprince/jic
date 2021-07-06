@@ -8,7 +8,7 @@ export default function WorkTogether ({text, link}) {
             <a>
             <section>
                 <h2>{text}</h2>
-                <img src="/img/arrow.png" alt={text}/>
+                <img src="/img/arrow.svg" alt={text}/>
             </section>
             </a>
             </Link>
