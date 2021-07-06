@@ -25,7 +25,7 @@ const projectQuery = groq`*[ _type == 'project' ]{
   categories,
   featured,
   process,
-  "processPics":processPics[0].asset -> url,
+  "processPics":processPics[].asset -> url,
   description,
   credits,
   playbuttonColor,

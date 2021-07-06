@@ -23,6 +23,10 @@
     grid-column: 3/4;
 }
 
+.single {
+    grid-auto-rows: 24rem ;
+}
+
 @media (max-width: 1300px) {
     .doubleOf3 {
         grid-column: 1/-1;
