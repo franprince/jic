@@ -156,6 +156,13 @@ export default function Form ({sent, setSent}) {
             } else {
                 setMissingProduct(true)
             }
+        } else if (!presupuesto) {
+            if (!producto) {
+                setMissingBudget(true)
+                setMissingProduct (true)
+            } else {
+                setMissingBudget(true)
+            }
         }
         else {
             fetch('/api/mail', {

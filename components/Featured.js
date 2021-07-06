@@ -46,7 +46,9 @@ export default function Featured ({projects}) {
                     )
                 })}
                 </div>
-            <Link href="/projects"><button><a>Ver más proyectos</a></button></Link>
+            <div className={styles.button}>   
+                    <Link href="/projects"><a>Ver más proyectos</a></Link>
+                </div>
         </main>
     )
 }

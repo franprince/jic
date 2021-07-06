@@ -14,16 +14,13 @@
     grid-auto-rows: 449px;
 }
 
-.container > button {
-    width: 100vw !important;
-    background-color: black;
-    border: none;
-    outline: none;
-    pointer-events: none;
+.button {
+    display: flex;
+    justify-content: center;
     margin-top: 4rem
 }
 
-.container > button > a {
+.button > a {
         font-weight: 700;
     z-index: 1;
     font-family: 'Poppins', sans-serif;
@@ -39,7 +36,7 @@
     pointer-events: all;
 }
 
-.container > button > a:hover {
+.button > a:hover {
     background-color: transparent;
     color: #FFF;
 }
