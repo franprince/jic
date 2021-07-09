@@ -38,6 +38,13 @@
     .header > div {
         display: none !important;
     }
+    .header > section > h1 {
+        font-size: 30px;
+    }
+
+    .aboutTitles > h1 {
+        margin-top: 4rem !important
+    }
     .contactTitles > h1:not(:last-child) {
         display: none;
     }

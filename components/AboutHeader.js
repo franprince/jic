@@ -14,7 +14,7 @@ export default function AboutHeader ({title, img, contact, mobileTitle}) {
                 quality={100}
                 priority={true}
                 />
-                <section className={contact && styles.contactTitles}>
+                <section className={contact ? styles.contactTitles : styles.aboutTitles}>
                     <h1>{title}</h1>
                     {
                         contact && <h1>{mobileTitle}</h1>

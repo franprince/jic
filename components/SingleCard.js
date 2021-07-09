@@ -10,7 +10,7 @@ export default function SingleCard ({item, index, size, mp}) {
 
     return(
         <Link href={`/projects/${item.slug.current}`}>
-            <article className={styles.card}
+            <article className={mp ? styles.mpCard : styles.card}
             data-aos={mp ? index == 0 ? "fade-right" : "fade-left" : 
                         size && size.width < 700 ?
                         index == 0 ? null :

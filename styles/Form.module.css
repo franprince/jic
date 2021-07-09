@@ -199,7 +199,7 @@
   }
 
 
-@media (min-width: 401px) and (max-width: 1000px) {
+@media (max-width: 1000px) {
     .form > form > div {
         margin-top: 1.2rem
     }
@@ -246,6 +246,7 @@
     }
 
     .form > form > p{
+        margin-top: 1rem;
         margin: auto;
         width: 100%;
     }
@@ -253,6 +254,7 @@
     .form > form > p > input,
 .form > form > p > textarea {
     padding: 1rem;
+    margin-top: 1rem;
 }
 
     .mobileCell {

@@ -46,6 +46,7 @@
     transition: all 0.3s ease;
     width: 100%;
     flex-direction: column-reverse;
+    
     box-shadow: 10px 10px 17px -3px rgba(0,0,0,0.17);
 -webkit-box-shadow: 10px 10px 17px -3px rgba(0,0,0,0.17);
 -moz-box-shadow: 10px 10px 17px -3px rgba(0,0,0,0.17);
