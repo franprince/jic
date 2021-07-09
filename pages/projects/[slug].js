@@ -4,14 +4,11 @@ import { getClient, overlayDrafts } from '../../lib/sanity.server'
 import {groq} from 'next-sanity'
 import ReactPlayer from 'react-player'
 import NavBar from "../../components/NavBar"
-import Banner from "../../components/Banner"
 import ProjectHeader from "../../components/ProjectHeader"
-import PlayArrow from "../../components/PlayArrow"
 import Screenshots from "../../components/Screenshots"
 import Footer from "../../components/Footer"
 import styles from "../../styles/ProjectPage.module.css"
 import Head from "next/head";
-import Image from "next/image"
 import MoreProjects from "../../components/MoreProjects";
 import Description from "../../components/Description";
 import AboutVideo from "../../components/AboutVideo";
@@ -55,6 +52,30 @@ export default function Details ({pageSlug, projects, banner}) {
   const [color, setColor] = useState("#000")
   const [moreProjects, setMoreProjects] = useState()
 
+  const size = useWindowSize();
+
+  function useWindowSize() { // Hook para detectar el tamaño de pantalla.
+          const [windowSize, setWindowSize] = useState({ // Inicializar el estado con altura y anchura undefined así cliente y servidor están coordinados
+          width: undefined,
+          height: undefined,
+      });
+  
+      useEffect(() => {
+          if (typeof window !== 'undefined') { // Este código se ejecuta únicamente del lado del cliente
+          function handleResize() { // Función que se ejecuta al cambiar el tamaño de la pantalla
+          setWindowSize({ // Cambiar el estado del tamaño de pantalla
+          width: window.innerWidth,
+          height: window.innerHeight,
+          });
+          }
+          window.addEventListener("resize", handleResize); // Agregar event listener
+          handleResize(); // Cuando cambia el tamaño de la pantalla, el handler se ejecuta automáticamente
+          return () => window.removeEventListener("resize", handleResize); // Sacar el event listener
+      }
+      }, []);
+      return windowSize;
+  }
+
     function getRandom(arr, n) { // Función para conseguir dos proyectos al azar que se mostrarán al final de la página
       var result = new Array(n),
           len = arr.length,
@@ -70,7 +91,6 @@ export default function Details ({pageSlug, projects, banner}) {
   }
   
   useEffect(() => getRandom(clearProjects, 2), [])
-  console.log(thisProject[0].backstageVid)
     return (<>
     <Head>
       <title>{thisProject[0].name}</title>
@@ -127,7 +147,7 @@ export default function Details ({pageSlug, projects, banner}) {
       <Description text={thisProject[0].credits} title="Créditos" credits={true}/>
       </InView>
       <InView threshold="0.3" onChange={(inView) => inView && setColor("#000")}>
-      <MoreProjects moreProjects={moreProjects}/>
+      <MoreProjects moreProjects={moreProjects} size={size}/>
       </InView>
       <Footer/>
       </main>

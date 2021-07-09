@@ -33,7 +33,7 @@ export default function Youtube ({ytApi, banner}) {
             <Head>
             <title>JIC | YouTube</title>
             </Head>
-            <NavBar color={color} iNavRef={"3"} theme={"light"}/>
+            <NavBar color={color} iNavRef={"2"} theme={"light"}/>
             <Header img={ytApi[0].headerURL} title={`YOUTUBER IN\nPROGRESS`} home={false}/>
             <Videos videos={videos}/>
             <Banner img={banner[0].bannerURL}/>

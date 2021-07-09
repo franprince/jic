@@ -32,7 +32,7 @@ export default function About ({pics, aboutApi}) {
         <Head>
             <title>JIC | Sobre Mi</title>
         </Head>
-        <NavBar color={color} iNavRef={"5"} theme={"light"}/>
+        <NavBar color={color} iNavRef={"4"} theme={"light"}/>
         <AboutHeader title="SOBRE MI" img={aboutApi[0].headerURL}/>
         <Presentation img={aboutApi[0].personalImgURL} text={aboutApi[0].text}/>
         <AboutVideo videoID={aboutApi[0].videoID} title="Un film acerca de mí"/>

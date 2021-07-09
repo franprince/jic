@@ -29,7 +29,7 @@ export default function Podcast ({podcastApi}) {
                 JIC | Podcast
             </title>
         </Head>
-        <NavBar color={color} iNavRef={"4"} theme={"light"}/>
+        <NavBar color={color} iNavRef={"3"} theme={"light"}/>
         <PodcastHeader img={podcastApi[0].headerURL}/>
         <InView threshold="0.3" onChange={(inView) => inView ? setColor("#000") : setColor("#FFF")}>
         <main className={styles.main}>

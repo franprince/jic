@@ -3,6 +3,7 @@ import styles from "../styles/NavBar.module.css"
 import {Spin as Hamburger} from 'hamburger-react'
 import { motion } from "framer-motion"
 import Link from 'next/link'
+import NavLink from "./NavLink";
 
 export default function Navbar({color, iNavRef, theme}) {
 
@@ -98,44 +99,63 @@ export default function Navbar({color, iNavRef, theme}) {
         closed: {opacity: 0, x: "300%", width: "0px"}
     }
 
+    const links = [
+        {
+            "text": "HOME",
+            "link": "/",
+            "id": 0,
+            "className": `${initialNavBar? styles.liFirst : styles.liScrolledFirst}`
+        },
+        {
+            "text": "PROYECTOS",
+            "link": "/projects",
+            "id": 1,
+            "className": `${initialNavBar? styles.li : styles.liScrolled}`
+        },
+        {
+            "text": "YOUTUBE",
+            "link": "/youtube",
+            "id": 2,
+            "className": `${initialNavBar? styles.li : styles.liScrolled}`
+        },
+        {
+            "text": "PODCAST",
+            "link": "/podcast",
+            "id": 3,
+            "className": `${initialNavBar? styles.li : styles.liScrolled}`
+        },
+        {
+            "text": "SOBRE MI",
+            "link": "/about",
+            "id": 4,
+            "className": `${initialNavBar? styles.liLast : styles.liLastScrolled}`
+        },
+        {
+            "text": "CONTACTO",
+            "link": "/contact",
+            "id": 5,
+            "className": `${initialNavBar? styles.contact : styles.contactScrolled}`
+        },
+    ]
     return (
     <nav className={styles.wrapper}>
         <main style={!open && !mobile ? {justifyContent: "space-between"} : null}>
-            <Link href="/">
-                <a><h2 style={!mobile ? {color: color, opacity: "1"} : open ? {color: "#FFF", opacity: "1"} : {opacity: "0"}}>JIC</h2></a>
-            </Link>
+
+        {/* JIC */}
+        <Link href="/">
+            <a><h2 style={!mobile ? {color: color, opacity: "1"} : open ? {color: "#FFF", opacity: "1"} : {opacity: "0"}}>JIC</h2></a>
+        </Link>
             <div style={mobile ? {display: "none"} : {flex: "1"}}></div>
+
+        {/* NAV */}
         <motion.nav className={styles.nav} animate={open ? "open" : "closed"} variants={variants} transition={{ type: "spring", duration: 0.6}}>
-                    <motion.div className={styles.bg} animate={initialNavBar ? "closed" : open ? "open" : "closed"} variants={bgVariants} transition={{ type: "ease", duration: 0.2}}></motion.div>
+        <motion.div className={styles.bg} animate={initialNavBar ? "closed" : open ? "open" : "closed"} variants={bgVariants} transition={{ type: "ease", duration: 0.2}}></motion.div>
             <ul className={theme == "light" ? styles.light : initialNavBar ? styles.dark : styles.light}>
-                <Link href="/">
-                    <a onClick={handleRef}>
-                        <li id="0" className={initialNavBar ? styles.liFirst : styles.liScrolledFirst}
-                        style={navRef.current == "0" ? {fontWeight: "700", pointerEvents: "none"} : {fontWeight: "300"}}>HOME</li>
-                        </a>
-                </Link>
-                <Link href="/projects">
-                    <a onClick={handleRef}>
-                        <li id="1" className={initialNavBar ? styles.li : styles.liScrolled}
-                        style={navRef.current == "1" ? {fontWeight: "700", pointerEvents: "none"} : {fontWeight: "300"}}>PROYECTOS</li>
-                        </a>
-                </Link>
-                <Link href="/youtube">
-                    <a href="/youtube"><li id="3" className={initialNavBar ? styles.li : styles.liScrolled}
-                    style={navRef.current == "3" ? {fontWeight: "700", pointerEvents: "none"} : {fontWeight: "300"}}>YOUTUBE</li></a>
-                </Link>
-                <Link href="/podcast">
-                    <a><li id="4" className={initialNavBar ? styles.li : styles.liScrolled}
-                    style={navRef.current == "4" ? {fontWeight: "700", pointerEvents: "none"} : {fontWeight: "300"}}>PODCAST</li></a>
-                </Link>
-                <Link href="/about">
-                    <a><li id="5" className={initialNavBar ? styles.liLast : styles.liLastScrolled}
-                    style={navRef.current == "5" ? {fontWeight: "700", pointerEvents: "none"} : {fontWeight: "300"}}>SOBRE MI</li></a>
-                </Link>
-                <Link href="/contact">
-                    <a><li id="6" className={initialNavBar? styles.contact : styles.contactScrolled}
-                    style={navRef.current == "6" ? {fontWeight: "700", pointerEvents: "none"} : {fontWeight: "300"}}>CONTACTO</li></a>
-                </Link>
+                {links.map((link) => {
+                    return (
+                        <NavLink text={link.text} navRef={navRef} handleRef={handleRef} id={link.id} link={link.link} className={link.className}/>
+                    )
+                })}
                 <li className={styles.links} style={mobile ? {display: "flex"} : {display: "none"}}>
                     <a href="https://www.instagram.com/juanignaciocali/" target="_blank">
                         <img src="/img/instagram.svg" alt="Ir a Instagram"/>
@@ -152,6 +172,8 @@ export default function Navbar({color, iNavRef, theme}) {
                 </li>
             </ul>
         </motion.nav>
+
+        {/* ANVORGUESA */}
         <motion.div className={styles.hamb} animate={initialNavBar ? {opacity: 0, display: "none"} : {opacity: 1}} transition={{duration: 0.5}} >
         <Hamburger toggled={open} toggle={handleClick} size={18} className={styles.hamb}/>
         </motion.div>

@@ -1,15 +1,26 @@
+import { useEffect, useState } from "react"
 import styles from "../styles/Screenshots.module.css"
 
 export default function Screenshots ({pictures}) {
 
-    const length = pictures.length
+    const [finalPics, setFinalPics] = useState([])
 
+    const checkLength = (pics) => {
+        if (pics.length > 6) {
+            setFinalPics(pics.slice(0,6))
+        } else {
+            setFinalPics(pics)
+        }
+    }
+
+    useEffect(() => checkLength(pictures), [])
+    
     return (
-        <section className={pictures && pictures.length > 1 ? styles.container : styles.single}>
-            {pictures && pictures.length > 1 ? pictures.map((item, index) => {
+        <section className={pictures && finalPics.length > 1 ? styles.container : styles.single}>
+            {pictures && finalPics.length > 1 ? finalPics.map((item, index) => {
                 return (
-                    <article key={item} className={pictures.length == 3 && index == 2 ? styles.doubleOf3 :
-                                                    pictures.length == 5 && index == 4 ? styles.doubleOf5 : null}>
+                    <article key={item} className={finalPics.length == 3 && index == 2 ? styles.doubleOf3 :
+                                                    finalPics.length == 5 && index == 4 ? styles.doubleOf5 : null}>
                         <img src={item} alt="Screenshot" />
                     </article>
                 )

@@ -34,6 +34,31 @@ const homeQuery = groq`*[ _type == 'home' ]{
 
 export default function Home({projectsApi, homeApi}) {
 
+  const size = useWindowSize();
+
+  function useWindowSize() { // Hook para detectar el tamaño de pantalla.
+          const [windowSize, setWindowSize] = useState({ // Inicializar el estado con altura y anchura undefined así cliente y servidor están coordinados
+          width: undefined,
+          height: undefined,
+      });
+  
+      useEffect(() => {
+          if (typeof window !== 'undefined') { // Este código se ejecuta únicamente del lado del cliente
+          function handleResize() { // Función que se ejecuta al cambiar el tamaño de la pantalla
+          setWindowSize({ // Cambiar el estado del tamaño de pantalla
+          width: window.innerWidth,
+          height: window.innerHeight,
+          });
+          }
+          window.addEventListener("resize", handleResize); // Agregar event listener
+          handleResize(); // Cuando cambia el tamaño de la pantalla, el handler se ejecuta automáticamente
+          return () => window.removeEventListener("resize", handleResize); // Sacar el event listener
+      }
+      }, []);
+      return windowSize;
+  }
+
+
   const [color, setColor] = useState("#FFF")
 
   useEffect(() => window.scroll({
@@ -48,10 +73,10 @@ export default function Home({projectsApi, homeApi}) {
       </Head>
       <NavBar color={color} inNavRef={"0"} theme={"light"}/>
       <InView onChange={(inView) => inView && setColor("#FFF")}>
-      <Header img={homeApi[0].headerURL} changeOnMobile={true} home={true} mobileImg={homeApi[0].headerMobileURL} title="JUAN IGNACIO CALI" subtitle="Filmmaker | Director Creativo | Fotógrafo"/>
+      <Header img={homeApi[0].headerURL} changeOnMobile={true} home={true} mobileImg={homeApi[0].headerMobileURL} size={size} title="JUAN IGNACIO CALI" subtitle="Filmmaker | Director Creativo | Fotógrafo"/>
       </InView>
       <InView threshold="0.5" onChange={(inView) => inView && setColor("#000")}>
-      <Featured projects={projectsApi}/>
+      <Featured projects={projectsApi} size={size}/>
       </InView>
       <InView onChange={(inView) => inView && setColor("#000")}>
       <Services/>
