@@ -7,7 +7,6 @@
 .container > article {
     position: relative;
     object-fit: cover;
-    min-height: 20rem;
 }
 
 .container > article > img, .single > article > img {
