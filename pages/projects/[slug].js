@@ -78,7 +78,7 @@ export default function Details ({pageSlug, projects, banner}) {
     <main className={styles.main}>
       <NavBar color={color} iNavRef={"1"} theme={"dark"}/>
       <InView onChange={(inView) => inView && setColor("#000")}>
-      <ProjectHeader brand={thisProject[0].brand} title={thisProject[0].subtitle} category={thisProject[0].categories[0]}/>
+      <ProjectHeader brand={thisProject[0].brand} title={thisProject[0].subtitle} categories={thisProject[0].categories}/>
       </InView>
       <div className={styles.videoWrapper}>
           <ReactPlayer

@@ -26,6 +26,9 @@
 }
 
 @media (max-width: 1300px) {
+    .container {
+        gap: 0
+    }
     .doubleOf3 {
         grid-column: 1/-1;
     }
@@ -37,8 +40,6 @@
 
 @media (min-width: 1670px) {
     .container {
-        display: grid;
-        width: 100%;
         overflow: hidden ;
         grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
     }

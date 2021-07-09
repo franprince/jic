@@ -53,6 +53,13 @@ export default {
         type: "text", 
     },
     {
+        title: "Capturas",
+        description: "Las capturas que van a aparecer en El Proyecto",
+        name: "screenshots",
+        type: "array",
+        of: [{type: "image"}]
+    },
+    {
         title: "El proceso",
         name: "process",
         type: "text",
@@ -90,13 +97,6 @@ export default {
         title: "Imagen Principal",
         name: "img",
         type: "image"
-    },
-    {
-        title: "Capturas",
-        description: "Las capturas que van a aparecer en El Proceso",
-        name: "screenshots",
-        type: "array",
-        of: [{type: "image"}]
     },
     ]
 }

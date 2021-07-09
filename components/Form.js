@@ -170,6 +170,7 @@ export default function Form ({sent, setSent}) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ nombre: nombre, mensaje: mensaje, presupuesto: presupuesto, producto: producto, trabajo: trabajo, puesto: puesto, email: email })
         });
+        console.log("sent")
         setSent(true)
         formName.current.value = ""
         formEmail.current.value = ""
