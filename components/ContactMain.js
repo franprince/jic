@@ -20,10 +20,10 @@ export default function ContactMain ({size}) {
                     <p>+54 221 356-3090</p>
                     <h3>Seguime</h3>
                     <article className={styles.links}>
-                        <a href="https://www.instagram.com/juanignaciocali/">
+                        <a target="_blank" href="https://www.instagram.com/juanignaciocali/">
                             <img src="/img/instagram.svg" alt="Ir a Instagram" className={styles.icon}/>
                         </a>
-                        <a href="mailto:juanignaciocali@gmail.com">
+                        <a target="_blank" href="mailto:juanignaciocali@gmail.com">
                             <img src="/img/gmail.svg" alt="Contactame por email" className={styles.icon}/>
                         </a>
                 </article>

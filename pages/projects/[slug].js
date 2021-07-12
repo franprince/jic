@@ -100,7 +100,9 @@ export default function Details ({pageSlug, projects, banner}) {
       <InView onChange={(inView) => inView && setColor("#000")}>
       <ProjectHeader brand={thisProject[0].brand} title={thisProject[0].subtitle} categories={thisProject[0].categories}/>
       </InView>
-      <div className={styles.videoWrapper}>
+      {
+        thisProject[0].videoURL != null &&
+        <div className={styles.videoWrapper}>
           <ReactPlayer
                       url={`${thisProject[0].videoURL}`}
                       height={"100%"} 
@@ -114,21 +116,28 @@ export default function Details ({pageSlug, projects, banner}) {
                       }}
                       />
         </div>
+      }
       <InView threshold="0.3" onChange={(inView) => inView && setColor("#000")}>
-        <Description text={thisProject[0].description} title="El proyecto"/>
+      {thisProject[0].description != null && 
+      <Description text={thisProject[0].description} title="El proyecto"/>
+          }
       </InView>
       <InView threshold="0.3" onChange={(inView) => inView && setColor("#FFF")}>
-        <Screenshots pictures={screenshots}/>
+        {screenshots != null && <>
+          <Screenshots pictures={screenshots}/></>
+          }
       </InView>
       <InView threshold="0.3" onChange={(inView) => inView && setColor("#000")}>
+        {thisProject[0].process != null &&
         <Description text={thisProject[0].process} title="El proceso"/>
+        }
       </InView>
       <InView threshold="0.3" onChange={(inView) => inView && setColor("#FFF")}>
       {thisProject[0].processPics != null  && 
         <Screenshots pictures={thisProject[0].processPics}/>}
       </InView>
       {
-        thisProject[0].backstage && 
+        thisProject[0].backstage != null && 
         <>
         <InView threshold="0.3" onChange={(inView) => inView && setColor("#000")}>
           <Description text={thisProject[0].backstage} title="El backstage"/>
@@ -138,13 +147,16 @@ export default function Details ({pageSlug, projects, banner}) {
         }
         {thisProject[0].backstagePics != null  && 
           <InView threshold="0.3" onChange={(inView) => inView && setColor("#FFF")}>
-            <Screenshots pictures={thisProject[0].backstagePics}/>
+            <Screenshots pictures={thisProject[0].backstagePics} last={true}/>
           </InView>
         }
         </>
       }
       <InView threshold="0.3" onChange={(inView) => inView && setColor("#FFF")}>
-      <Description text={thisProject[0].credits} title="Créditos" credits={true}/>
+        {
+          thisProject[0].credits &&
+          <Description text={thisProject[0].credits} title="Créditos" credits={true}/>
+        }
       </InView>
       <InView threshold="0.3" onChange={(inView) => inView && setColor("#000")}>
       <MoreProjects moreProjects={moreProjects} size={size}/>

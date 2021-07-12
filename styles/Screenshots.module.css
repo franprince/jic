@@ -2,6 +2,7 @@
     display: grid;
     width: 100%;
     grid-template-columns: repeat(auto-fill, minmax(27rem, 1fr));
+    padding-bottom: 7rem;
 }
 
 .container > article {
@@ -22,6 +23,10 @@
 
 .single > article {
     height: 25rem;
+}
+
+.single {
+    padding-bottom: 7rem;
 }
 
 @media (max-width: 1300px) {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import styles from "../styles/Screenshots.module.css"
 
-export default function Screenshots ({pictures}) {
+export default function Screenshots ({pictures, last}) {
 
     const [finalPics, setFinalPics] = useState([])
 
@@ -16,7 +16,7 @@ export default function Screenshots ({pictures}) {
     useEffect(() => checkLength(pictures), [])
     
     return (
-        <section className={pictures && finalPics.length > 1 ? styles.container : styles.single}>
+        <section className={pictures && finalPics.length > 1 ? styles.container : styles.single} style={last ? {paddingBottom: "0"} : null}>
             {pictures && finalPics.length > 1 ? finalPics.map((item, index) => {
                 return (
                     <article key={item} className={finalPics.length == 3 && index == 2 ? styles.doubleOf3 :
