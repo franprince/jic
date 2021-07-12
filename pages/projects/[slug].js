@@ -134,7 +134,7 @@ export default function Details ({pageSlug, projects, banner}) {
       </InView>
       <InView threshold="0.3" onChange={(inView) => inView && setColor("#FFF")}>
       {thisProject[0].processPics != null  && 
-        <Screenshots pictures={thisProject[0].processPics}/>}
+        <Screenshots pictures={thisProject[0].processPics} last={thisProject[0].backstage == null ? true : false}/>}
       </InView>
       {
         thisProject[0].backstage != null && 
