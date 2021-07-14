@@ -1,9 +1,10 @@
 import Layout from "../components/Layout"
 import '../styles/globals.css'
-import App from 'next/app'
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useRouter } from 'next/router'
+import * as gtag from '../lib/gtag'
 
 function MyApp({ Component, pageProps }) {
 
@@ -18,6 +19,17 @@ function MyApp({ Component, pageProps }) {
       left: 0
    })
   }, []);
+
+  const router = useRouter()
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      gtag.pageview(url)
+    }
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
 
   return (
     <Layout>
