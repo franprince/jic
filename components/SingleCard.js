@@ -4,11 +4,11 @@ import AOS from "aos"
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
 
-export default function SingleCard ({item, index, size, mp, key}) {
+export default function SingleCard ({item, index, size, mp}) {
 
     useEffect(() => AOS.init(), [])
     return(
-        <Link href={`/projects/${item.slug.current}`} key={item.name}>
+        <Link href={`/projects/${item.slug.current}`} key={item}>
             <article className={mp ? styles.mpCard : styles.card}
             data-aos={mp ? 
                         index == 0 ? "fade-right" : "fade-left" :

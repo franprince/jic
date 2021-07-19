@@ -36,6 +36,11 @@ export default {
         type: "boolean"
     },
     {
+        title: "Oculto",
+        name: "hidden",
+        type: "boolean"
+    },
+    {
         title: "Slug",
         name: "slug",
         description: ".../slug-de-mi-proyecto",

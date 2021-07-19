@@ -5,15 +5,18 @@ import DoubleCard from "../components/DoubleCard"
 
 export default function ProjectsContainer ({projects, size}) {
 
-    const [shown, setShown] = useState(projects)
+    const filteredProjects = projects.filter(project => !project.hidden)
+
+
+    const [shown, setShown] = useState(filteredProjects)
     const filter = useRef("0")
 
     const handleClick = (e) => {
         e.preventDefault()
         if (e.target.value == "all") {
-            setShown(projects)
+            setShown(filteredProjects)
         } else {
-            const filtered = projects.filter(project => project.categories.includes(e.target.value))
+            const filtered = filteredProjects.filter(project => project.categories.includes(e.target.value))
             setShown(filtered)
         }
         filter.current = e.target.id
@@ -34,8 +37,8 @@ export default function ProjectsContainer ({projects, size}) {
                     { shown.map((item, index) => {
                         return(
                             index == 0 &&  size.width > 800 && shown.length > 1 || index % 3 == 0 && size.width > 800 && index !== (shown.length -1) ? 
-                            <DoubleCard item={item} index={index} size={size}/> :
-                            <SingleCard item={item} index={index} size={size}/>
+                            <DoubleCard item={item} index={index} size={size} key={item.name}/> :
+                            <SingleCard item={item} index={index} size={size} key={item.name}/>
                         )
                     })}
                     <article className={styles.last}>

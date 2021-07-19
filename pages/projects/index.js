@@ -15,6 +15,7 @@ import { InView } from 'react-intersection-observer';
 const projectQuery = groq`*[ _type == 'project' ]{
     name,
     _id,
+    hidden,
     categories,
     featured,
     slug,

@@ -9,7 +9,7 @@ export default function SingleCard ({item, index, size}) {
     useEffect(() => AOS.init(), [])
 
     return(
-        <Link href={`/projects/${item.slug.current}`}>
+        <Link href={`/projects/${item.slug.current}`} key={item._id}>
             <article 
             data-aos={index == 0 ? "fade-down" : index % 2 == 0 ? "fade-left" : "fade-right"}
             className={styles.card}>

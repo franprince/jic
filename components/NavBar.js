@@ -153,7 +153,7 @@ export default function Navbar({color, iNavRef, theme}) {
             <ul className={theme == "light" ? styles.light : initialNavBar ? styles.dark : styles.light}>
                 {links.map((link) => {
                     return (
-                        <NavLink text={link.text} navRef={navRef} handleRef={handleRef} id={link.id} link={link.link} className={link.className}/>
+                        <NavLink text={link.text} navRef={navRef} handleRef={handleRef} id={link.id} link={link.link} className={link.className} key={link.id}/>
                     )
                 })}
                 <li className={styles.links} style={mobile ? {display: "flex"} : {display: "none"}}>
