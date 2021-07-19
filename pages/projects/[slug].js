@@ -25,11 +25,9 @@ const projectQuery = groq`*[ _type == 'project' ]{
   "processPics":processPics[].asset -> url,
   description,
   credits,
-  playbuttonColor,
   slug,
   videoURL,
   "imageUrl": img.asset->url,
-  "thumbnailURL": thumbnail.asset->url,
   "screenshots": screenshots[].asset->url,
   "backstagePics" : backstagePics[].asset->url,
   backstageVid,
@@ -37,13 +35,8 @@ const projectQuery = groq`*[ _type == 'project' ]{
   _createdAt
 } | order(_createdAt asc)`
 
-const bannerQuery = groq`*[_type=='banner'] {
-  _id,
-  "headerURL": header.asset -> url
-  }`
 
-
-export default function Details ({pageSlug, projects, banner}) {
+export default function Details ({pageSlug, projects}) {
 
   const thisProject = projects.filter(project => project.slug.current == pageSlug) // Evita que el proyecto actual sea sugerido en la parte de abajo
   const clearProjects = projects.filter(project => project.name != thisProject[0].name)
@@ -54,6 +47,7 @@ export default function Details ({pageSlug, projects, banner}) {
 
   const size = useWindowSize();
 
+  console.log(thisProject[0])
   function useWindowSize() { // Hook para detectar el tamaño de pantalla.
           const [windowSize, setWindowSize] = useState({ // Inicializar el estado con altura y anchura undefined así cliente y servidor están coordinados
           width: undefined,
@@ -98,7 +92,7 @@ export default function Details ({pageSlug, projects, banner}) {
     <main className={styles.main}>
       <NavBar color={color} iNavRef={"1"} theme={"dark"}/>
       <InView onChange={(inView) => inView && setColor("#000")}>
-      <ProjectHeader brand={thisProject[0].brand} title={thisProject[0].subtitle} categories={thisProject[0].categories}/>
+        <ProjectHeader brand={thisProject[0].brand} title={thisProject[0].subtitle} categories={thisProject[0].categories}/>
       </InView>
       {
         thisProject[0].videoURL != null &&
@@ -118,23 +112,23 @@ export default function Details ({pageSlug, projects, banner}) {
         </div>
       }
       <InView threshold="0.3" onChange={(inView) => inView && setColor("#000")}>
-      {thisProject[0].description != null && 
-      <Description text={thisProject[0].description} title="El proyecto"/>
-          }
+        {thisProject[0].description != null && 
+        <Description text={thisProject[0].description} title="El proyecto"/>
+            }
       </InView>
       <InView threshold="0.3" onChange={(inView) => inView && setColor("#FFF")}>
-        {screenshots != null && <>
-          <Screenshots pictures={screenshots}/></>
+        {thisProject[0].screenshots != null &&
+          <Screenshots pictures={screenshots}/>
           }
       </InView>
       <InView threshold="0.3" onChange={(inView) => inView && setColor("#000")}>
         {thisProject[0].process != null &&
-        <Description text={thisProject[0].process} title="El proceso"/>
+          <Description text={thisProject[0].process} title="El proceso"/>
         }
       </InView>
       <InView threshold="0.3" onChange={(inView) => inView && setColor("#FFF")}>
-      {thisProject[0].processPics != null  && 
-        <Screenshots pictures={thisProject[0].processPics} last={thisProject[0].backstage == null ? true : false}/>}
+        {thisProject[0].processPics != null  && 
+          <Screenshots pictures={thisProject[0].processPics} last={thisProject[0].backstage == null ? true : false}/>}
       </InView>
       {
         thisProject[0].backstage != null && 
@@ -169,13 +163,12 @@ export default function Details ({pageSlug, projects, banner}) {
 export const getServerSideProps = async pageContext => {
     const pageSlug = pageContext.query.slug
     const projects = overlayDrafts(await getClient().fetch(projectQuery))
-    const banner = overlayDrafts(await getClient().fetch(bannerQuery))
       if (!pageSlug) {
         return {
             notFound: true
         } 
       }
       return {
-        props: {pageSlug, projects, banner}
+        props: {pageSlug, projects}
         }
 }

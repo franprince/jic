@@ -12,7 +12,7 @@ export default function MoreProjects ({moreProjects, size}) {
         <section className={styles.moreProjectsContainer}>
           <h2>Otros Proyectos</h2>
           <section className={styles.moreProjects}>
-          { moreProjects && moreProjects.map((item, index, size) => {
+          { moreProjects && moreProjects.map((item, index) => {
                 return (
                     <SingleCard item={item} index={index} size={size} mp={true}/>
                           )
