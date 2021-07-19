@@ -21,7 +21,7 @@ const projectQuery = groq`*[ _type == 'project' ]{
   slug,
   "imageUrl": img.asset->url,
   _createdAt
-} | order(_createdAt asc)`
+} | order(_createdAt desc)`
 
 const homeQuery = groq`*[ _type == 'home' ]{
   _id,
