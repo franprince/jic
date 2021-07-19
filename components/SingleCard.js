@@ -22,7 +22,7 @@ export default function SingleCard ({item, index, size, mp, key}) {
                 </div>
                 <div className={styles.content}>
                     <section className={styles.info}>
-                        <h2>{item.name}</h2>
+                        <h2>{item.name != null && item.name}</h2>
                         <h3>{item.categories != null && item.categories.join(", ")}</h3>
                     </section>
                 </div>
