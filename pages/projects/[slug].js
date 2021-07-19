@@ -90,7 +90,7 @@ export default function Details ({pageSlug, projects, banner}) {
       setMoreProjects(result);
   }
   
-  useEffect(() => getRandom(clearProjects, 2), [])
+  useEffect(() => getRandom(clearProjects, 2), [pageSlug])
     return (<>
     <Head>
       <title>{thisProject[0].name}</title>
