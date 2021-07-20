@@ -6,7 +6,7 @@ export default function ProjectHeader ({title, brand, categories}) {
             <section className={styles.content}>
                 <h3>{brand}</h3>
                 <h2>{title}</h2>
-                <h4>{categories.join(", ")}</h4>
+                <h4>{categories && categories.join(", ")}</h4>
             </section>
         </header>
     )
