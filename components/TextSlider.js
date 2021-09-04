@@ -2,44 +2,13 @@ import styles from "../styles/Slider.module.css"
 import React, {useState, useEffect} from 'react'
 import Slider from 'react-touch-drag-slider'
 
-const slides = [
-    {
-        "title": "#1\nPROCESO\nante RESULTADO",
-        "description": "El resultado importa, pero más importa el proceso.\nEs el camino donde realmente vamos a aprender y donde vamos a pasar la mayor parte de nuestro tiempo.\n\nSmall steps at a time.",
-        "descriptionMobile": "El resultado importa, pero\nmás importa el proceso.\nEs el camino donde realmente vamos a aprender y donde vamos a pasar la mayor parte de nuestro tiempo.\n\nSmall steps at a time.",
-        "id": 1,
-        "large": true,
-    },
-    {
-        "title": "#2\nFAIL FAST\nSUCCEED BETTER",
-        "description": "Podemos fallar pero hay que intentar\nque sea rápido para poder mejorarlo y aprender de eso.",
-        "descriptionMobile": "Podemos fallar pero hay que\nintentar que sea rápido para poder mejorarlo y aprender de eso.",
-        "id": 2,
-        "large": false,
-    },
-    {
-        "title": "#3\nStory is the KING,\nbut concept\nis the KEY",
-        "description": "No siempre tenemos que contar\nhistorias en todo lo que hacemos y creamos.\nMuchas veces el concepto es mas importante y transmite mejor aquello que queremos comunicar.",
-        "descriptionMobile": "No siempre tenemos que\ncontar historias en todo lo que hacemos y creamos.\nMuchas veces el concepto es mas importante y transmite mejor aquello que queremos comunicar.",
-        "id": 3,
-        "large": false,
-    },
-    {
-        "title": "#4\nDONE is better\nthan PERFECT",
-        "description": "Algo en lo que estoy trabajando.\nLa frase ya se explica sola, just fu**ing do it.",
-        "descriptionMobile": "Algo en lo que estoy trabajando.\nLa frase ya se explica sola,\njust fu**ing do it.",
-        "id": 4,
-        "large": false,
-    },
-    {
-        "title": "#5\nDO IT\nwith PASSION",
-        "description": "La clave de por qué estoy haciendo esto.\nCuando no encuentres el norte, volvé a este punto.",
-        "descriptionMobile": "La clave de por qué\nestoyhaciendo esto.\nCuando no encuentres\nel norte, volvé a\neste punto.",
-        "id": 5
-    }
-]
+export default function TextSlider ( {slidesA} ) {
 
-export default function TextSlider () {
+    const slides = slidesA.sort(function(a, b) {
+        return a.order - b.order
+    })
+
+
 
     const size = useWindowSize();
 
@@ -75,9 +44,9 @@ export default function TextSlider () {
             <Slider activeIndex={parseInt(index)} onSlideComplete={(i) => {setIndex(i)}}>
                 {slides.map((slide)=> {
                     return (
-                    <article key={slide.id} className={styles.article}>
+                    <article key={slide._id} className={styles.article}>
                         <h3>{slide.title}</h3>
-                        {size && size.width > 700 ? <p>{slide.description}</p> : <p>{slide.descriptionMobile}</p>}
+                        {size && size.width > 700 ? <p>{slide.phrase}</p> : <p>{slide.phraseMobile}</p>}
                         </article>
                 )}
                 )}
