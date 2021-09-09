@@ -12,7 +12,7 @@ export default function ContactMain ({size}) {
                 <article className={styles.area1}>
                     <h2>Conversemos!</h2>
                     <p className={styles.border}>Dejame saber quien sos y<br />cómo puedo ayudarte.</p>
-                    <p>Si no querés llenar el<br />formulario, podes<br />enviarm eun mail. </p>
+                    <p>Si no querés llenar el<br />formulario, podes<br />enviarme un mail. </p>
                 </article>
                 <article className={styles.area2}>
                     <h3>Mis datos</h3>
