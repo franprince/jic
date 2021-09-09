@@ -10,19 +10,15 @@ export default function Footer () {
                     <a target="_blank" href="https://www.youtube.com/channel/UC2Xel3b_bb-RwcpZk0U4yuA">
                         <img src="/img/youtube.svg" alt="Ir a YouTube"/>
                     </a>
-                    <a target="_blank" href="mailto:juanignaciocali@gmail.com">
-                        <img src="/img/gmail.svg" alt="Contactame por email"/>
-                    </a>
                     <a target="_blank" href="https://www.instagram.com/juanignaciocali/">
                         <img src="/img/instagram.svg" alt="Ir a Instagram"/>
                     </a>
-                    <a target="_blank" href="https://wa.me/542213563090">
+                    <a target="_blank" href="https://wa.me/542213648722">
                         <img src="/img/wsp.svg" alt="Contactame por WhatsApp"/>
                     </a>
                     </div>
                 </section>
                 <section className={styles.contact}>
-                    <a href="tel:+542213563090">+54 221 356-3090</a>
                     <p>juan.ignacio.cali@gmail.com</p>
                     <p>Buenos Aires, Argentina</p>
                 </section>
