@@ -8,7 +8,7 @@ import { InView } from 'react-intersection-observer';
 import { getClient, overlayDrafts } from '../../lib/sanity.server'
 import {groq} from 'next-sanity'
 
-const headerQuery = groq`*[_type=='about'] {
+const headerQuery = groq`*[_type=='contact'] {
     _id,
     "headerURL": header.asset -> url,
     }`
