@@ -26,7 +26,7 @@ export default function Form ({sent, setSent, size}) {
 
     const options2 = [
         {
-            value: "$15.000", label: "$15.000"
+            value: "$20.000", label: "$20.000"
         },
         {
             value: "$20.000 - $50.000", label: "$20.000 - $50.000"
@@ -35,7 +35,10 @@ export default function Form ({sent, setSent, size}) {
             value: "$50.000 - $100.000", label: "$50.000 - $100.000"
         },
         {
-            value: "Más de $100.000", label: "Más de $100.000"
+            value: "$100.000 - $200.000", label: "$100.000 - $200.000"
+        },
+        {
+            value: "Más de $200.000", label: "Más de $200.000"
         },
         {
             value: "No especifica", label: "Prefiero no especificar"
