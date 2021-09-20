@@ -11,7 +11,7 @@ import styles from "../../styles/ProjectPage.module.css"
 import Head from "next/head";
 import MoreProjects from "../../components/MoreProjects";
 import Description from "../../components/Description";
-import AboutVideo from "../../components/AboutVideo";
+import Backstage from "../../components/Backstage";
 
 
 const projectQuery = groq`*[ _type == 'project' ]{
@@ -46,8 +46,6 @@ export default function Details ({pageSlug, projects}) {
   const [moreProjects, setMoreProjects] = useState()
 
   const size = useWindowSize();
-
-  console.log(thisProject[0])
   function useWindowSize() { // Hook para detectar el tamaño de pantalla.
           const [windowSize, setWindowSize] = useState({ // Inicializar el estado con altura y anchura undefined así cliente y servidor están coordinados
           width: undefined,
@@ -130,22 +128,7 @@ export default function Details ({pageSlug, projects}) {
         {thisProject[0].processPics != null  && 
           <Screenshots pictures={thisProject[0].processPics} last={thisProject[0].backstage == null ? true : false}/>}
       </InView>
-      {
-        thisProject[0].backstage != null && 
-        <>
-        <InView threshold="0.3" onChange={(inView) => inView && setColor("#000")}>
-          <Description text={thisProject[0].backstage} title="El backstage"/>
-        </InView>
-        {thisProject[0].backstageVid != null  && 
-          <AboutVideo videoID={thisProject[0].backstageVid}/>
-        }
-        {thisProject[0].backstagePics != null  && 
-          <InView threshold="0.3" onChange={(inView) => inView && setColor("#FFF")}>
-            <Screenshots pictures={thisProject[0].backstagePics} last={true}/>
-          </InView>
-        }
-        </>
-      }
+      <Backstage backstage={thisProject[0].backstage} backstageVid={thisProject[0].backstageVid} backstagePics={thisProject[0].backstagePics}/>
       <InView threshold="0.3" onChange={(inView) => inView && setColor("#FFF")}>
         {
           thisProject[0].credits &&

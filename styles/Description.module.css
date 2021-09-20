@@ -12,9 +12,17 @@
     padding-bottom: 7rem;
 }
 
-.description > article > h2, .description > article > p {
+.description > article > h2, .description > article > p, .title {
     width: 80%;
     white-space: pre-line;
+}
+
+.title {
+    padding-bottom: -10rem;
+}
+
+#hola {
+    margin-bottom: -3rem;
 }
 
 .description > article > h2 {

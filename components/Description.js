@@ -4,7 +4,7 @@ export default function Description ({title, text, credits}) {
     return (
         <section className={styles.description} style={credits && {backgroundColor: "#000", color: "white", paddingTop: "7rem"}}>
             <article>
-                <h2>{title}</h2>
+                {title ? <h2>{title}</h2> : null}
                 <p>{text}</p>
             </article>
         </section>
