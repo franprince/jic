@@ -1,5 +1,4 @@
 import { useState } from "react"
-import styles from "../styles/Screenshots.module.css"
 import titleStyle from "../styles/Description.module.css"
 import { InView } from 'react-intersection-observer';
 import Description from "./Description";
