@@ -16,7 +16,7 @@ export default function Screenshots ({pictures, last}) {
     useEffect(() => checkLength(pictures), [])
     
     return (
-        <section className={pictures && finalPics.length > 1 ? styles.container : styles.single} style={last ? {paddingBottom: "0"} : null}>
+        <section className={pictures && finalPics.length > 1 ? styles.container : styles.single} style={last ? {paddingBottom: "3rem"} : null}>
             {pictures && finalPics.length > 1 ? finalPics.map((item, index) => {
                 return (
                     <article key={item} className={finalPics.length == 3 && index == 2 ? styles.doubleOf3 :
