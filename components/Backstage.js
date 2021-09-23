@@ -6,7 +6,7 @@ import AboutVideo from "./AboutVideo"
 import Screenshots from "./Screenshots";
 
 export default function Backstage ({backstage, backstageVid, backstagePics}) {
-
+  
     const [color, setColor] = useState("#000")
 
     return (

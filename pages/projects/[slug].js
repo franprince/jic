@@ -128,7 +128,11 @@ export default function Details ({pageSlug, projects}) {
         {thisProject[0].processPics != null  && 
           <Screenshots pictures={thisProject[0].processPics} last={thisProject[0].backstage == null ? true : false}/>}
       </InView>
-      <Backstage backstage={thisProject[0].backstage} backstageVid={thisProject[0].backstageVid} backstagePics={thisProject[0].backstagePics}/>
+      {
+        (thisProject[0].backstagePics != null || thisProject[0].backstageVid != null || thisProject[0].backstage != null) &&
+        <Backstage backstage={thisProject[0].backstage} backstageVid={thisProject[0].backstageVid} backstagePics={thisProject[0].backstagePics}/>
+      }
+      
       <InView threshold="0.3" onChange={(inView) => inView && setColor("#FFF")}>
         {
           thisProject[0].credits &&
