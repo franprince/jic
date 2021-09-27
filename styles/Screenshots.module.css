@@ -2,18 +2,19 @@
     display: grid;
     width: 100%;
     padding-top: 4rem;
-    grid-template-columns: repeat(auto-fill, minmax(27rem, 1fr));
+    grid-template-columns: repeat(3, minmax(27rem, 1fr));
 }
 
 .container > article {
     position: relative;
-    height: 30rem;
+    height: 35rem;
 }
 
 .container > article > img, .single > article > img {
     height: 100% !important;
     width: 100%;
     object-fit: cover;
+    object-position: bottom;
 }
 
 .lastSingle {
@@ -25,7 +26,7 @@
 }
 
 .single > article {
-    height: 25rem;
+    height: 35rem;
 }
 
 .single {
@@ -48,11 +49,15 @@
 @media (min-width: 1670px) {
     .container {
         overflow: hidden ;
-        grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+        grid-template-columns: repeat(3, minmax(30rem, 1fr));
     }
 
     .container > article {
+        position: relative;
+        height: 45rem;
+    }
 
-        min-height: 23rem;
+    .single > article {
+        height: 45rem;
     }
 }
