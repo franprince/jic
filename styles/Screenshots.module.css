@@ -17,14 +17,6 @@
     object-position: bottom;
 }
 
-.lastSingle {
-    grid-column: 1/4;
-}
-
-.lastDouble {
-    grid-column: 2/4;
-}
-
 .single > article {
     height: 35rem;
 }
@@ -37,12 +29,11 @@
     .container {
         gap: 0
     }
-    .doubleOf3 {
-        grid-column: 1/-1;
-    }
-    .doubleOf5 {
-        grid-row: auto;
-        grid-column: 1/-1;
+    .container > article > img, .single > article > img {
+        height: 100% !important;
+        width: 100%;
+        object-fit: cover;
+        object-position: bottom;
     }
 }
 

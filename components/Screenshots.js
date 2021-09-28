@@ -7,7 +7,7 @@ export default function Screenshots ({pictures, last}) {
         <section className={pictures.length > 1 ? styles.container : styles.single}>
             {pictures.length > 1 ? pictures.map((item, index) => {
                 return (
-                    <article key={item} className={((pictures.length - 1) % 3) == 0 && index == (pictures.length - 1) ? styles.lastSingle : ((pictures.length + 1) % 3 == 0 && (index - 1) % 3) == 0 ? null : styles.lastDouble}>
+                    <article key={item}>
                         <img src={item} alt="Screenshot" />
                     </article>
                 )
