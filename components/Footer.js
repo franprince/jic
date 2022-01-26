@@ -13,9 +13,6 @@ export default function Footer () {
                     <a target="_blank" href="https://www.instagram.com/juanignaciocali/">
                         <img src="/img/instagram.svg" alt="Ir a Instagram"/>
                     </a>
-                    <a target="_blank" href="https://wa.me/542213648722">
-                        <img src="/img/wsp.svg" alt="Contactame por WhatsApp"/>
-                    </a>
                     </div>
                 </section>
                 <section className={styles.contact}>

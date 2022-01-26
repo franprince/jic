@@ -166,9 +166,6 @@ export default function Navbar({color, iNavRef, theme}) {
                     <a href="mailto:juanignaciocali@gmail.com" target="_blank">
                         <img src="/img/gmail.svg" alt="Contactame por email"/>
                     </a>
-                    <a href="https://wa.me/542213648722" target="_blank">
-                        <img src="/img/wsp.svg" alt="Contactame por WhatsApp"/>
-                    </a>
                 </li>
             </ul>
         </motion.nav>

@@ -26,9 +26,6 @@ export default function Presentation ({img, text}) {
                     <a href="https://www.instagram.com/juanignaciocali/">
                         <img src="/img/instagram.svg" alt="Ir a Instagram"/>
                     </a>
-                    <a href="https://wa.me/542213563090">
-                        <img src="/img/wsp.svg" alt="Contactame por WhatsApp"/>
-                    </a>
                 </div>
             </article>
     </section>

@@ -18,9 +18,6 @@ export default function ContactMain ({size}) {
                     <h3>Mis datos</h3>
                     <p>juan.ignacio.cali@gmail.com</p>
                     <article className={styles.links}>
-                        <a target="_blank" href="https://wa.me/542213648722">
-                            <img src="/img/wsp.svg" alt="Contactame por WhatsApp" className={styles.icon}/>
-                        </a>
                         <a target="_blank" href="https://www.instagram.com/juanignaciocali/">
                             <img src="/img/instagram.svg" alt="Ir a Instagram" className={styles.icon}/>
                         </a>
