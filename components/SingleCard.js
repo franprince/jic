@@ -8,7 +8,7 @@ export default function SingleCard ({item, index, size, mp}) {
 
     useEffect(() => AOS.init(), [])
     return(
-        <Link href={`/projects/${item.slug.current}`} key={item}>
+        <Link href={`/projects/${item?.slug?.current}`} key={item}>
             <article className={mp ? styles.mpCard : styles.card}
             data-aos={mp ? 
                         index == 0 ? "fade-right" : "fade-left" :
