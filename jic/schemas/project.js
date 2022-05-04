@@ -9,9 +9,7 @@ export default {
         type: "text",
         description: "Máximo 40 caracteres",
         rows: 2,
-        validation: Rule => [
-            Rule.max(40).error('Máximo de caracteres excedido')
-        ]
+        validation: Rule => Rule.required().max(40).error('Máximo de caracteres excedido')
     },
     {
         title: "Subtítulo",
@@ -45,6 +43,7 @@ export default {
         name: "slug",
         description: ".../slug-de-mi-proyecto",
         type: "slug",
+        validation: Rule => Rule.required().error('El slug es requerido!')
     },
         {
         title: "Categorías",
