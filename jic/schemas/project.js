@@ -49,7 +49,8 @@ export default {
         title: "Categorías",
         name: "categories",
         type: "array", 
-        of: [{type: "string"}]
+        of: [{type: "string"}],
+        validation: Rule => Rule.required().error('Ingresá por lo menos una categoría')
     },
     {
         title: "El proyecto",
