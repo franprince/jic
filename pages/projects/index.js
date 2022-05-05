@@ -1,10 +1,12 @@
 import Head from "next/head";
-import Header from "../../components/Header";
-import NavBar from "../../components/NavBar";
-import WorkTogether from "../../components/WorkTogether";
-import Footer from "../../components/Footer";
-import ProjectsContainer from "../../components/Projects";
-import PhGrid from "../../components/PhGrid";
+import {
+  Header,
+  NavBar,
+  WorkTogether,
+  Footer,
+  ProjectsContainer,
+  PhGrid,
+} from "../../components";
 import { useState } from "react";
 import { getClient, overlayDrafts } from "../../lib/sanity.server";
 import { groq } from "next-sanity";

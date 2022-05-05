@@ -1,7 +1,6 @@
 import styles from "../styles/Header.module.css"
 import Image from 'next/image'
 import Link from 'next/link'
-import {useState, useEffect} from "react"
 
 export default function Header ({title, subtitle, img, home, mobileImg, changeOnMobile, size}) {
 
