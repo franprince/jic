@@ -12,6 +12,7 @@ import Head from "next/head";
 import MoreProjects from "../../components/MoreProjects";
 import Description from "../../components/Description";
 import Backstage from "../../components/Backstage";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 
 const projectQuery = groq`*[ _type == 'project' ]{
@@ -46,27 +47,6 @@ export default function Details({ pageSlug, projects }) {
   const [moreProjects, setMoreProjects] = useState()
 
   const size = useWindowSize();
-  function useWindowSize() { // Hook para detectar el tamaño de pantalla.
-    const [windowSize, setWindowSize] = useState({ // Inicializar el estado con altura y anchura undefined así cliente y servidor están coordinados
-      width: undefined,
-      height: undefined,
-    });
-
-    useEffect(() => {
-      if (typeof window !== 'undefined') { // Este código se ejecuta únicamente del lado del cliente
-        function handleResize() { // Función que se ejecuta al cambiar el tamaño de la pantalla
-          setWindowSize({ // Cambiar el estado del tamaño de pantalla
-            width: window.innerWidth,
-            height: window.innerHeight,
-          });
-        }
-        window.addEventListener("resize", handleResize); // Agregar event listener
-        handleResize(); // Cuando cambia el tamaño de la pantalla, el handler se ejecuta automáticamente
-        return () => window.removeEventListener("resize", handleResize); // Sacar el event listener
-      }
-    }, []);
-    return windowSize;
-  }
 
   function getRandom(arr, n) { // Función para conseguir dos proyectos al azar que se mostrarán al final de la página
     let result = new Array(n),
