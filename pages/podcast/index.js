@@ -24,15 +24,12 @@ export default function Podcast({ podcastApi }) {
       </Head>
       <NavBar color={color} iNavRef={"3"} theme={"light"} />
       <PodcastHeader img={podcastApi[0].headerURL} />
-      <InView
-        threshold="0.3"
-        onChange={(inView) => (inView ? setColor("#000") : setColor("#FFF"))}
-      >
+      <InView threshold="0.3" onChange={(inView) => (inView ? setColor("#000") : setColor("#FFF"))}>
         <main className={styles.main}>
           <section>
             <article className={styles.text}>
-              Un <b>podcast</b> donde hablamos con <b>artistas</b>,<br />{" "}
-              <b>filmmakers</b> y <b>emprendedores</b> sobre
+              Un <b>podcast</b> donde hablamos con <b>artistas</b>,<br /> <b>filmmakers</b> y{" "}
+              <b>emprendedores</b> sobre
               <br /> experiencias y procesos de trabajo.
             </article>
             <article className={styles.img}>
@@ -48,16 +45,10 @@ export default function Podcast({ podcastApi }) {
             <article className={styles.disponible}>
               <p>Disponible en</p>
               <div className={styles.links}>
-                <a
-                  target="_blank"
-                  href="https://www.youtube.com/juanignaciocali"
-                >
+                <a target="_blank" href="https://www.youtube.com/juanignaciocali">
                   <img src="/img/podYT.svg" alt="Youtube" />
                 </a>
-                <a
-                  target="_blank"
-                  href="https://open.spotify.com/show/6VHzEF8VKmRstoAdgwXFX9"
-                >
+                <a target="_blank" href="https://open.spotify.com/show/6VHzEF8VKmRstoAdgwXFX9">
                   <img src="/img/podSpotify.svg" alt="Spotify" />
                 </a>
                 <a
@@ -85,11 +76,7 @@ export default function Podcast({ podcastApi }) {
           return (
             <article
               key={podcastApi[0].assets.indexOf(picture)}
-              className={
-                podcastApi[0].assets.indexOf(picture) == 2
-                  ? styles.last
-                  : styles.notLast
-              }
+              className={podcastApi[0].assets.indexOf(picture) == 2 ? styles.last : styles.notLast}
             >
               <Image
                 src={picture}
@@ -104,10 +91,7 @@ export default function Podcast({ podcastApi }) {
           );
         })}
       </section>
-      <InView
-        threshold="0.8"
-        onChange={(inView) => (inView ? setColor("#000") : setColor("#FFF"))}
-      >
+      <InView threshold="0.8" onChange={(inView) => (inView ? setColor("#000") : setColor("#FFF"))}>
         <WorkTogether
           text="Instagram del Podcast"
           link="https://www.instagram.com/calishowpodcast/"
@@ -119,9 +103,7 @@ export default function Podcast({ podcastApi }) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const podcastApi = overlayDrafts(
-    await getClient(preview).fetch(podcastQuery)
-  );
+  const podcastApi = overlayDrafts(await getClient(preview).fetch(podcastQuery));
   return {
     props: { podcastApi },
     revalidate: 1,

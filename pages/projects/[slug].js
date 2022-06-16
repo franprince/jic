@@ -1,14 +1,6 @@
 import Head from "next/head";
 import { useState, useEffect } from "react";
-import {
-  NavBar,
-  ProjectHeader,
-  Screenshots,
-  Footer,
-  MoreProjects,
-  Description,
-  Backstage,
-} from "../../components";
+import { NavBar, ProjectHeader, Screenshots, Footer, MoreProjects, Description, Backstage } from "../../components";
 import { InView } from "react-intersection-observer";
 import { getClient, overlayDrafts } from "../../lib/sanity.server";
 import { groq } from "next-sanity";
@@ -38,12 +30,8 @@ const projectQuery = groq`*[ _type == 'project' ]{
 } | order(_createdAt asc)`;
 
 export default function Details({ pageSlug, projects }) {
-  const thisProject = projects.filter(
-    (project) => project?.slug?.current == pageSlug
-  ); // Evita que el proyecto actual sea sugerido en la parte de abajo
-  const clearProjects = projects.filter(
-    (project) => project.name != thisProject[0].name
-  );
+  const thisProject = projects.filter((project) => project?.slug?.current == pageSlug); // Evita que el proyecto actual sea sugerido en la parte de abajo
+  const clearProjects = projects.filter((project) => project.name != thisProject[0].name);
   const screenshots = thisProject[0].screenshots;
 
   const [color, setColor] = useState("#000");
@@ -56,8 +44,7 @@ export default function Details({ pageSlug, projects }) {
     let result = new Array(n),
       len = arr.length,
       taken = new Array(len);
-    if (n > len)
-      throw new RangeError("getRandom: more elements taken than available");
+    if (n > len) throw new RangeError("getRandom: more elements taken than available");
     while (n--) {
       let x = Math.floor(Math.random() * len);
       result[n] = arr[x in taken ? taken[x] : x];
@@ -97,42 +84,18 @@ export default function Details({ pageSlug, projects }) {
             />
           </div>
         )}
-        <InView
-          threshold="0.3"
-          onChange={(inView) => inView && setColor("#000")}
-        >
-          {thisProject[0].description != null && (
-            <Description
-              text={thisProject[0].description}
-              title="El proyecto"
-            />
-          )}
+        <InView threshold="0.3" onChange={(inView) => inView && setColor("#000")}>
+          {thisProject[0].description != null && <Description text={thisProject[0].description} title="El proyecto" />}
         </InView>
-        <InView
-          threshold="0.3"
-          onChange={(inView) => inView && setColor("#FFF")}
-        >
-          {thisProject[0].screenshots != null && (
-            <Screenshots pictures={screenshots} />
-          )}
+        <InView threshold="0.3" onChange={(inView) => inView && setColor("#FFF")}>
+          {thisProject[0].screenshots != null && <Screenshots pictures={screenshots} />}
         </InView>
-        <InView
-          threshold="0.3"
-          onChange={(inView) => inView && setColor("#000")}
-        >
-          {thisProject[0].process != null && (
-            <Description text={thisProject[0].process} title="El proceso" />
-          )}
+        <InView threshold="0.3" onChange={(inView) => inView && setColor("#000")}>
+          {thisProject[0].process != null && <Description text={thisProject[0].process} title="El proceso" />}
         </InView>
-        <InView
-          threshold="0.3"
-          onChange={(inView) => inView && setColor("#FFF")}
-        >
+        <InView threshold="0.3" onChange={(inView) => inView && setColor("#FFF")}>
           {thisProject[0].processPics != null && (
-            <Screenshots
-              pictures={thisProject[0].processPics}
-              last={thisProject[0].backstage == null ? true : false}
-            />
+            <Screenshots pictures={thisProject[0].processPics} last={thisProject[0].backstage == null ? true : false} />
           )}
         </InView>
         {(thisProject[0].backstagePics != null ||
@@ -145,22 +108,10 @@ export default function Details({ pageSlug, projects }) {
           />
         )}
 
-        <InView
-          threshold="0.3"
-          onChange={(inView) => inView && setColor("#FFF")}
-        >
-          {thisProject[0].credits && (
-            <Description
-              text={thisProject[0].credits}
-              title="Créditos"
-              credits={true}
-            />
-          )}
+        <InView threshold="0.3" onChange={(inView) => inView && setColor("#FFF")}>
+          {thisProject[0].credits && <Description text={thisProject[0].credits} title="Créditos" credits={true} />}
         </InView>
-        <InView
-          threshold="0.3"
-          onChange={(inView) => inView && setColor("#000")}
-        >
+        <InView threshold="0.3" onChange={(inView) => inView && setColor("#000")}>
           <MoreProjects moreProjects={moreProjects} size={size} />
         </InView>
         <Footer />

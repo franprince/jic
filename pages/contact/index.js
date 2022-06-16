@@ -28,10 +28,7 @@ export default function Contact({ header }) {
         img={header[0].headerURL}
         contact={true}
       />
-      <InView
-        threshold="0.3"
-        onChange={(inView) => (inView ? setColor("#000") : setColor("#FFF"))}
-      >
+      <InView threshold="0.3" onChange={(inView) => (inView ? setColor("#000") : setColor("#FFF"))}>
         <ContactMain size={size} />
       </InView>
       <Footer />

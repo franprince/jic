@@ -84,9 +84,7 @@ export default function Home({ projectsApi, homeApi }) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const projectsApi = overlayDrafts(
-    await getClient(preview).fetch(projectQuery)
-  );
+  const projectsApi = overlayDrafts(await getClient(preview).fetch(projectQuery));
   const homeApi = overlayDrafts(await getClient(preview).fetch(homeQuery));
   console.log(projectsApi);
   console.log(homeApi);
