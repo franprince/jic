@@ -107,13 +107,13 @@ export default function Navbar({color, iNavRef, theme}) {
             "text": "SOBRE MI",
             "link": "/about",
             "id": 4,
-            "className": `${initialNavBar? styles.liLast : styles.liLastScrolled}`
+            "className": `${initialNavBar? styles.li : styles.liScrolled}`
         },
         {
             "text": "CONTACTO",
             "link": "/contact",
             "id": 5,
-            "className": `${initialNavBar? styles.contact : styles.contactScrolled}`
+            "className": `${initialNavBar? styles.liLast : styles.liLastScrolled}`
         },
     ]
     return (
