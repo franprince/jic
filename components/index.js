@@ -25,8 +25,10 @@ import SingleCard from "./SingleCard";
 import TextSlider from "./TextSlider";
 import Videos from "./Videos";
 import WorkTogether from "./WorkTogether";
+import Clients from "./Clients";
 
 export {
+  Clients,
   AboutHeader,
   AboutVideo,
   Backstage,
