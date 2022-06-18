@@ -4,26 +4,32 @@ import { Spin as Hamburger } from "hamburger-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import NavLink from "./NavLink";
+import { useWindowSize } from "../hooks/useWindowSize";
 
 export default function Navbar({ color, iNavRef, theme }) {
   const [initialNavBar, setInitialNavbar] = useState(true);
   const [open, setOpen] = useState(false);
-  const [mobile, setMobile] = useState(true);
   const navRef = useRef(iNavRef);
 
   if (iNavRef == undefined) {
     navRef.current = "0";
   }
 
-  const size = useWindowSize();
+    const size = useWindowSize();
 
-  function useWindowSize() {
-    // Hook para detectar el tamaño de pantalla.
-    const [windowSize, setWindowSize] = useState({
-      // Inicializar el estado con altura y anchura undefined así cliente y servidor están coordinados
-      width: undefined,
-      height: undefined,
-    });
+    const handleScroll = () => {
+        if (window.scrollY > 10 && size.width > 800) {
+            setInitialNavbar(false)
+            setOpen(false)
+        } else if (window.scrollY == 0 && size.width > 800) {
+            setOpen(true)
+            setInitialNavbar(true)
+        }
+        else {
+            setOpen(open)
+            setInitialNavbar(false)
+        } 
+    }
 
     useEffect(() => {
       if (typeof window !== "undefined") {
@@ -76,76 +82,46 @@ export default function Navbar({ color, iNavRef, theme }) {
     } else {
       setMobile(false);
     }
-  };
 
-  const handleClick = () => {
-    // Abre y cierra la barra de navegación haciéndole click
-    setOpen(!open);
-  };
-
-  const handleRef = (e) => {
-    navRef.current = e.target.id;
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  });
-  useEffect(() => {
-    handleSize();
-  }, [size]);
-
-  // Variantes para las animaciones con Framer Motion.
-
-  const variants = {
-    open: { opacity: 1, x: 0, display: "flex" },
-    closed: { opacity: 0, pointerEvents: "none", x: "300%", display: "none" },
-  };
-
-  const bgVariants = {
-    open: { opacity: 1, x: 0 },
-    closed: { opacity: 0, x: "300%", width: "0px" },
-  };
-
-  const links = [
-    {
-      text: "HOME",
-      link: "/",
-      id: 0,
-      className: `${initialNavBar ? styles.liFirst : styles.liScrolledFirst}`,
-    },
-    {
-      text: "PROYECTOS",
-      link: "/projects",
-      id: 1,
-      className: `${initialNavBar ? styles.li : styles.liScrolled}`,
-    },
-    {
-      text: "YOUTUBE",
-      link: "/youtube",
-      id: 2,
-      className: `${initialNavBar ? styles.li : styles.liScrolled}`,
-    },
-    {
-      text: "PODCAST",
-      link: "/podcast",
-      id: 3,
-      className: `${initialNavBar ? styles.li : styles.liScrolled}`,
-    },
-    {
-      text: "SOBRE MI",
-      link: "/about",
-      id: 4,
-      className: `${initialNavBar ? styles.liLast : styles.liLastScrolled}`,
-    },
-    {
-      text: "CONTACTO",
-      link: "/contact",
-      id: 5,
-      className: `${initialNavBar ? styles.contact : styles.contactScrolled}`,
-    },
-  ];
-  return (
+    const links = [
+        {
+            "text": "HOME",
+            "link": "/",
+            "id": 0,
+            "className": `${initialNavBar? styles.liFirst : styles.liScrolledFirst}`
+        },
+        {
+            "text": "PROYECTOS",
+            "link": "/projects",
+            "id": 1,
+            "className": `${initialNavBar? styles.li : styles.liScrolled}`
+        },
+        {
+            "text": "YOUTUBE",
+            "link": "/youtube",
+            "id": 2,
+            "className": `${initialNavBar? styles.li : styles.liScrolled}`
+        },
+        {
+            "text": "PODCAST",
+            "link": "/podcast",
+            "id": 3,
+            "className": `${initialNavBar? styles.li : styles.liScrolled}`
+        },
+        {
+            "text": "SOBRE MI",
+            "link": "/about",
+            "id": 4,
+            "className": `${initialNavBar? styles.li : styles.liScrolled}`
+        },
+        {
+            "text": "CONTACTO",
+            "link": "/contact",
+            "id": 5,
+            "className": `${initialNavBar? styles.liLast : styles.liLastScrolled}`
+        },
+    ]
+    return (
     <nav className={styles.wrapper}>
       <main
         style={!open && !mobile ? { justifyContent: "space-between" } : null}

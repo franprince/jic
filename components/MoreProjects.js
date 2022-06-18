@@ -3,7 +3,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import SingleCard from "./SingleCard";
+
 export default function MoreProjects({ moreProjects, size }) {
+
   useEffect(() => {
     AOS.init();
   }, []);
