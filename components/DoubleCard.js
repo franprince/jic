@@ -6,7 +6,9 @@ import 'aos/dist/aos.css';
 
 export default function SingleCard({ item, index, size }) {
 
-    useEffect(() => AOS.init(), [])
+    useEffect(() => {
+        AOS.init()
+    }, [])
 
     return (
         <Link href={`/projects/${item?.slug?.current}`} key={item._id}>
