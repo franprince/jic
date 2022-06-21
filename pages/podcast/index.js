@@ -45,20 +45,20 @@ export default function Podcast({ podcastApi }) {
             <article className={styles.disponible}>
               <p>Disponible en</p>
               <div className={styles.links}>
-                <a target="_blank" href="https://www.youtube.com/juanignaciocali">
+                <a target="_blank"  rel="noreferrer" href="https://www.youtube.com/juanignaciocali">
                   <img src="/img/podYT.svg" alt="Youtube" />
                 </a>
-                <a target="_blank" href="https://open.spotify.com/show/6VHzEF8VKmRstoAdgwXFX9">
+                <a target="_blank"  rel="noreferrer" href="https://open.spotify.com/show/6VHzEF8VKmRstoAdgwXFX9">
                   <img src="/img/podSpotify.svg" alt="Spotify" />
                 </a>
                 <a
-                  target="_blank"
+                  target="_blank"  rel="noreferrer"
                   href="https://podcasts.apple.com/ar/podcast/the-cali-show/id1562735300"
                 >
                   <img src="/img/podApple.svg" alt="Apple Podcasts" />
                 </a>
                 <a
-                  target="_blank"
+                  target="_blank"  rel="noreferrer"
                   href="https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy81NWZhNzdiMC9wb2RjYXN0L3Jzcw=="
                 >
                   <img src="/img/podGoogle.svg" alt="Google Podcasts" />

@@ -1,6 +1,5 @@
 import styles from "../styles/Slider.module.css"
 import React, {useState} from 'react'
-import Slider from 'react-touch-drag-slider'
 import { useWindowSize } from "../hooks/useWindowSize"
 
 export default function TextSlider ( {slidesA} ) {
@@ -17,18 +16,6 @@ export default function TextSlider ( {slidesA} ) {
         <section className={styles.wrapper}>
         <h3>Mi Manifiesto</h3>
         <div className={styles.slider}>
-
-            <Slider activeIndex={parseInt(index)} onSlideComplete={(i) => {setIndex(i)}}>
-                {slides.map((slide)=> {
-                    return (
-                    <article key={slide._id} className={styles.article}>
-                        <h3>{slide.title}</h3>
-                        {size && size.width > 700 ? <p>{slide.phrase}</p> : <p>{slide.phraseMobile}</p>}
-                        </article>
-                )}
-                )}
-            </Slider>
-
             <div className={styles.dots}>
                 {slides.map((slide) => {
                     return (

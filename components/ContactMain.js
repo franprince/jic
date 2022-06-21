@@ -38,7 +38,7 @@ export default function ContactMain({ size }) {
                     <h3>Mis datos</h3>
                     <p>juan.ignacio.cali@gmail.com</p>
                     <article className={styles.links}>
-                        <a target="_blank" href="https://www.instagram.com/juanignaciocali/">
+                        <a target="_blank"  rel="noreferrer" href="https://www.instagram.com/juanignaciocali/">
                             <img src="/img/instagram.svg" alt="Ir a Instagram" className={styles.icon} />
                         </a>
                     </article>

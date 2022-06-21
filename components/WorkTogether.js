@@ -6,7 +6,7 @@ export default function WorkTogether({ text, link }) {
         <div className={styles.container}>
                 <section>
                     <h2>{text}</h2>
-                    <Link href="/#projects" target="_blank">
+                    <Link href="/#projects" target="_blank"  rel="noreferrer">
                         <button>Empecemos</button>
                     </Link>
                 </section>

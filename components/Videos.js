@@ -12,7 +12,7 @@ export default function Videos ({videos}) {
                     )
                 })}
             </section>
-            <a href="https://www.youtube.com/channel/UC2Xel3b_bb-RwcpZk0U4yuA" target="_blank">Visitá mi canal</a>
+            <a href="https://www.youtube.com/channel/UC2Xel3b_bb-RwcpZk0U4yuA" target="_blank"  rel="noreferrer">Visitá mi canal</a>
         </main>
     )
 }

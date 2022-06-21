@@ -183,17 +183,17 @@ export default function Navbar({ color, iNavRef, theme }) {
             >
               <a
                 href="https://www.instagram.com/juanignaciocali/"
-                target="_blank"
+                target="_blank"  rel="noreferrer"
               >
                 <img src="/img/instagram.svg" alt="Ir a Instagram" />
               </a>
               <a
                 href="https://www.youtube.com/channel/UC2Xel3b_bb-RwcpZk0U4yuA"
-                target="_blank"
+                target="_blank"  rel="noreferrer"
               >
                 <img src="/img/youtube.svg" alt="Ir a YouTube" />
               </a>
-              <a href="mailto:juanignaciocali@gmail.com" target="_blank">
+              <a href="mailto:juanignaciocali@gmail.com" target="_blank"  rel="noreferrer">
                 <img src="/img/gmail.svg" alt="Contactame por email" />
               </a>
             </li>
