@@ -1,6 +1,6 @@
 import Link from "next/link"
 import styles from "../styles/DoubleCard.module.css"
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos"
 import 'aos/dist/aos.css';
 

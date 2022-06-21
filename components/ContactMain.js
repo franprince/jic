@@ -1,6 +1,6 @@
 import styles from "../styles/ContactMain.module.css"
 import Form from "./Form"
-import { useState } from "react"
+import {useRef, useState, useEffect} from "react"
 
 export default function ContactMain ({size}) {
 
