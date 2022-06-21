@@ -9,46 +9,14 @@ import { useWindowSize } from "../hooks/useWindowSize";
 export default function Navbar({ color, iNavRef, theme }) {
   const [initialNavBar, setInitialNavbar] = useState(true);
   const [open, setOpen] = useState(false);
+  const [mobile, setMobile] = useState(true);
   const navRef = useRef(iNavRef);
 
   if (iNavRef == undefined) {
     navRef.current = "0";
   }
 
-    const size = useWindowSize();
-
-    const handleScroll = () => {
-        if (window.scrollY > 10 && size.width > 800) {
-            setInitialNavbar(false)
-            setOpen(false)
-        } else if (window.scrollY == 0 && size.width > 800) {
-            setOpen(true)
-            setInitialNavbar(true)
-        }
-        else {
-            setOpen(open)
-            setInitialNavbar(false)
-        } 
-    }
-
-    useEffect(() => {
-      if (typeof window !== "undefined") {
-        // Este código se ejecuta únicamente del lado del cliente
-        function handleResize() {
-          // Función que se ejecuta al cambiar el tamaño de la pantalla
-          setWindowSize({
-            // Cambiar el estado del tamaño de pantalla
-            width: window.innerWidth,
-            height: window.innerHeight,
-          });
-        }
-        window.addEventListener("resize", handleResize); // Agregar event listener
-        handleResize(); // Cuando cambia el tamaño de la pantalla, el handler se ejecuta automáticamente
-        return () => window.removeEventListener("resize", handleResize); // Sacar el event listener
-      }
-    }, []);
-    return windowSize;
-  }
+  const size = useWindowSize();
 
   const handleScroll = () => {
     if (window.scrollY > 10 && size.width > 800) {
@@ -82,46 +50,76 @@ export default function Navbar({ color, iNavRef, theme }) {
     } else {
       setMobile(false);
     }
+  };
 
-    const links = [
-        {
-            "text": "HOME",
-            "link": "/",
-            "id": 0,
-            "className": `${initialNavBar? styles.liFirst : styles.liScrolledFirst}`
-        },
-        {
-            "text": "PROYECTOS",
-            "link": "/projects",
-            "id": 1,
-            "className": `${initialNavBar? styles.li : styles.liScrolled}`
-        },
-        {
-            "text": "YOUTUBE",
-            "link": "/youtube",
-            "id": 2,
-            "className": `${initialNavBar? styles.li : styles.liScrolled}`
-        },
-        {
-            "text": "PODCAST",
-            "link": "/podcast",
-            "id": 3,
-            "className": `${initialNavBar? styles.li : styles.liScrolled}`
-        },
-        {
-            "text": "SOBRE MI",
-            "link": "/about",
-            "id": 4,
-            "className": `${initialNavBar? styles.li : styles.liScrolled}`
-        },
-        {
-            "text": "CONTACTO",
-            "link": "/contact",
-            "id": 5,
-            "className": `${initialNavBar? styles.liLast : styles.liLastScrolled}`
-        },
-    ]
-    return (
+  const handleClick = () => {
+    // Abre y cierra la barra de navegación haciéndole click
+    setOpen(!open);
+  };
+
+  const handleRef = (e) => {
+    navRef.current = e.target.id;
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+  useEffect(() => {
+    handleSize();
+  }, [size]);
+
+  // Variantes para las animaciones con Framer Motion.
+
+  const variants = {
+    open: { opacity: 1, x: 0, display: "flex" },
+    closed: { opacity: 0, pointerEvents: "none", x: "300%", display: "none" },
+  };
+
+  const bgVariants = {
+    open: { opacity: 1, x: 0 },
+    closed: { opacity: 0, x: "300%", width: "0px" },
+  };
+
+  const links = [
+    {
+      text: "HOME",
+      link: "/",
+      id: 0,
+      className: `${initialNavBar ? styles.liFirst : styles.liScrolledFirst}`,
+    },
+    {
+      text: "PROYECTOS",
+      link: "/projects",
+      id: 1,
+      className: `${initialNavBar ? styles.li : styles.liScrolled}`,
+    },
+    {
+      text: "YOUTUBE",
+      link: "/youtube",
+      id: 2,
+      className: `${initialNavBar ? styles.li : styles.liScrolled}`,
+    },
+    {
+      text: "PODCAST",
+      link: "/podcast",
+      id: 3,
+      className: `${initialNavBar ? styles.li : styles.liScrolled}`,
+    },
+    {
+      text: "SOBRE MI",
+      link: "/about",
+      id: 4,
+      className: `${initialNavBar ? styles.liLast : styles.liLastScrolled}`,
+    },
+    {
+      text: "CONTACTO",
+      link: "/contact",
+      id: 5,
+      className: `${initialNavBar ? styles.contact : styles.contactScrolled}`,
+    },
+  ];
+  return (
     <nav className={styles.wrapper}>
       <main
         style={!open && !mobile ? { justifyContent: "space-between" } : null}

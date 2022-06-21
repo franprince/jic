@@ -61,8 +61,7 @@
 }
 
 .elements > a:hover {
-    background-color: transparent;
-    color: #fff;
+    background-color: white;
 }
 
 .wrapper > .header > section > h1 {
@@ -110,6 +109,7 @@
         font-size: 16px;
     }
     .elements > a {
+        width: -moz-fit-content;
         width: fit-content;
         align-self: flex-end;
         margin: auto auto 0 auto;
