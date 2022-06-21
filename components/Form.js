@@ -1,6 +1,6 @@
 import Select from 'react-select'
 import styles from "../styles/Form.module.css"
-import {useRef, useState, useEffect} from "react"
+import { useRef, useState } from "react"
 import { useRouter } from 'next/router'
 import { motion } from "framer-motion"
 

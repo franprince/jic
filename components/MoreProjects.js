@@ -1,8 +1,7 @@
 import styles from "../styles/ProjectPage.module.css"
-import Link from "next/link"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import {useState, useEffect} from "react"
+import {useEffect} from "react"
 import SingleCard from "./SingleCard";
 export default function MoreProjects ({moreProjects, size}) {
 

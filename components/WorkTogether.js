@@ -1,5 +1,4 @@
 import styles from "../styles/WorkTogether.module.css"
-import Link from "next/link"
 
 export default function WorkTogether ({text, link}) {
     return (
