@@ -1,4 +1,5 @@
 import styles from "../styles/Presentation.module.css"
+import Image from "next/image"
 
 export default function Presentation ({img, text}) {
 
