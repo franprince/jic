@@ -17,7 +17,7 @@ export default function MoreProjects({ moreProjects, size }) {
         {moreProjects &&
           moreProjects.map((item, index) => {
             return (
-              <SingleCard item={item} index={index} size={size} mp={true} />
+              <SingleCard item={item} index={index} size={size} mp={true} key={item}/>
             );
           })}
       </section>
