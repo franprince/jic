@@ -1,213 +1,205 @@
-import Select from 'react-select'
-import styles from "../styles/Form.module.css"
-import { useRef, useState } from "react"
-import { useRouter } from 'next/router'
-import { motion } from "framer-motion"
+import styles from "../styles/Form.module.css";
+import { useState } from "react";
+import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 
-export default function Form ({sent, setSent, size}) {
-
-    const options1 = [
-        {
-            value: "Video Producto", label: "Video Producto", category: "1"
-        },
-        {
-            value: "Foto Producto", label: "Foto Producto", category: "1"
-        },
-        {
-            value: "Video Institucional", label: "Video Institucional", category: "1"
-        },
-        {
-            value: "Animacion", label: "Animación", category: "1"
-        },
-        {
-            value: "Otro", label: "Ni idea, ayudame a decidir 🙏", category: "1"
-        }
-    ]
-
-    const options2 = [
-        {
-            value: "$20.000", label: "$20.000"
-        },
-        {
-            value: "$20.000 - $50.000", label: "$20.000 - $50.000"
-        },
-        {
-            value: "$50.000 - $100.000", label: "$50.000 - $100.000"
-        },
-        {
-            value: "$100.000 - $200.000", label: "$100.000 - $200.000"
-        },
-        {
-            value: "Más de $200.000", label: "Más de $200.000"
-        },
-        {
-            value: "No especifica", label: "Prefiero no especificar"
-        }
-    ]
-
-    const customStyles = {
-        control: () => (size.width < 325 ? {
-            border: "1px solid black",
-            borderRadius: "10px",
-            display: "flex",
-            padding: "0.5rem 0rem 0.5rem 0.5rem",
-            cursor: "pointer",
-        } : size.width < 700 ? {
-            border: "1px solid black",
-            borderRadius: "10px",
-            display: "flex",
-            padding: "0.8rem 1rem 0.8rem 0.8rem",
-            cursor: "pointer",
-        } : {
-            border: "1px solid black",
-            borderRadius: "10px",
-            display: "flex",
-            padding: "0.7rem",
-            cursor: "pointer",
-            fontSize: "16px"
-        }),
-        placeholder: () => ({
-            color: "black",
-            fontSize: "16px"
-        }),
-        option: () => ({
-            padding: "0.7rem 1rem 0.7rem 2rem",
-            "&:hover": {
-                backgroundColor: "#C5C5C5"
-            },
-        }),
-        indicatorBanner: () => ({
-            display: "none"
-        }),
-        indicatorsContainer: () => ({
-            display: "none"
-        }),
-        container: () => (size.width > 10000 ? {
-            backgroundColor: "#F9F9F9",
-            marginTop: "8rem",
-        } : size.width < 325 ? {
-            backgroundColor: "#F9F9F9",
-            marginTop: "auto",
-        } : {
-            backgroundColor: "#F9F9F9",
-            marginTop: "auto",
-        }),
-        menuList: () => ({
-            backgroundColor: "#F9F9F9",
-            marginTop: "-8px",
-            padding: "0.5rem 0 0.5rem 0",
-        })
-    }
-
-    const [producto, setProducto] = useState()
-    const [presupuesto, setPresupuesto] = useState()
-    const [nombre, setNombre] = useState('')
-    const [mensaje, setMensaje] = useState('')
-    const [trabajo, setTrabajo] = useState('')
-    const [puesto, setPuesto] = useState('')
-    const [email, setEmail] = useState()
-    const [missingProduct, setMissingProduct] = useState(false)
-    const [missingBudget, setMissingBudget] = useState(false)
-    const router = useRouter()
-
-    const handleSelectChange = (selectedOption) => {
-        if (selectedOption.category == "1") {
-            setProducto(selectedOption.value)
-        }else{
-            setPresupuesto(selectedOption.value)
-        }
-    }
-
-    const formName = useRef(null)
-    const formProduct = useRef(null)
-    const formBudget = useRef(null)
-    const formEmail = useRef(null)
-    const formPosition = useRef(null)
-    const formMessage = useRef(null)
-    const formJob = useRef(null)
+export default function Form({ sent, setSent, size }) {
+    // const customStyles = {
+    //     control: () =>
+    //         size.width < 325
+    //             ? {
+    //                   border: "1px solid black",
+    //                   borderRadius: "10px",
+    //                   display: "flex",
+    //                   padding: "0.5rem 0rem 0.5rem 0.5rem",
+    //                   cursor: "pointer",
+    //               }
+    //             : size.width < 700
+    //             ? {
+    //                   border: "1px solid black",
+    //                   borderRadius: "10px",
+    //                   display: "flex",
+    //                   padding: "0.8rem 1rem 0.8rem 0.8rem",
+    //                   cursor: "pointer",
+    //               }
+    //             : {
+    //                   border: "1px solid black",
+    //                   borderRadius: "10px",
+    //                   display: "flex",
+    //                   padding: "0.7rem",
+    //                   cursor: "pointer",
+    //                   fontSize: "16px",
+    //               },
+    //     placeholder: () => ({
+    //         color: "black",
+    //         fontSize: "16px",
+    //     }),
+    //     option: () => ({
+    //         padding: "0.7rem 1rem 0.7rem 2rem",
+    //         "&:hover": {
+    //             backgroundColor: "#C5C5C5",
+    //         },
+    //     }),
+    //     indicatorBanner: () => ({
+    //         display: "none",
+    //     }),
+    //     indicatorsContainer: () => ({
+    //         display: "none",
+    //     }),
+    //     container: () =>
+    //         size.width > 10000
+    //             ? {
+    //                   backgroundColor: "#F9F9F9",
+    //                   marginTop: "8rem",
+    //               }
+    //             : size.width < 325
+    //             ? {
+    //                   backgroundColor: "#F9F9F9",
+    //                   marginTop: "auto",
+    //               }
+    //             : {
+    //                   backgroundColor: "#F9F9F9",
+    //                   marginTop: "auto",
+    //               },
+    //     menuList: () => ({
+    //         backgroundColor: "#F9F9F9",
+    //         marginTop: "-8px",
+    //         padding: "0.5rem 0 0.5rem 0",
+    //     }),
+    // };
+    const emptyForm = { producto: "", presupuesto: "", nombre: "", mensaje: "", trabajo: "", puesto: "", email: "" };
+    const [formValues, setFormValues] = useState(emptyForm);
+    const [missingValue, setMissingValue] = useState({ presupuesto: false, producto: false });
+    const router = useRouter();
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        if (!producto) {
-            if (!presupuesto) {
-                setMissingBudget(true)
-                setMissingProduct(true)
-            } else {
-                setMissingProduct(true)
-            }
-        } else if (!presupuesto) {
-            if (!producto) {
-                setMissingBudget(true)
-                setMissingProduct (true)
-            } else {
-                setMissingBudget(true)
-            }
+        e.preventDefault();
+        if (!!!formValues.producto | !!!formValues.presupuesto) {
+            setMissingValue({ presupuesto: !!formValues.presupuesto, producto: !!formValues.producto });
+        } else {
+            fetch("/api/mail", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ ...formValues }),
+            });
+            setFormValues(emptyForm);
+            setSent(true);
         }
-        else {
-            fetch('/api/mail', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ nombre: nombre, mensaje: mensaje, presupuesto: presupuesto, producto: producto, trabajo: trabajo, puesto: puesto, email: email })
-        });
-        setSent(true)
-        formName.current.value = ""
-        formEmail.current.value = ""
-        formJob.current.value = ""
-        formPosition.current.value = ""
-        formProduct.current.value = ""
-        formBudget.current.value = ""
-        formMessage.current.value = ""
-        }
-        
-    }
+    };
 
     const handleClick = (e) => {
-        setSent(false)
-        router.reload(window.location.pathname)
-    }
+        setSent(false);
+        router.reload(window.location.pathname);
+    };
+
+    const handleChange = (e) => setFormValues({ ...formValues, [e.target.name]: e.target.value });
+
     return (
         <section className={styles.form}>
             <form onSubmit={handleSubmit}>
-                <p>
-                    <input ref={formName} onChange={(e) => setNombre(e.target.value)} type="text" name="name" placeholder="Mi nombre es*" required/>
-                </p>
-                <p>
-                    <input ref={formEmail} onChange={(e) => setEmail(e.target.value)} type="email" name="email" placeholder="Mi email es*" required/>
-                </p>
-                <p>
-                    <input ref={formJob} onChange={(e) => setTrabajo(e.target.value)} type="text" name="job" placeholder="Estoy trabajando en"/>
-                </p>
-                <p>
-                    <input ref={formPosition} onChange={(e) => setPuesto(e.target.value)} type="text" name="position" placeholder="Mi puesto es"/>
-                </p>
+                <label htmlFor="nombre">
+                    <input
+                        onChange={handleChange}
+                        value={formValues.nombre}
+                        type="text"
+                        name="nombre"
+                        placeholder="Mi nombre es*"
+                        required
+                    />
+                </label>
+                <label htmlFor="email">
+                    <input
+                        onChange={handleChange}
+                        value={formValues.email}
+                        type="email"
+                        name="email"
+                        placeholder="Mi email es*"
+                        required
+                    />
+                </label>
+                <label htmlFor="trabajo">
+                    <input
+                        onChange={handleChange}
+                        value={formValues.trabajo}
+                        type="text"
+                        name="trabajo"
+                        placeholder="Estoy trabajando en"
+                    />
+                </label>
+                <label htmlFor="puesto">
+                    <input
+                        onChange={handleChange}
+                        value={formValues.puesto}
+                        type="text"
+                        name="puesto"
+                        placeholder="Mi puesto es"
+                    />
+                </label>
                 <div className={styles.mobileCell}>
                     <h2>Cuál es tu idea?</h2>
                     <p className={styles.hablemos}>Hablemos sobre tu proyecto.</p>
                 </div>
                 <div className={styles.select}>
-                    <Select isSearchable={false} ref={formProduct} options={options1} onChange={handleSelectChange} id="producto" instanceID="12345" inputID="producto" name="producto" styles={customStyles} placeholder="Estoy necesitando" />
-                    <p style={missingProduct ? {display: "block"} : {display: "none"}}>Por favor, completá este campo.</p>
+                    <select required onChange={handleChange} id="producto" name="producto" styles={styles.select}>
+                        <option value="">Estoy necesitando</option>
+                        <option value="Video Producto">Video Producto</option>
+                        <option value="Foto Producto">Foto Producto</option>
+                        <option value="Video Institucional">Video Institucional</option>
+                        <option value="Animacion">Animación</option>
+                        <option value="Otro">Ni idea, ayudame a decidir 🙏</option>
+                    </select>
+                    <p style={missingValue.producto ? { display: "block" } : { display: "none" }}>
+                        Por favor, completá este campo.
+                    </p>
                 </div>
                 <div className={styles.select}>
-                    <Select isSearchable={false} ref={formBudget} options={options2} onChange={handleSelectChange} id="presupuesto" instanceID="86865" inputID="presupuesto" name="presupuesto" styles={customStyles} placeholder="Mi presupuesto estimado es" />
-                    <p style={missingBudget ? {display: "block"} : {display: "none"}}>Por favor, completá este campo.</p>
+                    <select required onChange={handleChange} id="presupuesto" name="presupuesto" styles={styles.select}>
+                        <option value="">Mi presupuesto estimado es</option>
+                        <option value="$20.000">$20.000</option>
+                        <option value="$20.000 - $50.000">$20.000 - $50.000</option>
+                        <option value="$50.000 - $100.000">$50.000 - $100.000</option>
+                        <option value="$100.000 - $200.000">$100.000 - $200.000</option>
+                        <option value="Más de $200.000">Más de $200.000</option>
+                        <option value="No especifica">Prefiero no especificar</option>
+                    </select>
+                    <p style={missingValue.presupuesto ? { display: "block" } : { display: "none" }}>
+                        Por favor, completá este campo.
+                    </p>
                 </div>
-                <p>
-                    <textarea ref={formMessage} rows="4" onChange={(e) => setMensaje(e.target.value)} name="message" placeholder="Detalles del proyecto, algo más que tenga que saber?"/>
-                </p>
+                <label htmlFor="mensaje">
+                    <textarea
+                        rows="4"
+                        onChange={handleChange}
+                        name="mensaje"
+                        placeholder="Detalles del proyecto, algo más que tenga que saber?"
+                    />
+                </label>
                 <div className={styles.space}></div>
                 <div className={styles.button}>
                     <button>Enviar</button>
                 </div>
             </form>
-            <motion.div  animate={sent ? {scale: 1, opacity: 1} : {scale: 0, opacity: 0}} className={styles.sent}>
+            <motion.div animate={sent ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }} className={styles.sent}>
                 <section>
                     <img src="/img/cohete.png" alt="Enviado exitosamente" />
                     <button onClick={handleClick}></button>
                     <h2>El mensaje fue enviado!</h2>
-                    {size.width > 1000 ? <p>Gracias! En las próximas horas<br/>me pondré en contacto con vos!</p> : <p>Gracias!<br/> En las próximas horas<br/>me pondré en contacto con vos!</p>}
+                    {size.width > 1000 ? (
+                        <p>
+                            Gracias! En las próximas horas
+                            <br />
+                            me pondré en contacto con vos!
+                        </p>
+                    ) : (
+                        <p>
+                            Gracias!
+                            <br /> En las próximas horas
+                            <br />
+                            me pondré en contacto con vos!
+                        </p>
+                    )}
                 </section>
             </motion.div>
         </section>
-    )
+    );
 }
