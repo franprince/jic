@@ -1,56 +1,54 @@
 .videoWrapper {
-    margin: auto;
-    width: 78%;
-    position: relative;
-    border-radius: 50px;
-    position: relative;
-    padding-top: 41.1%;
-    margin-bottom: 7rem;
-    border: 1px solid red;
+  margin: auto;
+  width: 78%;
+  position: relative;
+  border-radius: 50px;
+  position: relative;
+  padding-top: 41.1%;
+  margin-bottom: 7rem;
+  border: 1px solid red;
 }
 
 .film {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    width: 78%;
-    margin: auto;
-    margin-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 78%;
+  margin: auto;
+  margin-bottom: 6rem;
 }
 
 .film > h2 {
-    font-size: 40px;
-    padding: 5rem 0 4rem 0;
-    font-weight: 700;
+  font-size: 40px;
+  padding: 5rem 0 4rem 0;
+  font-weight: 700;
 }
 
 .film > article {
-    position: relative;
-    padding-top: 56.25%;
-    background-position: center;
-    background-size: cover;
-    width: 100%
+  position: relative;
+  padding-top: 56.25%;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
 }
 
-
-
 @media (max-width: 700px) {
-    .film {
-        width: 95%;
-        margin: auto;
-        text-align: center;
-        margin-bottom: 5rem;
-    }
+  .film {
+    width: 95%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 5rem;
+  }
 
-    .film > h2 {
-        font-size: 30px;
-    }
+  .film > h2 {
+    font-size: 30px;
+  }
 }
 
 @media (min-width: 1670px) {
-    .film {
-        width: 78%;
-    }
+  .film {
+    width: 78%;
+  }
 }

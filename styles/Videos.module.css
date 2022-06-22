@@ -1,73 +1,74 @@
 .wrapper {
-    width: 100%;
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 5rem;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5rem;
 }
 
 .wrapper > section {
-    margin: -5rem auto 2rem auto;
-    width: 75%;
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-    gap: 1rem;
-    position: relative;
+  margin: -5rem auto 2rem auto;
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  gap: 1rem;
+  position: relative;
 }
 
 .wrapper > section > article {
-    position: relative;
-    background-position: center;
-    background-size: cover;
-    padding-top: 56.25%;
-    height: 0
-} 
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  padding-top: 56.25%;
+  height: 0;
+}
 
-.wrapper > section > article >iframe {
-    position: absolute;
-    top: 0;
-} 
+.wrapper > section > article > iframe {
+  position: absolute;
+  top: 0;
+}
 
 .wrapper > a {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    font-weight: 700;
-    width: fit-content;
-    padding: 0.7rem 2.3rem 0.7rem 2.3rem;
-    color: #000;
-    background-color: #FFF;
-    border-radius: 50px;
-    transition: all 0.5s ease;
-    border: 1px solid white;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  width: fit-content;
+  padding: 0.7rem 2.3rem 0.7rem 2.3rem;
+  color: #000;
+  background-color: #fff;
+  border-radius: 50px;
+  transition: all 0.5s ease;
+  border: 1px solid white;
 }
 
 .wrapper > a:hover {
-    color: #fff;
-    background-color: #000;
+  color: #fff;
+  background-color: #000;
 }
 
-.wrapper > section > article > div > div > div { /* Perdón por la cantidad de divs, es el Play Icon del react-player */
-    transform: scale(0.7);
-    transition: all 0.3s ease;
+.wrapper > section > article > div > div > div {
+  /* Perdón por la cantidad de divs, es el Play Icon del react-player */
+  transform: scale(0.7);
+  transition: all 0.3s ease;
 }
 
 .wrapper > section > article > div > div > div > div {
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .wrapper > section > article > div > div > div > div:hover {
-    background-color: #FF0000 !important;
+  background-color: #ff0000 !important;
 }
 
 @media (max-width: 600px) {
-    .wrapper > section {
-        margin: 4rem auto 4rem auto;
-        width: 85%;
-        display: grid;
-        grid-template-columns: 100%;
-        position: relative;
-        gap: 1.5rem;
-    }
+  .wrapper > section {
+    margin: 4rem auto 4rem auto;
+    width: 85%;
+    display: grid;
+    grid-template-columns: 100%;
+    position: relative;
+    gap: 1.5rem;
+  }
 }

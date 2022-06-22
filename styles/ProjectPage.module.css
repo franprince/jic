@@ -1,73 +1,70 @@
 .main {
-    background-color: white;
+  background-color: white;
 }
 
 .videoWrapper {
-    position: relative;
-    padding-top: 56.25%;
-    background-position: center;
-    background-size: cover;
-    padding-bottom: 7rem;
+  position: relative;
+  padding-top: 56.25%;
+  background-position: center;
+  background-size: cover;
+  padding-bottom: 7rem;
 }
 .videoWrapper > div {
-    height: 105%;
-    top: -5px !important
+  height: 105%;
+  top: -5px !important;
 }
 .image {
-    height: 80vh;
-    position: relative
+  height: 80vh;
+  position: relative;
 }
 
 .moreProjectsContainer {
-    width: 100%;
+  width: 100%;
 }
 
 .moreProjectsContainer > h2 {
-    width: 75%;
-    margin: 10rem auto 2.5rem auto;
-    font-size: 2.3rem;
-    font-weight: 800;
+  width: 75%;
+  margin: 10rem auto 2.5rem auto;
+  font-size: 2.3rem;
+  font-weight: 800;
 }
 
 .moreProjects {
-    margin: auto;
-    width: 75%;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(min(100%, 22rem), 1fr));
-    gap: 1.5rem;
-    padding-bottom: 10rem;
-    grid-auto-rows: 439px;
+  margin: auto;
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(min(100%, 22rem), 1fr));
+  gap: 1.5rem;
+  padding-bottom: 10rem;
+  grid-auto-rows: 439px;
 }
 
-
-
 @media (max-width: 700px) {
-    .moreProjects {
-        margin: auto;
-        width: 80%;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
-        gap: 4rem;
-        padding-bottom: 10rem;
-    }
-    .moreProjectsContainer > h2 {
-        width: 80%;
-        margin: 10rem auto 8rem auto;
-        text-align: left;
-    }
+  .moreProjects {
+    margin: auto;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 4rem;
+    padding-bottom: 10rem;
+  }
+  .moreProjectsContainer > h2 {
+    width: 80%;
+    margin: 10rem auto 8rem auto;
+    text-align: left;
+  }
 }
 
 @media (min-width: 1670px) {
+  .moreProjects {
+    padding-bottom: 12rem;
+    grid-template-columns: repeat(2, minmax(min(100%, 35rem), 1fr));
+    grid-auto-rows: 50rem;
+  }
 
-    .moreProjects {
-        padding-bottom: 12rem;
-        grid-template-columns: repeat(2, minmax(min(100%, 35rem), 1fr));
-        grid-auto-rows: 50rem;
-    }
-
-    .moreProjectsContainer > h2 {
+  .moreProjectsContainer > h2 {
     width: 75%;
     margin: 11rem auto 6rem auto;
-}
+  }
 }

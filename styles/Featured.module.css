@@ -1,55 +1,55 @@
 .container {
-    background-color: black;
-    width: 100%;
-    padding: 5rem 0 5rem 0;
+  background-color: black;
+  width: 100%;
+  padding: 5rem 0 5rem 0;
 }
 
 .grid {
-    margin: auto;
-    max-width: 80%;
-    display: grid;
-    gap: 1.2rem;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
-    position: relative;
-    grid-auto-rows: 449px;
+  margin: auto;
+  max-width: 80%;
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+  position: relative;
+  grid-auto-rows: 449px;
 }
 
 .button {
-    display: flex;
-    justify-content: center;
-    margin-top: 4rem
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
 }
 
 .button > a {
-        font-weight: 700;
-    z-index: 1;
-    font-family: 'Poppins', sans-serif;
-    padding: 0.5rem 2rem 0.5rem 2rem;
-    color: #000;
-    background-color: white;
-    border: 1px solid white;
-    border-radius: 50px;
-    transition: all 0.5s ease;
-    margin: auto;
-    cursor: pointer;
-    font-size: 16px;
-    pointer-events: all;
+  font-weight: 700;
+  z-index: 1;
+  font-family: "Poppins", sans-serif;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  color: #000;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 50px;
+  transition: all 0.5s ease;
+  margin: auto;
+  cursor: pointer;
+  font-size: 16px;
+  pointer-events: all;
 }
 
 .button > a:hover {
-    background-color: transparent;
-    color: #FFF;
+  background-color: transparent;
+  color: #fff;
 }
 
 @media (min-width: 1670px) {
-    .grid {
-        grid-template-columns: repeat(auto-fill, minmax(min(100%, 35rem), 1fr));
-        grid-auto-rows: 1fr;
-    }
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 35rem), 1fr));
+    grid-auto-rows: 1fr;
+  }
 }
 
 @media (max-width: 700px) {
-    .grid {
-        max-width: 90%;
-    }
+  .grid {
+    max-width: 90%;
+  }
 }

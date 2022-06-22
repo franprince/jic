@@ -1,55 +1,56 @@
 .container {
-    display: grid;
-    width: 100%;
-    padding-top: 4rem;
-    grid-template-columns: repeat(3, minmax(27rem, 1fr));
+  display: grid;
+  width: 100%;
+  padding-top: 4rem;
+  grid-template-columns: repeat(3, minmax(27rem, 1fr));
 }
 
 .container > article {
-    position: relative;
-    height: 25rem;
+  position: relative;
+  height: 25rem;
 }
 
-.container > article > img, .single > article > img {
-    height: 100% !important;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
+.container > article > img,
+.single > article > img {
+  height: 100% !important;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .single > article {
-    height: 25rem;
+  height: 25rem;
 }
 
 .single {
-    padding-bottom: 7rem;
+  padding-bottom: 7rem;
 }
 
 @media (max-width: 1300px) {
-    .container {
-        grid-template-columns: repeat(1, minmax(27rem, 1fr));
-    }
+  .container {
+    grid-template-columns: repeat(1, minmax(27rem, 1fr));
+  }
 
-    
-    .container > article > img, .single > article > img {
-        height: 100% !important;
-        width: 100%;
-        object-fit: cover;
-    }
+  .container > article > img,
+  .single > article > img {
+    height: 100% !important;
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 @media (min-width: 1670px) {
-    .container {
-        overflow: hidden ;
-        grid-template-columns: repeat(3, minmax(30rem, 1fr));
-    }
+  .container {
+    overflow: hidden;
+    grid-template-columns: repeat(3, minmax(30rem, 1fr));
+  }
 
-    .container > article {
-        position: relative;
-        height: 35rem;
-    }
+  .container > article {
+    position: relative;
+    height: 35rem;
+  }
 
-    .single > article {
-        height: 45rem;
-    }
+  .single > article {
+    height: 45rem;
+  }
 }

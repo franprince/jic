@@ -23,20 +23,30 @@
 //   res.status(200).json({ status: "Ok" })
 // }
 
-import { NextApiRequest, NextApiResponse  } from 'next';
+import { NextApiRequest, NextApiResponse } from "next";
 
-import { sendEmail } from '../../utils/sendEmail.js';
+import { sendEmail } from "../../utils/sendEmail.js";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-    if(req.method === 'POST') {
-        const { nombre, mensaje, presupuesto, producto, trabajo, puesto, email } = req.body;
-        await sendEmail({ nombre, mensaje, presupuesto, producto, trabajo, puesto, email });
-        return res.status(200).end();
-    }
-    return res.status(404).json({
-        error: {
-            code: 'not_found',
-            messgae: "The requested endpoint was not found or doesn't support this method."
-        }
+  if (req.method === "POST") {
+    const { nombre, mensaje, presupuesto, producto, trabajo, puesto, email } =
+      req.body;
+    await sendEmail({
+      nombre,
+      mensaje,
+      presupuesto,
+      producto,
+      trabajo,
+      puesto,
+      email,
     });
-}
+    return res.status(200).end();
+  }
+  return res.status(404).json({
+    error: {
+      code: "not_found",
+      messgae:
+        "The requested endpoint was not found or doesn't support this method.",
+    },
+  });
+};

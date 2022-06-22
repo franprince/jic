@@ -1,271 +1,283 @@
 .wrapper {
-    z-index: 2;
-    width: 100%;
-    margin: auto;
-    position: fixed;
+  z-index: 2;
+  width: 100%;
+  margin: auto;
+  position: fixed;
 }
 
 .wrapper > main {
-    width: 80%;
-    display: flex;
-    align-items: center;
-    flex-direction:row;
-    margin: auto;
-    position: relative;
-    transition: all 0.5s ease;
-    height: 0px;
-    margin-top: 5rem
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin: auto;
+  position: relative;
+  transition: all 0.5s ease;
+  height: 0px;
+  margin-top: 5rem;
 }
 
 .wrapper > main > a {
-    z-index: 1;
-    transition: all 0.5s ease;
+  z-index: 1;
+  transition: all 0.5s ease;
 }
 
 .wrapper > main > a > h2 {
-    z-index: 3;
-    opacity: 0;
-    transition: all 0.5s ease;
-    font-size: 1.6rem;
-    text-shadow: 2px 2px 3px rgba(150, 150, 150, 0.63);
+  z-index: 3;
+  opacity: 0;
+  transition: all 0.5s ease;
+  font-size: 1.6rem;
+  text-shadow: 2px 2px 3px rgba(150, 150, 150, 0.63);
 }
 
 .wrapper > main > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hamb > span > .b {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .hamb {
-    opacity: 0;
-    transition: all 0.2s ease;
-    z-index: 1;
-    height: fit-content;
-    border-radius: 50%;
-    background-color: white;
-    color: #000;
-    box-shadow: 10px 10px 14px -10px rgba(0,0,0,0.39);
-    -webkit-box-shadow: 10px 10px 14px -10px rgba(0,0,0,0.39);
-    -moz-box-shadow: 10px 10px 14px -10px rgba(0,0,0,0.39);
+  opacity: 0;
+  transition: all 0.2s ease;
+  z-index: 1;
+  height: fit-content;
+  border-radius: 50%;
+  background-color: white;
+  color: #000;
+  box-shadow: 10px 10px 14px -10px rgba(0, 0, 0, 0.39);
+  -webkit-box-shadow: 10px 10px 14px -10px rgba(0, 0, 0, 0.39);
+  -moz-box-shadow: 10px 10px 14px -10px rgba(0, 0, 0, 0.39);
 }
 
 .nav {
-    font-size: 1.2rem;
-    line-height: 1.5rem;
-    position: relative;
-    opacity: 0;
-    display: flex;
-    align-content: center;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  position: relative;
+  opacity: 0;
+  display: flex;
+  align-content: center;
 }
 
 .nav > ul {
-    display: flex;
-    padding: 0.5rem 1rem 0.5rem 1.5rem;
-    margin: 0;
+  display: flex;
+  padding: 0.5rem 1rem 0.5rem 1.5rem;
+  margin: 0;
 }
 
 .nav > ul > a {
-    list-style: none;
-    color: white;
-    display: flex;
-    align-content: center;
+  list-style: none;
+  color: white;
+  display: flex;
+  align-content: center;
 }
 
 .nav > ul > a > li {
-    transition: all 0.3s ease;
-    font-weight: 100;
-    align-self: center;
+  transition: all 0.3s ease;
+  font-weight: 100;
+  align-self: center;
 }
 
 .nav > ul > a > li:hover {
-    font-weight: 700 !important;
+  font-weight: 700 !important;
 }
 
-
-.nav > ul > a > .contact, .contactScrolled {
-    border: 2px solid white;
-    border-radius: 20px;
-    margin-left: 0.5rem;
-    padding: 0.25rem 1.8rem 0.25rem 1.8rem;
+.nav > ul > a > .contact,
+.contactScrolled {
+  border: 2px solid white;
+  border-radius: 20px;
+  margin-left: 0.5rem;
+  padding: 0.25rem 1.8rem 0.25rem 1.8rem;
 }
 
-.contact:hover, .contactScrolled:hover {
-    font-weight: 700 !important;
-    background-color: white;
-    border: 2px solid white;
-    color: black;
+.contact:hover,
+.contactScrolled:hover {
+  font-weight: 700 !important;
+  background-color: white;
+  border: 2px solid white;
+  color: black;
 }
 
 .nav > ul > a > .liScrolled {
-    border: none;
-    padding-left: 0.7rem;
+  border: none;
+  padding-left: 0.7rem;
 }
 
-.liLast, .liLastScrolled {
-    padding-left: 0.5rem;
-    margin-right: 0.1rem;
+.liLast,
+.liLastScrolled {
+  padding-left: 0.5rem;
+  margin-right: 0.1rem;
 }
 
 .bg {
-    background-color: rgba(0, 0, 0, 0.842);
-    z-index: -1;
-    height: 100%;
-    width: 150% !important;
-    position: fixed;
-    border-radius: 50px;
-    opacity: 0;
-    pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.842);
+  z-index: -1;
+  height: 100%;
+  width: 150% !important;
+  position: fixed;
+  border-radius: 50px;
+  opacity: 0;
+  pointer-events: none;
 }
 
-.contact, .contactScrolled {
-    font-size: 16px;
-    font-weight: 700 !important;
+.contact,
+.contactScrolled {
+  font-size: 16px;
+  font-weight: 700 !important;
 }
 
-.light > a > .liFirst, .dark > a > .liFirst {
-    padding-right: 0.5rem;
+.light > a > .liFirst,
+.dark > a > .liFirst {
+  padding-right: 0.5rem;
 }
 
-.light > a > .li, .dark > a > .li {
-    padding: 0 0.5rem 0 0.5rem;
+.light > a > .li,
+.dark > a > .li {
+  padding: 0 0.5rem 0 0.5rem;
 }
 
 /*LIGHT THEME*/
 
-.light > a > .liFirst, .light > a > .li {
-    border-right: 1px solid white;
+.light > a > .liFirst,
+.light > a > .li {
+  border-right: 1px solid white;
 }
 
 .light > a > li {
-    color: white;
+  color: white;
 }
 
 /*DARK THEME*/
 
-.dark > a > .liFirst, .dark > a > .li {
-    border-right: 1px solid #000;
+.dark > a > .liFirst,
+.dark > a > .li {
+  border-right: 1px solid #000;
 }
 
 .dark > a > li {
-    color: #000;
+  color: #000;
 }
 
 .dark > a > .contact {
-    border: 2px solid black !important;
+  border: 2px solid black !important;
 }
 
 .dark > a > .contact:hover {
-    color: white;
-    background-color: black;
+  color: white;
+  background-color: black;
 }
 @media (max-width: 1000px) {
-    .wrapper > main {
-        width: 90%;
-        margin-top: 0
-    }
-    .wrapper > main > a {
-        flex: 0;
-        position: absolute;
-        top: 2rem;
-        left: 0.5rem;
-    }
+  .wrapper > main {
+    width: 90%;
+    margin-top: 0;
+  }
+  .wrapper > main > a {
+    flex: 0;
+    position: absolute;
+    top: 2rem;
+    left: 0.5rem;
+  }
 
-    .hamb {
-        position: absolute;
-        top: 3rem;
-        right: 0.5rem;
-    }
+  .hamb {
+    position: absolute;
+    top: 3rem;
+    right: 0.5rem;
+  }
 
-    .wrapper > main {
-        justify-content: space-around;
-        padding: 0;
-    }
-    .bg {
-        position: absolute;
-        width: 250vw !important;
-        height: 130vh !important;
-        right: -25rem;
-        border-radius: 0px;
-        background-color: rgba(0, 0, 0);
-    }
+  .wrapper > main {
+    justify-content: space-around;
+    padding: 0;
+  }
+  .bg {
+    position: absolute;
+    width: 250vw !important;
+    height: 130vh !important;
+    right: -25rem;
+    border-radius: 0px;
+    background-color: rgba(0, 0, 0);
+  }
 
-    .nav {
-        position: fixed;
-        bottom: 9rem;
-    }
-    .nav > ul {
-        height: 80vh;
-        position: relative;
-        top: 7rem;
-        flex-direction: column;
-        padding: 2rem;
-        margin: auto;
-        justify-content: center;
-        align-items: center;
-    }
+  .nav {
+    position: fixed;
+    bottom: 9rem;
+  }
+  .nav > ul {
+    height: 80vh;
+    position: relative;
+    top: 7rem;
+    flex-direction: column;
+    padding: 2rem;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .nav > ul > a > li {
-        margin-top: 0.8rem;
-    }
+  .nav > ul > a > li {
+    margin-top: 0.8rem;
+  }
 
-    .li, .liLast, .liFirst .liScrolled {
-        border: none;
-        padding: 0;
-    }
-    
-    .liScrolled, .liScrolledFirst {
-        border: none;
-        padding: 0.8rem;
-    }
+  .li,
+  .liLast,
+  .liFirst .liScrolled {
+    border: none;
+    padding: 0;
+  }
 
-    .liLastScrolled {
-        padding: 0.8rem;
-        padding-bottom: 1.5rem;
-    }
+  .liScrolled,
+  .liScrolledFirst {
+    border: none;
+    padding: 0.8rem;
+  }
 
-    .links {
-        display: flex;
-        align-items: center;
-        margin-top: 4rem
-    }
-    .links > a > img {
-        height: 3rem;
-    }
-    .links > a:not(:last-child) {
-        margin-right: 0.8rem;
-    }
+  .liLastScrolled {
+    padding: 0.8rem;
+    padding-bottom: 1.5rem;
+  }
 
-    .contact, .contactScrolled {
-        margin-top: 1rem;
-    }
+  .links {
+    display: flex;
+    align-items: center;
+    margin-top: 4rem;
+  }
+  .links > a > img {
+    height: 3rem;
+  }
+  .links > a:not(:last-child) {
+    margin-right: 0.8rem;
+  }
+
+  .contact,
+  .contactScrolled {
+    margin-top: 1rem;
+  }
 }
 
 @media (max-width: 325px) {
-    .links {
-        margin-top: 3.5rem
-    }
+  .links {
+    margin-top: 3.5rem;
+  }
 
-    .liScrolled, .liScrolledFirst {
-        padding: 0.5rem;
-    }
-    
-    .liLastScrolled {
-        padding: 0.5rem;
-        padding-bottom: 1.2rem;
-    }
+  .liScrolled,
+  .liScrolledFirst {
+    padding: 0.5rem;
+  }
 
-    .nav > ul {
-        height: 80vh;
-        position: relative;
-        top: 5.5rem;
-        flex-direction: column;
-        padding: 2rem;
-        margin: auto;
-        justify-content: center;
-        align-items: center;
-    }
+  .liLastScrolled {
+    padding: 0.5rem;
+    padding-bottom: 1.2rem;
+  }
+
+  .nav > ul {
+    height: 80vh;
+    position: relative;
+    top: 5.5rem;
+    flex-direction: column;
+    padding: 2rem;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+  }
 }

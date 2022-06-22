@@ -1,66 +1,67 @@
 .card {
-    border-radius: 20px;
-    transition: all 0.3s ease;
+  border-radius: 20px;
+  transition: all 0.3s ease;
 }
 
 .mpCard {
-    border-radius: 20px;
-    transition: all 0.3s ease;
-    box-shadow: 10px 10px 17px -3px rgba(0,0,0,0.17);
--webkit-box-shadow: 10px 10px 17px -3px rgba(0,0,0,0.17);
--moz-box-shadow: 10px 10px 17px -3px rgba(0,0,0,0.17);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 10px 10px 17px -3px rgba(0, 0, 0, 0.17);
+  -webkit-box-shadow: 10px 10px 17px -3px rgba(0, 0, 0, 0.17);
+  -moz-box-shadow: 10px 10px 17px -3px rgba(0, 0, 0, 0.17);
 }
 
-.card:hover, .mpCard:hover {
-    transform: scale(0.98) !important;
-    cursor: pointer;
+.card:hover,
+.mpCard:hover {
+  transform: scale(0.98) !important;
+  cursor: pointer;
 }
 
 .content {
-    background-color: white;
-    min-height: 38%;
-    display: flex;
-    align-items: center;
-    overflow-wrap: normal;
-    border-radius: 0 0 20px 20px;
+  background-color: white;
+  min-height: 38%;
+  display: flex;
+  align-items: center;
+  overflow-wrap: normal;
+  border-radius: 0 0 20px 20px;
 }
 
 .info {
-    margin: auto;
-    width: 80%;
+  margin: auto;
+  width: 80%;
 }
 
 .info > h2 {
-    white-space: pre-line;
-    font-size: 30px;
-    line-height: 98.7%;
-    margin-bottom: 0;
+  white-space: pre-line;
+  font-size: 30px;
+  line-height: 98.7%;
+  margin-bottom: 0;
 }
 
 .info > h3 {
-    font-size: 18px;
-    color: #828282;
-    font-weight: 600 !important;
-    margin-top: 0.5rem
+  font-size: 18px;
+  color: #828282;
+  font-weight: 600 !important;
+  margin-top: 0.5rem;
 }
 
 .img {
-    height: 62%;
+  height: 62%;
 }
 
 .img > img {
-    object-fit: cover;
-    object-position: center;
-    height: 100%;
-    border-radius: 20px 20px 0 0;
-    width: 100%;
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  border-radius: 20px 20px 0 0;
+  width: 100%;
 }
 
 @media (min-width: 1670px) {
-    .info > h2 {
-        font-size: 35px;
-    }
-    .info > h3 {
-        font-size: 23px;
-    }
+  .info > h2 {
+    font-size: 35px;
+  }
+  .info > h3 {
+    font-size: 23px;
+  }
 }
