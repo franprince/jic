@@ -5,7 +5,6 @@ import { useEffect } from "react";
 import SingleCard from "./SingleCard";
 
 export default function MoreProjects({ moreProjects, size }) {
-
   useEffect(() => {
     AOS.init();
   }, []);
@@ -17,7 +16,13 @@ export default function MoreProjects({ moreProjects, size }) {
         {moreProjects &&
           moreProjects.map((item, index) => {
             return (
-              <SingleCard item={item} index={index} size={size} mp={true} key={item}/>
+              <SingleCard
+                item={item}
+                index={index}
+                size={size}
+                mp={true}
+                key={item}
+              />
             );
           })}
       </section>

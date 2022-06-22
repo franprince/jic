@@ -1,13 +1,12 @@
-import Layout from "../components/Layout"
-import '../styles/globals.css'
+import Layout from "../components/Layout";
+import "../styles/globals.css";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useRouter } from 'next/router'
-import * as gtag from '../lib/gtag'
+import { useRouter } from "next/router";
+import * as gtag from "../lib/gtag";
 
 function MyApp({ Component, pageProps }) {
-
   useEffect(() => {
     AOS.init({
       easing: "ease-out-cubic",
@@ -16,26 +15,26 @@ function MyApp({ Component, pageProps }) {
     });
     window.scroll({
       top: 0,
-      left: 0
-   })
+      left: 0,
+    });
   }, []);
 
-  const router = useRouter()
+  const router = useRouter();
   useEffect(() => {
     const handleRouteChange = (url) => {
-      gtag.pageview(url)
-    }
-    router.events.on('routeChangeComplete', handleRouteChange)
+      gtag.pageview(url);
+    };
+    router.events.on("routeChangeComplete", handleRouteChange);
     return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [router.events])
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <Layout>
-      <Component {...pageProps}/>
+      <Component {...pageProps} />
     </Layout>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

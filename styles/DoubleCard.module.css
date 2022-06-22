@@ -1,83 +1,83 @@
 .card {
-    grid-column: 1/-1;
-    border: 1px solid rgb(32, 22, 22);
-    display: flex;
-    border-radius: 20px;
-    transition: all 0.3s ease;
+  grid-column: 1/-1;
+  border: 1px solid rgb(32, 22, 22);
+  display: flex;
+  border-radius: 20px;
+  transition: all 0.3s ease;
 }
 
 .card:hover {
-    transform: scale(0.98) !important;
-    cursor: pointer;
+  transform: scale(0.98) !important;
+  cursor: pointer;
 }
 
 .content {
-    width: 37%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-    border-radius: 20px 0 0 20px;
-    padding: 3rem 0 2rem 0
+  width: 37%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px 0 0 20px;
+  padding: 3rem 0 2rem 0;
 }
 
 .content > a {
-    display: flex;
-    align-items: center;
-    font-size: 20px;
-    line-height: 98.7%;
-    width: 80%;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  line-height: 98.7%;
+  width: 80%;
 }
 
 .content > a > img {
-    font-family: 'Lora', serif;
-    stroke: black;
-    margin-left: 1rem ;
+  font-family: "Lora", serif;
+  stroke: black;
+  margin-left: 1rem;
 }
 .info {
-    margin: 0 auto auto auto;
-    width: 80%;
+  margin: 0 auto auto auto;
+  width: 80%;
 }
 
 .info > h2 {
-    white-space: pre-line;
-    font-size: 40px;
-    line-height: 115.5%;
-    font-weight: 700;
-    margin: 0
+  white-space: pre-line;
+  font-size: 40px;
+  line-height: 115.5%;
+  font-weight: 700;
+  margin: 0;
 }
 
 .info > h3 {
-    white-space: pre-line;
-    font-size: 18px;
-    font-weight: 600 !important;
-    color: #828282;
-    margin: 0
+  white-space: pre-line;
+  font-size: 18px;
+  font-weight: 600 !important;
+  color: #828282;
+  margin: 0;
 }
 
 .img {
-    width: 63%;
+  width: 63%;
 }
 
 .img > img {
-    object-fit: cover;
-    object-position: center;
-    height: 100%;
-    border-radius: 0px 20px 20px 0;
-    width: 100%;
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  border-radius: 0px 20px 20px 0;
+  width: 100%;
 }
 
 @media (min-width: 1670px) {
-    .info > h2 {
-        font-size: 45px;
-    }
-    .info > h3 {
-        font-size: 23px;
-    }
-    .content {
-        padding: 5rem 0 3rem 0
-    }
-    .content > a {
-        font-size: 25px;
-    }
+  .info > h2 {
+    font-size: 45px;
+  }
+  .info > h3 {
+    font-size: 23px;
+  }
+  .content {
+    padding: 5rem 0 3rem 0;
+  }
+  .content > a {
+    font-size: 25px;
+  }
 }

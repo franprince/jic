@@ -1,59 +1,59 @@
 .container {
-    width: 100%;
-    height: 80vh;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 80vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container > section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .container > section > h2 {
-    font-size: 40px;
-    font-weight: 300;
+  font-size: 40px;
+  font-weight: 300;
 }
 
 .container > section > img {
-    margin-top: 5px;
-    height: 22px;
-    width: 26px;
-    align-self: center;
-    margin-left: 3rem;
+  margin-top: 5px;
+  height: 22px;
+  width: 26px;
+  align-self: center;
+  margin-left: 3rem;
 }
 
 @media (max-width: 700px) {
-    .container > section {
-        flex-direction: column;
-    }
+  .container > section {
+    flex-direction: column;
+  }
 
-    .container > section > h2 {
-        font-size: 24px;
-    }
+  .container > section > h2 {
+    font-size: 24px;
+  }
 
-    .container > section > img {
-        margin-top: 1rem;
-        margin-left: 0;
-    }
+  .container > section > img {
+    margin-top: 1rem;
+    margin-left: 0;
+  }
 }
 
 .container button {
-    font-size: 16px;
-    font-weight: 600;
-    padding: 15px 45px;
-    color: #000;
-    background-color: #ffcc00;
-    border: 0;
-    border-radius: 5px;
-    transition: all 0.5s ease;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 15px 45px;
+  color: #000;
+  background-color: #ffcc00;
+  border: 0;
+  border-radius: 5px;
+  transition: all 0.5s ease;
 }
 
 .container button:hover {
-    background-color: black;
-    color: white;
-    cursor: pointer;
+  background-color: black;
+  color: white;
+  cursor: pointer;
 }

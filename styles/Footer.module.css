@@ -1,73 +1,73 @@
 .footer {
-    width: 100%;
-    height: 43vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    background-color: #000;
+  width: 100%;
+  height: 43vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #000;
 }
 
 .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .container > section > h2 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 40px;
-    margin-bottom: 1rem;
-    text-align: center;
-    font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  font-size: 40px;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 400;
 }
 
 .contact {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .container img {
-    max-width: 50px;
+  max-width: 50px;
 }
 
 @media (max-width: 700px) {
-    .footer {
-        height: auto;
-        padding: 5rem 0 5rem 0;
-    }
-    .container {
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        gap: 5rem;
-        justify-content: center;
-        width: 100%;
-    }
+  .footer {
+    height: auto;
+    padding: 5rem 0 5rem 0;
+  }
+  .container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 5rem;
+    justify-content: center;
+    width: 100%;
+  }
 
-    .container > section {
-        justify-content: center;
-        width: 100%;
-    }
+  .container > section {
+    justify-content: center;
+    width: 100%;
+  }
 
-    .container > section > div {
-        margin: auto;
-        width: -moz-fit-content;
-        width: fit-content;
-    }
+  .container > section > div {
+    margin: auto;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
 
-    .contact {
-        justify-content: center;
-    }
+  .contact {
+    justify-content: center;
+  }
 
-    .contact > a {
-        cursor: pointer;
-    }
+  .contact > a {
+    cursor: pointer;
+  }
 }
 
 @media (max-width: 325px) {
-    .contact > p,
-    .contact > a {
-        margin: auto 0 auto 0;
-    }
+  .contact > p,
+  .contact > a {
+    margin: auto 0 auto 0;
+  }
 }

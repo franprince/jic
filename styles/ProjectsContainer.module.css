@@ -1,132 +1,130 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 6rem;
 }
 .grid {
-    margin: 5rem auto auto auto;
-    max-width: 77%;
-    display: grid;
-    gap: 1.2rem;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
-    position: relative;
-    grid-auto-rows: 439px;
+  margin: 5rem auto auto auto;
+  max-width: 77%;
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+  position: relative;
+  grid-auto-rows: 439px;
 }
 
-
 .projects {
-    width: 100%;
-    position: relative;
+  width: 100%;
+  position: relative;
 }
 
 .buttons {
-    width: 77%;
-    margin: -6rem auto auto auto;
-    margin-bottom:6rem;
+  width: 77%;
+  margin: -6rem auto auto auto;
+  margin-bottom: 6rem;
 }
 
 .buttons > button {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    outline: none;
-    padding: 0.5rem 2rem 0.5rem 2rem;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.5s ease;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  outline: none;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.5s ease;
 }
 
 .button {
-    background-color: transparent;
-    border: 2px solid white;
-    color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
 }
 
 .selected {
-    background-color: white;
-    border: 2px solid white;
-    color: #000
+  background-color: white;
+  border: 2px solid white;
+  color: #000;
 }
 
 .buttons > button:not(:last-child) {
-    margin-right: 1.7rem;
+  margin-right: 1.7rem;
 }
 
 .buttons > .button:hover {
-    background-color: #FFF;
-    color: #000;
+  background-color: #fff;
+  color: #000;
 }
 
 .last {
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-
 .last > article {
-    width: fit-content;
-    margin: auto;
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  width: fit-content;
+  margin: auto;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .last > article > h2 {
-    font-size: 38px;
-    line-height: 98.7%;
+  font-size: 38px;
+  line-height: 98.7%;
 }
 
 .last > article > a {
-    background-color: white;
-    font-size: 16px;
-    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
-    border-radius: 50px;
-    font-weight: 700;
-    width: fit-content;
-    color: #000;
-    transition: all 0.3s ease;
-    border: 1px solid white;
-    margin-left: auto;
-    margin-right: auto;
+  background-color: white;
+  font-size: 16px;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  width: fit-content;
+  color: #000;
+  transition: all 0.3s ease;
+  border: 1px solid white;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .last > article > a:hover {
-    background-color: black;
-    border-radius: 50px;
-    font-weight: 700;
-    width: fit-content;
-    color: #FFF;
-    border: 1px solid white;
+  background-color: black;
+  border-radius: 50px;
+  font-weight: 700;
+  width: fit-content;
+  color: #fff;
+  border: 1px solid white;
 }
 
 @media (min-width: 1670px) {
-    .grid {
-        grid-template-columns: repeat(auto-fill, minmax(min(100%, 35rem), 1fr));
-        grid-auto-rows: 36rem;
-    }
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 35rem), 1fr));
+    grid-auto-rows: 36rem;
+  }
 
-    .last {
-        height: 649px;
-    }
+  .last {
+    height: 649px;
+  }
 }
 
 @media (max-width: 800px) {
-    .grid {
-        max-width: 90%;
-        grid-auto-rows: 500px;
-    }
-    .buttons {
-        display: none;
-    }
-    .container {
-        padding-bottom: 6rem;
-    }
-    .last {
-        display: none;
-    }
+  .grid {
+    max-width: 90%;
+    grid-auto-rows: 500px;
+  }
+  .buttons {
+    display: none;
+  }
+  .container {
+    padding-bottom: 6rem;
+  }
+  .last {
+    display: none;
+  }
 }

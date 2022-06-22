@@ -1,57 +1,60 @@
 .description {
-    width: 100%;
+  width: 100%;
 }
 
 .description > article {
-    width: 75%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding-bottom: 7rem;
+  width: 75%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-bottom: 7rem;
 }
 
-.description > article > h2, .description > article > p, .title {
-    width: 80%;
-    white-space: pre-line;
+.description > article > h2,
+.description > article > p,
+.title {
+  width: 80%;
+  white-space: pre-line;
 }
 
 .title {
-    padding-top: 4rem;
-    padding-bottom: 3rem;
+  padding-top: 4rem;
+  padding-bottom: 3rem;
 }
 
 #hola {
-    margin-bottom: -3rem;
+  margin-bottom: -3rem;
 }
 
 .description > article > h2 {
-    font-size: 40px;
-    font-weight: 700;
-    margin-bottom: 0;
-    padding-top: 5rem
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 0;
+  padding-top: 5rem;
 }
 
 .description > article > p {
-    font-size: 24px;
-    line-height: 170%;
-    font-weight: 400;
-    font-family: "Lora", serif;
+  font-size: 24px;
+  line-height: 170%;
+  font-weight: 400;
+  font-family: "Lora", serif;
 }
 
 @media (max-width: 700px) {
-    .description > article {
-        width: 90%;
-    }
-    .description > article > h2, .description > article > p {
-        width: 100%;
-    }
-    .description > article > h2 {
-        font-size: 30px;
-    }
-    .description > article > p {
-        font-size: 20px;
-        line-height: 170%;
-    }
+  .description > article {
+    width: 90%;
+  }
+  .description > article > h2,
+  .description > article > p {
+    width: 100%;
+  }
+  .description > article > h2 {
+    font-size: 30px;
+  }
+  .description > article > p {
+    font-size: 20px;
+    line-height: 170%;
+  }
 }
