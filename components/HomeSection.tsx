@@ -1,5 +1,11 @@
 import styles from '../styles/HomeSection.module.css';
-const HomeSection = (props) => {
+
+interface iHomeSection {
+    title: string;
+    description: string;
+    image: string;
+}
+const HomeSection = (props: iHomeSection) => {
     const { title, description, image } = props;
     return (
         <section className={styles.homeSection}>
