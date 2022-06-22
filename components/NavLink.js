@@ -1,4 +1,5 @@
 import Link from "next/link"
+import styles from "../styles/NavBar.module.css"
 
 export default function NavLink ({navRef, handleRef, id, text, link, className}) {
     return (

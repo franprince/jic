@@ -4,7 +4,6 @@ import { Spin as Hamburger } from "hamburger-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import NavLink from "./NavLink";
-import { useWindowSize } from "../hooks/useWindowSize";
 
 export default function Navbar({ color, iNavRef, theme }) {
   const [initialNavBar, setInitialNavbar] = useState(true);
