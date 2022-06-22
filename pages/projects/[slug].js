@@ -150,7 +150,6 @@ export default function Details({ pageSlug, projects }) {
 export const getServerSideProps = async pageContext => {
   const pageSlug = pageContext.query.slug
   const projects = overlayDrafts(await getClient().fetch(projectQuery))
-  console.log("projects: ", projects)
   if (!pageSlug) {
     return {
       notFound: true

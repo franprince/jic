@@ -4,6 +4,7 @@ import { Spin as Hamburger } from "hamburger-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import NavLink from "./NavLink";
+import { useWindowSize } from "../hooks/useWindowSize";
 
 export default function Navbar({ color, iNavRef, theme }) {
   const [initialNavBar, setInitialNavbar] = useState(true);
@@ -182,17 +183,23 @@ export default function Navbar({ color, iNavRef, theme }) {
             >
               <a
                 href="https://www.instagram.com/juanignaciocali/"
-                target="_blank"  rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
               >
                 <img src="/img/instagram.svg" alt="Ir a Instagram" />
               </a>
               <a
                 href="https://www.youtube.com/channel/UC2Xel3b_bb-RwcpZk0U4yuA"
-                target="_blank"  rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
               >
                 <img src="/img/youtube.svg" alt="Ir a YouTube" />
               </a>
-              <a href="mailto:juanignaciocali@gmail.com" target="_blank"  rel="noreferrer">
+              <a
+                href="mailto:juanignaciocali@gmail.com"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <img src="/img/gmail.svg" alt="Contactame por email" />
               </a>
             </li>

@@ -1,15 +1,7 @@
-<<<<<<< HEAD
 import styles from "../styles/Featured.module.css";
 import Link from "next/link";
 import SingleCard from "../components/SingleCard";
 import DoubleCard from "../components/DoubleCard";
-=======
-import styles from "../styles/Featured.module.css"
-import { useEffect, useState } from "react";
-import Link from 'next/link'
-import SingleCard from "../components/SingleCard"
-import DoubleCard from "../components/DoubleCard"
->>>>>>> 280f03c08d2099771ffb0e5ad7ccafb1a7450b23
 
 export default function Featured({ projects, size }) {
     const raw = projects.filter((project) => project.featured == true);
@@ -34,10 +26,5 @@ export default function Featured({ projects, size }) {
                 </Link>
             </div>
         </main>
-<<<<<<< HEAD
     );
 }
-=======
-    )
-}
->>>>>>> 280f03c08d2099771ffb0e5ad7ccafb1a7450b23

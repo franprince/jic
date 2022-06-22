@@ -8,7 +8,7 @@ import {
   Clients,
 } from "../components";
 import { InView } from "react-intersection-observer";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getClient, overlayDrafts } from "../lib/sanity.server";
 import { groq } from "next-sanity";
 import { useWindowSize } from "../hooks/useWindowSize";
@@ -36,6 +36,7 @@ const homeQuery = groq`*[ _type == 'home' ]{
 
 export default function Home({ projectsApi, homeApi }) {
   const size = useWindowSize();
+  const [color, setColor] = useState("#FFF");
 
   useEffect(() => {
     window.scroll({
@@ -80,8 +81,6 @@ export async function getStaticProps({ preview = false }) {
     await getClient(preview).fetch(projectQuery)
   );
   const homeApi = overlayDrafts(await getClient(preview).fetch(homeQuery));
-  console.log(projectsApi);
-  console.log(homeApi);
   return {
     props: { projectsApi, homeApi },
     revalidate: 1,
