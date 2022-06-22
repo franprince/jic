@@ -4,7 +4,6 @@ import { Spin as Hamburger } from "hamburger-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import NavLink from "./NavLink";
-import { useWindowSize } from "../hooks/useWindowSize";
 
 export default function Navbar({ color, iNavRef, theme }) {
   const [initialNavBar, setInitialNavbar] = useState(true);
@@ -18,16 +17,40 @@ export default function Navbar({ color, iNavRef, theme }) {
 
   const size = useWindowSize();
 
-  const handleScroll = () => {
-    if (window.scrollY > 10 && size.width > 800) {
-      setInitialNavbar(false);
-      setOpen(false);
-    } else if (window.scrollY == 0 && size.width > 800) {
-      setOpen(true);
-      setInitialNavbar(true);
-    } else {
-      setOpen(open);
-      setInitialNavbar(false);
+    function useWindowSize() { // Hook para detectar el tamaño de pantalla.
+            const [windowSize, setWindowSize] = useState({ // Inicializar el estado con altura y anchura undefined así cliente y servidor están coordinados
+            width: undefined,
+            height: undefined,
+        });
+    
+        useEffect(() => {
+            if (typeof window !== 'undefined') { // Este código se ejecuta únicamente del lado del cliente
+            function handleResize() { // Función que se ejecuta al cambiar el tamaño de la pantalla
+            setWindowSize({ // Cambiar el estado del tamaño de pantalla
+            width: window.innerWidth,
+            height: window.innerHeight,
+            });
+            }
+            window.addEventListener("resize", handleResize); // Agregar event listener
+            handleResize(); // Cuando cambia el tamaño de la pantalla, el handler se ejecuta automáticamente
+            return () => window.removeEventListener("resize", handleResize); // Sacar el event listener
+        }
+        }, []);
+        return windowSize;
+    }
+
+    const handleScroll = () => {
+        if (window.scrollY > 10 && size.width > 800) {
+            setInitialNavbar(false)
+            setOpen(false)
+        } else if (window.scrollY == 0 && size.width > 800) {
+            setOpen(true)
+            setInitialNavbar(true)
+        }
+        else {
+            setOpen(open)
+            setInitialNavbar(false)
+        } 
     }
   };
 
@@ -76,10 +99,47 @@ export default function Navbar({ color, iNavRef, theme }) {
     closed: { opacity: 0, pointerEvents: "none", x: "300%", display: "none" },
   };
 
-  const bgVariants = {
-    open: { opacity: 1, x: 0 },
-    closed: { opacity: 0, x: "300%", width: "0px" },
-  };
+    const links = [
+        {
+            "text": "HOME",
+            "link": "/",
+            "id": 0,
+            "className": `${initialNavBar? styles.liFirst : styles.liScrolledFirst}`
+        },
+        {
+            "text": "PROYECTOS",
+            "link": "/projects",
+            "id": 1,
+            "className": `${initialNavBar? styles.li : styles.liScrolled}`
+        },
+        {
+            "text": "YOUTUBE",
+            "link": "/youtube",
+            "id": 2,
+            "className": `${initialNavBar? styles.li : styles.liScrolled}`
+        },
+        {
+            "text": "PODCAST",
+            "link": "/podcast",
+            "id": 3,
+            "className": `${initialNavBar? styles.li : styles.liScrolled}`
+        },
+        {
+            "text": "SOBRE MI",
+            "link": "/about",
+            "id": 4,
+            "className": `${initialNavBar? styles.liLast : styles.liLastScrolled}`
+        },
+        {
+            "text": "CONTACTO",
+            "link": "/contact",
+            "id": 5,
+            "className": `${initialNavBar? styles.contact : styles.contactScrolled}`
+        },
+    ]
+    return (
+    <nav className={styles.wrapper}>
+        <main style={!open && !mobile ? {justifyContent: "space-between"} : null}>
 
   const links = [
     {

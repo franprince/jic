@@ -1,5 +1,5 @@
-import styles from "../styles/WorkTogether.module.css";
-import Link from "next/link";
+import styles from "../styles/WorkTogether.module.css"
+import Link from "next/link"
 
 export default function WorkTogether({ text, link }) {
     return (
@@ -11,5 +11,5 @@ export default function WorkTogether({ text, link }) {
                     </Link>
                 </section>
         </div>
-    );
+    )
 }

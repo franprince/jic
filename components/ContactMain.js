@@ -1,6 +1,6 @@
-import styles from "../styles/ContactMain.module.css";
-import Form from "./Form";
-import { useState } from "react";
+import styles from "../styles/ContactMain.module.css"
+import Form from "./Form"
+import {useRef, useState, useEffect} from "react"
 
 export default function ContactMain({ size }) {
     const [sent, setSent] = useState(false);
@@ -72,5 +72,5 @@ export default function ContactMain({ size }) {
                 </article>
             </section>
         </main>
-    );
+    )
 }
