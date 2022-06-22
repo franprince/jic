@@ -1,15 +1,26 @@
 .clients {
     display: flex;
     background-color: white;
-    padding: 100px 120px;
+    padding: 0 120px;
     flex-direction: column;
     align-items: center;
 }
+.title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    padding: 100px;
+    margin: 0;
+}
 
 .logos {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 50px;
+    padding-bottom: 100px;
+    justify-items: center;
 }
 
 .logo {
-    padding: 0 25px ;
+    align-self: center;
 }

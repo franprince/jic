@@ -1,12 +1,8 @@
-import React from 'react'
+import React from "react";
 import styles from "../styles/Header.module.css";
 import Link from "next/link";
 
 export default function Header({ title, subtitle, img, home, mobileImg, changeOnMobile, size }) {
-    const videoRef = React.useRef();
-    React.useEffect(() => {
-        videoRef.current.play();
-    }, []);
 
     return (
         <header className={home ? styles.homeWrapper : styles.wrapper} id="header">
@@ -19,7 +15,7 @@ export default function Header({ title, subtitle, img, home, mobileImg, changeOn
                     objectPosition={!changeOnMobile ? "center" : size.width < 700 && "center"}
                     quality={100}
                 /> */}
-                <video ref={videoRef} src="/video-bg.mp4" muted loop autoplay></video>
+                <video src="/video-bg.mp4" muted loop autoPlay />
                 <section className={styles.elements}>
                     <h1>{title}</h1>
                     {subtitle && (

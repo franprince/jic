@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Header, Services, NavBar, ContactCard, WorkTogether, Footer, Clients } from "../components";
+import { Header, NavBar, HomeSection, WorkTogether, Footer, Clients } from "../components";
 import { InView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
 import { getClient, overlayDrafts } from "../lib/sanity.server";
@@ -32,14 +32,12 @@ export default function Home({ projectsApi, homeApi }) {
 
     const [color, setColor] = useState("#FFF");
 
-    useEffect(
-        () =>
-            window.scroll({
-                top: 0,
-                left: 0,
-            }),
-        []
-    );
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+        });
+    }, []);
 
     return (
         <>
@@ -61,14 +59,11 @@ export default function Home({ projectsApi, homeApi }) {
             <InView threshold="0.5" onChange={(inView) => inView && setColor("#000")}>
                 <Clients />
             </InView>
-            <InView onChange={(inView) => inView && setColor("#000")}>
-                <Services />
-            </InView>
             <InView onChange={(inView) => inView && setColor("#FFF")}>
-                <ContactCard img={homeApi[0].personalImgURL} />
+                <HomeSection title="¿Quién soy?" />
             </InView>
             <InView onChange={(inView) => inView && setColor("#000")}>
-                <WorkTogether text="Trabajemos juntos!" link="/contact" />
+                <WorkTogether text="Listo para que trabajemos juntos?" />
             </InView>
             <Footer />
         </>

@@ -26,8 +26,10 @@ import TextSlider from "./TextSlider";
 import Videos from "./Videos";
 import WorkTogether from "./WorkTogether";
 import Clients from "./Clients";
+import HomeSection from "./HomeSection";
 
 export {
+  HomeSection,
   Clients,
   AboutHeader,
   AboutVideo,
