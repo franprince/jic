@@ -27,6 +27,9 @@ import Videos from "./Videos";
 import WorkTogether from "./WorkTogether";
 import Clients from "./Clients";
 import HomeSection from "./HomeSection";
+import InstagramIcon from "./icons/instagram";
+import SpotifyIcon from "./icons/spotify";
+import YoutubeIcon from "./icons/youtube";
 
 export {
   HomeSection,
@@ -58,4 +61,7 @@ export {
   TextSlider,
   Videos,
   WorkTogether,
+  InstagramIcon,
+  SpotifyIcon,
+  YoutubeIcon,
 };

@@ -1,4 +1,5 @@
 import styles from "../styles/Footer.module.css";
+import { InstagramIcon, SpotifyIcon, YoutubeIcon } from "../components";
 
 export default function Footer() {
   return (
@@ -6,27 +7,30 @@ export default function Footer() {
       <div className={styles.container}>
         <section>
           <h2>Seguir</h2>
-          <div>
+          <div className={styles.socialIconsContainer}>
             <a
               target="_blank"
               rel="noreferrer"
+              aria-label="Ir a youtube"
               href="https://www.youtube.com/channel/UC2Xel3b_bb-RwcpZk0U4yuA"
             >
-              <img src="/img/youtube.svg" alt="Ir a YouTube" />
+              <YoutubeIcon />
             </a>
             <a
               target="_blank"
               rel="noreferrer"
+              aria-label="Ir a instagram"
               href="https://www.instagram.com/juanignaciocali/"
             >
-              <img src="/img/instagram.svg" alt="Ir a Instagram" />
+              <InstagramIcon />
             </a>
             <a
               target="_blank"
               rel="noreferrer"
+              aria-label="Ir a spotify"
               href="https://www.instagram.com/juanignaciocali/"
             >
-              <img src="/img/instagram.svg" alt="Ir a Instagram" />
+              <SpotifyIcon />
             </a>
           </div>
         </section>

@@ -32,7 +32,10 @@
   }
 
   .container > section > h2 {
-    font-size: 24px;
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 30px;
+    font-weight: 400;
   }
 
   .container > section > img {

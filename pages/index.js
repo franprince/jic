@@ -66,7 +66,10 @@ export default function Home({ projectsApi, homeApi }) {
         <Clients />
       </InView>
       <InView onChange={(inView) => inView && setColor("#FFF")}>
-        <HomeSection title="¿Quién soy?" />
+        <HomeSection title="¿Quién soy?"/>
+      </InView>
+      <InView onChange={(inView) => inView && setColor("#FFF")}>
+        <HomeSection title="¿Quién soy?" type="podcast" />
       </InView>
       <InView onChange={(inView) => inView && setColor("#000")}>
         <WorkTogether text="Listo para que trabajemos juntos?" />

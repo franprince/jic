@@ -10,7 +10,7 @@
 
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
@@ -35,14 +35,9 @@
 @media (max-width: 700px) {
   .footer {
     height: auto;
-    padding: 5rem 0 5rem 0;
   }
   .container {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    gap: 5rem;
-    justify-content: center;
-    width: 100%;
+    padding: 2rem 0 4rem;
   }
 
   .container > section {
@@ -70,4 +65,11 @@
   .contact > a {
     margin: auto 0 auto 0;
   }
+}
+
+.socialIconsContainer {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
