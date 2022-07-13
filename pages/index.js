@@ -50,10 +50,7 @@ const sectionsQuery = groq`*[ _type == 'section' ]{
 // HOME APP
 
 export default function Home({ projectsApi, homeApi, sectionApi }) {
-//  const size = useWindowSize();
-  const [color, setColor] = useState("#FFF");
 
-  console.log(sectionApi);
   return (
     <>
       <Head>

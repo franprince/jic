@@ -1,6 +1,5 @@
 import styles from "../styles/HomeSection.module.css";
 import Image from "next/image";
-import classNames from "classnames";
 
 interface iHomeSection {
   _id: string;
