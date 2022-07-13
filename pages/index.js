@@ -56,7 +56,7 @@ export default function Home({ projectsApi, homeApi, sectionApi }) {
       <Head>
         <title>JIC</title>
       </Head>
-      <NavBar color={color} inNavRef={"0"} theme={"light"} />
+      <NavBar inNavRef={"0"} theme={"light"} />
       <Header
         img={homeApi[0].headerURL}
         home={true}
