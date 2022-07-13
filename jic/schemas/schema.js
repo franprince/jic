@@ -14,6 +14,8 @@ import about from './about'
 import banner from "./banner"
 import manifiesto from "./manifiesto"
 import frase from "./frase"
+import section from './section'
+import sections from './sections'
 
 export default createSchema({
 name: 'mySchema',
@@ -29,6 +31,8 @@ types: schemaTypes.concat([
   contact,
   banner,
   manifiesto,
-  frase
+  frase,
+  section,
+  sections
 ])
 })
