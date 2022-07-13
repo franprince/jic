@@ -33,7 +33,11 @@ export default {
       name: "contentPosition",
       type: "string",
       options: {
-        list: [...positions],
+        list: [
+          { title: "Left", value: "leftPosition" },
+          { title: "Center", value: "centerPosition" },
+          { title: "Right", value: "rightPosition" },
+        ],
       },
     },
     {
@@ -79,5 +83,3 @@ export default {
     },
   ],
 };
-
-import positions from "./positions";
