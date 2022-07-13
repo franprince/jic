@@ -6,10 +6,12 @@ import Link from "next/link";
 import NavLink from "./NavLink";
 import { useWindowSize } from "../hooks/useWindowSize";
 
-export default function Navbar({ color, iNavRef, theme }) {
+export default function Navbar({ iNavRef, theme }) {
   const [initialNavBar, setInitialNavbar] = useState(true);
   const [open, setOpen] = useState(false);
   const [mobile, setMobile] = useState(true);
+  const [color, setColor] = useState("#FFF");
+
   const navRef = useRef(iNavRef);
 
   if (iNavRef == undefined) {

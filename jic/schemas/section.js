@@ -29,6 +29,14 @@ export default {
       rows: 2,
     },
     {
+      title: "Posición del contenido",
+      name: "contentPosition",
+      type: "string",
+      options: {
+        list: [...positions],
+      },
+    },
+    {
       title: "Parallax",
       name: "parallax",
       type: "boolean",
@@ -41,28 +49,35 @@ export default {
     {
       title: "Fondo",
       description: "Este es el fondo que va a tener la sección",
-      name: "fondo",
+      name: "backgrounds",
       type: "document",
       fields: [
         {
           title: "Fondo desktop",
           name: "desktop_bg",
           type: "image",
+          options: {
+            metadata: [],
+          },
         },
         {
           title: "Fondo mobile",
           name: "mobile_bg",
           type: "image",
+          options: {
+            metadata: [],
+          },
         },
       ],
     },
     {
       title: "Link",
       name: "link",
-      description:
-        "Esta es la URL a dónde va a redirigir el botón",
+      description: "Esta es la URL a dónde va a redirigir el botón",
       type: "text",
       rows: 2,
     },
   ],
 };
+
+import positions from "./positions";

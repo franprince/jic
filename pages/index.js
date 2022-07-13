@@ -32,48 +32,64 @@ const homeQuery = groq`*[ _type == 'home' ]{
   "personalImgURL": personalImg.asset->url,
 }`;
 
+const sectionsQuery = groq`*[ _type == 'section' ]{
+  _id, 
+  name,
+  title,
+  subtitle,
+  contentPosition,
+  parallax,
+  hidden,
+  "backgrounds": {
+    "desktop": backgrounds.desktop_bg.asset->{url, metadata{dimensions{width, height}}}, 
+    "mobile": backgrounds.mobile_bg.asset->{url, metadata{dimensions{width, height}}}
+  },
+  link
+} | order(_createdAt asc)`;
+
 // HOME APP
 
-export default function Home({ projectsApi, homeApi }) {
-  const size = useWindowSize();
+export default function Home({ projectsApi, homeApi, sectionApi }) {
+//  const size = useWindowSize();
   const [color, setColor] = useState("#FFF");
 
-  useEffect(() => {
-    window.scroll({
-      top: 0,
-      left: 0,
-    });
-  }, []);
-
+  console.log(sectionApi);
   return (
     <>
       <Head>
         <title>JIC</title>
       </Head>
       <NavBar color={color} inNavRef={"0"} theme={"light"} />
-      <InView onChange={(inView) => inView && setColor("#FFF")}>
-        <Header
-          img={homeApi[0].headerURL}
-          changeOnMobile={true}
-          home={true}
-          mobileImg={homeApi[0].headerMobileURL}
-          size={size}
-          title="JUAN IGNACIO CALI"
-          subtitle="Filmmaker | Director Creativo | Fotógrafo"
-        />
-      </InView>
-      <InView threshold="0.5" onChange={(inView) => inView && setColor("#000")}>
-        <Clients />
-      </InView>
-      <InView onChange={(inView) => inView && setColor("#FFF")}>
-        <HomeSection title="¿Quién soy?"/>
-      </InView>
-      <InView onChange={(inView) => inView && setColor("#FFF")}>
-        <HomeSection title="¿Quién soy?" type="podcast" />
-      </InView>
-      <InView onChange={(inView) => inView && setColor("#000")}>
-        <WorkTogether text="Listo para que trabajemos juntos?" />
-      </InView>
+      <Header
+        img={homeApi[0].headerURL}
+        home={true}
+        title="JUAN IGNACIO CALI"
+        subtitle="Filmmaker | Director Creativo | Fotógrafo"
+      />
+      <Clients />
+      {sectionApi?.map((section) => {
+        const {
+          _id,
+          title,
+          subtitle,
+          hidden,
+          parallax,
+          backgrounds,
+          contentPosition,
+        } = section;
+        return (
+          <HomeSection
+            key={_id}
+            title={title}
+            subtitle={subtitle}
+            hidden={hidden}
+            parallax={parallax}
+            backgrounds={backgrounds}
+            contentPosition={contentPosition}
+          />
+        );
+      })}
+      <WorkTogether text="Listo para que trabajemos juntos?" />
       <Footer />
     </>
   );
@@ -83,9 +99,15 @@ export async function getStaticProps({ preview = false }) {
   const projectsApi = overlayDrafts(
     await getClient(preview).fetch(projectQuery)
   );
+
   const homeApi = overlayDrafts(await getClient(preview).fetch(homeQuery));
+
+  const sectionApi = overlayDrafts(
+    await getClient(preview).fetch(sectionsQuery)
+  );
+
   return {
-    props: { projectsApi, homeApi },
+    props: { projectsApi, homeApi, sectionApi },
     revalidate: 1,
   };
 }
