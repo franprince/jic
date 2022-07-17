@@ -1,14 +1,12 @@
-import NavBar from "../../components/NavBar";
-import PodcastHeader from "../../components/PodcastHeader";
+import { NavBar, PodcastHeader, Footer, WorkTogether } from "../../components";
 import Head from "next/head";
 import Image from "next/image";
-import Footer from "../../components/Footer";
-import WorkTogether from "../../components/WorkTogether";
 import { InView } from "react-intersection-observer";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import styles from "../../styles/Podcast.module.css";
 import { getClient, overlayDrafts } from "../../lib/sanity.server";
 import { groq } from "next-sanity";
+import ColorContext from "../../components/context/ColorContext";
 
 const podcastQuery = groq`*[_type=='podcast'] {
     _id,
@@ -18,18 +16,18 @@ const podcastQuery = groq`*[_type=='podcast'] {
     }`;
 
 export default function Podcast({ podcastApi }) {
-  const [color, setColor] = useState("#FFF");
+  const { colorWhite, colorBlack } = useContext(ColorContext);
 
   return (
     <>
       <Head>
         <title>JIC | Podcast</title>
       </Head>
-      <NavBar color={color} iNavRef={"3"} theme={"light"} />
+      <NavBar iNavRef={"3"} theme={"light"} />
       <PodcastHeader img={podcastApi[0].headerURL} />
       <InView
-        threshold="0.3"
-        onChange={(inView) => (inView ? setColor("#000") : setColor("#FFF"))}
+        rootMargin="0px 0px -90%"
+        onChange={(inView) => (inView && colorBlack())}
       >
         <main className={styles.main}>
           <section>
@@ -111,15 +109,11 @@ export default function Podcast({ podcastApi }) {
           );
         })}
       </section>
-      <InView
-        threshold="0.8"
-        onChange={(inView) => (inView ? setColor("#000") : setColor("#FFF"))}
-      >
-        <WorkTogether
-          text="Instagram del Podcast"
-          link="https://www.instagram.com/calishowpodcast/"
-        />
-      </InView>
+      <WorkTogether
+        text="Instagram del Podcast"
+        buttonText="Ir a Instagram"
+        link="https://www.instagram.com/calishowpodcast/"
+      />
       <Footer />
     </>
   );

@@ -1,5 +1,5 @@
 import styles from "../styles/ProjectsContainer.module.css";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import SingleCard from "../components/SingleCard";
 import DoubleCard from "../components/DoubleCard";
 import Link from "next/link";
@@ -8,7 +8,6 @@ export default function ProjectsContainer({ projects, size }) {
   const filteredProjects = projects.filter((project) => !project.hidden);
 
   const [shown, setShown] = useState(filteredProjects);
-  const filter = useRef("0");
 
   return (
     <main className={styles.container}>
