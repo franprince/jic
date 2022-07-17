@@ -1,9 +1,19 @@
 import styles from "../styles/Clients.module.css";
 import Image from "next/image";
+import { InView } from "react-intersection-observer";
+import { useContext } from "react";
+import ColorContext from "./context/ColorContext";
 
 const Clients = () => {
+  const { colorBlack } = useContext(ColorContext); // colorWhite y colorBlack son funciones que cambian el color en el context.
+
   return (
-    <section className={styles.clients}>
+    <InView
+      rootMargin="0px 0px -90%"
+      as="section"
+      onChange={(InView) => InView && colorBlack()}
+      className={styles.clients}
+    >
       <h2 className={styles.title}>CLIENTES</h2>
       <div className={styles.logos}>
         <div className={styles.logo}>
@@ -52,7 +62,7 @@ const Clients = () => {
           />
         </div>
       </div>
-    </section>
+    </InView>
   );
 };
 

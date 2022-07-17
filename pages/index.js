@@ -7,50 +7,16 @@ import {
   Footer,
   Clients,
 } from "../components";
-import { InView } from "react-intersection-observer";
-import { useEffect, useState } from "react";
 import { getClient, overlayDrafts } from "../lib/sanity.server";
-import { groq } from "next-sanity";
-import { useWindowSize } from "../hooks/useWindowSize";
-
-// QUERIES PARA SANITY
-
-const projectQuery = groq`*[ _type == 'project' ]{
-  name,
-  _id,
-  categories,
-  featured,
-  slug,
-  "imageUrl": img.asset->url,
-  _createdAt
-} | order(_createdAt desc)`;
-
-const homeQuery = groq`*[ _type == 'home' ]{
-  _id,
-  "headerURL": header.asset->url,
-  "headerMobileURL": headerMobile.asset->url,
-  "personalImgURL": personalImg.asset->url,
-}`;
-
-const sectionsQuery = groq`*[ _type == 'section' ]{
-  _id, 
-  name,
-  title,
-  subtitle,
-  contentPosition,
-  parallax,
-  hidden,
-  "backgrounds": {
-    "desktop": backgrounds.desktop_bg.asset->{url, metadata{dimensions{width, height}}}, 
-    "mobile": backgrounds.mobile_bg.asset->{url, metadata{dimensions{width, height}}}
-  },
-  link
-} | order(_createdAt asc)`;
+import {
+  projectQuery,
+  homeQuery,
+  sectionsQuery,
+} from "../queries/sanityQueries";
 
 // HOME APP
 
-export default function Home({ projectsApi, homeApi, sectionApi }) {
-
+export default function Home({ homeApi, sectionApi }) {
   return (
     <>
       <Head>

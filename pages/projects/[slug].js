@@ -64,7 +64,10 @@ export default function Details({ pageSlug, projects }) {
     setMoreProjects(result);
   }
 
-  useEffect(() => getRandom(clearProjects, 2), [pageSlug]);
+  useEffect(() => {
+    getRandom(clearProjects, 2);
+  }, [pageSlug]);
+
   return (
     <>
       <Head>

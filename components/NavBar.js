@@ -1,16 +1,18 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useContext } from "react";
 import styles from "../styles/NavBar.module.css";
 import { Spin as Hamburger } from "hamburger-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import NavLink from "./NavLink";
 import { useWindowSize } from "../hooks/useWindowSize";
+import ColorContext from "./context/ColorContext";
 
 export default function Navbar({ iNavRef, theme }) {
+  const context = useContext(ColorContext);
   const [initialNavBar, setInitialNavbar] = useState(true);
   const [open, setOpen] = useState(false);
   const [mobile, setMobile] = useState(true);
-  const [color, setColor] = useState("#FFF");
+  const color = context.color;
 
   const navRef = useRef(iNavRef);
 
@@ -134,7 +136,7 @@ export default function Navbar({ iNavRef, theme }) {
                 !mobile
                   ? { color: color, opacity: "1" }
                   : open
-                  ? { color: "#FFF", opacity: "1" }
+                  ? { color: "#fff", opacity: "1" }
                   : { opacity: "0" }
               }
             >

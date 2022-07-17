@@ -6,19 +6,14 @@ export default {
     {
       title: "Nombre de la sección",
       name: "name",
-      type: "text",
-      description: "Máximo 40 caracteres",
-      rows: 2,
+      type: "string",
       validation: (Rule) =>
         Rule.required().max(40).error("Máximo de caracteres excedido"),
     },
     {
       title: "Título",
       name: "title",
-      description:
-        "Este es el título que tendrá el proyecto en su propia sección",
-      type: "text",
-      rows: 2,
+      type: "string",
     },
     {
       title: "Subtítulo",
@@ -29,14 +24,19 @@ export default {
       rows: 2,
     },
     {
+      title: "Mostrar título y subtitulo",
+      name: "showTitle",
+      type: "boolean",
+    },
+    {
       title: "Posición del contenido",
       name: "contentPosition",
       type: "string",
       options: {
         list: [
-          { title: "Left", value: "leftPosition" },
-          { title: "Center", value: "centerPosition" },
-          { title: "Right", value: "rightPosition" },
+          { title: "Izquierda", value: "leftPosition" },
+          { title: "Centrado", value: "centerPosition" },
+          { title: "Derecha", value: "rightPosition" },
         ],
       },
     },
@@ -75,11 +75,22 @@ export default {
       ],
     },
     {
+      title: "Texto del botón",
+      name: "buttonText",
+      type: "text",
+      rows: 1,
+    },
+    {
       title: "Link",
       name: "link",
       description: "Esta es la URL a dónde va a redirigir el botón",
       type: "text",
       rows: 2,
+    },
+    {
+      title: "Mostrar botón",
+      name: "showButton",
+      type: "boolean",
     },
   ],
 };

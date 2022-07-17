@@ -1,11 +1,15 @@
 import styles from "../styles/HomeSection.module.css";
 import Image from "next/image";
+import { InView } from "react-intersection-observer";
+import { useContext } from "react";
+import ColorContext from "./context/ColorContext";
 
 interface iHomeSection {
   _id: string;
   title: string;
   subtitle: string;
   image: string;
+  color?: string;
   type?: string;
   hidden?: boolean;
   parallax?: boolean;
@@ -28,16 +32,27 @@ const HomeSection = (props: iHomeSection) => {
     subtitle,
     type,
     parallax,
+    color = "white",
     hidden,
     backgrounds,
     contentPosition,
   } = props;
+  const { colorWhite, colorBlack } = useContext(ColorContext); // colorWhite y colorBlack son funciones que cambian el color en el context.
 
   return (
     !hidden && (
-      <section className={styles.homeSection}>
-        <div className={ `${styles.content} ${styles[contentPosition]} ${styles[title.toLocaleLowerCase()]}`}>
-          <h2>{title}</h2>
+      <InView
+        rootMargin="0px 0px -90%"
+        as="section"
+        className={styles.homeSection}
+        onChange={(InView) => InView && colorWhite()}
+      >
+        <div
+          className={`${styles.content} ${styles[contentPosition]} ${
+            styles[title?.toLocaleLowerCase()]
+          }`}
+        >
+          <h2>{title !== "Podcast" && title}</h2>
           <p>{subtitle}</p>
         </div>
         <Image
@@ -46,12 +61,12 @@ const HomeSection = (props: iHomeSection) => {
           layout="fill"
           objectFit="cover"
           objectPosition="center"
-          quality={100}
+          quality={90}
         />
         {title === "Podcast" && (
           <img className={styles.button} src="/podcast-button.png" alt="" />
         )}
-      </section>
+      </InView>
     )
   );
 };
