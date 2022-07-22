@@ -4,7 +4,18 @@ import { InView } from "react-intersection-observer";
 import { useContext } from "react";
 import ColorContext from "./context/ColorContext";
 
-const Clients = () => {
+interface clientsProps {
+  clients: [logo: imgData];
+}
+
+interface imgData {
+  logos: {
+    imgUrl: string;
+    imgData: { dimensions: { width: string; height: string } };
+  }[];
+}
+
+const Clients = ({ clients }: clientsProps) => {
   const { colorBlack } = useContext(ColorContext); // colorWhite y colorBlack son funciones que cambian el color en el context.
 
   return (
@@ -14,53 +25,21 @@ const Clients = () => {
       onChange={(InView) => InView && colorBlack()}
       className={styles.clients}
     >
-      <h2 className={styles.title}>CLIENTES</h2>
-      <div className={styles.logos}>
-        <div className={styles.logo}>
-          <Image
-            src="/netflix.png"
-            alt="netflix"
-            layout="fixed"
-            width={200}
-            height={54}
-          />
-        </div>
-        <div className={styles.logo}>
-          <Image
-            src="/pastalinda.png"
-            alt="pastalinda"
-            layout="fixed"
-            width={275}
-            height={40}
-          />
-        </div>
-        <div className={styles.logo}>
-          <Image
-            src="/vw.png"
-            alt="volkswagen"
-            layout="fixed"
-            width={119}
-            height={119}
-          />
-        </div>
-        <div className={styles.logo}>
-          <Image
-            src="/pastalinda.png"
-            alt="pastalinda"
-            layout="fixed"
-            width={275}
-            height={40}
-          />
-        </div>
-        <div className={styles.logo}>
-          <Image
-            src="/vw.png"
-            alt="volkswagen"
-            layout="fixed"
-            width={119}
-            height={119}
-          />
-        </div>
+      <h2 className={styles.title}>Marcas que confiaron en mí</h2>
+      <div className={styles.grid}>
+        {clients[0].logos.map((logo) => {
+          return (
+            <div className={styles.logo}>
+              <Image
+                src={logo.imgUrl}
+                alt="netflix"
+                layout="fixed"
+                width={logo.imgData.dimensions.width}
+                height={logo.imgData.dimensions.height}
+              />
+            </div>
+          );
+        })}
       </div>
     </InView>
   );

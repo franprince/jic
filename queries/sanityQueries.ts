@@ -78,4 +78,16 @@ const projectPageQuery = groq`*[ _type == 'projectsPage' ]{
 
 const gridQuery = groq`*[_type=='phGrid'] {_id, 'assets': pics[].asset->url}`;
 
-export { projectQuery, homeQuery, sectionsQuery, projectPageQuery, gridQuery };
+const clientsQuery = groq`*[ _type == 'clients' ]{
+  _id, 
+  "logos": images[].asset->{"imgUrl":url, "imgData": metadata{dimensions{width, height}}}
+}`;
+
+export {
+  projectQuery,
+  homeQuery,
+  sectionsQuery,
+  projectPageQuery,
+  gridQuery,
+  clientsQuery,
+};

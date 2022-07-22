@@ -12,11 +12,12 @@ import {
   projectQuery,
   homeQuery,
   sectionsQuery,
+  clientsQuery,
 } from "../queries/sanityQueries";
 
 // HOME APP
 
-export default function Home({ homeApi, sectionApi }) {
+export default function Home({ homeApi, sectionApi, clientsApi }) {
   return (
     <>
       <Head>
@@ -29,7 +30,7 @@ export default function Home({ homeApi, sectionApi }) {
         title="JUAN IGNACIO CALI"
         subtitle="Filmmaker | Director Creativo | Fotógrafo"
       />
-      <Clients />
+      <Clients clients={clientsApi} />
       {sectionApi?.map((section) => {
         const {
           _id,
@@ -68,9 +69,12 @@ export async function getStaticProps({ preview = false }) {
   const sectionApi = overlayDrafts(
     await getClient(preview).fetch(sectionsQuery)
   );
+  const clientsApi = overlayDrafts(
+    await getClient(preview).fetch(clientsQuery)
+  );
 
   return {
-    props: { projectsApi, homeApi, sectionApi },
+    props: { projectsApi, homeApi, sectionApi, clientsApi },
     revalidate: 1,
   };
 }
