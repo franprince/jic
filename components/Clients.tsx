@@ -27,12 +27,13 @@ const Clients = ({ clients }: clientsProps) => {
     >
       <h2 className={styles.title}>Marcas que confiaron en mí</h2>
       <div className={styles.grid}>
-        {clients[0].logos.map((logo) => {
+        {clients[0].logos.map((logo, index) => {
           return (
             <div className={styles.logo}>
               <Image
+              key={`marca-${index}`}
                 src={logo.imgUrl}
-                alt="netflix"
+                alt="cliente"
                 layout="fixed"
                 width={logo.imgData.dimensions.width}
                 height={logo.imgData.dimensions.height}
