@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "../styles/Header.module.css";
 import Link from "next/link";
 import { InView } from "react-intersection-observer";
@@ -17,7 +16,9 @@ export default function Header({ title, subtitle, home }) {
       onChange={(InView) => InView && colorWhite()}
     >
       <div className={styles.header}>
-        <video src="/video-bg.mp4" muted loop autoPlay />
+        <video muted loop autoPlay preload="auto">
+          <source src="/video-bg.mp4" type="video/mp4" />
+        </video>
         <section className={styles.elements}>
           <h1>{title}</h1>
           {subtitle && (
