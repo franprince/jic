@@ -27,12 +27,14 @@
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
+
 .rightPosition {
   position: absolute;
   top: 50%;
   left: 80%;
   transform: translateX(-80%) translateY(-50%);
 }
+
 .leftPosition {
   position: absolute;
   top: 50%;
@@ -45,20 +47,39 @@
   padding: 0 10rem;
   height: 100%;
   align-items: center;
+  @media (max-width: 700px) {
+    padding: 0 3rem;
+  }
 }
 
 .parallaxContent.rightPosition {
   justify-content: end;
+  @media (max-width: 700px) {
+    justify-content: center;
+    & > * {
+      text-align: center;
+    }
+  }
 }
+
 .parallaxContent.rightPosition > * {
   text-align: right;
 }
+
 .parallaxContent.leftPosition {
   justify-content: start;
+  @media (max-width: 700px) {
+    justify-content: center;
+    & > * {
+      text-align: center;
+    }
+  }
 }
+
 .parallaxContent.centerPosition {
   justify-content: center;
 }
+
 .parallaxContent.centerPosition > * {
   text-align: center;
 }
@@ -78,6 +99,10 @@
 .parallaxContent h2 {
   margin: 0;
   margin-bottom: -20px;
+  @media (max-width: 700px) {
+    text-align: center;
+    font-size: 30px;
+  }
 }
 
 .content,
