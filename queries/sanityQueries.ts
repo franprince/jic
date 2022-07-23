@@ -1,6 +1,6 @@
 import { groq } from "next-sanity";
 
-interface projectProps {
+export interface projectProps {
   _id: string;
   name: string;
   categories: string;
@@ -9,21 +9,25 @@ interface projectProps {
   imageUrl: string;
 }
 
-interface homeProps {
+export interface homeProps {
   _id: string;
   headerURL: string;
   headerMobileURL: string;
   personalImgURL: string;
 }
 
-interface sectionsProps {
+export interface SectionsProps {
   _id: string;
   name: string;
+  hidden: boolean;
   title: string;
   subtitle: string;
+  buttonText: string;
+  link: string;
   contentPosition: string;
+  showContent: boolean;
+  backgroundColor: "white" | "black";
   parallax: boolean;
-  hidden: boolean;
   backgrounds: {
     desktop: {
       url: string;
@@ -34,7 +38,6 @@ interface sectionsProps {
       metadata: { dimensions: { width: number; height: number } };
     };
   };
-  link: string;
 }
 
 const projectQuery = groq`*[ _type == 'project' ]{
@@ -61,6 +64,10 @@ const sectionsQuery = groq`*[ _type == 'section' ]{
     title,
     subtitle,
     contentPosition,
+    backgroundColor,
+    link,
+    showContent,
+    buttonText,
     parallax,
     hidden,
     "backgrounds": {
@@ -69,7 +76,7 @@ const sectionsQuery = groq`*[ _type == 'section' ]{
     },
     link,
     _createdAt
-  } | order(_createdAt asc)`;
+  } | order(_createdAt desc)`;
 
 const projectPageQuery = groq`*[ _type == 'projectsPage' ]{
     _id,
@@ -79,7 +86,7 @@ const projectPageQuery = groq`*[ _type == 'projectsPage' ]{
 const gridQuery = groq`*[_type=='phGrid'] {_id, 'assets': pics[].asset->url}`;
 
 const clientsQuery = groq`*[ _type == 'clients' ]{_id,
-  "logos": images[].asset->{"imgUrl":url, "imgData": metadata{...dimensions{width, height}}}
+  "logos": images[]{alt, ...asset->{"imgUrl":url, "dimensions": metadata{...dimensions{width, height}}}}
 }`;
 
 export {

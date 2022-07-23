@@ -32,26 +32,7 @@ export default function Home({ homeApi, sectionApi, clientsApi }) {
       />
       <Clients clients={clientsApi} />
       {sectionApi?.map((section) => {
-        const {
-          _id,
-          title,
-          subtitle,
-          hidden,
-          parallax,
-          backgrounds,
-          contentPosition,
-        } = section;
-        return (
-          <HomeSection
-            key={_id}
-            title={title}
-            subtitle={subtitle}
-            hidden={hidden}
-            parallax={parallax}
-            backgrounds={backgrounds}
-            contentPosition={contentPosition}
-          />
-        );
+        return <HomeSection key={section._id} {...section} />;
       })}
       <WorkTogether text="Listo para que trabajemos juntos?" />
       <Footer />

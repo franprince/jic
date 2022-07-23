@@ -9,7 +9,7 @@ type SliderProps = {
 
 const infiniteScroll = (width: number) =>
   keyframes(`
-0% {
+  0% {
     transform: translateX(0);
   }
   100% {
@@ -64,11 +64,11 @@ const SliderContainer = styled.div<SliderProps>`
   }
 `;
 
-const ClientSlider = ({ logos }: ILogos) => {
+const ClientsSlider = ({ logos }: ILogos) => {
   const logoArray = [...logos, ...logos];
   const logoWidth = logos.reduce(
     (previousValue, currentValue) =>
-      previousValue + currentValue.imgData.width + 50,
+      previousValue + currentValue.dimensions.width + 50,
     0
   );
 
@@ -83,8 +83,8 @@ const ClientSlider = ({ logos }: ILogos) => {
                   src={logo.imgUrl}
                   alt="cliente"
                   layout="fixed"
-                  width={logo.imgData.width}
-                  height={logo.imgData.height}
+                  width={logo.dimensions.width}
+                  height={logo.dimensions.height}
                 />
               </div>
             );
@@ -95,4 +95,4 @@ const ClientSlider = ({ logos }: ILogos) => {
   );
 };
 
-export default ClientSlider;
+export default ClientsSlider;

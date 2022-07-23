@@ -30,6 +30,7 @@ import HomeSection from "./HomeSection";
 import InstagramIcon from "./icons/instagram";
 import SpotifyIcon from "./icons/spotify";
 import YoutubeIcon from "./icons/youtube";
+import ClientsSlider from "./ClientsSlider";
 
 export {
   HomeSection,
@@ -64,4 +65,5 @@ export {
   InstagramIcon,
   SpotifyIcon,
   YoutubeIcon,
+  ClientsSlider,
 };

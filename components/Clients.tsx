@@ -3,7 +3,7 @@ import Image from "next/image";
 import { InView } from "react-intersection-observer";
 import { useContext } from "react";
 import ColorContext from "./context/ColorContext";
-import ClientSlider from "./ClientsSlider";
+import { ClientsSlider } from "./index";
 import { useWindowSize } from "../hooks/useWindowSize";
 
 interface ClientsProps {
@@ -13,7 +13,8 @@ interface ClientsProps {
 export interface ILogos {
   logos: {
     imgUrl: string;
-    imgData: { width: number; height: number };
+    alt: string | null;
+    dimensions: { width: number; height: number };
   }[];
 }
 
@@ -37,16 +38,16 @@ const Clients = ({ clients }: ClientsProps) => {
                 <div className={styles.logo} key={`marca-${index}`}>
                   <Image
                     src={logo.imgUrl}
-                    alt="cliente"
+                    alt={logo.alt ?? ""}
                     layout="fixed"
-                    width={logo.imgData.width}
-                    height={logo.imgData.height}
+                    width={logo.dimensions.width}
+                    height={logo.dimensions.height}
                   />
                 </div>
               );
             })
           ) : (
-            <ClientSlider logos={logos} />
+            <ClientsSlider logos={logos} />
           )}
         </div>
       </div>

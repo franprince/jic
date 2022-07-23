@@ -5,6 +5,10 @@
   height: 60vh;
 }
 
+.parallax {
+  height: 60vh;
+}
+
 .button {
   height: 20%;
   position: absolute;
@@ -36,7 +40,17 @@
   transform: translateX(-10%) translateY(-50%);
 }
 
-.podcast{
+.parallaxContent {
+  display: flex;
+  padding: 0 10rem;
+}
+
+.parallax-rightPosition {
+}
+.parallax-leftPosition {
+}
+
+.podcast {
   color: #fff;
 }
 
@@ -45,4 +59,27 @@
   color: #fff;
   font-size: 57px;
   font-weight: 400;
+}
+
+.content, .parallaxContent h2 {
+  margin: 0;
+  margin-bottom: -20px;
+}
+
+.content, .parallaxContent button {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 15px 45px;
+  color: #000;
+  background-color: #ffcc00;
+  border: 0;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+  margin-top: -2rem;
+}
+
+.content, .parallaxContent button:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
 }
