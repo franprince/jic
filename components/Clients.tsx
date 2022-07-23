@@ -34,9 +34,8 @@ const Clients = ({ clients }: ClientsProps) => {
           {size.width && size.width > 900 ? (
             logos.map((logo, index) => {
               return (
-                <div className={styles.logo}>
+                <div className={styles.logo} key={`marca-${index}`}>
                   <Image
-                    key={`marca-${index}`}
                     src={logo.imgUrl}
                     alt="cliente"
                     layout="fixed"
