@@ -7,6 +7,8 @@ type SliderProps = {
   width: number;
 };
 
+// Este componente está basado en este código: https://codepen.io/FranPrince/pen/oNjMGrO
+
 const infiniteScroll = (width: number) =>
   keyframes(`
   0% {
@@ -65,12 +67,12 @@ const SliderContainer = styled.div<SliderProps>`
 `;
 
 const ClientsSlider = ({ logos }: ILogos) => {
-  const logoArray = [...logos, ...logos];
+  const logoArray = [...logos, ...logos]; // Para lograr el efecto de scroll infinito se duplican los logos.
   const logoWidth = logos.reduce(
-    (previousValue, currentValue) =>
-      previousValue + currentValue.dimensions.width + 50,
+    (accumulator, currentValue) =>
+      accumulator + currentValue.dimensions.width + 50,
     0
-  );
+  ); // Calcula el ancho total del slider sumando el ancho de cada logo más 50px de gap.
 
   return (
     <SliderContainer width={logoWidth * 2}>
@@ -81,7 +83,7 @@ const ClientsSlider = ({ logos }: ILogos) => {
               <div className="slide" key={`marca-${index}`}>
                 <Image
                   src={logo.imgUrl}
-                  alt="cliente"
+                  alt={logo.alt ?? ""} // Se puede agrgar el alt desde Sanity, si no lo encuentra usa un string vacío.
                   layout="fixed"
                   width={logo.dimensions.width}
                   height={logo.dimensions.height}
