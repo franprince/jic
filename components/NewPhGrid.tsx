@@ -10,7 +10,10 @@ type GridProps = {
 const GridContainer = styled.section<GridProps>`
   position: relative;
   display: grid;
-  grid-template-rows: repeat(${(props) => props.length}, 1fr);
+  grid-template-rows: repeat(
+    ${(props) => props.length},
+    ${(props) => (1 / props.length).toFixed(2)}fr
+  );
   gap: 5px;
 `;
 
