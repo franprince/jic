@@ -31,6 +31,7 @@ import InstagramIcon from "./icons/instagram";
 import SpotifyIcon from "./icons/spotify";
 import YoutubeIcon from "./icons/youtube";
 import ClientsSlider from "./ClientsSlider";
+import NewPhGrid from "./NewPhGrid";
 
 export {
   HomeSection,
@@ -66,4 +67,5 @@ export {
   SpotifyIcon,
   YoutubeIcon,
   ClientsSlider,
+  NewPhGrid,
 };

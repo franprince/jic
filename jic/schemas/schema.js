@@ -22,19 +22,6 @@ import row from "./row";
 export default createSchema({
   name: "mySchema",
   types: schemaTypes.concat([
-    {
-      name: "someDocumentType",
-      title: "Some document type",
-      type: "document",
-      fields: [
-        {
-          name: "rows",
-          title: "Filas",
-          type: "array",
-          of: [{ type: "row" }],
-        },
-      ],
-    },
     project,
     projects,
     projectsPage,

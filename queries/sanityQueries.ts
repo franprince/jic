@@ -40,6 +40,24 @@ export interface SectionsProps {
   };
 }
 
+export interface NewGridProps {
+  [key: string]: RowsInterface;
+}
+
+interface RowsInterface {
+  rows: Array<ColumnsInterface>;
+}
+
+interface ColumnsInterface {
+  columns: Array<ImageInterface>;
+}
+
+interface ImageInterface {
+  alt: string;
+  url: string;
+  dimensions: { width: number; height: number };
+}
+
 const projectQuery = groq`*[ _type == 'project' ]{
     name,
     _id,
@@ -48,6 +66,7 @@ const projectQuery = groq`*[ _type == 'project' ]{
     featured,
     slug,
     "imageUrl": img.asset->url,
+    'rows': rows[]{columns[]{alt, ...asset->{url, "dimensions": metadata{...dimensions{width, height}}}}},
     _createdAt
   } | order(_createdAt desc)`;
 

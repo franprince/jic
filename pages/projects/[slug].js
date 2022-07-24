@@ -14,6 +14,7 @@ import Description from "../../components/Description";
 import Backstage from "../../components/Backstage";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import ColorContext from "../../components/context/ColorContext";
+import { NewPhGrid } from "../../components";
 
 const projectQuery = groq`*[ _type == 'project' ]{
   _id,
@@ -31,6 +32,7 @@ const projectQuery = groq`*[ _type == 'project' ]{
   "imageUrl": img.asset->url,
   "screenshots": screenshots[].asset->url,
   "backstagePics" : backstagePics[].asset->url,
+  "grid":{'rows': rows[]{columns[]{alt, ...asset->{url, "dimensions": metadata{...dimensions{width, height}}}}}},
   backstageVid,
   backstage,
   _createdAt
@@ -113,6 +115,7 @@ export default function Details({ pageSlug, projects }) {
             />
           )}
         </InView>
+        <NewPhGrid grid={thisProject[0].grid} />
         <InView
           onChange={(InView) => InView && colorWhite()}
           rootMargin="0px 0px -90%"
