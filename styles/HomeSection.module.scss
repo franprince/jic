@@ -54,6 +54,9 @@
 
 .parallaxContent.rightPosition {
   justify-content: end;
+  & > * {
+    text-align: right;
+  }
   @media (max-width: 700px) {
     justify-content: center;
     & > * {
@@ -62,12 +65,11 @@
   }
 }
 
-.parallaxContent.rightPosition > * {
-  text-align: right;
-}
-
 .parallaxContent.leftPosition {
   justify-content: start;
+  & > * {
+    text-align: left;
+  }
   @media (max-width: 700px) {
     justify-content: center;
     & > * {
@@ -78,10 +80,9 @@
 
 .parallaxContent.centerPosition {
   justify-content: center;
-}
-
-.parallaxContent.centerPosition > * {
-  text-align: center;
+  & > * {
+    text-align: center;
+  }
 }
 
 .podcast {
