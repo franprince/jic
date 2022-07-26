@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import Image from "next/image";
 import { NewGridProps } from "../queries/sanityQueries";
-import styles from "../styles/PhGrid.module.css";
 
 type GridProps = {
   length: number;
@@ -15,6 +14,9 @@ const GridContainer = styled.section<GridProps>`
     ${(props) => (1 / props.length).toFixed(2)}fr
   );
   gap: 5px;
+  @media (max-width: 700px) {
+    grid-template-rows: auto;
+  }
 `;
 
 const GridRow = styled.section<GridProps>`
@@ -22,6 +24,10 @@ const GridRow = styled.section<GridProps>`
   display: grid;
   grid-template-columns: repeat(${(props) => props.length}, 1fr);
   gap: 5px;
+  gap: 5px;
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const GridColum = styled.div`
@@ -32,7 +38,7 @@ const GridColum = styled.div`
 
 const NewPhGrid = ({ grid }: NewGridProps) => {
   return (
-    <section className={styles.container}>
+    <section>
       <GridContainer length={grid.rows.length}>
         {grid.rows.map((row, index) => (
           <GridRow length={row.columns.length} key={`row-${index}`}>
