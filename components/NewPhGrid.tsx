@@ -43,7 +43,7 @@ const NewPhGrid = ({ grid }: NewGridProps) => {
         {grid.rows.map((row, index) => (
           <GridRow length={row.columns.length} key={`row-${index}`}>
             {row.columns.map((column) => (
-              <GridColum key={`column-${index}`}>
+              <GridColum key={`${column.alt}-${index}`}>
                 <Image
                   src={column.url}
                   alt={column.alt ?? ""}

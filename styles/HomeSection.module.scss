@@ -89,10 +89,16 @@
   color: #fff;
 }
 
+.button {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .youtube {
   font-family: "Poppins", sans-serif;
   color: #fff;
-  font-size: 57px;
+  font-size: 40px;
   font-weight: 400;
 }
 

@@ -87,7 +87,9 @@ const HomeSection = (props: SectionsProps) => {
           quality={90}
         />
         {title === "Podcast" && (
-          <img className={styles.button} src="/podcast-button.png" alt="" />
+          <Link href="/podcast">
+            <img className={styles.button} src="/podcast-button.png" alt="" />
+          </Link>
         )}
       </InView>
     ))
