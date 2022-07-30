@@ -51,7 +51,6 @@ export default function About({ pics, aboutApi, slidesA }) {
         />
       ) : null}
       <PhGrid pictures={pics[0].assets} />
-      <TextSlider slidesA={slidesA} />
       <InView
         rootMargin="0px 0px -90%"
         onChange={(InView) => (InView ? colorBlack() : colorWhite())}

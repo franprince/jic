@@ -1,6 +1,6 @@
 import Select from "react-select";
 import styles from "../styles/Form.module.css";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 
@@ -121,6 +121,10 @@ export default function Form({ sent, setSent, size }) {
       backgroundColor: "#F9F9F9",
       marginTop: "-8px",
       padding: "0.5rem 0 0.5rem 0",
+    }),
+    valueContainer: () => ({
+      display: "flex",
+      flexWrap: "wrap",
     }),
   };
 

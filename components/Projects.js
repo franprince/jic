@@ -2,7 +2,6 @@ import styles from "../styles/ProjectsContainer.module.css";
 import { useState } from "react";
 import SingleCard from "../components/SingleCard";
 import DoubleCard from "../components/DoubleCard";
-import Link from "next/link";
 
 export default function ProjectsContainer({ projects, size }) {
   const filteredProjects = projects.filter((project) => !project.hidden);
@@ -33,16 +32,6 @@ export default function ProjectsContainer({ projects, size }) {
               />
             );
           })}
-          <article className={styles.last}>
-            <article>
-              <h2>
-                Tu marca puede
-                <br />
-                estar acá ;)
-              </h2>
-              <Link href="/contact">Trabajemos juntos!</Link>
-            </article>
-          </article>
         </div>
       </section>
     </main>

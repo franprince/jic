@@ -33,9 +33,7 @@ export default function Projects({ projectsApi, projectsPageApi, pics }) {
       />
       <ProjectsContainer projects={projectsApi} size={size} />
 
-      <PhGrid pictures={pics[0].assets} />
-
-      <WorkTogether text="Trabajemos juntos!" link="/contact" />
+      <WorkTogether text="Listo para que trabajemos juntos?" link="/contact" />
 
       <Footer />
     </>

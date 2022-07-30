@@ -1,6 +1,7 @@
 import styles from "../styles/ContactMain.module.css";
 import Form from "./Form";
 import { useState } from "react";
+import { InstagramIcon, SpotifyIcon, YoutubeIcon } from "./icons";
 
 export default function ContactMain({ size }) {
   const [sent, setSent] = useState(false);
@@ -37,18 +38,34 @@ export default function ContactMain({ size }) {
         <article className={styles.area2}>
           <h3>Mis datos</h3>
           <p>juan.ignacio.cali@gmail.com</p>
-          <article className={styles.links}>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.instagram.com/juanignaciocali/"
-            >
-              <img
-                src="/img/instagram.svg"
-                alt="Ir a Instagram"
-                className={styles.icon}
-              />
-            </a>
+          <article className={styles.social}>
+            <h3>Seguime</h3>
+            <div className={styles.links}>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Ir a youtube"
+                href="https://www.youtube.com/channel/UC2Xel3b_bb-RwcpZk0U4yuA"
+              >
+                <YoutubeIcon playFill="white" />
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Ir a instagram"
+                href="https://www.instagram.com/juanignaciocali/"
+              >
+                <InstagramIcon />
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Ir a spotify"
+                href="https://www.instagram.com/juanignaciocali/"
+              >
+                <SpotifyIcon />
+              </a>
+            </div>
           </article>
         </article>
         <article className={styles.area3}>
