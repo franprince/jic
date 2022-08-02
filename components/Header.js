@@ -16,7 +16,7 @@ export default function Header({ title, subtitle, home }) {
       onChange={(InView) => InView && colorWhite()}
     >
       <div className={styles.header}>
-        <video muted loop autoPlay preload="auto" poster="/poster.png">
+        <video muted loop autoPlay preload="auto" poster="/poster.webp">
           <source src="/video-bg.mp4" type="video/mp4" />
         </video>
         <section className={styles.elements}>
