@@ -37,91 +37,91 @@ export default class MyDocument extends Document {
             as="font"
             href="/fonts/BarlowCondensed-ExtraLightItalic.ttf"
             type="application/octet-stream"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           />
           <link
             rel="preload"
             as="font"
             href="/fonts/BarlowCondensed-LightItalic.ttf"
             type="application/octet-stream"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           />
           <link
             rel="preload"
             as="font"
             href="/fonts/Gobold Bold Italic.otf"
             type="font/opentype"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           />
           <link
             rel="preload"
             as="font"
             href="/fonts/Lora-Italic-VariableFont_wght.ttf"
             type="application/octet-stream"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           />
           <link
             rel="preload"
             as="font"
             href="/fonts/Lora-VariableFont_wght.ttf"
             type="application/octet-stream"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           />
           <link
             rel="preload"
             as="font"
             href="/fonts/Poppins-Bold.ttf"
             type="application/octet-stream"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           />
           <link
             rel="preload"
             as="font"
             href="/fonts/Poppins-ExtraBold.ttf"
             type="application/octet-stream"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           />
           <link
             rel="preload"
             as="font"
             href="/fonts/Poppins-ExtraLight.ttf"
             type="application/octet-stream"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           />
           <link
             rel="preload"
             as="font"
             href="/fonts/Poppins-Light.ttf"
             type="application/octet-stream"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           />
           <link
             rel="preload"
             as="font"
             href="/fonts/Poppins-LightItalic.ttf"
             type="application/octet-stream"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           />
           <link
             rel="preload"
             as="font"
             href="/fonts/Poppins-Regular.ttf"
             type="application/octet-stream"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           />
           <link
             rel="preload"
             as="font"
             href="/fonts/Poppins-SemiBold.ttf"
             type="application/octet-stream"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           />
           <link
             rel="preload"
             as="font"
             href="/fonts/Poppins-ThinItalic.ttf"
             type="application/octet-stream"
-            crossorigin="anonymous"
+            crossOrigin="anonymous"
           />
           <script
             async
