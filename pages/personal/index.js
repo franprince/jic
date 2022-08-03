@@ -23,7 +23,7 @@ export default function Projects({ personalApi, personalPageApi, pics }) {
         <title>JIC | Proyectos</title>
       </Head>
 
-      <NavBar iNavRef={"1"} theme={"light"} />
+      <NavBar iNavRef={"2"} theme={"light"} />
 
       <Header
         img={personalPageApi[0].headerURL}
