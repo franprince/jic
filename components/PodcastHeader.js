@@ -23,7 +23,13 @@ export default function PodcastHeader({ img }) {
         priority={true}
       />
       <section>
-        <img src="/img/thecalishow.svg" alt="The Cali Show Podcast"></img>
+        <Image
+          width={475}
+          height={135}
+          layout="fixed"
+          src="/img/thecalishow.svg"
+          alt="The Cali Show Podcast"
+        />
       </section>
     </InView>
   );

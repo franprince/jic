@@ -28,7 +28,7 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="Ir a spotify"
-              href="https://www.instagram.com/juanignaciocali/"
+              href="https://open.spotify.com/show/6VHzEF8VKmRstoAdgwXFX9"
             >
               <SpotifyIcon />
             </a>
