@@ -9,15 +9,16 @@ import projectsPage from "./projectsPage";
 import podcast from "./podcast";
 import contact from "./contact";
 import phGrid from "./phGrid";
-import youtube from "./youtube";
 import about from "./about";
 import banner from "./banner";
-import manifiesto from "./manifiesto";
 import frase from "./frase";
 import section from "./section";
 import sections from "./sections";
 import clients from "./clients";
 import row from "./row";
+import personalProjects from "./personalProjects";
+import personalPage from "./personalPage";
+import personal from "./personal";
 
 export default createSchema({
   name: "mySchema",
@@ -27,16 +28,17 @@ export default createSchema({
     projectsPage,
     phGrid,
     home,
-    youtube,
     podcast,
     about,
     contact,
     banner,
-    manifiesto,
     frase,
     section,
     sections,
     clients,
-    row
+    row,
+    personalProjects,
+    personalPage,
+    personal
   ]),
 });

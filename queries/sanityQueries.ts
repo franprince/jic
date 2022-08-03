@@ -102,6 +102,23 @@ const projectPageQuery = groq`*[ _type == 'projectsPage' ]{
     "headerURL": header.asset->url,
 }`;
 
+const personalQuery = groq`*[ _type == 'personal' ]{
+  name,
+  _id,
+  categories,
+  hidden,
+  featured,
+  slug,
+  "imageUrl": img.asset->url,
+  'rows': rows[]{columns[]{alt, ...asset->{url, "dimensions": metadata{...dimensions{width, height}}}}},
+  _createdAt
+} | order(_createdAt desc)`;
+
+const personalPageQuery = groq`*[ _type == 'personalPage' ]{
+  _id,
+  "headerURL": header.asset->url,
+}`;
+
 const gridQuery = groq`*[_type=='phGrid'] {_id, 'assets': pics[].asset->url}`;
 
 const clientsQuery = groq`*[ _type == 'clients' ]{_id,
@@ -115,4 +132,6 @@ export {
   projectPageQuery,
   gridQuery,
   clientsQuery,
+  personalPageQuery,
+  personalQuery,
 };

@@ -93,14 +93,14 @@ export default function Navbar({ iNavRef, theme }) {
       className: `${initialNavBar ? styles.liFirst : styles.liScrolledFirst}`,
     },
     {
-      text: "PROYECTOS",
+      text: "TRABAJOS",
       link: "/projects",
       id: 1,
       className: `${initialNavBar ? styles.li : styles.liScrolled}`,
     },
     {
-      text: "YOUTUBE",
-      link: "/youtube",
+      text: "PERSONAL",
+      link: "/personal",
       id: 2,
       className: `${initialNavBar ? styles.li : styles.liScrolled}`,
     },

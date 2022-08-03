@@ -169,7 +169,11 @@ export default function Details({ pageSlug, projects }) {
           onChange={(InView) => InView && colorBlack()}
           rootMargin="0px 0px -90%"
         >
-          <MoreProjects moreProjects={moreProjects} size={size} />
+          <MoreProjects
+            moreProjects={moreProjects}
+            sectionOrigin="projects"
+            size={size}
+          />
         </InView>
         <Footer />
       </main>

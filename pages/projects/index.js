@@ -29,9 +29,13 @@ export default function Projects({ projectsApi, projectsPageApi, pics }) {
       <Header
         img={projectsPageApi[0].headerURL}
         home={false}
-        title="PROYECTOS"
+        title="TRABAJOS"
       />
-      <ProjectsContainer projects={projectsApi} size={size} />
+      <ProjectsContainer
+        projects={projectsApi}
+        size={size}
+        sectionOrigin="projects"
+      />
 
       <WorkTogether text="Listo para que trabajemos juntos?" link="/contact" />
 

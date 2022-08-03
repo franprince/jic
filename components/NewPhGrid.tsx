@@ -39,8 +39,8 @@ const GridColum = styled.div`
 const NewPhGrid = ({ grid }: NewGridProps) => {
   return (
     <section>
-      <GridContainer length={grid.rows.length}>
-        {grid.rows.map((row, index) => (
+      <GridContainer length={grid.rows?.length}>
+        {grid.rows?.map((row, index) => (
           <GridRow length={row.columns.length} key={`row-${index}`}>
             {row.columns.map((column) => (
               <GridColum key={`${column.alt}-${index}`}>

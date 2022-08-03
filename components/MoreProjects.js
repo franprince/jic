@@ -4,7 +4,7 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import SingleCard from "./SingleCard";
 
-export default function MoreProjects({ moreProjects, size }) {
+export default function MoreProjects({ moreProjects, size, sectionOrigin }) {
   useEffect(() => {
     AOS.init();
   }, []);
@@ -22,6 +22,7 @@ export default function MoreProjects({ moreProjects, size }) {
                 size={size}
                 mp={true}
                 key={item}
+                sectionOrigin={sectionOrigin}
               />
             );
           })}

@@ -3,11 +3,10 @@ import { useState } from "react";
 import SingleCard from "../components/SingleCard";
 import DoubleCard from "../components/DoubleCard";
 
-export default function ProjectsContainer({ projects, size }) {
+export default function ProjectsContainer({ projects, size, sectionOrigin }) {
   const filteredProjects = projects.filter((project) => !project.hidden);
 
   const [shown, setShown] = useState(filteredProjects);
-
   return (
     <main className={styles.container}>
       <section className={styles.projects}>
@@ -21,6 +20,7 @@ export default function ProjectsContainer({ projects, size }) {
                 item={item}
                 index={index}
                 size={size}
+                sectionOrigin={sectionOrigin}
                 key={item.name}
               />
             ) : (
@@ -29,6 +29,7 @@ export default function ProjectsContainer({ projects, size }) {
                 index={index}
                 size={size}
                 key={item.name}
+                sectionOrigin={sectionOrigin}
               />
             );
           })}
