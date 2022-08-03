@@ -6,6 +6,7 @@ import ColorContext from "./context/ColorContext";
 import Link from "next/link";
 import { SectionsProps } from "../queries/sanityQueries";
 import { Parallax } from "react-parallax";
+import { YellowButton } from ".";
 
 const HomeSection = (props: SectionsProps) => {
   const {
@@ -46,9 +47,7 @@ const HomeSection = (props: SectionsProps) => {
               {title && <h2>{title}</h2>}
               {subtitle && <p>{subtitle}</p>}
               {buttonText && (
-                <Link href={link ?? "/youtube"}>
-                  <button>{buttonText}</button>
-                </Link>
+                <YellowButton link={link ?? "/youtube"} text={buttonText} />
               )}
             </div>
           )}
@@ -72,9 +71,7 @@ const HomeSection = (props: SectionsProps) => {
             <h2>{title !== "Podcast" && title}</h2>
             {subtitle && <p>{subtitle}</p>}
             {buttonText && (
-              <Link href={link ?? "/youtube"}>
-                <button>{buttonText}</button>
-              </Link>
+              <YellowButton link={link ?? "/youtube"} text={buttonText} />
             )}
           </div>
         )}

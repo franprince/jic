@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useContext } from "react";
 import ColorContext from "./context/ColorContext";
 import { InView } from "react-intersection-observer";
+import { YellowButton } from ".";
 
 interface iWorkTogether {
   text: string;
@@ -24,9 +25,7 @@ export default function WorkTogether({
     >
       <section>
         <h2>{text}</h2>
-        <Link href="/#projects" target="_blank" rel="noreferrer">
-          <button>{buttonText ? buttonText : "Empecemos"}</button>
-        </Link>
+        <YellowButton link="/projects" text={buttonText ? buttonText : "Empecemos"} />
       </section>
     </InView>
   );

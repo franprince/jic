@@ -3,6 +3,7 @@ import Link from "next/link";
 import { InView } from "react-intersection-observer";
 import { useContext } from "react";
 import ColorContext from "./context/ColorContext";
+import { YellowButton } from ".";
 
 export default function Header({ title, subtitle, home }) {
   const { colorWhite } = useContext(ColorContext); // colorWhite y colorBlack son funciones que cambian el color en el context.
@@ -27,9 +28,7 @@ export default function Header({ title, subtitle, home }) {
             </h2>
           )}
           {title == "JUAN IGNACIO CALI" && (
-            <Link href="/projects">
-              <a>Mis proyectos</a>
-            </Link>
+            <YellowButton link="/projects" text="Mis proyectos"  hoverColor="white" />
           )}
         </section>
       </div>
