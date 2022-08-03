@@ -27,7 +27,7 @@ export default function Header({ title, subtitle, home }) {
             </h2>
           )}
           {title == "JUAN IGNACIO CALI" && (
-            <Link href="/#projects">
+            <Link href="/projects">
               <a>Mis proyectos</a>
             </Link>
           )}
