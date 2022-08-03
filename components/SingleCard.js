@@ -3,6 +3,7 @@ import styles from "../styles/SingleCard.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Image from "next/image";
 
 export default function SingleCard({ item, index, size, mp, sectionOrigin }) {
   useEffect(() => {
@@ -29,10 +30,14 @@ export default function SingleCard({ item, index, size, mp, sectionOrigin }) {
         }
       >
         <div className={styles.img}>
-          <img
+          <Image
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
             src={item.imageUrl}
             alt={item.name}
             className={styles.imgBorder}
+            style={{borderRadius:"20px 20px 0 0"}}
           />
         </div>
         <div className={styles.content}>
