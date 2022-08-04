@@ -21,16 +21,7 @@ export default function SingleCard({ item, index, size, sectionOrigin }) {
         <div className={styles.content}>
           <section className={styles.info}>
             <h2>{item.name != null && item.name}</h2>
-            <h3>{item.categories != null && item.categories.join(", ")}</h3>
           </section>
-          <a href={`/${sectionOrigin}/${item?.slug?.current}`}>
-            <p>Ver el proyecto</p>
-            <img
-              src="/img/arrow.svg"
-              alt="Ver el proyecto"
-              className={styles.arrow}
-            />
-          </a>
         </div>
         <div className={styles.img}>
           <Image
