@@ -14,7 +14,7 @@ export default function Backstage({ backstage, backstageVid, backstagePics }) {
       <section className={titleStyle.description} id={titleStyle.hola}>
         <article>
           {backstage || backstageVid || backstagePics ? (
-            <h2 className={titleStyle.title}>El backstage</h2>
+            <h2 className={titleStyle.title}>Backstage</h2>
           ) : null}
         </article>
       </section>

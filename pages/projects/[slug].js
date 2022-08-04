@@ -83,9 +83,7 @@ export default function Details({ pageSlug, projects }) {
           rootMargin="0px 0px -90%"
         >
           <ProjectHeader
-            brand={thisProject[0].brand}
             title={thisProject[0].subtitle}
-            categories={thisProject[0].categories}
           />
         </InView>
         {thisProject[0].videoURL != null && (
