@@ -28,7 +28,7 @@ export default function Header({ title, subtitle, home }) {
             </h2>
           )}
           {title == "JUAN IGNACIO CALI" && (
-            <YellowButton link="/projects" text="Mis proyectos"  hoverColor="white" />
+            <YellowButton link="/trabajos" text="Mis proyectos"  hoverColor="white" />
           )}
         </section>
       </div>

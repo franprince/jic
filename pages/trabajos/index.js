@@ -21,7 +21,7 @@ export default function Projects({ projectsApi, projectsPageApi, pics }) {
   return (
     <>
       <Head>
-        <title>JIC | Proyectos</title>
+        <title>JIC | Trabajos</title>
       </Head>
 
       <NavBar iNavRef={"1"} theme={"light"} />
@@ -34,7 +34,7 @@ export default function Projects({ projectsApi, projectsPageApi, pics }) {
       <ProjectsContainer
         projects={projectsApi}
         size={size}
-        sectionOrigin="projects"
+        sectionOrigin="trabajos"
       />
 
       <WorkTogether text="Listo para que trabajemos juntos?" link="/contact" />

@@ -169,7 +169,7 @@ export default function Details({ pageSlug, projects }) {
         >
           <MoreProjects
             moreProjects={moreProjects}
-            sectionOrigin="projects"
+            sectionOrigin="trabajos"
             size={size}
           />
         </InView>
