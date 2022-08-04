@@ -26,8 +26,7 @@ export default function Contact({ header }) {
       </Head>
       <NavBar iNavRef={"5"} theme={"light"} />
       <AboutHeader
-        title={`YA HABLAMOS DE MI, AHORA\nHABLEMOS DE VOS Y TU PROYECTO!`}
-        mobileTitle="HABLEMOS DE TU PROYECTO"
+        title="HABLEMOS DE TU PROYECTO"
         img={header[0].headerURL}
         contact={true}
       />
