@@ -47,7 +47,11 @@ const HomeSection = (props: SectionsProps) => {
               {title && <h2>{title}</h2>}
               {subtitle && <p>{subtitle}</p>}
               {buttonText && (
-                <YellowButton link={link ?? "/youtube"} text={buttonText} />
+                <YellowButton
+                  link={link ?? "/youtube"}
+                  text={buttonText}
+                  hoverColor="white"
+                />
               )}
             </div>
           )}

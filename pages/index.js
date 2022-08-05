@@ -29,6 +29,8 @@ export default function Home({ homeApi, sectionApi, clientsApi }) {
         home={true}
         title="JUAN IGNACIO CALI"
         subtitle="Filmmaker | Director Creativo | Fotógrafo"
+        videoSrc="/video-bg.mp4"
+        posterSrc="/poster.webp"
       />
       <Clients clients={clientsApi} />
       {sectionApi?.map((section) => {

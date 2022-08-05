@@ -30,6 +30,8 @@ export default function Projects({ projectsApi, projectsPageApi, pics }) {
         img={projectsPageApi[0].headerURL}
         home={false}
         title="TRABAJOS"
+        videoSrc="/video-bg.mp4"
+        posterSrc="/poster.webp"
       />
       <ProjectsContainer
         projects={projectsApi}

@@ -1,11 +1,10 @@
 import styles from "../styles/Header.module.css";
-import Link from "next/link";
 import { InView } from "react-intersection-observer";
 import { useContext } from "react";
 import ColorContext from "./context/ColorContext";
 import { YellowButton } from ".";
 
-export default function Header({ title, subtitle, home }) {
+export default function Header({ title, subtitle, home, posterSrc, videoSrc }) {
   const { colorWhite } = useContext(ColorContext); // colorWhite y colorBlack son funciones que cambian el color en el context.
 
   return (
@@ -17,8 +16,8 @@ export default function Header({ title, subtitle, home }) {
       onChange={(InView) => InView && colorWhite()}
     >
       <div className={styles.header}>
-        <video muted loop autoPlay preload="auto" poster="/poster.webp">
-          <source src="/video-bg.mp4" type="video/mp4" />
+        <video muted loop autoPlay preload="auto" poster={posterSrc}>
+          <source src={videoSrc} type="video/mp4" />
         </video>
         <section className={styles.elements}>
           <h1>{title}</h1>
