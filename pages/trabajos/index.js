@@ -22,6 +22,10 @@ export default function Projects({ projectsApi, projectsPageApi, pics }) {
     <>
       <Head>
         <title>JIC | Trabajos</title>
+        <meta
+          name="description"
+          content="Comerciales, Videoproducto, Fotoproducto"
+        />
       </Head>
 
       <NavBar iNavRef={"1"} theme={"light"} />

@@ -21,6 +21,10 @@ export default function Projects({ personalApi, personalPageApi, pics }) {
     <>
       <Head>
         <title>JIC | Proyectos</title>
+        <meta
+          name="description"
+          content="Drone, Travel Films, Travel Photogrtaphy"
+        />
       </Head>
 
       <NavBar iNavRef={"2"} theme={"light"} />
@@ -30,7 +34,11 @@ export default function Projects({ personalApi, personalPageApi, pics }) {
         home={false}
         title="PERSONAL"
       />
-      <ProjectsContainer projects={personalApi} size={size} sectionOrigin="personal" />
+      <ProjectsContainer
+        projects={personalApi}
+        size={size}
+        sectionOrigin="personal"
+      />
 
       <WorkTogether text="Listo para que trabajemos juntos?" link="/contact" />
 

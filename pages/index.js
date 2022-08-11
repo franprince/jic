@@ -22,6 +22,10 @@ export default function Home({ homeApi, sectionApi, clientsApi }) {
     <>
       <Head>
         <title>JIC</title>
+        <meta
+          name="description"
+          content="Fotógrafo y Filmmaker de Buenos Aires especializado en Comerciales y Videoproducto."
+        />
       </Head>
       <NavBar inNavRef={"0"} theme={"light"} />
       <Header

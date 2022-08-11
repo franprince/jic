@@ -22,12 +22,16 @@ export default function Podcast({ podcastApi }) {
     <>
       <Head>
         <title>JIC | Podcast</title>
+        <meta
+          name="description"
+          content="The Cali Show - Un Podcast para filmmakers, artistas y emprendedores"
+        />
       </Head>
       <NavBar iNavRef={"3"} theme={"light"} />
       <PodcastHeader img={podcastApi[0].headerURL} />
       <InView
         rootMargin="0px 0px -90%"
-        onChange={(inView) => (inView && colorBlack())}
+        onChange={(inView) => inView && colorBlack()}
       >
         <main className={styles.main}>
           <section>

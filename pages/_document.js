@@ -11,10 +11,6 @@ export default class MyDocument extends Document {
           <meta charSet="utf-8" />
           <meta
             content="Director Creativo & Filmmaker. Me gusta contar historias y viajar."
-            name="description"
-          />
-          <meta
-            content="Director Creativo & Filmmaker. Me gusta contar historias y viajar."
             name="keywords"
           />
           <meta
