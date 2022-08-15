@@ -15,7 +15,7 @@ const sendEmail = async ({ nombre, mensaje, presupuesto, producto, trabajo, pues
             {
                 to: [
                     {
-                        email: 'fran.p.21@gmail.com'
+                        email: 'juanignaciocali@gmail.com'
                     }
                     ],
                     subject: 'Nuevo mensaje en JIC!'
