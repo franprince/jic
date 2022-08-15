@@ -19,6 +19,7 @@ import row from "./row";
 import personalProjects from "./personalProjects";
 import personalPage from "./personalPage";
 import personal from "./personal";
+import listValues from "./listValues";
 
 export default createSchema({
   name: "mySchema",
@@ -39,6 +40,7 @@ export default createSchema({
     row,
     personalProjects,
     personalPage,
-    personal
+    personal,
+    listValues
   ]),
 });

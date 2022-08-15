@@ -109,7 +109,6 @@
 .area5 {
   grid-area: fifth;
   position: relative;
-  margin-top: -3rem;
 }
 
 @media (max-width: 1000px) {

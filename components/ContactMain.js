@@ -3,7 +3,7 @@ import Form from "./Form";
 import { useState } from "react";
 import { InstagramIcon, SpotifyIcon, YoutubeIcon } from "./icons";
 
-export default function ContactMain({ size }) {
+export default function ContactMain({ size, contactData }) {
   const [sent, setSent] = useState(false);
 
   return (
@@ -81,7 +81,12 @@ export default function ContactMain({ size }) {
           </p>
         </article>
         <article className={styles.area4}>
-          <Form sent={sent} setSent={setSent} size={size} />
+          <Form
+            sent={sent}
+            setSent={setSent}
+            size={size}
+            contactData={contactData}
+          />
         </article>
         <article className={styles.area5}>
           <h2>

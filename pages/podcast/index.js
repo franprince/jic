@@ -7,6 +7,7 @@ import styles from "../../styles/Podcast.module.css";
 import { getClient, overlayDrafts } from "../../lib/sanity.server";
 import { groq } from "next-sanity";
 import ColorContext from "../../components/context/ColorContext";
+import ReactPlayer from "react-player";
 
 const podcastQuery = groq`*[_type=='podcast'] {
     _id,
@@ -40,14 +41,16 @@ export default function Podcast({ podcastApi }) {
               <b>filmmakers</b> y <b>emprendedores</b> sobre
               <br /> experiencias y procesos de trabajo.
             </article>
-            <article className={styles.img}>
+            <article className={styles.imgContainer}>
+              <div className={styles.img}></div>
               <Image
                 src={podcastApi[0].podcastImgURL}
                 alt="The Cali Show Podcast"
-                layout="fill"
-                objectFit="cover"
+                layout="responsive"
+                width={`32vw`}
+                height={`32vw`}
                 objectPosition="top"
-                quality={100}
+                style={{ borderRadius: "20px" }}
               />
             </article>
             <article className={styles.disponible}>
@@ -66,20 +69,6 @@ export default function Podcast({ podcastApi }) {
                   href="https://open.spotify.com/show/6VHzEF8VKmRstoAdgwXFX9"
                 >
                   <img src="/img/podSpotify.svg" alt="Spotify" />
-                </a>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://podcasts.apple.com/ar/podcast/the-cali-show/id1562735300"
-                >
-                  <img src="/img/podApple.svg" alt="Apple Podcasts" />
-                </a>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy81NWZhNzdiMC9wb2RjYXN0L3Jzcw=="
-                >
-                  <img src="/img/podGoogle.svg" alt="Google Podcasts" />
                 </a>
               </div>
             </article>
@@ -113,11 +102,25 @@ export default function Podcast({ podcastApi }) {
           );
         })}
       </section>
-      <WorkTogether
-        text="Instagram del Podcast"
-        buttonText="Ir a Instagram"
-        link="https://www.instagram.com/calishowpodcast/"
-      />
+      <section className={styles.watch}>
+        <h3>Ver último capítulo</h3>
+        <div className={styles.preWrapper}>
+          <div className={styles.videoWrapper}>
+            <ReactPlayer
+              url={`https://www.youtube.com/watch?v=rNr9S5GkeWE&ab_channel=JuanIgnacioCali`}
+              height={"100%"}
+              width={"100%"}
+              controls={false}
+              style={{ position: "absolute", top: "0", left: "0" }}
+              config={{
+                youtube: {
+                  playerVars: { showinfo: 0, playsinline: 1 },
+                },
+              }}
+            />
+          </div>
+        </div>
+      </section>
       <Footer />
     </>
   );

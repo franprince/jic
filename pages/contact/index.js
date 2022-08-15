@@ -13,9 +13,11 @@ import { useWindowSize } from "../../hooks/useWindowSize";
 const headerQuery = groq`*[_type=='contact'] {
     _id,
     "headerURL": header.asset -> url,
+    "budget": budget[],
+    "products": product[],
     }`;
 
-export default function Contact({ header }) {
+export default function Contact({ contactData }) {
   const size = useWindowSize();
   const { colorWhite, colorBlack } = useContext(ColorContext); // colorWhite y colorBlack son funciones que cambian el color en el context.
 
@@ -27,14 +29,14 @@ export default function Contact({ header }) {
       <NavBar iNavRef={"5"} theme={"light"} />
       <AboutHeader
         title="HABLEMOS DE TU PROYECTO"
-        img={header[0].headerURL}
+        img={contactData[0].headerURL}
         contact={true}
       />
       <InView
         rootMargin="0px 0px -90%"
         onChange={(InView) => (InView ? colorBlack() : colorWhite())}
       >
-        <ContactMain size={size} />
+        <ContactMain size={size} contactData={contactData[0]} />
       </InView>
       <Footer />
     </>
@@ -42,9 +44,9 @@ export default function Contact({ header }) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const header = overlayDrafts(await getClient(preview).fetch(headerQuery));
+  const contactData = overlayDrafts(await getClient(preview).fetch(headerQuery));
   return {
-    props: { header },
+    props: { contactData },
     revalidate: 1,
   };
 }
