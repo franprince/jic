@@ -20,7 +20,6 @@ export default function Form({ sent, setSent, size, contactData }) {
   });
   const router = useRouter();
   const { products, budget } = contactData;
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!!!formValues.producto | !!!formValues.presupuesto) {
@@ -104,7 +103,7 @@ export default function Form({ sent, setSent, size, contactData }) {
 
             {products.map((product) => {
               return (
-                <option value={product.value}>{product.displayValue}</option>
+                <option value={product.value} key={product._key}>{product.displayValue}</option>
               );
             })}
           </select>
@@ -126,7 +125,7 @@ export default function Form({ sent, setSent, size, contactData }) {
           >
             <option value="">Mi presupuesto estimado es</option>
             {budget.map((item) => {
-              return <option value={item.value}>{item.displayValue}</option>;
+              return <option value={item.value} key={item._key}>{item.displayValue}</option>;
             })}
           </select>
           <p
