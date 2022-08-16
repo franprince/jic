@@ -16,13 +16,20 @@
   margin-top: 7rem;
 }
 
-@media (max-width: 700px) {
+.imgContainer {
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
   .wrapper {
     height: 99vh;
   }
-  .header > div {
-    display: none !important;
+
+  .imgContainer {
+    display: none;
   }
+
   .header > section > img {
     width: 84vw;
     margin-top: -1rem;

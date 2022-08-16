@@ -24,7 +24,6 @@ const GridRow = styled.section<GridProps>`
   display: grid;
   grid-template-columns: repeat(${(props) => props.length}, 1fr);
   gap: 5px;
-  gap: 5px;
   @media (max-width: 700px) {
     grid-template-columns: 1fr;
   }

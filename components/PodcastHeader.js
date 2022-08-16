@@ -13,24 +13,25 @@ export default function PodcastHeader({ img }) {
       onChange={(inView) => inView && colorWhite()}
       className={styles.header}
     >
-      <Image
-        src={img}
-        alt="Juan Ignacio Cali's Podcast"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="center"
-        quality={100}
-        priority={true}
-      />
-      <section>
+      <div className={styles.imgContainer}>
         <Image
-          width={475}
-          height={135}
-          layout="fixed"
-          src="/img/thecalishow.svg"
-          alt="The Cali Show Podcast"
+          src={img}
+          alt="Juan Ignacio Cali's Podcast"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+          priority={true}
         />
-      </section>
+        <section>
+          <Image
+            width={475}
+            height={135}
+            layout="fixed"
+            src="/img/thecalishow.svg"
+            alt="The Cali Show Podcast"
+          />
+        </section>
+      </div>
     </InView>
   );
 }
