@@ -9,7 +9,7 @@
   max-width: 77%;
   display: grid;
   gap: 1.2rem;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 26rem), 1fr));
   position: relative;
   grid-auto-rows: 439px;
 }
@@ -66,6 +66,7 @@
 }
 
 .last > article {
+  width: -moz-fit-content;
   width: fit-content;
   margin: auto;
   height: 50%;
@@ -85,6 +86,7 @@
   padding: 0.5rem 1.5rem 0.5rem 1.5rem;
   border-radius: 50px;
   font-weight: 700;
+  width: -moz-fit-content;
   width: fit-content;
   color: #000;
   transition: all 0.3s ease;
@@ -97,6 +99,7 @@
   background-color: black;
   border-radius: 50px;
   font-weight: 700;
+  width: -moz-fit-content;
   width: fit-content;
   color: #fff;
   border: 1px solid white;
