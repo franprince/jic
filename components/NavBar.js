@@ -6,6 +6,7 @@ import Link from "next/link";
 import NavLink from "./NavLink";
 import { useWindowSize } from "../hooks/useWindowSize";
 import ColorContext from "./context/ColorContext";
+import { InstagramIcon, SpotifyIcon, YoutubeIcon } from "./icons";
 
 export default function Navbar({ iNavRef, theme }) {
   const context = useContext(ColorContext);
@@ -136,8 +137,8 @@ export default function Navbar({ iNavRef, theme }) {
                 !mobile
                   ? { color: color, opacity: "1" }
                   : open
-                  ? { color: "#fff", opacity: "1" }
-                  : { opacity: "0" }
+                    ? { color: "#fff", opacity: "1" }
+                    : { opacity: "0" }
               }
             >
               JIC
@@ -164,8 +165,8 @@ export default function Navbar({ iNavRef, theme }) {
               theme == "light"
                 ? styles.light
                 : initialNavBar
-                ? styles.dark
-                : styles.light
+                  ? styles.dark
+                  : styles.light
             }
           >
             {links.map((link) => {
@@ -186,25 +187,28 @@ export default function Navbar({ iNavRef, theme }) {
               style={mobile ? { display: "flex" } : { display: "none" }}
             >
               <a
-                href="https://www.instagram.com/juanignaciocali/"
                 target="_blank"
                 rel="noreferrer"
-              >
-                <img src="/img/instagram.svg" alt="Ir a Instagram" />
-              </a>
-              <a
+                aria-label="Ir a youtube"
                 href="https://www.youtube.com/channel/UC2Xel3b_bb-RwcpZk0U4yuA"
-                target="_blank"
-                rel="noreferrer"
               >
-                <img src="/img/youtube.svg" alt="Ir a YouTube" />
+                <YoutubeIcon />
               </a>
               <a
-                href="mailto:juanignaciocali@gmail.com"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Ir a instagram"
+                href="https://www.instagram.com/juanignaciocali/"
               >
-                <img src="/img/gmail.svg" alt="Contactame por email" />
+                <InstagramIcon />
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Ir a spotify"
+                href="https://open.spotify.com/show/6VHzEF8VKmRstoAdgwXFX9"
+              >
+                <SpotifyIcon />
               </a>
             </li>
           </ul>

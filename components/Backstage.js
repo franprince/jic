@@ -5,10 +5,10 @@ import AboutVideo from "./AboutVideo";
 import Screenshots from "./Screenshots";
 import { useContext } from "react";
 import ColorContext from "./context/ColorContext";
+import { NewPhGrid } from ".";
 
 export default function Backstage({ backstage, backstageVid, backstagePics }) {
   const { colorBlack, colorWhite } = useContext(ColorContext); // colorWhite y colorBlack son funciones que cambian el color en el context.
-
   return (
     <>
       <section className={titleStyle.description} id={titleStyle.hola}>
@@ -28,14 +28,7 @@ export default function Backstage({ backstage, backstageVid, backstagePics }) {
         </InView>
       )}
       {backstageVid != null && <AboutVideo videoID={backstageVid} />}
-      {backstagePics != null && (
-        <InView
-          rootMargin="0px 0px -90%"
-          onChange={(InView) => InView && colorWhite()}
-        >
-          <Screenshots pictures={backstagePics} last={true} />
-        </InView>
-      )}
+      {backstagePics && <NewPhGrid grid={backstagePics} />}
     </>
   );
 }

@@ -31,7 +31,7 @@ const projectQuery = groq`*[ _type == 'personal' ]{
   videoURL,
   "imageUrl": img.asset->url,
   "screenshots": screenshots[].asset->url,
-  "backstagePics" : backstagePics[].asset->url,
+  "backstagePics": {'rows':backstagePics[]{columns[]{alt, ...asset->{url, "dimensions": metadata{...dimensions{width, height}}}}}},
   "grid":{'rows': rows[]{columns[]{alt, ...asset->{url, "dimensions": metadata{...dimensions{width, height}}}}}},
   backstageVid,
   backstage,
@@ -88,21 +88,23 @@ export default function Details({ pageSlug, projects }) {
             categories={thisProject[0].categories}
           />
         </InView>
-        {thisProject[0].videoURL != null && (
-          <div className={styles.videoWrapper}>
-            <ReactPlayer
-              url={`${thisProject[0].videoURL}`}
-              height={"100%"}
-              width={"100%"}
-              muted={true}
-              style={{ position: "absolute", top: "0", left: "0" }}
-              config={{
-                vimeo: {
-                  playerOptions: { autoplay: true },
-                },
-              }}
-            />
-          </div>
+        {thisProject[0].videoURL && (
+          thisProject[0].videoURL.map(url => {
+            return <div className={styles.videoWrapper} key={url.split('/')[-1]}>
+              <ReactPlayer
+                url={url}
+                height={"100%"}
+                width={"100%"}
+                muted={true}
+                style={{ position: "absolute", top: "0", left: "0" }}
+                config={{
+                  vimeo: {
+                    playerOptions: { autoplay: true },
+                  },
+                }}
+              />
+            </div>
+          })
         )}
         <InView
           onChange={(InView) => InView && colorBlack()}
@@ -146,12 +148,12 @@ export default function Details({ pageSlug, projects }) {
         {(thisProject[0].backstagePics != null ||
           thisProject[0].backstageVid != null ||
           thisProject[0].backstage != null) && (
-          <Backstage
-            backstage={thisProject[0].backstage}
-            backstageVid={thisProject[0].backstageVid}
-            backstagePics={thisProject[0].backstagePics}
-          />
-        )}
+            <Backstage
+              backstage={thisProject[0].backstage}
+              backstageVid={thisProject[0].backstageVid}
+              backstagePics={thisProject[0].backstagePics}
+            />
+          )}
 
         <InView
           onChange={(InView) => InView && colorWhite()}

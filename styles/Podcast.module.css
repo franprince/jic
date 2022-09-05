@@ -5,7 +5,7 @@
   padding-bottom: 3rem;
 }
 
-.main > section:not(.circleWrapper) {
+.main>section:not(.circleWrapper) {
   width: 100%;
   margin: auto;
   position: relative;
@@ -22,6 +22,7 @@
 .img {
   width: 32vw;
 }
+
 .preWrapper {
   display: flex;
   flex-direction: row;
@@ -32,6 +33,7 @@
   width: 78%;
   margin: auto auto 6rem;
 }
+
 .videoWrapper {
   position: relative;
   padding-top: 56.25%;
@@ -57,7 +59,7 @@
   align-items: center;
 }
 
-.disponible > p {
+.disponible>p {
   padding-bottom: 1rem;
   z-index: 1;
   font-size: 20px;
@@ -71,6 +73,7 @@
 .links img {
   max-height: 72px;
 }
+
 .circleWrapper {
   position: absolute;
   left: 50%;
@@ -106,24 +109,21 @@
 }
 
 .pictures {
-  z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr 1.5fr 1fr;
-  height: 60vh;
+  background-color: #000;
   position: relative;
-  width: 100%;
 }
 
-.pictures > article {
+.pictures>article {
   position: inherit;
   z-index: 1;
 }
-+ .pictures > article > div {
+
++.pictures>article>div {
   position: relative !important;
   z-index: 1;
 }
 
-.pictures > article > div > img {
+.pictures>article>div>img {
   z-index: 1;
   height: 35rem !important;
   width: 100%;
@@ -143,17 +143,17 @@
     padding-bottom: 0;
   }
 
-  .main > section:not(.circleWrapper) {
+  .main>section:not(.circleWrapper) {
     width: 100%;
     top: -10rem;
   }
 
-  .main > section > article:not(:first-of-type) {
+  .main>section>article:not(:first-of-type) {
     width: 78%;
     max-width: 25rem;
   }
 
-  .main > section > article > br {
+  .main>section>article>br {
     display: none;
   }
 
@@ -161,6 +161,7 @@
     width: 100% !important;
     margin: 8rem auto 6rem auto !important;
   }
+
   .pictures {
     display: grid;
     grid-template-columns: 100%;
@@ -169,7 +170,7 @@
     position: relative;
   }
 
-  .last > div > img {
+  .last>div>img {
     height: 40rem !important;
   }
 
@@ -180,11 +181,11 @@
     z-index: 1;
   }
 
-  .main > section > article > div > a > img {
+  .main>section>article>div>a>img {
     width: 4rem;
   }
 
-  .main > section > article:first-of-type {
+  .main>section>article:first-of-type {
     padding: 1rem 0 1rem 0;
     margin-bottom: 4rem;
     line-height: 2rem;
@@ -192,7 +193,7 @@
     width: 65%;
   }
 
-  .main > section > article {
+  .main>section>article {
     font-size: 18px;
     width: 100%;
     margin: 0 auto 5rem auto;
@@ -225,13 +226,16 @@
     background-color: #80ffdb;
     border-radius: 50%;
   }
+
   .main {
     padding-bottom: 0;
   }
+
   .circleWrapper {
     transform: translate(-50%, -100%) !important;
     height: 57%;
   }
+
   .disponible {
     margin: 4rem auto 7rem auto !important;
   }

@@ -88,6 +88,7 @@
   outline: none;
   font-family: Poppins, sans-serif;
   margin-top: 0;
+  -webkit-appearance:none;
 }
 
 .form select:hover {

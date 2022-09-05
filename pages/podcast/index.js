@@ -1,4 +1,4 @@
-import { NavBar, PodcastHeader, Footer, WorkTogether } from "../../components";
+import { NavBar, PodcastHeader, Footer, NewPhGrid } from "../../components";
 import Head from "next/head";
 import Image from "next/image";
 import { InView } from "react-intersection-observer";
@@ -13,12 +13,13 @@ const podcastQuery = groq`*[_type=='podcast'] {
     _id,
     "headerURL": header.asset -> url,
     "assets": pics[].asset -> url,
-    "podcastImgURL": podcastImg.asset -> url
+    "podcastImgURL": podcastImg.asset -> url,
+    "podcastGrid":{'rows': pics[]{columns[]{alt, ...asset->{url, "dimensions": metadata{...dimensions{width, height}}}}}},
+    videoURL
     }`;
 
 export default function Podcast({ podcastApi }) {
   const { colorWhite, colorBlack } = useContext(ColorContext);
-
   return (
     <>
       <Head>
@@ -79,35 +80,14 @@ export default function Podcast({ podcastApi }) {
         </main>
       </InView>
       <section className={styles.pictures}>
-        {podcastApi[0].assets.map((picture) => {
-          return (
-            <article
-              key={podcastApi[0].assets.indexOf(picture)}
-              className={
-                podcastApi[0].assets.indexOf(picture) == 2
-                  ? styles.last
-                  : styles.notLast
-              }
-            >
-              <Image
-                src={picture}
-                alt="The Cali Show Podcast"
-                layout="fill"
-                objectFit="cover"
-                objectPosition="top"
-                quality={100}
-                priority={true}
-              />
-            </article>
-          );
-        })}
+        <NewPhGrid grid={podcastApi[0].podcastGrid} />
       </section>
       <section className={styles.watch}>
         <h3>Ver último capítulo</h3>
         <div className={styles.preWrapper}>
           <div className={styles.videoWrapper}>
             <ReactPlayer
-              url={`https://www.youtube.com/watch?v=rNr9S5GkeWE&ab_channel=JuanIgnacioCali`}
+              url={podcastApi[0].videoURL}
               height={"100%"}
               width={"100%"}
               controls={false}

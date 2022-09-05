@@ -28,7 +28,8 @@ export default {
     {
       title: "URL del video",
       name: "videoURL",
-      type: "url",
+      type: "array",
+      of: [{ type: "url" }],
     },
     {
       title: "Destacado",
@@ -101,7 +102,7 @@ export default {
       description: "Capturas que van a aparecer en El Backstage",
       name: "backstagePics",
       type: "array",
-      of: [{ type: "image" }],
+      of: [{ type: "row" }],
     },
     {
       title: "ID del video de backstage",
