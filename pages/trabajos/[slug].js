@@ -68,7 +68,7 @@ export default function Details({ pageSlug, projects }) {
   }
 
   useEffect(() => {
-    getRandom(clearProjects, 1);
+    getRandom(clearProjects, 2);
   }, [pageSlug]);
   const { colorBlack, colorWhite } = useContext(ColorContext);
   return (
