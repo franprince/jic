@@ -55,7 +55,7 @@ export default function About({ pics, aboutApi, slidesA }) {
         rootMargin="0px 0px -90%"
         onChange={(InView) => (InView ? colorBlack() : colorWhite())}
       >
-        <WorkTogether text="Trabajemos juntos!" link="/contact" />
+        <WorkTogether text="Listo para que trabajemos juntos?" link="/contact" />
       </InView>
       <Footer />
     </>

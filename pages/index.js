@@ -40,7 +40,7 @@ export default function Home({ homeApi, sectionApi, clientsApi }) {
       {sectionApi?.map((section) => {
         return <HomeSection key={section._id} {...section} />;
       })}
-      <WorkTogether text="Listo para que trabajemos juntos?" />
+      <WorkTogether text="Listo para que trabajemos juntos?" link="/contact" />
       <Footer />
     </>
   );
