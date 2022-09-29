@@ -3,11 +3,14 @@ import styles from "../styles/SingleCard.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Image from "next/image";
 
-export default function SingleCard({ item, index, size, mp }) {
-  useEffect(() => AOS.init(), []);
+export default function SingleCard({ item, index, size, mp, sectionOrigin }) {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
-    <Link href={`/projects/${item?.slug?.current}`} key={item}>
+    <Link href={`/${sectionOrigin}/${item?.slug?.current}`} key={item}>
       <article
         className={mp ? styles.mpCard : styles.card}
         data-aos={
@@ -27,16 +30,19 @@ export default function SingleCard({ item, index, size, mp }) {
         }
       >
         <div className={styles.img}>
-          <img
+          <Image
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
             src={item.imageUrl}
             alt={item.name}
             className={styles.imgBorder}
+            style={{borderRadius:"20px 20px 0 0"}}
           />
         </div>
         <div className={styles.content}>
           <section className={styles.info}>
             <h2>{item.name != null && item.name}</h2>
-            <h3>{item.categories != null && item.categories.join(", ")}</h3>
           </section>
         </div>
       </article>

@@ -1,5 +1,4 @@
 import styles from "../styles/Featured.module.css";
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import SingleCard from "../components/SingleCard";
 import DoubleCard from "../components/DoubleCard";
@@ -22,7 +21,7 @@ export default function Featured({ projects, size }) {
         })}
       </div>
       <div className={styles.button}>
-        <Link href="/projects">
+        <Link href="/trabajos">
           <a>Ver más proyectos</a>
         </Link>
       </div>

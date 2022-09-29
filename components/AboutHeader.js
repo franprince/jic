@@ -18,7 +18,6 @@ export default function AboutHeader({ title, img, contact, mobileTitle }) {
           className={contact ? styles.contactTitles : styles.aboutTitles}
         >
           <h1>{title}</h1>
-          {contact && <h1>{mobileTitle}</h1>}
         </section>
       </div>
     </header>

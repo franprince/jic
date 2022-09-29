@@ -39,27 +39,25 @@
   font-family: "Lora", serif;
 }
 
+.social {
+  padding-top: 4rem;
+}
+.social h3 {
+  font-size: 30px;
+  line-height: 115.5%;
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+}
+
 .links {
   width: 30%;
   display: flex;
-  justify-content: flex-start;
+  gap: 20px;
+  align-items: center;
 }
 
-.links > a:first-of-type {
-  margin-right: 15px;
-}
-
-.links > a > img {
-  height: 47.27px;
-  border-radius: 50%;
-  box-shadow: 10px 10px 14px -10px rgba(68, 68, 68, 0.185);
-  -webkit-box-shadow: 10px 10px 14px -10px rgba(68, 68, 68, 0.185);
-  -moz-box-shadow: 10px 10px 14px -10px rgba(68, 68, 68, 0.185);
-  transition: all 0.3s ease;
-}
-
-.links > a > img:hover {
-  transform: scale(0.94);
+.links svg {
+  fill: black;
 }
 
 .area1 > p:first-of-type::before,
@@ -111,7 +109,6 @@
 .area5 {
   grid-area: fifth;
   position: relative;
-  margin-top: -3rem;
 }
 
 @media (max-width: 1000px) {

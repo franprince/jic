@@ -1,14 +1,20 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useContext } from "react";
 import styles from "../styles/NavBar.module.css";
 import { Spin as Hamburger } from "hamburger-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import NavLink from "./NavLink";
+import { useWindowSize } from "../hooks/useWindowSize";
+import ColorContext from "./context/ColorContext";
+import { InstagramIcon, SpotifyIcon, YoutubeIcon } from "./icons";
 
-export default function Navbar({ color, iNavRef, theme }) {
+export default function Navbar({ iNavRef, theme }) {
+  const context = useContext(ColorContext);
   const [initialNavBar, setInitialNavbar] = useState(true);
   const [open, setOpen] = useState(false);
   const [mobile, setMobile] = useState(true);
+  const color = context.color;
+
   const navRef = useRef(iNavRef);
 
   if (iNavRef == undefined) {
@@ -16,33 +22,6 @@ export default function Navbar({ color, iNavRef, theme }) {
   }
 
   const size = useWindowSize();
-
-  function useWindowSize() {
-    // Hook para detectar el tamaño de pantalla.
-    const [windowSize, setWindowSize] = useState({
-      // Inicializar el estado con altura y anchura undefined así cliente y servidor están coordinados
-      width: undefined,
-      height: undefined,
-    });
-
-    useEffect(() => {
-      if (typeof window !== "undefined") {
-        // Este código se ejecuta únicamente del lado del cliente
-        function handleResize() {
-          // Función que se ejecuta al cambiar el tamaño de la pantalla
-          setWindowSize({
-            // Cambiar el estado del tamaño de pantalla
-            width: window.innerWidth,
-            height: window.innerHeight,
-          });
-        }
-        window.addEventListener("resize", handleResize); // Agregar event listener
-        handleResize(); // Cuando cambia el tamaño de la pantalla, el handler se ejecuta automáticamente
-        return () => window.removeEventListener("resize", handleResize); // Sacar el event listener
-      }
-    }, []);
-    return windowSize;
-  }
 
   const handleScroll = () => {
     if (window.scrollY > 10 && size.width > 800) {
@@ -91,7 +70,9 @@ export default function Navbar({ color, iNavRef, theme }) {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   });
-  useEffect(() => handleSize(), [size]);
+  useEffect(() => {
+    handleSize();
+  }, [size]);
 
   // Variantes para las animaciones con Framer Motion.
 
@@ -113,14 +94,14 @@ export default function Navbar({ color, iNavRef, theme }) {
       className: `${initialNavBar ? styles.liFirst : styles.liScrolledFirst}`,
     },
     {
-      text: "PROYECTOS",
-      link: "/projects",
+      text: "TRABAJOS",
+      link: "/trabajos",
       id: 1,
       className: `${initialNavBar ? styles.li : styles.liScrolled}`,
     },
     {
-      text: "YOUTUBE",
-      link: "/youtube",
+      text: "PERSONAL",
+      link: "/personal",
       id: 2,
       className: `${initialNavBar ? styles.li : styles.liScrolled}`,
     },
@@ -134,13 +115,13 @@ export default function Navbar({ color, iNavRef, theme }) {
       text: "SOBRE MI",
       link: "/about",
       id: 4,
-      className: `${initialNavBar ? styles.liLast : styles.liLastScrolled}`,
+      className: `${initialNavBar ? styles.li : styles.liScrolled}`,
     },
     {
       text: "CONTACTO",
       link: "/contact",
       id: 5,
-      className: `${initialNavBar ? styles.contact : styles.contactScrolled}`,
+      className: `${initialNavBar ? styles.liLast : styles.liLastScrolled}`,
     },
   ];
   return (
@@ -156,8 +137,8 @@ export default function Navbar({ color, iNavRef, theme }) {
                 !mobile
                   ? { color: color, opacity: "1" }
                   : open
-                  ? { color: "#FFF", opacity: "1" }
-                  : { opacity: "0" }
+                    ? { color: "#fff", opacity: "1" }
+                    : { opacity: "0" }
               }
             >
               JIC
@@ -184,8 +165,8 @@ export default function Navbar({ color, iNavRef, theme }) {
               theme == "light"
                 ? styles.light
                 : initialNavBar
-                ? styles.dark
-                : styles.light
+                  ? styles.dark
+                  : styles.light
             }
           >
             {links.map((link) => {
@@ -206,19 +187,28 @@ export default function Navbar({ color, iNavRef, theme }) {
               style={mobile ? { display: "flex" } : { display: "none" }}
             >
               <a
-                href="https://www.instagram.com/juanignaciocali/"
                 target="_blank"
+                rel="noreferrer"
+                aria-label="Ir a youtube"
+                href="https://www.youtube.com/channel/UC2Xel3b_bb-RwcpZk0U4yuA"
               >
-                <img src="/img/instagram.svg" alt="Ir a Instagram" />
+                <YoutubeIcon />
               </a>
               <a
-                href="https://www.youtube.com/channel/UC2Xel3b_bb-RwcpZk0U4yuA"
                 target="_blank"
+                rel="noreferrer"
+                aria-label="Ir a instagram"
+                href="https://www.instagram.com/juanignaciocali/"
               >
-                <img src="/img/youtube.svg" alt="Ir a YouTube" />
+                <InstagramIcon />
               </a>
-              <a href="mailto:juanignaciocali@gmail.com" target="_blank">
-                <img src="/img/gmail.svg" alt="Contactame por email" />
+              <a
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Ir a spotify"
+                href="https://open.spotify.com/show/6VHzEF8VKmRstoAdgwXFX9"
+              >
+                <SpotifyIcon />
               </a>
             </li>
           </ul>

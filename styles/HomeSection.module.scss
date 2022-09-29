@@ -1,0 +1,123 @@
+.homeSection {
+  display: flex;
+  position: relative;
+  width: 100vw;
+  height: 60vh;
+  @media (max-width: 700px) {
+    height: 75vh;
+  }
+}
+
+.parallax {
+  height: 60vh;
+  @media (max-width: 700px) {
+    height: 75vh;
+  }
+}
+
+.button {
+  height: auto;
+  max-width: 65%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.content {
+  position: absolute;
+  z-index: 1;
+}
+
+.centerPosition {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.rightPosition {
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  transform: translateX(-80%) translateY(-50%);
+}
+
+.leftPosition {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateX(-10%) translateY(-50%);
+}
+
+.parallaxContent {
+  display: flex;
+  padding: 0 10rem;
+  height: 100%;
+  align-items: center;
+  @media (max-width: 700px) {
+    padding: 0 3rem;
+  }
+}
+
+.parallaxContent.rightPosition {
+  justify-content: end;
+  & > * {
+    text-align: right;
+  }
+  @media (max-width: 700px) {
+    justify-content: center;
+    & > * {
+      text-align: center;
+    }
+  }
+}
+
+.parallaxContent.leftPosition {
+  justify-content: start;
+  & > * {
+    text-align: left;
+  }
+  @media (max-width: 700px) {
+    justify-content: center;
+    & > * {
+      text-align: center;
+    }
+  }
+}
+
+.parallaxContent.centerPosition {
+  justify-content: center;
+  & > * {
+    text-align: center;
+  }
+}
+
+.podcast {
+  color: #fff;
+}
+
+.button {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.youtube {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.content,
+.parallaxContent h2 {
+  margin: 0;
+  font-family: Poppins;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 60px;
+  @media (max-width: 700px) {
+    text-align: center;
+    font-size: 40px;
+  }
+}

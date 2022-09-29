@@ -1,14 +1,17 @@
 import Link from "next/link";
 import styles from "../styles/DoubleCard.module.css";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Image from "next/image";
 
-export default function SingleCard({ item, index, size }) {
-  useEffect(() => AOS.init(), []);
+export default function SingleCard({ item, index, size, sectionOrigin }) {
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
-    <Link href={`/projects/${item?.slug?.current}`} key={item._id}>
+    <Link href={`/${sectionOrigin}/${item?.slug?.current}`} key={item._id}>
       <article
         data-aos={
           index == 0 ? "fade-down" : index % 2 == 0 ? "fade-left" : "fade-right"
@@ -18,22 +21,18 @@ export default function SingleCard({ item, index, size }) {
         <div className={styles.content}>
           <section className={styles.info}>
             <h2>{item.name != null && item.name}</h2>
-            <h3>{item.categories != null && item.categories.join(", ")}</h3>
           </section>
-          <a href={`/projects/${item?.slug?.current}`}>
-            <p>Ver el proyecto</p>
-            <img
-              src="/img/arrow.svg"
-              alt="Ver el proyecto"
-              className={styles.arrow}
-            />
-          </a>
         </div>
         <div className={styles.img}>
-          <img
+          <Image
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            style={{ borderRadius: "0 20px 20px 0" }}
             src={item.imageUrl}
             alt={item.name}
             className={styles.imgBorder}
+            quality={90}
           />
         </div>
       </article>

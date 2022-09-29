@@ -1,5 +1,10 @@
+const path = require("path");
+
 module.exports = {
-    images: {
-      domains: ['cdn.sanity.io', 'i.ytimg.com'],
-    },
-  }
+  sassOptions: {
+    includePaths: [path.join(__dirname, "styles")],
+  },
+  images: {
+    domains: ["cdn.sanity.io", "i.ytimg.com"],
+  },
+};

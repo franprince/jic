@@ -48,7 +48,8 @@
 } */
 
 @media (max-width: 700px) {
-  .container {
-    display: none;
+  .grid {
+    grid-template-columns: 1fr;
+    width: 90%;
   }
 }

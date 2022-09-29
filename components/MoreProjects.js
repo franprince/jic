@@ -1,11 +1,13 @@
 import styles from "../styles/ProjectPage.module.css";
-import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import SingleCard from "./SingleCard";
-export default function MoreProjects({ moreProjects, size }) {
-  useEffect(() => AOS.init(), []);
+
+export default function MoreProjects({ moreProjects, size, sectionOrigin }) {
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <section className={styles.moreProjectsContainer}>
@@ -14,7 +16,14 @@ export default function MoreProjects({ moreProjects, size }) {
         {moreProjects &&
           moreProjects.map((item, index) => {
             return (
-              <SingleCard item={item} index={index} size={size} mp={true} />
+              <SingleCard
+                item={item}
+                index={index}
+                size={size}
+                mp={true}
+                key={item}
+                sectionOrigin={sectionOrigin}
+              />
             );
           })}
       </section>

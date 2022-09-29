@@ -1,30 +1,24 @@
 import styles from "../styles/Header.module.css";
-import Image from "next/image";
-import Link from "next/link";
-import { useState, useEffect } from "react";
+import { InView } from "react-intersection-observer";
+import { useContext } from "react";
+import ColorContext from "./context/ColorContext";
+import { YellowButton } from ".";
 
-export default function Header({
-  title,
-  subtitle,
-  img,
-  home,
-  mobileImg,
-  changeOnMobile,
-  size,
-}) {
+export default function Header({ title, subtitle, home, posterSrc, videoSrc }) {
+  const { colorWhite } = useContext(ColorContext); // colorWhite y colorBlack son funciones que cambian el color en el context.
+
   return (
-    <header className={home ? styles.homeWrapper : styles.wrapper} id="header">
+    <InView
+      as="header"
+      className={home ? styles.homeWrapper : styles.wrapper}
+      id="header"
+      rootMargin="0px 0px -90%"
+      onChange={(InView) => InView && colorWhite()}
+    >
       <div className={styles.header}>
-        <Image
-          src={!changeOnMobile ? img : size.width < 700 ? mobileImg : img}
-          alt={title}
-          layout="fill"
-          objectFit="cover"
-          objectPosition={
-            !changeOnMobile ? "center" : size.width < 700 && "center"
-          }
-          quality={100}
-        />
+        <video muted loop autoPlay playsInline preload="auto" poster={posterSrc}>
+          <source src={videoSrc} type="video/mp4" />
+        </video>
         <section className={styles.elements}>
           <h1>{title}</h1>
           {subtitle && (
@@ -33,12 +27,10 @@ export default function Header({
             </h2>
           )}
           {title == "JUAN IGNACIO CALI" && (
-            <Link href="/#projects">
-              <a>Mis proyectos</a>
-            </Link>
+            <YellowButton link="/trabajos" text="Ver trabajos"  hoverColor="white" />
           )}
         </section>
       </div>
-    </header>
+    </InView>
   );
 }

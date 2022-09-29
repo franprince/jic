@@ -1,8 +1,9 @@
 import styles from "../styles/ContactMain.module.css";
 import Form from "./Form";
-import { useRef, useState, useEffect } from "react";
+import { useState } from "react";
+import { InstagramIcon, SpotifyIcon, YoutubeIcon } from "./icons";
 
-export default function ContactMain({ size }) {
+export default function ContactMain({ size, contactData }) {
   const [sent, setSent] = useState(false);
 
   return (
@@ -31,23 +32,40 @@ export default function ContactMain({ size }) {
             <br />
             formulario, podes
             <br />
-            enviarme un mail.{" "}
+            enviarme un mail.
           </p>
         </article>
         <article className={styles.area2}>
           <h3>Mis datos</h3>
           <p>juan.ignacio.cali@gmail.com</p>
-          <article className={styles.links}>
-            <a
-              target="_blank"
-              href="https://www.instagram.com/juanignaciocali/"
-            >
-              <img
-                src="/img/instagram.svg"
-                alt="Ir a Instagram"
-                className={styles.icon}
-              />
-            </a>
+          <article className={styles.social}>
+            <h3>Seguime</h3>
+            <div className={styles.links}>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Ir a youtube"
+                href="https://www.youtube.com/channel/UC2Xel3b_bb-RwcpZk0U4yuA"
+              >
+                <YoutubeIcon playFill="white" />
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Ir a instagram"
+                href="https://www.instagram.com/juanignaciocali/"
+              >
+                <InstagramIcon />
+              </a>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Ir a spotify"
+                href="https://open.spotify.com/show/6VHzEF8VKmRstoAdgwXFX9"
+              >
+                <SpotifyIcon />
+              </a>
+            </div>
           </article>
         </article>
         <article className={styles.area3}>
@@ -63,7 +81,12 @@ export default function ContactMain({ size }) {
           </p>
         </article>
         <article className={styles.area4}>
-          <Form sent={sent} setSent={setSent} size={size} />
+          <Form
+            sent={sent}
+            setSent={setSent}
+            size={size}
+            contactData={contactData}
+          />
         </article>
         <article className={styles.area5}>
           <h2>
