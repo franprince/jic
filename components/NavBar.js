@@ -107,7 +107,7 @@ export default function Navbar({ iNavRef, theme }) {
     },
     {
       text: "PODCAST",
-      link: "/podcast",
+      link: "https://www.thecalishow.com/",
       id: 3,
       className: `${initialNavBar ? styles.li : styles.liScrolled}`,
     },

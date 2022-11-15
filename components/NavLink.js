@@ -1,5 +1,4 @@
 import Link from "next/link";
-import styles from "../styles/NavBar.module.css";
 
 export default function NavLink({
   navRef,
@@ -11,7 +10,7 @@ export default function NavLink({
 }) {
   return (
     <Link href={link} key={id}>
-      <a onClick={handleRef}>
+      <a onClick={handleRef} target={text === "PODCAST" ? "_blank" : ""}>
         <li
           id={id}
           className={className}
