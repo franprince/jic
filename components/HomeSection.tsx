@@ -3,7 +3,6 @@ import Image from "next/image";
 import { InView } from "react-intersection-observer";
 import { useContext } from "react";
 import ColorContext from "./context/ColorContext";
-import Link from "next/link";
 import { SectionsProps } from "../queries/sanityQueries";
 import { Parallax } from "react-parallax";
 import { YellowButton } from ".";
@@ -88,9 +87,9 @@ const HomeSection = (props: SectionsProps) => {
           quality={90}
         />
         {title === "Podcast" && (
-          <Link href="/podcast">
+          <a href="https://www.thecalishow.com/" target="_blank" rel="noopener noreferrer">
             <img className={styles.button} src="/podcast-button.png" alt="" />
-          </Link>
+          </a>
         )}
       </InView>
     ))

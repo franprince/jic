@@ -15,7 +15,6 @@ import MoreProjects from "./MoreProjects";
 import NavBar from "./NavBar";
 import NavLink from "./NavLink";
 import PhGrid from "./PhGrid";
-import PodcastHeader from "./PodcastHeader";
 import Presentation from "./Presentation";
 import ProjectHeader from "./ProjectHeader";
 import ProjectsContainer from "./Projects";
@@ -54,7 +53,6 @@ export {
   NavBar,
   NavLink,
   PhGrid,
-  PodcastHeader,
   Presentation,
   ProjectHeader,
   ProjectsContainer,
