@@ -43,7 +43,7 @@ export default function Details({ pageSlug, projects }) {
     (project) => project?.slug?.current == pageSlug
   ); // Evita que el proyecto actual sea sugerido en la parte de abajo
   const clearProjects = projects.filter(
-    (project) => project.name != thisProject[0].name
+    (project) => project.name != thisProject[0].name &&  project.hidden != true
   );
   const screenshots = thisProject[0].screenshots;
 

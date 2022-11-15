@@ -1,12 +1,31 @@
 {
   "root": true,
+  "api": {
+    "projectId": "arac2r4p",
+    "dataset": "podcast"
+  },
   "project": {
     "name": "JIC"
   },
-  "api": {
-    "projectId": "arac2r4p",
-    "dataset": "production"
-  },
+  "__experimental_spaces": [
+    {
+      "name": "production",
+      "title": "Main",
+      "default": true,
+      "api": {
+        "projectId": "arac2r4p",
+        "dataset": "production"
+      }
+    },
+    {
+      "name": "podcast",
+      "title": "Podcast",
+      "api": {
+        "projectId": "arac2r4p",
+        "dataset": "podcast"
+      }
+    }
+  ],
   "plugins": [
     "@sanity/base",
     "@sanity/components",
