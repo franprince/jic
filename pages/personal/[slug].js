@@ -27,6 +27,7 @@ const projectQuery = groq`*[ _type == 'personal' ]{
   "processPics":processPics[].asset -> url,
   description,
   credits,
+  hidden,
   slug,
   videoURL,
   "imageUrl": img.asset->url,
@@ -42,9 +43,11 @@ export default function Details({ pageSlug, projects }) {
   const thisProject = projects.filter(
     (project) => project?.slug?.current == pageSlug
   ); // Evita que el proyecto actual sea sugerido en la parte de abajo
+
   const clearProjects = projects.filter(
-    (project) => project.name != thisProject[0].name
+    (project) => project.name != thisProject[0].name & project.hidden !== true
   );
+
   const screenshots = thisProject[0].screenshots;
 
   const [color, setColor] = useState("#000");
@@ -77,7 +80,7 @@ export default function Details({ pageSlug, projects }) {
         <title>{thisProject[0].name}</title>
       </Head>
       <main className={styles.main}>
-        <NavBar color={color} iNavRef={"1"} theme={"dark"} />
+        <NavBar color={color} iNavRef={"2"} theme={"dark"} />
         <InView
           onChange={(InView) => InView && colorBlack()}
           rootMargin="0px 0px -90%"

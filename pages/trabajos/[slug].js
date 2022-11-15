@@ -27,6 +27,7 @@ const projectQuery = groq`*[ _type == 'project' ]{
   "processPics":processPics[].asset -> url,
   description,
   credits,
+  hidden,
   slug,
   videoURL,
   "imageUrl": img.asset->url,
@@ -42,9 +43,11 @@ export default function Details({ pageSlug, projects }) {
   const thisProject = projects.filter(
     (project) => project?.slug?.current == pageSlug
   ); // Evita que el proyecto actual sea sugerido en la parte de abajo
+
   const clearProjects = projects.filter(
-    (project) => project.name != thisProject[0].name
+    (project) => project.name != thisProject[0].name & project.hidden !== true
   );
+
   const screenshots = thisProject[0].screenshots;
 
   const [color, setColor] = useState("#000");
