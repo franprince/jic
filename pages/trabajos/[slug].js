@@ -100,7 +100,7 @@ export default function Details({ pageSlug, projects }) {
                 style={{ position: "absolute", top: "0", left: "0" }}
                 config={{
                   vimeo: {
-                    playerOptions: { autoplay: true },
+                    playerOptions: { autoplay: true, controls: true },
                   },
                 }}
               />
