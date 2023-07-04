@@ -146,7 +146,7 @@ export default function Details({ pageSlug, projects }) {
             />
           )}
         </InView>
-        {(thisProject[0].backstagePics.length ||
+        {(thisProject[0].backstagePics.rows.length ||
           thisProject[0].backstageVid != null ||
           thisProject[0].backstage != null) && (
             <Backstage
