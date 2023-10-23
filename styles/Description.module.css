@@ -1,6 +1,9 @@
 .description {
   width: 100%;
 }
+.description a {
+  color: blue;
+}
 
 .description > article {
   width: 75%;

@@ -59,7 +59,7 @@ export default {
     {
       title: "El proyecto",
       name: "description",
-      type: "text",
+      type: "markdown",
     },
     {
       title: "Más Capturas",
