@@ -18,6 +18,8 @@
     "emotion": "^11.0.0",
     "framer-motion": "^4.1.17",
     "hamburger-react": "^2.5.0",
+    "isomorphic-dompurify": "^1.9.0",
+    "marked": "^9.1.2",
     "next": "^12.1.6",
     "next-images": "^1.8.4",
     "next-sanity": "^0.5.2",
