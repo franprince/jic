@@ -117,6 +117,7 @@ export default function Details({ pageSlug, projects }) {
             <Description
               text={thisProject[0].description}
               title="El proyecto"
+              markdown={true}
             />
           )}
         </InView>
