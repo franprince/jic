@@ -131,19 +131,17 @@ export default function Navbar({ iNavRef, theme }) {
       >
         {/* JIC */}
         <Link href="/">
-          <a>
-            <h2
-              style={
-                !mobile
-                  ? { color: color, opacity: "1" }
-                  : open
-                    ? { color: "#fff", opacity: "1" }
-                    : { opacity: "0" }
-              }
-            >
-              JIC
-            </h2>
-          </a>
+          <h2
+            style={
+              !mobile
+                ? { color: color, opacity: "1" }
+                : open
+                ? { color: "#fff", opacity: "1" }
+                : { opacity: "0" }
+            }
+          >
+            JIC
+          </h2>
         </Link>
         <div style={mobile ? { display: "none" } : { flex: "1" }}></div>
 
@@ -165,8 +163,8 @@ export default function Navbar({ iNavRef, theme }) {
               theme == "light"
                 ? styles.light
                 : initialNavBar
-                  ? styles.dark
-                  : styles.light
+                ? styles.dark
+                : styles.light
             }
           >
             {links.map((link) => {

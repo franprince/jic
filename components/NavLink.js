@@ -9,20 +9,23 @@ export default function NavLink({
   className,
 }) {
   return (
-    <Link href={link} key={id}>
-      <a onClick={handleRef} target={text === "PODCAST" ? "_blank" : ""}>
-        <li
-          id={id}
-          className={className}
-          style={
-            navRef.current == id
-              ? { fontWeight: "700", pointerEvents: "none" }
-              : { fontWeight: "300" }
-          }
-        >
-          {text}
-        </li>
-      </a>
+    <Link
+      onClick={handleRef}
+      target={text === "PODCAST" ? "_blank" : ""}
+      href={link}
+      key={id}
+    >
+      <li
+        id={id}
+        className={className}
+        style={
+          navRef.current == id
+            ? { fontWeight: "700", pointerEvents: "none" }
+            : { fontWeight: "300" }
+        }
+      >
+        {text}
+      </li>
     </Link>
   );
 }

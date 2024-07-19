@@ -22,7 +22,7 @@ export default function Featured({ projects, size }) {
       </div>
       <div className={styles.button}>
         <Link href="/trabajos">
-          <a>Ver más proyectos</a>
+          Ver más proyectos
         </Link>
       </div>
     </main>
