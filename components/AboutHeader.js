@@ -1,5 +1,5 @@
 import styles from "../styles/AboutHeader.module.css";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 export default function AboutHeader({ title, img, contact, mobileTitle }) {
   return (
@@ -8,12 +8,14 @@ export default function AboutHeader({ title, img, contact, mobileTitle }) {
         <Image
           src={img}
           alt="Sobre mi"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
           quality={100}
           priority={true}
-        />
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover",
+            objectPosition: "center"
+          }} />
         <section
           className={contact ? styles.contactTitles : styles.aboutTitles}
         >

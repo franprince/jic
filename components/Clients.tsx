@@ -1,5 +1,5 @@
 import styles from "../styles/Clients.module.scss";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { InView } from "react-intersection-observer";
 import { useContext } from "react";
 import ColorContext from "./context/ColorContext";
@@ -43,10 +43,8 @@ const Clients = ({ clients }: ClientsProps) => {
                   <Image
                     src={logo.imgUrl}
                     alt={logo.alt ?? ""}
-                    layout="fixed"
                     width={logo.dimensions.width}
-                    height={logo.dimensions.height}
-                  />
+                    height={logo.dimensions.height} />
                 </div>
               );
             })

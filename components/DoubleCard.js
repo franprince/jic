@@ -3,7 +3,7 @@ import styles from "../styles/DoubleCard.module.css";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 export default function SingleCard({ item, index, size, sectionOrigin }) {
   useEffect(() => {
@@ -28,15 +28,17 @@ export default function SingleCard({ item, index, size, sectionOrigin }) {
         </div>
         <div className={styles.img}>
           <Image
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
-            style={{ borderRadius: "0 20px 20px 0" }}
             src={item.imageUrl}
             alt={item.name}
             className={styles.imgBorder}
             quality={90}
-          />
+            fill
+            sizes="100vw"
+            style={{
+              borderRadius: "0 20px 20px 0",
+              objectFit: "cover",
+              objectPosition: "center"
+            }} />
         </div>
       </article>
     </Link>

@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { NewGridProps } from "../queries/sanityQueries";
 
 type GridProps = {
@@ -46,10 +46,13 @@ const NewPhGrid = ({ grid }: NewGridProps) => {
                 <Image
                   src={column.url}
                   alt={column.alt ?? ""}
-                  layout="responsive"
                   width={column.dimensions.width}
                   height={column.dimensions.height}
-                />
+                  sizes="100vw"
+                  style={{
+                    width: "100%",
+                    height: "auto"
+                  }} />
               </GridColum>
             ))}
           </GridRow>

@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import styles from "../styles/PhGrid.module.css";
 
 export default function PhGrid({ pictures }) {
@@ -12,10 +12,12 @@ export default function PhGrid({ pictures }) {
             <Image
               src={pic}
               alt="Juan Ignacio Cali's picture"
-              layout="fill"
-              objectFit="cover"
               quality={100}
-            />
+              fill
+              sizes="100vw"
+              style={{
+                objectFit: "cover"
+              }} />
           </article>
         ))}
       </div>

@@ -1,3 +1,4 @@
+const { hostname } = require("os");
 const path = require("path");
 
 module.exports = {
@@ -5,6 +6,9 @@ module.exports = {
     includePaths: [path.join(__dirname, "styles")],
   },
   images: {
-    domains: ["cdn.sanity.io", "i.ytimg.com"],
+    remotePatterns: [
+      { hostname: "cdn.sanity.io", protocol: "https", port: "" },
+      { hostname: "i.ytimg.com", protocol: "https", port: "" },
+    ],
   },
 };

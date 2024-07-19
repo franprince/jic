@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { ILogos } from "./Clients";
 
 type SliderProps = {
@@ -83,11 +83,10 @@ const ClientsSlider = ({ logos }: ILogos) => {
               <div className="slide" key={`marca-${index}`}>
                 <Image
                   src={logo.imgUrl}
-                  alt={logo.alt ?? ""} // Se puede agrgar el alt desde Sanity, si no lo encuentra usa un string vacío.
-                  layout="fixed"
+                  // Se puede agrgar el alt desde Sanity, si no lo encuentra usa un string vacío.
+                  alt={logo.alt ?? ""}
                   width={logo.dimensions.width}
-                  height={logo.dimensions.height}
-                />
+                  height={logo.dimensions.height} />
               </div>
             );
           })}
