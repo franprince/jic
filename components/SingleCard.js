@@ -10,7 +10,10 @@ export default function SingleCard({ item, index, size, mp, sectionOrigin }) {
     AOS.init();
   }, []);
   return (
-    <Link href={`/${sectionOrigin}/${item?.slug?.current}`} key={item}>
+    <Link
+      href={`/${sectionOrigin}/${item?.slug?.current}`}
+      key={item}
+      legacyBehavior>
       <article
         className={mp ? styles.mpCard : styles.card}
         data-aos={

@@ -11,7 +11,10 @@ export default function SingleCard({ item, index, size, sectionOrigin }) {
   }, []);
 
   return (
-    <Link href={`/${sectionOrigin}/${item?.slug?.current}`} key={item._id}>
+    <Link
+      href={`/${sectionOrigin}/${item?.slug?.current}`}
+      key={item._id}
+      legacyBehavior>
       <article
         data-aos={
           index == 0 ? "fade-down" : index % 2 == 0 ? "fade-left" : "fade-right"

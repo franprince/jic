@@ -14,7 +14,7 @@ export default function NavLink({
       target={text === "PODCAST" ? "_blank" : ""}
       href={link}
       key={id}
-    >
+      legacyBehavior>
       <li
         id={id}
         className={className}
