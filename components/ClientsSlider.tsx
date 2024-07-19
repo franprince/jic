@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { ILogos } from "./Clients";
 
 type SliderProps = {

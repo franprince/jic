@@ -3,7 +3,7 @@ import styles from "../styles/SingleCard.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 export default function SingleCard({ item, index, size, mp, sectionOrigin }) {
   useEffect(() => {

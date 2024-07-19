@@ -1,5 +1,5 @@
 import styles from "../styles/HomeSection.module.scss";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { InView } from "react-intersection-observer";
 import { useContext } from "react";
 import ColorContext from "./context/ColorContext";

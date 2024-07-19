@@ -1,5 +1,5 @@
 import styles from "../styles/AboutHeader.module.css";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 export default function AboutHeader({ title, img, contact, mobileTitle }) {
   return (
