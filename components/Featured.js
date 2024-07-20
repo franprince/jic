@@ -21,8 +21,8 @@ export default function Featured({ projects, size }) {
         })}
       </div>
       <div className={styles.button}>
-        <Link href="/trabajos">
-          Ver más proyectos
+        <Link href="/trabajos" legacyBehavior>
+          <a>Ver más proyectos</a>
         </Link>
       </div>
     </main>
