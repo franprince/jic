@@ -22,78 +22,78 @@ const HomeSection = (props: SectionsProps) => {
   } = props;
   const { colorWhite, colorBlack } = useContext(ColorContext); // colorWhite y colorBlack son funciones que cambian el color en el context.
 
-  return (
-    !hidden &&
-    (parallax ? (
-      <InView
-        rootMargin="0px 0px -90%"
-        as="section"
-        onChange={(InView) =>
-          InView && (backgroundColor === "white" ? colorWhite() : colorBlack())
-        }
-      >
-        <Parallax
-          bgImage={backgrounds?.desktop.url}
-          bgImageAlt={title}
-          strength={-300}
-          className={styles.parallax}
-          contentClassName={`${styles.parallaxContent} ${
-            styles[contentPosition]
-          } ${styles[title?.toLocaleLowerCase()]}`}
-        >
-          {showContent && (
-            <div className={contentPosition}>
-              {title && <h2>{title}</h2>}
-              {subtitle && <p>{subtitle}</p>}
-              {buttonText && (
-                <YellowButton
-                  link={link ?? "/youtube"}
-                  text={buttonText}
-                  hoverColor="white"
-                />
-              )}
-            </div>
-          )}
-        </Parallax>
-      </InView>
-    ) : (
-      <InView
-        rootMargin="0px 0px -90%"
-        as="section"
-        className={styles.homeSection}
-        onChange={(InView) =>
-          InView && (backgroundColor === "white" ? colorWhite() : colorBlack())
-        }
+  return !hidden &&
+  (parallax ? (
+    <InView
+      rootMargin="0px 0px -90%"
+      as="section"
+      onChange={(InView) =>
+        InView && (backgroundColor === "white" ? colorWhite() : colorBlack())
+      }
+    >
+      <Parallax
+        bgImage={backgrounds?.desktop.url}
+        bgImageAlt={title}
+        strength={-300}
+        className={styles.parallax}
+        contentClassName={`${styles.parallaxContent} ${
+          styles[contentPosition]
+        } ${styles[title?.toLocaleLowerCase()]}`}
       >
         {showContent && (
-          <div
-            className={`${styles.content} ${styles[contentPosition]} ${
-              styles[title?.toLocaleLowerCase()]
-            }`}
-          >
-            <h2>{title !== "Podcast" && title}</h2>
+          <div className={contentPosition}>
+            {title && <h2>{title}</h2>}
             {subtitle && <p>{subtitle}</p>}
             {buttonText && (
-              <YellowButton link={link ?? "/youtube"} text={buttonText} />
+              <YellowButton
+                link={link ?? "/youtube"}
+                text={buttonText}
+                hoverColor="white"
+              />
             )}
           </div>
         )}
-        <Image
-          src={backgrounds?.desktop.url}
-          alt={title}
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-          quality={90}
-        />
-        {title === "Podcast" && (
-          <a href="https://www.thecalishow.com/" target="_blank" rel="noopener noreferrer">
-            <img className={styles.button} src="/podcast-button.png" alt="" />
-          </a>
-        )}
-      </InView>
-    ))
-  );
+      </Parallax>
+    </InView>
+  ) : (
+    <InView
+      rootMargin="0px 0px -90%"
+      as="section"
+      className={styles.homeSection}
+      onChange={(InView) =>
+        InView && (backgroundColor === "white" ? colorWhite() : colorBlack())
+      }
+    >
+      {showContent && (
+        <div
+          className={`${styles.content} ${styles[contentPosition]} ${
+            styles[title?.toLocaleLowerCase()]
+          }`}
+        >
+          <h2>{title !== "Podcast" && title}</h2>
+          {subtitle && <p>{subtitle}</p>}
+          {buttonText && (
+            <YellowButton link={link ?? "/youtube"} text={buttonText} />
+          )}
+        </div>
+      )}
+      <Image
+        src={backgrounds?.desktop.url}
+        alt={title}
+        quality={90}
+        fill
+        sizes="100vw"
+        style={{
+          objectFit: "cover",
+          objectPosition: "center"
+        }} />
+      {title === "Podcast" && (
+        <a href="https://www.thecalishow.com/" target="_blank" rel="noopener noreferrer">
+          <img className={styles.button} src="/podcast-button.png" alt="" />
+        </a>
+      )}
+    </InView>
+  ));
 };
 
 export default HomeSection;

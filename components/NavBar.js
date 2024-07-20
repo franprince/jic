@@ -130,7 +130,7 @@ export default function Navbar({ iNavRef, theme }) {
         style={!open && !mobile ? { justifyContent: "space-between" } : null}
       >
         {/* JIC */}
-        <Link href="/">
+        <Link href="/" legacyBehavior>
           <a>
             <h2
               style={

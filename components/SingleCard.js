@@ -10,7 +10,10 @@ export default function SingleCard({ item, index, size, mp, sectionOrigin }) {
     AOS.init();
   }, []);
   return (
-    <Link href={`/${sectionOrigin}/${item?.slug?.current}`} key={item}>
+    <Link
+      href={`/${sectionOrigin}/${item?.slug?.current}`}
+      key={item}
+      legacyBehavior>
       <article
         className={mp ? styles.mpCard : styles.card}
         data-aos={
@@ -31,14 +34,16 @@ export default function SingleCard({ item, index, size, mp, sectionOrigin }) {
       >
         <div className={styles.img}>
           <Image
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
             src={item.imageUrl}
             alt={item.name}
             className={styles.imgBorder}
-            style={{borderRadius:"20px 20px 0 0"}}
-          />
+            fill
+            sizes="100vw"
+            style={{
+              borderRadius:"20px 20px 0 0",
+              objectFit: "cover",
+              objectPosition: "center"
+            }} />
         </div>
         <div className={styles.content}>
           <section className={styles.info}>

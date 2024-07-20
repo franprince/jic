@@ -9,7 +9,7 @@ export default function NavLink({
   className,
 }) {
   return (
-    <Link href={link} key={id}>
+    <Link href={link} key={id} legacyBehavior>
       <a onClick={handleRef} target={text === "PODCAST" ? "_blank" : ""}>
         <li
           id={id}

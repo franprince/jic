@@ -12,10 +12,12 @@ export default function PhGrid({ pictures }) {
             <Image
               src={pic}
               alt="Juan Ignacio Cali's picture"
-              layout="fill"
-              objectFit="cover"
               quality={100}
-            />
+              fill
+              sizes="100vw"
+              style={{
+                objectFit: "cover"
+              }} />
           </article>
         ))}
       </div>

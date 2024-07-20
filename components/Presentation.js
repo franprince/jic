@@ -10,10 +10,13 @@ export default function Presentation({ img, text }) {
           <Image
             width={524}
             height={519}
-            layout="responsive"
             src={img}
             alt=""
-          />
+            sizes="100vw"
+            style={{
+              width: "100%",
+              height: "auto"
+            }} />
         </article>
         <article>
           <h3>Juan Ignacio Cali</h3>

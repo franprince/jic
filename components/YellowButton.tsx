@@ -8,7 +8,7 @@ interface ButtonProps {
 }
 
 const YellowButton = ({ link, text, hoverColor = "black" }: ButtonProps) => (
-  <Link href={link}>
+  <Link href={link} legacyBehavior>
     <button
       className={hoverColor === "black" ? styles.button : styles.buttonAlt}
     >

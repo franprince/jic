@@ -11,7 +11,10 @@ export default function SingleCard({ item, index, size, sectionOrigin }) {
   }, []);
 
   return (
-    <Link href={`/${sectionOrigin}/${item?.slug?.current}`} key={item._id}>
+    <Link
+      href={`/${sectionOrigin}/${item?.slug?.current}`}
+      key={item._id}
+      legacyBehavior>
       <article
         data-aos={
           index == 0 ? "fade-down" : index % 2 == 0 ? "fade-left" : "fade-right"
@@ -25,15 +28,17 @@ export default function SingleCard({ item, index, size, sectionOrigin }) {
         </div>
         <div className={styles.img}>
           <Image
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
-            style={{ borderRadius: "0 20px 20px 0" }}
             src={item.imageUrl}
             alt={item.name}
             className={styles.imgBorder}
             quality={90}
-          />
+            fill
+            sizes="100vw"
+            style={{
+              borderRadius: "0 20px 20px 0",
+              objectFit: "cover",
+              objectPosition: "center"
+            }} />
         </div>
       </article>
     </Link>

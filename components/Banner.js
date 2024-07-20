@@ -10,12 +10,14 @@ export default function Banner({ img }) {
       <Image
         src={img}
         alt="Imagen de separador"
-        layout="fill"
-        objectFit="cover"
         objectPosition={size.width > 700 ? "center" : "bottom"}
         quality={100}
         priority={true}
-      />
+        fill
+        sizes="100vw"
+        style={{
+          objectFit: "cover"
+        }} />
     </article>
   );
 }

@@ -8,12 +8,14 @@ export default function AboutHeader({ title, img, contact, mobileTitle }) {
         <Image
           src={img}
           alt="Sobre mi"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
           quality={100}
           priority={true}
-        />
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover",
+            objectPosition: "center"
+          }} />
         <section
           className={contact ? styles.contactTitles : styles.aboutTitles}
         >

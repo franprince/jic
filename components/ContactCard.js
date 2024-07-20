@@ -8,11 +8,13 @@ export default function ContactCard({ img }) {
         <Image
           src={img}
           alt="Juan Ignacio Cali"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="top"
           quality={100}
-        />
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover",
+            objectPosition: "top"
+          }} />
       </section>
       <section className={styles.info}>
         <article className={styles.content}>

@@ -43,10 +43,8 @@ const Clients = ({ clients }: ClientsProps) => {
                   <Image
                     src={logo.imgUrl}
                     alt={logo.alt ?? ""}
-                    layout="fixed"
                     width={logo.dimensions.width}
-                    height={logo.dimensions.height}
-                  />
+                    height={logo.dimensions.height} />
                 </div>
               );
             })
