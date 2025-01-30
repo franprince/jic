@@ -24,7 +24,7 @@ const SliderContainer = styled.div<SliderProps>`
 
   .slider {
     background: white;
-    height: 100px;
+    height: auto;
     margin: auto;
     overflow: hidden;
     position: relative;
