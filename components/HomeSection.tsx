@@ -5,7 +5,7 @@ import { useContext } from "react";
 import ColorContext from "./context/ColorContext";
 import { SectionsProps } from "../queries/sanityQueries";
 import { Parallax } from "react-parallax";
-import { YellowButton } from ".";
+import { Button } from ".";
 
 const HomeSection = (props: SectionsProps) => {
   const {
@@ -46,7 +46,7 @@ const HomeSection = (props: SectionsProps) => {
               {title && <h2>{title}</h2>}
               {subtitle && <p>{subtitle}</p>}
               {buttonText && (
-                <YellowButton
+                <Button
                   link={link ?? "/youtube"}
                   text={buttonText}
                   hoverColor="white"
@@ -74,7 +74,7 @@ const HomeSection = (props: SectionsProps) => {
             <h2>{title !== "Podcast" && title}</h2>
             {subtitle && <p>{subtitle}</p>}
             {buttonText && (
-              <YellowButton link={link ?? "/youtube"} text={buttonText} />
+              <Button link={link ?? "/youtube"} text={buttonText} />
             )}
           </div>
         )}

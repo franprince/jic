@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../styles/YellowButton.module.scss";
+import styles from "../styles/Button.module.scss";
 
 interface ButtonProps {
   link: string;
@@ -7,7 +7,7 @@ interface ButtonProps {
   hoverColor?: "white" | "black";
 }
 
-const YellowButton = ({ link, text, hoverColor = "black" }: ButtonProps) => (
+const Button = ({ link, text, hoverColor = "black" }: ButtonProps) => (
   <Link href={link}>
     <button
       className={hoverColor === "black" ? styles.button : styles.buttonAlt}
@@ -17,4 +17,4 @@ const YellowButton = ({ link, text, hoverColor = "black" }: ButtonProps) => (
   </Link>
 );
 
-export default YellowButton;
+export default Button;
