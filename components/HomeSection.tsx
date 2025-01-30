@@ -49,7 +49,6 @@ const HomeSection = (props: SectionsProps) => {
                 <Button
                   link={link ?? "/youtube"}
                   text={buttonText}
-                  hoverColor="white"
                 />
               )}
             </div>
