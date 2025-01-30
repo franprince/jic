@@ -32,7 +32,7 @@ export default function Home({ homeApi, sectionApi, clientsApi }) {
         img={homeApi[0].headerURL}
         home={true}
         title="JUAN IGNACIO CALI"
-        subtitle="Filmmaker | Director Creativo | Fotógrafo"
+        subtitle="Film Director"
         videoSrc="/video-bg.mp4"
         posterSrc="/poster.webp"
       />
