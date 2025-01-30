@@ -42,7 +42,7 @@ export default function Projects({ personalApi, personalPageApi, pics }) {
         sectionOrigin="personal"
       />
 
-      <WorkTogether text="Listo para que trabajemos juntos?" link="/contact" />
+      <WorkTogether text="Trabajemos juntos!" link="/contact" />
 
       <Footer />
     </>
