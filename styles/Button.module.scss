@@ -3,21 +3,33 @@
   font-size: 16px;
   font-weight: 700;
   padding: 15px 35px;
-  color: #000;
-  background-color: #ffcc00;
-  border: 0;
+  border-width: 2px;
+  border-style: solid;
   border-radius: 10px;
   transition: all 0.5s ease;
 }
 
+.button {
+  background-color: white;
+  color: black;
+  border-color: white;
+}
+
 .button:hover {
-  background-color: black;
+  background-color: transparent;
   color: white;
   cursor: pointer;
 }
 
+.buttonAlt {
+  background-color: black;
+  color: white;
+  border-color: black;
+}
+
 .buttonAlt:hover {
-  background-color: white;
+  background-color: transparent;
   color: black;
+  border-color: black;
   cursor: pointer;
 }
