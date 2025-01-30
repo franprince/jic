@@ -4,13 +4,13 @@ import styles from "../styles/Button.module.scss";
 interface ButtonProps {
   link: string;
   text: string;
-  hoverColor?: "white" | "black";
+  backgroundColor?: "white" | "black";
 }
 
-const Button = ({ link, text, hoverColor = "black" }: ButtonProps) => (
+const Button = ({ link, text, backgroundColor = "white" }: ButtonProps) => (
   <Link href={link}>
     <button
-      className={hoverColor === "black" ? styles.button : styles.buttonAlt}
+      className={backgroundColor === "white" ? styles.button : styles.buttonAlt}
     >
       {text}
     </button>
