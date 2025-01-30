@@ -25,7 +25,7 @@ export default function WorkTogether({
     >
       <section>
         <h2>{text}</h2>
-        <Button link={link} text={buttonText ? buttonText : "Empecemos"} />
+        <Button link={link} text={buttonText ? buttonText : "Empecemos"} backgroundColor="black"/>
       </section>
     </InView>
   );
