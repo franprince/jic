@@ -59,7 +59,8 @@
 .form > form > div > button {
   font-size: 16px;
   font-weight: 600;
-  padding: 12px 80px;
+  padding: 12px 0px;
+  width: 200px;
   color: white;
   background-color: black;
   border: 2px solid black;
