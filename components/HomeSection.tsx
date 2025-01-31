@@ -46,10 +46,7 @@ const HomeSection = (props: SectionsProps) => {
               {title && <h2>{title}</h2>}
               {subtitle && <p>{subtitle}</p>}
               {buttonText && (
-                <Button
-                  link={link ?? "/youtube"}
-                  text={buttonText}
-                />
+                <Button link={link ?? "/youtube"} text={buttonText} />
               )}
             </div>
           )}
@@ -86,7 +83,11 @@ const HomeSection = (props: SectionsProps) => {
           quality={90}
         />
         {title === "Podcast" && (
-          <a href="https://www.thecalishow.com/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.thecalishow.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img className={styles.button} src="/podcast-button.png" alt="" />
           </a>
         )}
