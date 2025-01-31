@@ -32,7 +32,7 @@ export default function Home({ homeApi, sectionApi, clientsApi }) {
         img={homeApi[0].headerURL}
         home={true}
         title="JUAN IGNACIO CALI"
-        subtitle="Filmmaker | Director Creativo | Fotógrafo"
+        subtitle="Film Director"
         videoSrc="/video-bg.mp4"
         posterSrc="/poster.webp"
       />
@@ -40,7 +40,7 @@ export default function Home({ homeApi, sectionApi, clientsApi }) {
       {sectionApi?.map((section) => {
         return <HomeSection key={section._id} {...section} />;
       })}
-      <WorkTogether text="Listo para que trabajemos juntos?" link="/contact" />
+      <WorkTogether text="Trabajemos juntos!" link="/contact" />
       <Footer />
     </>
   );

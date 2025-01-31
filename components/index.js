@@ -31,7 +31,7 @@ import SpotifyIcon from "./icons/spotify";
 import YoutubeIcon from "./icons/youtube";
 import ClientsSlider from "./ClientsSlider";
 import NewPhGrid from "./NewPhGrid";
-import YellowButton from "./YellowButton";
+import Button from "./Button";
 
 export {
   HomeSection,
@@ -67,5 +67,5 @@ export {
   YoutubeIcon,
   ClientsSlider,
   NewPhGrid,
-  YellowButton
+  Button,
 };

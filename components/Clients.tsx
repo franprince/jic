@@ -29,11 +29,6 @@ const Clients = ({ clients }: ClientsProps) => {
       onChange={(InView) => InView && colorBlack()}
       className={styles.clients}
     >
-      <h2 className={styles.title}>
-        {size.width && size.width > 700
-          ? "Marcas que confiaron en mí"
-          : "Clientes"}
-      </h2>
       <div className={styles.container}>
         <div className={styles.grid}>
           {size.width && size.width > 900 ? (

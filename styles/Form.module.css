@@ -2,7 +2,7 @@
   width: 100%;
 }
 
-.form>form {
+.form > form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
@@ -11,8 +11,8 @@
   padding-top: 0;
 }
 
-.form>form>p>input,
-.form>form>p>textarea {
+.form > form > p > input,
+.form > form > p > textarea {
   width: 100%;
   background-color: #f9f9f9;
   font-size: 16px;
@@ -25,30 +25,30 @@
   margin-top: 0;
 }
 
-.form>form>p>textarea {
+.form > form > p > textarea {
   margin-top: 1.5rem;
 }
 
-.form>form>p {
+.form > form > p {
   margin-top: 0;
 }
 
-.form>form>p:last-of-type {
+.form > form > p:last-of-type {
   grid-column: 1/3;
 }
 
-.form>form>div {
+.form > form > div {
   width: 100%;
   justify-content: flex-end;
 }
 
-.form>form>div>p:not(.hablemos) {
+.form > form > div > p:not(.hablemos) {
   font-size: 15px;
   margin: 0;
   color: rgb(223, 0, 0);
 }
 
-.form>form>div>div {
+.form > form > div > div {
   width: 100%;
   height: fit-content;
   position: relative;
@@ -56,15 +56,15 @@
   border-radius: 10px;
 }
 
-
-.form>form>div>button {
+.form > form > div > button {
   font-size: 16px;
   font-weight: 600;
-  padding: 15px 45px;
-  color: #000;
-  background-color: #ffcc00;
-  border: 0;
-  border-radius: 5px;
+  padding: 12px 0px;
+  width: 200px;
+  color: white;
+  background-color: black;
+  border: 2px solid black;
+  border-radius: 8px;
   transition: all 0.5s ease;
 }
 
@@ -99,10 +99,9 @@
   cursor: pointer;
 }
 
-.form select>option {
+.form select > option {
   padding: 1rem;
 }
-
 
 .form textarea {
   width: 100%;
@@ -124,9 +123,9 @@
   display: flex;
 }
 
-.form>form>div>button:hover {
-  background-color: black;
-  color: white;
+.form > form > div > button:hover {
+  background-color: transparent;
+  color: black;
   cursor: pointer;
 }
 
@@ -147,7 +146,7 @@
   align-items: center;
 }
 
-.sent>section {
+.sent > section {
   position: relative;
   background-color: rgb(255, 255, 255);
   height: fit-content;
@@ -166,23 +165,23 @@
   box-shadow: 0px 5px 13px -1px rgba(0, 0, 0, 0.46);
 }
 
-.sent>section>img {
+.sent > section > img {
   height: 64px;
   width: 64px;
 }
 
-.sent>section>h2 {
+.sent > section > h2 {
   font-size: 40px;
 }
 
-.sent>section>p {
+.sent > section > p {
   font-family: "Lora", serif;
   font-size: 24px;
   line-height: 195.2%;
   margin-top: 0;
 }
 
-.sent>section>button {
+.sent > section > button {
   width: 44px;
   height: 44px;
   text-align: center;
@@ -202,8 +201,8 @@
   box-shadow: 0px 5px 9px -1px rgba(0, 0, 0, 0.46);
 }
 
-.sent>section>button::before,
-.sent>section>button::after {
+.sent > section > button::before,
+.sent > section > button::after {
   position: absolute;
   top: 12px;
   content: " ";
@@ -212,23 +211,23 @@
   background-color: rgb(0, 0, 0);
 }
 
-.sent>section>button:hover {
+.sent > section > button:hover {
   opacity: 0.5;
   -webkit-box-shadow: 0px 5px 9px -1px rgba(0, 0, 0, 0.9);
   -moz-box-shadow: 0px 5px 9px -1px rgba(0, 0, 0, 0.9);
   box-shadow: 0px 5px 9px -1px rgba(0, 0, 0, 0.9);
 }
 
-.sent>section>button::before {
+.sent > section > button::before {
   transform: rotate(45deg);
 }
 
-.sent>section>button::after {
+.sent > section > button::after {
   transform: rotate(-45deg);
 }
 
 @media (max-width: 1000px) {
-  .form>form>div {
+  .form > form > div {
     margin-bottom: 1.2rem;
   }
 
@@ -240,7 +239,7 @@
     z-index: 3;
   }
 
-  .sent>section {
+  .sent > section {
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -248,28 +247,28 @@
     border-radius: 0px;
   }
 
-  .sent>section>img {
+  .sent > section > img {
     height: 48px;
     width: 48px;
   }
 
-  .sent>section>h2 {
+  .sent > section > h2 {
     font-size: 30px;
     width: 60%;
     margin-top: 2rem;
   }
 
-  .sent>section>p {
+  .sent > section > p {
     font-size: 20px;
     margin-top: 0.7rem;
   }
 
-  .sent>section>button {
+  .sent > section > button {
     top: 50px;
     right: 35px;
   }
 
-  .form>form {
+  .form > form {
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -277,14 +276,14 @@
     margin: auto;
   }
 
-  .form>form>p {
+  .form > form > p {
     margin-top: 1rem;
     margin: auto;
     width: 100%;
   }
 
-  .form>form>p>input,
-  .form>form>p>textarea {
+  .form > form > p > input,
+  .form > form > p > textarea {
     padding: 1rem;
     margin-top: 1rem;
   }
@@ -294,30 +293,30 @@
     padding-top: 2rem;
   }
 
-  .mobileCell>p {
+  .mobileCell > p {
     font-size: 18px;
     font-family: "Lora", serif;
     color: #6d6d6d;
     line-height: 195.2%;
   }
 
-  .mobileCell>h2 {
+  .mobileCell > h2 {
     font-size: 30px;
     line-height: 98.7%;
   }
 
-  .mobileCell>h2,
-  .mobileCell>p {
+  .mobileCell > h2,
+  .mobileCell > p {
     margin: 2rem auto 2rem auto;
     width: -moz-fit-content;
     width: fit-content;
   }
 
-  .form>form>div {
+  .form > form > div {
     justify-content: center;
   }
 
-  .form>form>div>button {
+  .form > form > div > button {
     align-self: center;
   }
 }
@@ -327,7 +326,7 @@
     z-index: 3;
   }
 
-  .sent>section {
+  .sent > section {
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -335,28 +334,28 @@
     border-radius: 0px;
   }
 
-  .sent>section>img {
+  .sent > section > img {
     height: 48px;
     width: 48px;
   }
 
-  .sent>section>h2 {
+  .sent > section > h2 {
     font-size: 22px;
     width: 65%;
     margin-top: 2rem;
   }
 
-  .sent>section>p {
+  .sent > section > p {
     font-size: 18px;
     margin-top: 0.7rem;
   }
 
-  .sent>section>button {
+  .sent > section > button {
     top: 50px;
     right: 35px;
   }
 
-  .form>form {
+  .form > form {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -365,15 +364,15 @@
     padding-left: 0 !important;
   }
 
-  .form>form>p {
+  .form > form > p {
     margin-top: 1rem;
   }
 
-  .form>form>div:not(.button):not(.mobileCell):not(.space) {
+  .form > form > div:not(.button):not(.mobileCell):not(.space) {
     margin-top: 1.4rem;
   }
 
-  .button>button {
+  .button > button {
     margin: auto;
   }
 
@@ -382,20 +381,20 @@
     padding-top: 2rem;
   }
 
-  .mobileCell>p {
+  .mobileCell > p {
     font-size: 18px;
     font-family: "Lora", serif;
     color: #6d6d6d;
     line-height: 195.2%;
   }
 
-  .mobileCell>h2 {
+  .mobileCell > h2 {
     font-size: 30px;
     line-height: 98.7%;
   }
 
-  .mobileCell>h2,
-  .mobileCell>p {
+  .mobileCell > h2,
+  .mobileCell > p {
     margin: 2rem auto 2rem auto;
     width: -moz-fit-content;
     width: fit-content;
