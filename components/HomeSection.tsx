@@ -53,46 +53,49 @@ const HomeSection = (props: SectionsProps) => {
         </Parallax>
       </InView>
     ) : (
-      <InView
-        rootMargin="0px 0px -90%"
-        as="section"
-        className={styles.homeSection}
-        onChange={(InView) =>
-          InView && (backgroundColor === "white" ? colorWhite() : colorBlack())
-        }
-      >
-        {showContent && (
-          <div
-            className={`${styles.content} ${styles[contentPosition]} ${
-              styles[title?.toLocaleLowerCase()]
-            }`}
-          >
-            <h2>{title !== "Podcast" && title}</h2>
-            {subtitle && <p>{subtitle}</p>}
-            {buttonText && (
-              <Button link={link ?? "/youtube"} text={buttonText} />
-            )}
-          </div>
-        )}
-        <Image
-          className={styles.cardImage}
-          src={backgrounds?.desktop.url}
-          alt={title}
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-          quality={90}
-        />
-        {title === "Podcast" && (
-          <a
-            href="https://www.thecalishow.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img className={styles.button} src="/podcast-button.png" alt="" />
-          </a>
-        )}
-      </InView>
+      <a href={link} target="_blank" rel="noopener noreferrer">
+        <InView
+          rootMargin="0px 0px -90%"
+          as="section"
+          className={styles.homeSection}
+          onChange={(InView) =>
+            InView &&
+            (backgroundColor === "white" ? colorWhite() : colorBlack())
+          }
+        >
+          {showContent && (
+            <div
+              className={`${styles.content} ${styles[contentPosition]} ${
+                styles[title?.toLocaleLowerCase()]
+              }`}
+            >
+              <h2>{title !== "Podcast" && title}</h2>
+              {subtitle && <p>{subtitle}</p>}
+              {buttonText && (
+                <Button link={link ?? "/youtube"} text={buttonText} />
+              )}
+            </div>
+          )}
+          <Image
+            className={styles.cardImage}
+            src={backgrounds?.desktop.url}
+            alt={title}
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            quality={90}
+          />
+          {title === "Podcast" && (
+            <a
+              href="https://www.thecalishow.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img className={styles.button} src="/podcast-button.png" alt="" />
+            </a>
+          )}
+        </InView>
+      </a>
     ))
   );
 };
