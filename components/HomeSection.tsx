@@ -46,10 +46,7 @@ const HomeSection = (props: SectionsProps) => {
               {title && <h2>{title}</h2>}
               {subtitle && <p>{subtitle}</p>}
               {buttonText && (
-                <Button
-                  link={link ?? "/youtube"}
-                  text={buttonText}
-                />
+                <Button link={link ?? "/youtube"} text={buttonText} />
               )}
             </div>
           )}
@@ -77,16 +74,23 @@ const HomeSection = (props: SectionsProps) => {
             )}
           </div>
         )}
-        <Image
-          src={backgrounds?.desktop.url}
-          alt={title}
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-          quality={90}
-        />
+        <a href={link} target="_blank" rel="noopener noreferrer">
+          <Image
+            className={styles.cardImage}
+            src={backgrounds?.desktop.url}
+            alt={title}
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
+            quality={90}
+          />
+        </a>
         {title === "Podcast" && (
-          <a href="https://www.thecalishow.com/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.thecalishow.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img className={styles.button} src="/podcast-button.png" alt="" />
           </a>
         )}
