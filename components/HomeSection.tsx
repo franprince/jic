@@ -53,29 +53,28 @@ const HomeSection = (props: SectionsProps) => {
         </Parallax>
       </InView>
     ) : (
-      <a href={link} target="_blank" rel="noopener noreferrer">
-        <InView
-          rootMargin="0px 0px -90%"
-          as="section"
-          className={styles.homeSection}
-          onChange={(InView) =>
-            InView &&
-            (backgroundColor === "white" ? colorWhite() : colorBlack())
-          }
-        >
-          {showContent && (
-            <div
-              className={`${styles.content} ${styles[contentPosition]} ${
-                styles[title?.toLocaleLowerCase()]
-              }`}
-            >
-              <h2>{title !== "Podcast" && title}</h2>
-              {subtitle && <p>{subtitle}</p>}
-              {buttonText && (
-                <Button link={link ?? "/youtube"} text={buttonText} />
-              )}
-            </div>
-          )}
+      <InView
+        rootMargin="0px 0px -90%"
+        as="section"
+        className={styles.homeSection}
+        onChange={(InView) =>
+          InView && (backgroundColor === "white" ? colorWhite() : colorBlack())
+        }
+      >
+        {showContent && (
+          <div
+            className={`${styles.content} ${styles[contentPosition]} ${
+              styles[title?.toLocaleLowerCase()]
+            }`}
+          >
+            <h2>{title !== "Podcast" && title}</h2>
+            {subtitle && <p>{subtitle}</p>}
+            {buttonText && (
+              <Button link={link ?? "/youtube"} text={buttonText} />
+            )}
+          </div>
+        )}
+        <a href={link} target="_blank" rel="noopener noreferrer">
           <Image
             className={styles.cardImage}
             src={backgrounds?.desktop.url}
@@ -85,17 +84,17 @@ const HomeSection = (props: SectionsProps) => {
             objectPosition="center"
             quality={90}
           />
-          {title === "Podcast" && (
-            <a
-              href="https://www.thecalishow.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img className={styles.button} src="/podcast-button.png" alt="" />
-            </a>
-          )}
-        </InView>
-      </a>
+        </a>
+        {title === "Podcast" && (
+          <a
+            href="https://www.thecalishow.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img className={styles.button} src="/podcast-button.png" alt="" />
+          </a>
+        )}
+      </InView>
     ))
   );
 };
