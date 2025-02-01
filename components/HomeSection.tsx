@@ -75,6 +75,7 @@ const HomeSection = (props: SectionsProps) => {
           </div>
         )}
         <Image
+          className={styles.cardImage}
           src={backgrounds?.desktop.url}
           alt={title}
           layout="fill"
