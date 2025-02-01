@@ -1,4 +1,5 @@
 import Head from "next/head";
+import styles from "../styles/Home.module.css";
 import {
   Header,
   NavBar,
@@ -37,9 +38,11 @@ export default function Home({ homeApi, sectionApi, clientsApi }) {
         posterSrc="/poster.webp"
       />
       <Clients clients={clientsApi} />
-      {sectionApi?.map((section) => {
-        return <HomeSection key={section._id} {...section} />;
-      })}
+      <div className={styles.homeSectionScontainer}>
+        {sectionApi?.map((section) => {
+          return <HomeSection key={section._id} {...section} />;
+        })}
+      </div>
       <WorkTogether text="Trabajemos juntos!" link="/contact" />
       <Footer />
     </>
