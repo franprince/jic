@@ -1,12 +1,7 @@
 const SENDGRID_API = "https://api.sendgrid.com/v3/mail/send";
 const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
 
-const sendEmail = async ({
-  nombre,
-  mensaje,
-  trabajo,
-  email,
-}) => {
+const sendEmail = async ({ nombre, mensaje, trabajo, email }) => {
   await fetch(SENDGRID_API, {
     method: "POST",
     headers: {

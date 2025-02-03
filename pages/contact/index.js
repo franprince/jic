@@ -44,7 +44,9 @@ export default function Contact({ contactData }) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const contactData = overlayDrafts(await getClient(preview).fetch(headerQuery));
+  const contactData = overlayDrafts(
+    await getClient(preview).fetch(headerQuery)
+  );
   return {
     props: { contactData },
     revalidate: 1,
