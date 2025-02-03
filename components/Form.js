@@ -78,10 +78,6 @@ export default function Form({ sent, setSent, size, contactData }) {
             placeholder="Estoy trabajando en"
           />
         </label>
-        <div className={styles.mobileCell}>
-          <h2>Cuál es tu idea?</h2>
-          <p className={styles.hablemos}>Hablemos sobre tu proyecto.</p>
-        </div>
         <label htmlFor="mensaje" className={styles.message}>
           <textarea
             rows="4"
