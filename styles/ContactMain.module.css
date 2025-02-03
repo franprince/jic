@@ -13,8 +13,6 @@
   row-gap: 2rem;
   grid-template-areas:
     "first second"
-    "third fourth"
-    "fifth fourth";
 }
 
 .main > section > article > h2 {
@@ -83,7 +81,7 @@
 
 .area2 {
   margin-top: 8rem;
-  grid-area: fourth;
+  grid-area: second;
   display: flex;
 }
 
@@ -97,8 +95,7 @@
     width: 100%;
     grid-template-areas:
       "first"
-      "third"
-      "fourth";
+      "second"
   }
 
   .main > section > article > h2 {
@@ -144,7 +141,7 @@
 
   .area2 {
     margin-top: auto;
-    grid-area: fourth;
+    grid-area: second;
     display: flex;
   }
 }
@@ -173,13 +170,7 @@
   }
   .area2 {
     margin-top: auto;
-    grid-area: fourth;
-    display: flex;
-  }
-
-  .area2 {
-    margin-top: auto;
-    grid-area: fourth;
+    grid-area: second;
     display: flex;
   }
 }
