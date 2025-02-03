@@ -81,6 +81,10 @@
   margin-top: 0;
 }
 
+.workInput {
+  grid-column: span 2;
+}
+
 .form select {
   width: 100%;
   background-color: #f9f9f9;
@@ -127,10 +131,6 @@
   background-color: transparent;
   color: black;
   cursor: pointer;
-}
-
-.mobileCell {
-  display: none !important;
 }
 
 .sent {
@@ -288,30 +288,6 @@
     margin-top: 1rem;
   }
 
-  .mobileCell {
-    display: block !important;
-    padding-top: 2rem;
-  }
-
-  .mobileCell > p {
-    font-size: 18px;
-    font-family: "Lora", serif;
-    color: #6d6d6d;
-    line-height: 195.2%;
-  }
-
-  .mobileCell > h2 {
-    font-size: 30px;
-    line-height: 98.7%;
-  }
-
-  .mobileCell > h2,
-  .mobileCell > p {
-    margin: 2rem auto 2rem auto;
-    width: -moz-fit-content;
-    width: fit-content;
-  }
-
   .form > form > div {
     justify-content: center;
   }
@@ -368,35 +344,11 @@
     margin-top: 1rem;
   }
 
-  .form > form > div:not(.button):not(.mobileCell):not(.space) {
+  .form > form > div:not(.button):not(.space) {
     margin-top: 1.4rem;
   }
 
   .button > button {
     margin: auto;
-  }
-
-  .mobileCell {
-    display: block !important;
-    padding-top: 2rem;
-  }
-
-  .mobileCell > p {
-    font-size: 18px;
-    font-family: "Lora", serif;
-    color: #6d6d6d;
-    line-height: 195.2%;
-  }
-
-  .mobileCell > h2 {
-    font-size: 30px;
-    line-height: 98.7%;
-  }
-
-  .mobileCell > h2,
-  .mobileCell > p {
-    margin: 2rem auto 2rem auto;
-    width: -moz-fit-content;
-    width: fit-content;
   }
 }

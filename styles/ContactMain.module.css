@@ -11,10 +11,7 @@
   display: grid;
   column-gap: 4rem;
   row-gap: 2rem;
-  grid-template-areas:
-    "first second"
-    "third fourth"
-    "fifth fourth";
+  grid-template-areas: "first second";
 }
 
 .main > section > article > h2 {
@@ -39,30 +36,7 @@
   font-family: "Lora", serif;
 }
 
-.social {
-  padding-top: 4rem;
-}
-.social h3 {
-  font-size: 30px;
-  line-height: 115.5%;
-  margin-top: 0;
-  margin-bottom: 2.5rem;
-}
-
-.links {
-  width: 30%;
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.links svg {
-  fill: black;
-}
-
-.area1 > p:first-of-type::before,
-.area3 > p::before,
-.area5 > p::before {
+.area1 > p:first-of-type::before {
   content: "";
   position: absolute;
   left: 0px;
@@ -74,41 +48,17 @@
 
 .area1 {
   grid-area: first;
-  min-width: 20rem;
   position: relative;
 }
 
-.area1 > p,
-.area3 > p,
-.area5 > p {
+.area1 > p {
   position: inherit;
   padding: 1.4rem 0 1.4rem 0;
 }
 
 .area2 {
   grid-area: second;
-  position: relative;
-}
-
-.area2 > p:last-of-type {
-  margin-bottom: 2rem;
-}
-
-.area3 {
-  grid-area: third;
-  position: relative;
-  margin-top: 8rem;
-}
-
-.area4 {
-  margin-top: 8rem;
-  grid-area: fourth;
   display: flex;
-}
-
-.area5 {
-  grid-area: fifth;
-  position: relative;
 }
 
 @media (max-width: 1000px) {
@@ -121,8 +71,7 @@
     width: 100%;
     grid-template-areas:
       "first"
-      "third"
-      "fourth";
+      "second";
   }
 
   .main > section > article > h2 {
@@ -146,15 +95,7 @@
     width: 100%;
   }
 
-  .hablemos {
-    color: red;
-  }
-
-  .area3 > p::before,
-  .area5 > p::before,
-  .area1 > p:last-of-type,
-  .area5,
-  .area2 {
+  .area1 > p:last-of-type {
     display: none;
   }
 
@@ -169,16 +110,10 @@
   .area1 {
     width: fit-content !important;
   }
-  .area3 {
-    margin-top: auto;
-  }
-  .area3 > p {
-    color: #6d6d6d;
-  }
 
-  .area4 {
+  .area2 {
     margin-top: auto;
-    grid-area: fourth;
+    grid-area: second;
     display: flex;
   }
 }
@@ -205,26 +140,9 @@
     margin-right: 0 !important;
     margin-left: 0 !important;
   }
-  .area4 {
+  .area2 {
     margin-top: auto;
-    grid-area: fourth;
-    display: flex;
-  }
-
-  .area3 > p {
-    color: #6d6d6d;
-  }
-
-  .area3 {
-    margin-top: auto;
-  }
-  .area3 > p {
-    color: #6d6d6d;
-  }
-
-  .area4 {
-    margin-top: auto;
-    grid-area: fourth;
+    grid-area: second;
     display: flex;
   }
 }

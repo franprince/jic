@@ -13,8 +13,6 @@ import { useWindowSize } from "../../hooks/useWindowSize";
 const headerQuery = groq`*[_type=='contact'] {
     _id,
     "headerURL": header.asset -> url,
-    "budget": budget[],
-    "products": product[],
     }`;
 
 export default function Contact({ contactData }) {
@@ -36,7 +34,7 @@ export default function Contact({ contactData }) {
         rootMargin="0px 0px -90%"
         onChange={(InView) => (InView ? colorBlack() : colorWhite())}
       >
-        <ContactMain size={size} contactData={contactData[0]} />
+        <ContactMain size={size} />
       </InView>
       <Footer />
     </>
@@ -44,7 +42,9 @@ export default function Contact({ contactData }) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const contactData = overlayDrafts(await getClient(preview).fetch(headerQuery));
+  const contactData = overlayDrafts(
+    await getClient(preview).fetch(headerQuery)
+  );
   return {
     props: { contactData },
     revalidate: 1,
