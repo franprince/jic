@@ -78,65 +78,9 @@ export default function Form({ sent, setSent, size, contactData }) {
             placeholder="Estoy trabajando en"
           />
         </label>
-        <label htmlFor="puesto">
-          <input
-            onChange={handleChange}
-            value={formValues.puesto}
-            type="text"
-            name="puesto"
-            placeholder="Mi puesto es"
-          />
-        </label>
         <div className={styles.mobileCell}>
           <h2>Cuál es tu idea?</h2>
           <p className={styles.hablemos}>Hablemos sobre tu proyecto.</p>
-        </div>
-        <div className={styles.select}>
-          <select
-            required
-            onChange={handleChange}
-            id="producto"
-            name="producto"
-            styles={styles.select}
-          >
-            <option value="">Estoy necesitando</option>
-
-            {products.map((product) => {
-              return (
-                <option value={product.value} key={product._key}>{product.displayValue}</option>
-              );
-            })}
-          </select>
-          <p
-            style={
-              missingValue.producto ? { display: "block" } : { display: "none" }
-            }
-          >
-            Por favor, completá este campo.
-          </p>
-        </div>
-        <div className={styles.select}>
-          <select
-            required
-            onChange={handleChange}
-            id="presupuesto"
-            name="presupuesto"
-            styles={styles.select}
-          >
-            <option value="">Mi presupuesto estimado es</option>
-            {budget.map((item) => {
-              return <option value={item.value} key={item._key}>{item.displayValue}</option>;
-            })}
-          </select>
-          <p
-            style={
-              missingValue.presupuesto
-                ? { display: "block" }
-                : { display: "none" }
-            }
-          >
-            Por favor, completá este campo.
-          </p>
         </div>
         <label htmlFor="mensaje" className={styles.message}>
           <textarea
