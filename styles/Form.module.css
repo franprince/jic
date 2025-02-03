@@ -81,6 +81,10 @@
   margin-top: 0;
 }
 
+.workInput {
+  grid-column: span 2;
+}
+
 .form select {
   width: 100%;
   background-color: #f9f9f9;
