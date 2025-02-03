@@ -60,8 +60,7 @@
   fill: black;
 }
 
-.area1 > p:first-of-type::before,
-.area3 > p::before {
+.area1 > p:first-of-type::before {
   content: "";
   position: absolute;
   left: 0px;
