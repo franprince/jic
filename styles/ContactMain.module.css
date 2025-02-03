@@ -61,8 +61,7 @@
 }
 
 .area1 > p:first-of-type::before,
-.area3 > p::before,
-.area5 > p::before {
+.area3 > p::before {
   content: "";
   position: absolute;
   left: 0px;
@@ -78,37 +77,15 @@
   position: relative;
 }
 
-.area1 > p,
-.area3 > p,
-.area5 > p {
+.area1 > p {
   position: inherit;
   padding: 1.4rem 0 1.4rem 0;
-}
-
-.area2 {
-  grid-area: second;
-  position: relative;
-}
-
-.area2 > p:last-of-type {
-  margin-bottom: 2rem;
-}
-
-.area3 {
-  grid-area: third;
-  position: relative;
-  margin-top: 8rem;
 }
 
 .area4 {
   margin-top: 8rem;
   grid-area: fourth;
   display: flex;
-}
-
-.area5 {
-  grid-area: fifth;
-  position: relative;
 }
 
 @media (max-width: 1000px) {
@@ -150,11 +127,7 @@
     color: red;
   }
 
-  .area3 > p::before,
-  .area5 > p::before,
-  .area1 > p:last-of-type,
-  .area5,
-  .area2 {
+  .area1 > p:last-of-type {
     display: none;
   }
 
@@ -168,12 +141,6 @@
 
   .area1 {
     width: fit-content !important;
-  }
-  .area3 {
-    margin-top: auto;
-  }
-  .area3 > p {
-    color: #6d6d6d;
   }
 
   .area4 {
@@ -209,17 +176,6 @@
     margin-top: auto;
     grid-area: fourth;
     display: flex;
-  }
-
-  .area3 > p {
-    color: #6d6d6d;
-  }
-
-  .area3 {
-    margin-top: auto;
-  }
-  .area3 > p {
-    color: #6d6d6d;
   }
 
   .area4 {
