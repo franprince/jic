@@ -36,7 +36,7 @@ export default function Contact({ contactData }) {
         rootMargin="0px 0px -90%"
         onChange={(InView) => (InView ? colorBlack() : colorWhite())}
       >
-        <ContactMain size={size} contactData={contactData[0]} />
+        <ContactMain size={size} />
       </InView>
       <Footer />
     </>
