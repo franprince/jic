@@ -2,7 +2,7 @@ import styles from "../styles/ContactMain.module.css";
 import Form from "./Form";
 import { useState } from "react";
 
-export default function ContactMain({ size, contactData }) {
+export default function ContactMain({ size }) {
   const [sent, setSent] = useState(false);
 
   return (
@@ -27,16 +27,13 @@ export default function ContactMain({ size, contactData }) {
             cómo puedo ayudarte.
           </p>
           <p>
-            También podés escribirme<br /> un mail:<br /> juan.ignacio.cali@gmail.com
+            También podés escribirme
+            <br /> un mail:
+            <br /> juan.ignacio.cali@gmail.com
           </p>
         </article>
         <article className={styles.area2}>
-          <Form
-            sent={sent}
-            setSent={setSent}
-            size={size}
-            contactData={contactData}
-          />
+          <Form sent={sent} setSent={setSent} size={size} />
         </article>
       </section>
     </main>
