@@ -28,7 +28,7 @@ export default function ContactMain({ size, contactData }) {
             cómo puedo ayudarte.
           </p>
           <p>
-            También podés escribirme un mail a juan.ignacio.cali@gmail.com
+            También podés escribirme<br /> un mail:<br /> juan.ignacio.cali@gmail.com
           </p>
         </article>
         <article className={styles.area2}>
