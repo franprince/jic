@@ -69,7 +69,7 @@ export default function Form({ sent, setSent, size, contactData }) {
             required
           />
         </label>
-        <label htmlFor="trabajo">
+        <label htmlFor="trabajo" className={styles.workInput}>
           <input
             onChange={handleChange}
             value={formValues.trabajo}
