@@ -24,15 +24,11 @@ export default function ContactMain({ size, contactData }) {
         <article className={styles.area1}>
           <h2>Conversemos!</h2>
           <p className={styles.border}>
-            Dejame saber quien sos y<br />
+            Dejame saber quién sos y<br />
             cómo puedo ayudarte.
           </p>
           <p>
-            Si no querés llenar el
-            <br />
-            formulario, podes
-            <br />
-            enviarme un mail.
+            También podés escribirme un mail a juan.ignacio.cali@gmail.com
           </p>
         </article>
         <article className={styles.area2}>
