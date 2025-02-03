@@ -80,7 +80,6 @@
 }
 
 .area2 {
-  margin-top: 8rem;
   grid-area: second;
   display: flex;
 }
