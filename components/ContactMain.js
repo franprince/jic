@@ -1,7 +1,6 @@
 import styles from "../styles/ContactMain.module.css";
 import Form from "./Form";
 import { useState } from "react";
-import { InstagramIcon, SpotifyIcon, YoutubeIcon } from "./icons";
 
 export default function ContactMain({ size, contactData }) {
   const [sent, setSent] = useState(false);
