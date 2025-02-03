@@ -70,7 +70,6 @@
 
 .area1 {
   grid-area: first;
-  min-width: 20rem;
   position: relative;
 }
 
