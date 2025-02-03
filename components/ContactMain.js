@@ -31,7 +31,7 @@ export default function ContactMain({ size, contactData }) {
             También podés escribirme un mail a juan.ignacio.cali@gmail.com
           </p>
         </article>
-        <article className={styles.area4}>
+        <article className={styles.area2}>
           <Form
             sent={sent}
             setSent={setSent}
