@@ -3,39 +3,24 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 
-export default function Form({ sent, setSent, size, contactData }) {
+export default function Form({ sent, setSent, size }) {
   const emptyForm = {
-    producto: "",
-    presupuesto: "",
     nombre: "",
     mensaje: "",
     trabajo: "",
-    puesto: "",
     email: "",
   };
   const [formValues, setFormValues] = useState(emptyForm);
-  const [missingValue, setMissingValue] = useState({
-    presupuesto: false,
-    producto: false,
-  });
   const router = useRouter();
-  const { products, budget } = contactData;
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!!!formValues.producto | !!!formValues.presupuesto) {
-      setMissingValue({
-        presupuesto: !!formValues.presupuesto,
-        producto: !!formValues.producto,
-      });
-    } else {
-      fetch("/api/mail", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formValues }),
-      });
-      setFormValues(emptyForm);
-      setSent(true);
-    }
+    fetch("/api/mail", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...formValues }),
+    });
+    setFormValues(emptyForm);
+    setSent(true);
   };
 
   const handleClick = (e) => {
