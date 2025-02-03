@@ -13,8 +13,6 @@ import { useWindowSize } from "../../hooks/useWindowSize";
 const headerQuery = groq`*[_type=='contact'] {
     _id,
     "headerURL": header.asset -> url,
-    "budget": budget[],
-    "products": product[],
     }`;
 
 export default function Contact({ contactData }) {
