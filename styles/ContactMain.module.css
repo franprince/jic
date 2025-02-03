@@ -11,8 +11,7 @@
   display: grid;
   column-gap: 4rem;
   row-gap: 2rem;
-  grid-template-areas:
-    "first second"
+  grid-template-areas: "first second";
 }
 
 .main > section > article > h2 {
@@ -93,7 +92,7 @@
     width: 100%;
     grid-template-areas:
       "first"
-      "second"
+      "second";
   }
 
   .main > section > article > h2 {
